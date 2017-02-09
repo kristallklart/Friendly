@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Friendly
+namespace Friendly.Model
 {
     class Purpose
     {
@@ -19,7 +19,7 @@ namespace Friendly
 
             set
             {
-                pID = value;
+                purposeId = value;
             }
         }
     }
