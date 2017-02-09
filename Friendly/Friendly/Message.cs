@@ -6,62 +6,65 @@ using System.Threading.Tasks;
 
 namespace Friendly
 {
-    class Message
+    namespace Model
     {
-        private string mId;
-        private string mDate;
-        private string mTime;
-        private string content;
-
-        public string MID
+        class Message
         {
-            get
+            private string mId;
+            private string mDate;
+            private string mTime;
+            private string content;
+
+            public string MID
             {
-                return mId;
+                get
+                {
+                    return mId;
+                }
+
+                set
+                {
+                    mId = value;
+                }
             }
 
-            set
+            public string MDate
             {
-                mId = value;
-            }
-        }
+                get
+                {
+                    return mDate;
+                }
 
-        public string MDate
-        {
-            get
-            {
-                return mDate;
-            }
-
-            set
-            {
-                mDate = value;
-            }
-        }
-
-        public string MTime
-        {
-            get
-            {
-                return mTime;
+                set
+                {
+                    mDate = value;
+                }
             }
 
-            set
+            public string MTime
             {
-                mTime = value;
-            }
-        }
+                get
+                {
+                    return mTime;
+                }
 
-        public string Content
-        {
-            get
-            {
-                return content;
+                set
+                {
+                    mTime = value;
+                }
             }
 
-            set
+            public string Content
             {
-                content = value;
+                get
+                {
+                    return content;
+                }
+
+                set
+                {
+                    content = value;
+                }
             }
         }
     }

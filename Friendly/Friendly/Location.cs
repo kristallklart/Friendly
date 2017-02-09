@@ -6,34 +6,37 @@ using System.Threading.Tasks;
 
 namespace Friendly
 {
-    class Location
+    namespace Model
     {
-        private string city;
-        private string country;
-
-        public string City
+        class Location
         {
-            get
+            private string city;
+            private string country;
+
+            public string City
             {
-                return city;
+                get
+                {
+                    return city;
+                }
+
+                set
+                {
+                    city = value;
+                }
             }
 
-            set
+            public string Country
             {
-                city = value;
-            }
-        }
+                get
+                {
+                    return country;
+                }
 
-        public string Country
-        {
-            get
-            {
-                return country;
-            }
-
-            set
-            {
-                country = value;
+                set
+                {
+                    country = value;
+                }
             }
         }
     }

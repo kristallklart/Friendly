@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace Friendly
 {
-    class Interest
+    namespace Model
     {
-        private string iType;
-
-        public string IType
+        class Interest
         {
-            get
-            {
-                return iType;
-            }
+            private string iType;
 
-            set
+            public string IType
             {
-                iType = value;
+                get
+                {
+                    return iType;
+                }
+
+                set
+                {
+                    iType = value;
+                }
             }
         }
     }

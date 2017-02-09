@@ -19,6 +19,7 @@ namespace Friendly {
             private string hometown;
             private string education;
             private string password;
+             
 
             public string FirstName
             {

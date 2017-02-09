@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace Friendly
 {
-    class Purpose
+    namespace Model
     {
-        private string pID;
-
-        public string PID
+        class Purpose
         {
-            get
-            {
-                return pID;
-            }
+            private string pID;
 
-            set
+            public string PID
             {
-                pID = value;
+                get
+                {
+                    return pID;
+                }
+
+                set
+                {
+                    pID = value;
+                }
             }
         }
     }
