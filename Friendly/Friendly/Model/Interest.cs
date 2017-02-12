@@ -4,22 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Friendly
+namespace Friendly.Model
 {
-    class Purpose
+    class Interest
     {
-        private string pID;
-
-        public string PID
+        private string interestType;
+   
+        public string InterestType
         {
             get
             {
-                return pID;
+                return interestType;
             }
 
             set
             {
-                pID = value;
+                interestType = value;
             }
         }
     }

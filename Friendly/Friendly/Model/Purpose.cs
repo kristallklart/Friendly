@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Friendly
 {
-    class Interest
+    class Purpose
     {
-        private string iType;
+        private string purposeId;
 
-        public string IType
+        public string PurposeId
         {
             get
             {
-                return iType;
+                return purposeId;
             }
 
             set
             {
-                iType = value;
+                purposeId = value;
             }
         }
     }
