@@ -19,7 +19,7 @@ namespace Friendly.Model
 
             set
             {
-                interestType = value;
+                iType = value;
             }
         }
     }

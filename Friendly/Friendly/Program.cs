@@ -6,17 +6,20 @@ using System.Windows.Forms;
 
 namespace Friendly
 {
-    static class Program
+    namespace Model
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        static class Program
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            /// <summary>
+            /// The main entry point for the application.
+            /// </summary>
+            [STAThread]
+            static void Main()
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Form1());
+            }
         }
     }
 }
