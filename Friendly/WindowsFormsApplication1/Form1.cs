@@ -8,16 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LogIn
+namespace WindowsFormsApplication1
 {
-    public partial class LogIn : Form
+    public partial class Form1 : Form
     {
-        public LogIn()
+        public Form1()
         {
             InitializeComponent();
+            for(int i =1940; i<= 1999; i++)
+            {
+                comboBox1.Items.Add(i);
+            }
         }
-
-       
-
     }
 }
