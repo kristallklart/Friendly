@@ -145,7 +145,7 @@
             this.lblLogInPassword.Size = new System.Drawing.Size(109, 25);
             this.lblLogInPassword.TabIndex = 4;
             this.lblLogInPassword.Text = "Password :";
-            this.lblLogInPassword.Click += new System.EventHandler(this.label4_Click);
+            
             // 
             // button1
             // 
@@ -195,7 +195,6 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "LogIn";
             this.Text = "Log In";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
