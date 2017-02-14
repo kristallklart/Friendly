@@ -28,198 +28,212 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.lblCreateMail = new System.Windows.Forms.Label();
-            this.lblCreatePassword = new System.Windows.Forms.Label();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.labelLogIn = new System.Windows.Forms.Label();
+            this.buttonLogIn = new System.Windows.Forms.Button();
+            this.labelLogInPassword = new System.Windows.Forms.Label();
             this.lblLogInMail = new System.Windows.Forms.Label();
-            this.lblLogInPassword = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnLogIn = new System.Windows.Forms.Button();
-            this.lblCreate = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.textBoxLogInPassword = new System.Windows.Forms.TextBox();
+            this.textBoxLogInEmail = new System.Windows.Forms.TextBox();
+            this.labelCreate = new System.Windows.Forms.Label();
+            this.buttonCreate = new System.Windows.Forms.Button();
+            this.labelCreatePassword = new System.Windows.Forms.Label();
+            this.labelCreateMail = new System.Windows.Forms.Label();
+            this.textBoxCreatePassword = new System.Windows.Forms.TextBox();
+            this.textBoxCreateEmail = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
+            this.splitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // splitContainer
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer.Margin = new System.Windows.Forms.Padding(2);
+            this.splitContainer.Name = "splitContainer";
             // 
-            // splitContainer1.Panel1
+            // splitContainer.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.btnLogIn);
-            this.splitContainer1.Panel1.Controls.Add(this.lblLogInPassword);
-            this.splitContainer1.Panel1.Controls.Add(this.lblLogInMail);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox3);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
+            this.splitContainer.Panel1.Controls.Add(this.labelLogIn);
+            this.splitContainer.Panel1.Controls.Add(this.buttonLogIn);
+            this.splitContainer.Panel1.Controls.Add(this.labelLogInPassword);
+            this.splitContainer.Panel1.Controls.Add(this.lblLogInMail);
+            this.splitContainer.Panel1.Controls.Add(this.textBoxLogInPassword);
+            this.splitContainer.Panel1.Controls.Add(this.textBoxLogInEmail);
             // 
-            // splitContainer1.Panel2
+            // splitContainer.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.lblCreate);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
-            this.splitContainer1.Panel2.Controls.Add(this.lblCreatePassword);
-            this.splitContainer1.Panel2.Controls.Add(this.lblCreateMail);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox4);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(881, 427);
-            this.splitContainer1.SplitterDistance = 443;
-            this.splitContainer1.TabIndex = 0;
+            this.splitContainer.Panel2.Controls.Add(this.labelCreate);
+            this.splitContainer.Panel2.Controls.Add(this.buttonCreate);
+            this.splitContainer.Panel2.Controls.Add(this.labelCreatePassword);
+            this.splitContainer.Panel2.Controls.Add(this.labelCreateMail);
+            this.splitContainer.Panel2.Controls.Add(this.textBoxCreatePassword);
+            this.splitContainer.Panel2.Controls.Add(this.textBoxCreateEmail);
+            this.splitContainer.Size = new System.Drawing.Size(587, 278);
+            this.splitContainer.SplitterDistance = 295;
+            this.splitContainer.SplitterWidth = 3;
+            this.splitContainer.TabIndex = 0;
             // 
-            // textBox1
+            // labelLogIn
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox1.Location = new System.Drawing.Point(213, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 30);
-            this.textBox1.TabIndex = 0;
+            this.labelLogIn.AutoSize = true;
+            this.labelLogIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelLogIn.Location = new System.Drawing.Point(105, 16);
+            this.labelLogIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelLogIn.Name = "labelLogIn";
+            this.labelLogIn.Size = new System.Drawing.Size(54, 20);
+            this.labelLogIn.TabIndex = 6;
+            this.labelLogIn.Text = "Log In";
             // 
-            // textBox2
+            // buttonLogIn
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox2.Location = new System.Drawing.Point(162, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 30);
-            this.textBox2.TabIndex = 1;
+            this.buttonLogIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogIn.Location = new System.Drawing.Point(176, 168);
+            this.buttonLogIn.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLogIn.Name = "buttonLogIn";
+            this.buttonLogIn.Size = new System.Drawing.Size(107, 27);
+            this.buttonLogIn.TabIndex = 5;
+            this.buttonLogIn.Text = "Log In";
+            this.buttonLogIn.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // labelLogInPassword
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox3.Location = new System.Drawing.Point(162, 187);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 30);
-            this.textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(213, 187);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(198, 30);
-            this.textBox4.TabIndex = 1;
-            // 
-            // lblCreateMail
-            // 
-            this.lblCreateMail.AutoSize = true;
-            this.lblCreateMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreateMail.Location = new System.Drawing.Point(90, 105);
-            this.lblCreateMail.Name = "lblCreateMail";
-            this.lblCreateMail.Size = new System.Drawing.Size(79, 25);
-            this.lblCreateMail.TabIndex = 2;
-            this.lblCreateMail.Text = "E-Mail :";
-            // 
-            // lblCreatePassword
-            // 
-            this.lblCreatePassword.AutoSize = true;
-            this.lblCreatePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatePassword.Location = new System.Drawing.Point(90, 187);
-            this.lblCreatePassword.Name = "lblCreatePassword";
-            this.lblCreatePassword.Size = new System.Drawing.Size(109, 25);
-            this.lblCreatePassword.TabIndex = 3;
-            this.lblCreatePassword.Text = "Password :";
+            this.labelLogInPassword.AutoSize = true;
+            this.labelLogInPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelLogInPassword.Location = new System.Drawing.Point(27, 122);
+            this.labelLogInPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelLogInPassword.Name = "labelLogInPassword";
+            this.labelLogInPassword.Size = new System.Drawing.Size(77, 17);
+            this.labelLogInPassword.TabIndex = 4;
+            this.labelLogInPassword.Text = "Password :";
             // 
             // lblLogInMail
             // 
             this.lblLogInMail.AutoSize = true;
             this.lblLogInMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblLogInMail.Location = new System.Drawing.Point(40, 105);
+            this.lblLogInMail.Location = new System.Drawing.Point(27, 68);
+            this.lblLogInMail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogInMail.Name = "lblLogInMail";
-            this.lblLogInMail.Size = new System.Drawing.Size(79, 25);
+            this.lblLogInMail.Size = new System.Drawing.Size(55, 17);
             this.lblLogInMail.TabIndex = 3;
             this.lblLogInMail.Text = "E-Mail :";
             // 
-            // lblLogInPassword
+            // textBoxLogInPassword
             // 
-            this.lblLogInPassword.AutoSize = true;
-            this.lblLogInPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblLogInPassword.Location = new System.Drawing.Point(40, 187);
-            this.lblLogInPassword.Name = "lblLogInPassword";
-            this.lblLogInPassword.Size = new System.Drawing.Size(109, 25);
-            this.lblLogInPassword.TabIndex = 4;
-            this.lblLogInPassword.Text = "Password :";
-            
+            this.textBoxLogInPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxLogInPassword.Location = new System.Drawing.Point(108, 122);
+            this.textBoxLogInPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxLogInPassword.Name = "textBoxLogInPassword";
+            this.textBoxLogInPassword.Size = new System.Drawing.Size(129, 23);
+            this.textBoxLogInPassword.TabIndex = 2;
             // 
-            // button1
+            // textBoxLogInEmail
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(250, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 41);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Create Account";
-            this.button1.UseVisualStyleBackColor = true;
+            this.textBoxLogInEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxLogInEmail.Location = new System.Drawing.Point(108, 66);
+            this.textBoxLogInEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxLogInEmail.Name = "textBoxLogInEmail";
+            this.textBoxLogInEmail.Size = new System.Drawing.Size(129, 23);
+            this.textBoxLogInEmail.TabIndex = 1;
             // 
-            // btnLogIn
+            // labelCreate
             // 
-            this.btnLogIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogIn.Location = new System.Drawing.Point(264, 258);
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(90, 37);
-            this.btnLogIn.TabIndex = 5;
-            this.btnLogIn.Text = "Log In";
-            this.btnLogIn.UseVisualStyleBackColor = true;
+            this.labelCreate.AutoSize = true;
+            this.labelCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelCreate.Location = new System.Drawing.Point(60, 23);
+            this.labelCreate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCreate.Name = "labelCreate";
+            this.labelCreate.Size = new System.Drawing.Size(120, 20);
+            this.labelCreate.TabIndex = 5;
+            this.labelCreate.Text = "Create Account";
             // 
-            // lblCreate
+            // buttonCreate
             // 
-            this.lblCreate.AutoSize = true;
-            this.lblCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblCreate.Location = new System.Drawing.Point(90, 36);
-            this.lblCreate.Name = "lblCreate";
-            this.lblCreate.Size = new System.Drawing.Size(176, 29);
-            this.lblCreate.TabIndex = 5;
-            this.lblCreate.Text = "Create Account";
+            this.buttonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreate.Location = new System.Drawing.Point(167, 165);
+            this.buttonCreate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(107, 27);
+            this.buttonCreate.TabIndex = 4;
+            this.buttonCreate.Text = "Create Account";
+            this.buttonCreate.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // labelCreatePassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(157, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 29);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Log In";
+            this.labelCreatePassword.AutoSize = true;
+            this.labelCreatePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreatePassword.Location = new System.Drawing.Point(60, 122);
+            this.labelCreatePassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCreatePassword.Name = "labelCreatePassword";
+            this.labelCreatePassword.Size = new System.Drawing.Size(77, 17);
+            this.labelCreatePassword.TabIndex = 3;
+            this.labelCreatePassword.Text = "Password :";
+            // 
+            // labelCreateMail
+            // 
+            this.labelCreateMail.AutoSize = true;
+            this.labelCreateMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreateMail.Location = new System.Drawing.Point(60, 68);
+            this.labelCreateMail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCreateMail.Name = "labelCreateMail";
+            this.labelCreateMail.Size = new System.Drawing.Size(55, 17);
+            this.labelCreateMail.TabIndex = 2;
+            this.labelCreateMail.Text = "E-Mail :";
+            // 
+            // textBoxCreatePassword
+            // 
+            this.textBoxCreatePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCreatePassword.Location = new System.Drawing.Point(142, 122);
+            this.textBoxCreatePassword.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCreatePassword.Name = "textBoxCreatePassword";
+            this.textBoxCreatePassword.Size = new System.Drawing.Size(133, 23);
+            this.textBoxCreatePassword.TabIndex = 1;
+            // 
+            // textBoxCreateEmail
+            // 
+            this.textBoxCreateEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxCreateEmail.Location = new System.Drawing.Point(142, 66);
+            this.textBoxCreateEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCreateEmail.Name = "textBoxCreateEmail";
+            this.textBoxCreateEmail.Size = new System.Drawing.Size(133, 23);
+            this.textBoxCreateEmail.TabIndex = 0;
             // 
             // LogIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 427);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(587, 278);
+            this.Controls.Add(this.splitContainer);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LogIn";
             this.Text = "Log In";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer.Panel1.ResumeLayout(false);
+            this.splitContainer.Panel1.PerformLayout();
+            this.splitContainer.Panel2.ResumeLayout(false);
+            this.splitContainer.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label lblLogInPassword;
+        private System.Windows.Forms.SplitContainer splitContainer;
+        private System.Windows.Forms.Label labelLogInPassword;
         private System.Windows.Forms.Label lblLogInMail;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label lblCreatePassword;
-        private System.Windows.Forms.Label lblCreateMail;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnLogIn;
-        private System.Windows.Forms.Label lblCreate;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxLogInPassword;
+        private System.Windows.Forms.TextBox textBoxLogInEmail;
+        private System.Windows.Forms.Label labelCreatePassword;
+        private System.Windows.Forms.Label labelCreateMail;
+        private System.Windows.Forms.TextBox textBoxCreatePassword;
+        private System.Windows.Forms.TextBox textBoxCreateEmail;
+        private System.Windows.Forms.Label labelLogIn;
+        private System.Windows.Forms.Button buttonLogIn;
+        private System.Windows.Forms.Label labelCreate;
+        private System.Windows.Forms.Button buttonCreate;
     }
 }
 
