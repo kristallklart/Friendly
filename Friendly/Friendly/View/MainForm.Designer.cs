@@ -88,7 +88,6 @@
             this.tabMyProfile.TabIndex = 0;
             this.tabMyProfile.Text = "My Profile";
             this.tabMyProfile.UseVisualStyleBackColor = true;
-           // this.tabMyProfile.Click += new System.EventHandler(this.tabMyProfile_Click);
             // 
             // panel_Location
             // 
@@ -124,7 +123,6 @@
             this.label_To.Size = new System.Drawing.Size(18, 13);
             this.label_To.TabIndex = 15;
             this.label_To.Text = "Til";
-          //  this.label_To.Click += new System.EventHandler(this.label_To_Click);
             // 
             // comboBox_Hometown
             // 
@@ -270,7 +268,6 @@
             this.comboBox_Hometown.Size = new System.Drawing.Size(140, 21);
             this.comboBox_Hometown.TabIndex = 10;
             this.comboBox_Hometown.Text = "Hometown";
-       //     this.comboBox_Hometown.SelectedIndexChanged += new System.EventHandler(this.comboBox_Hometown_SelectedIndexChanged);
             // 
             // label_From
             // 
@@ -281,7 +278,6 @@
             this.label_From.Size = new System.Drawing.Size(33, 13);
             this.label_From.TabIndex = 14;
             this.label_From.Text = "From";
-            //this.label_From.Click += new System.EventHandler(this.label_From_Click);
             // 
             // dateTimePicker1
             // 
@@ -469,7 +465,6 @@
             this.pnl_PersDet.Name = "pnl_PersDet";
             this.pnl_PersDet.Size = new System.Drawing.Size(417, 388);
             this.pnl_PersDet.TabIndex = 1;
-          //  this.pnl_PersDet.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label_InShort
             // 
@@ -510,7 +505,6 @@
             this.checkBox_Money.TabIndex = 15;
             this.checkBox_Money.Text = "Money";
             this.checkBox_Money.UseVisualStyleBackColor = true;
-           // this.checkBox_Money.CheckedChanged += new System.EventHandler(this.checkBox_Money_CheckedChanged);
             // 
             // checkBox_Time
             // 
@@ -521,7 +515,6 @@
             this.checkBox_Time.TabIndex = 14;
             this.checkBox_Time.Text = "Time";
             this.checkBox_Time.UseVisualStyleBackColor = true;
-           // this.checkBox_Time.CheckedChanged += new System.EventHandler(this.checkBox_Time_CheckedChanged);
             // 
             // checkBox_Countryside
             // 
@@ -579,7 +572,6 @@
             this.txtBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
             this.txtBox_ProfessionalTitle.TabIndex = 8;
             this.txtBox_ProfessionalTitle.Text = "Professional title";
-           // this.txtBox_ProfessionalTitle.TextChanged += new System.EventHandler(this.txtBox_ProfessionalTitle_TextChanged);
             // 
             // comboBox_ProfessionalField
             // 
@@ -677,7 +669,6 @@
             this.comboBox_Month.Size = new System.Drawing.Size(62, 21);
             this.comboBox_Month.TabIndex = 4;
             this.comboBox_Month.Text = "Month";
-        //    this.comboBox_Month.SelectedIndexChanged += new System.EventHandler(this.comboBox_Month_SelectedIndexChanged);
             // 
             // comboBox_Year
             // 
@@ -719,7 +710,6 @@
             this.picBox_ProfilePic.TabIndex = 0;
             this.picBox_ProfilePic.TabStop = false;
             this.picBox_ProfilePic.WaitOnLoad = true;
-            //this.picBox_ProfilePic.Click += new System.EventHandler(this.picBox_ProfilePic_Click);
             // 
             // tabSearchMatch
             // 
@@ -730,7 +720,6 @@
             this.tabSearchMatch.TabIndex = 1;
             this.tabSearchMatch.Text = "Search and Match";
             this.tabSearchMatch.UseVisualStyleBackColor = true;
-           // this.tabSearchMatch.Click += new System.EventHandler(this.tabSearchMatch_Click);
             // 
             // MainForm
             // 
