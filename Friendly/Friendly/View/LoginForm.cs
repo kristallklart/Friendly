@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace Friendly.View
 {
-    public partial class MainForm : Form
+    public partial class LoginForm : Form
     {
-        public MainForm()
+        public LoginForm()
         {
             InitializeComponent();
-            for (int i = 1940; i <= 1999; i++)
-            {
-                comboBox_Year.Items.Add(i);
-            }
+        }
+
+        private void buttonNoLogin_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
