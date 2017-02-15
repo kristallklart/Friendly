@@ -97,6 +97,7 @@
             this.buttonNoLogin.TabIndex = 6;
             this.buttonNoLogin.Text = "LAD MI VA!";
             this.buttonNoLogin.UseVisualStyleBackColor = true;
+            this.buttonNoLogin.Click += new System.EventHandler(this.buttonNoLogin_Click);
             // 
             // LoginForm
             // 

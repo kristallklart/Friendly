@@ -20,12 +20,5 @@ namespace Friendly.View
                 comboBox_Year.Items.Add(i);
             }
         }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            this.Hide();
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
-        }
     }
 }

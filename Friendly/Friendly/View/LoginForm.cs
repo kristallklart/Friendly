@@ -16,5 +16,10 @@ namespace Friendly.View
         {
             InitializeComponent();
         }
+
+        private void buttonNoLogin_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

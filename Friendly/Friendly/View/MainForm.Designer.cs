@@ -130,7 +130,6 @@
             this.button_AddLocation.TabIndex = 17;
             this.button_AddLocation.Text = "Add";
             this.button_AddLocation.UseVisualStyleBackColor = true;
-            this.button_AddLocation.Click += new System.EventHandler(this.button2_Click);
             // 
             // label_Wantings
             // 
@@ -141,7 +140,6 @@
             this.label_Wantings.Size = new System.Drawing.Size(72, 25);
             this.label_Wantings.TabIndex = 16;
             this.label_Wantings.Text = "I want ";
-            this.label_Wantings.Click += new System.EventHandler(this.label_Location_Click);
             // 
             // label_To
             // 
@@ -505,7 +503,6 @@
             this.txtBox_FirstName.Size = new System.Drawing.Size(108, 22);
             this.txtBox_FirstName.TabIndex = 2;
             this.txtBox_FirstName.Text = "First name";
-            this.txtBox_FirstName.TextChanged += new System.EventHandler(this.txtBox_FirstName_TextChanged);
             // 
             // lblPersonalDetails
             // 
@@ -550,7 +547,6 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "MainForm";
             this.Text = " ";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tab_MyProfile.ResumeLayout(false);
             this.panel_IWant.ResumeLayout(false);
