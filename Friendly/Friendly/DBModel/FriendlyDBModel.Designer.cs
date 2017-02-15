@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Kalle\git\Friendly\Friendly\Friendly\DBModel\FriendlyDBModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Ann-Kathrine\Source\Repos\Friendly\Friendly\Friendly\DBModel\FriendlyDBModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
