@@ -4,16 +4,334 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="FriendlyDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
-        <EntityContainer Name="FriendlyDBModelTargetContainer" >
+    <Schema Namespace="FriendlyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FieldOfProfessions">
+          <Key>
+            <PropertyRef Name="industry" />
+          </Key>
+          <Property Name="industry" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Interests">
+          <Key>
+            <PropertyRef Name="itype" />
+          </Key>
+          <Property Name="itype" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Locations">
+          <Key>
+            <PropertyRef Name="city" />
+          </Key>
+          <Property Name="city" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profile_Interest">
+          <Key>
+            <PropertyRef Name="Interests_itype" />
+            <PropertyRef Name="Profiles_email" />
+          </Key>
+          <Property Name="Interests_itype" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Profiles_email" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profile_Location">
+          <Key>
+            <PropertyRef Name="city" />
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="city" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fromdate" Type="datetime" />
+          <Property Name="todate" Type="datetime" />
+          <Property Name="ptype_fk" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profiles">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="birthdate" Type="datetime" />
+          <Property Name="picture" Type="varbinary(max)" />
+          <Property Name="profession" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="hometown_fk" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="industry_fk" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Purposes">
+          <Key>
+            <PropertyRef Name="ptype" />
+          </Key>
+          <Property Name="ptype" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_FieldOfProfessionProfile">
+          <End Role="FieldOfProfessions" Type="Self.FieldOfProfessions" Multiplicity="1" />
+          <End Role="Profiles" Type="Self.Profiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FieldOfProfessions">
+              <PropertyRef Name="industry" />
+            </Principal>
+            <Dependent Role="Profiles">
+              <PropertyRef Name="industry_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_Interest_Interest">
+          <End Role="Interests" Type="Self.Interests" Multiplicity="1" />
+          <End Role="Profile_Interest" Type="Self.Profile_Interest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interests">
+              <PropertyRef Name="itype" />
+            </Principal>
+            <Dependent Role="Profile_Interest">
+              <PropertyRef Name="Interests_itype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_Interest_Profile">
+          <End Role="Profiles" Type="Self.Profiles" Multiplicity="1" />
+          <End Role="Profile_Interest" Type="Self.Profile_Interest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profiles">
+              <PropertyRef Name="email" />
+            </Principal>
+            <Dependent Role="Profile_Interest">
+              <PropertyRef Name="Profiles_email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_Location_Location">
+          <End Role="Locations" Type="Self.Locations" Multiplicity="1" />
+          <End Role="Profile_Location" Type="Self.Profile_Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locations">
+              <PropertyRef Name="city" />
+            </Principal>
+            <Dependent Role="Profile_Location">
+              <PropertyRef Name="city" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_Location_Profile">
+          <End Role="Profiles" Type="Self.Profiles" Multiplicity="1" />
+          <End Role="Profile_Location" Type="Self.Profile_Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profiles">
+              <PropertyRef Name="email" />
+            </Principal>
+            <Dependent Role="Profile_Location">
+              <PropertyRef Name="email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_LocationPurpose">
+          <End Role="Purposes" Type="Self.Purposes" Multiplicity="1" />
+          <End Role="Profile_Location" Type="Self.Profile_Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purposes">
+              <PropertyRef Name="ptype" />
+            </Principal>
+            <Dependent Role="Profile_Location">
+              <PropertyRef Name="ptype_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FriendlyDBModelStoreContainer">
+          <EntitySet Name="FieldOfProfessions" EntityType="Self.FieldOfProfessions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Interests" EntityType="Self.Interests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profile_Interest" EntityType="Self.Profile_Interest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profile_Location" EntityType="Self.Profile_Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profiles" EntityType="Self.Profiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Purposes" EntityType="Self.Purposes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_FieldOfProfessionProfile" Association="Self.FK_FieldOfProfessionProfile">
+            <End Role="FieldOfProfessions" EntitySet="FieldOfProfessions" />
+            <End Role="Profiles" EntitySet="Profiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_Interest_Interest" Association="Self.FK_Profile_Interest_Interest">
+            <End Role="Interests" EntitySet="Interests" />
+            <End Role="Profile_Interest" EntitySet="Profile_Interest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_Interest_Profile" Association="Self.FK_Profile_Interest_Profile">
+            <End Role="Profiles" EntitySet="Profiles" />
+            <End Role="Profile_Interest" EntitySet="Profile_Interest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_Location_Location" Association="Self.FK_Profile_Location_Location">
+            <End Role="Locations" EntitySet="Locations" />
+            <End Role="Profile_Location" EntitySet="Profile_Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_Location_Profile" Association="Self.FK_Profile_Location_Profile">
+            <End Role="Profiles" EntitySet="Profiles" />
+            <End Role="Profile_Location" EntitySet="Profile_Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_LocationPurpose" Association="Self.FK_Profile_LocationPurpose">
+            <End Role="Purposes" EntitySet="Purposes" />
+            <End Role="Profile_Location" EntitySet="Profile_Location" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="FriendlyDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="FriendlyDBModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FieldOfProfessions" EntityType="FriendlyDBModel.FieldOfProfession" />
+          <EntitySet Name="Interests" EntityType="FriendlyDBModel.Interest" />
+          <EntitySet Name="Locations" EntityType="FriendlyDBModel.Location" />
+          <EntitySet Name="Profile_Location" EntityType="FriendlyDBModel.Profile_Location" />
+          <EntitySet Name="Profiles" EntityType="FriendlyDBModel.Profile" />
+          <EntitySet Name="Purposes" EntityType="FriendlyDBModel.Purpos" />
+          <EntitySet Name="sysdiagrams" EntityType="FriendlyDBModel.sysdiagram" />
+          <AssociationSet Name="FK_FieldOfProfessionProfile" Association="FriendlyDBModel.FK_FieldOfProfessionProfile">
+            <End Role="FieldOfProfession" EntitySet="FieldOfProfessions" />
+            <End Role="Profile" EntitySet="Profiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_Location_Location" Association="FriendlyDBModel.FK_Profile_Location_Location">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Profile_Location" EntitySet="Profile_Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_Location_Profile" Association="FriendlyDBModel.FK_Profile_Location_Profile">
+            <End Role="Profile" EntitySet="Profiles" />
+            <End Role="Profile_Location" EntitySet="Profile_Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_LocationPurpose" Association="FriendlyDBModel.FK_Profile_LocationPurpose">
+            <End Role="Purpos" EntitySet="Purposes" />
+            <End Role="Profile_Location" EntitySet="Profile_Location" />
+          </AssociationSet>
+          <AssociationSet Name="Profile_Interest" Association="FriendlyDBModel.Profile_Interest">
+            <End Role="Interest" EntitySet="Interests" />
+            <End Role="Profile" EntitySet="Profiles" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="FieldOfProfession">
+          <Key>
+            <PropertyRef Name="industry" />
+          </Key>
+          <Property Name="industry" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Profiles" Relationship="FriendlyDBModel.FK_FieldOfProfessionProfile" FromRole="FieldOfProfession" ToRole="Profile" />
+        </EntityType>
+        <EntityType Name="Interest">
+          <Key>
+            <PropertyRef Name="itype" />
+          </Key>
+          <Property Name="itype" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Profiles" Relationship="FriendlyDBModel.Profile_Interest" FromRole="Interest" ToRole="Profile" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="city" />
+          </Key>
+          <Property Name="city" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Profile_Location" Relationship="FriendlyDBModel.FK_Profile_Location_Location" FromRole="Location" ToRole="Profile_Location" />
+        </EntityType>
+        <EntityType Name="Profile_Location">
+          <Key>
+            <PropertyRef Name="city" />
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="city" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fromdate" Type="DateTime" Precision="3" />
+          <Property Name="todate" Type="DateTime" Precision="3" />
+          <Property Name="ptype_fk" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Location" Relationship="FriendlyDBModel.FK_Profile_Location_Location" FromRole="Profile_Location" ToRole="Location" />
+          <NavigationProperty Name="Profile" Relationship="FriendlyDBModel.FK_Profile_Location_Profile" FromRole="Profile_Location" ToRole="Profile" />
+          <NavigationProperty Name="Purpos" Relationship="FriendlyDBModel.FK_Profile_LocationPurpose" FromRole="Profile_Location" ToRole="Purpos" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="birthdate" Type="DateTime" Precision="3" />
+          <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="profession" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hometown_fk" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="industry_fk" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FieldOfProfession" Relationship="FriendlyDBModel.FK_FieldOfProfessionProfile" FromRole="Profile" ToRole="FieldOfProfession" />
+          <NavigationProperty Name="Profile_Location" Relationship="FriendlyDBModel.FK_Profile_Location_Profile" FromRole="Profile" ToRole="Profile_Location" />
+          <NavigationProperty Name="Interests" Relationship="FriendlyDBModel.Profile_Interest" FromRole="Profile" ToRole="Interest" />
+        </EntityType>
+        <EntityType Name="Purpos">
+          <Key>
+            <PropertyRef Name="ptype" />
+          </Key>
+          <Property Name="ptype" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Profile_Location" Relationship="FriendlyDBModel.FK_Profile_LocationPurpose" FromRole="Purpos" ToRole="Profile_Location" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_FieldOfProfessionProfile">
+          <End Type="FriendlyDBModel.FieldOfProfession" Role="FieldOfProfession" Multiplicity="1" />
+          <End Type="FriendlyDBModel.Profile" Role="Profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FieldOfProfession">
+              <PropertyRef Name="industry" />
+            </Principal>
+            <Dependent Role="Profile">
+              <PropertyRef Name="industry_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_Location_Location">
+          <End Type="FriendlyDBModel.Location" Role="Location" Multiplicity="1" />
+          <End Type="FriendlyDBModel.Profile_Location" Role="Profile_Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="city" />
+            </Principal>
+            <Dependent Role="Profile_Location">
+              <PropertyRef Name="city" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_Location_Profile">
+          <End Type="FriendlyDBModel.Profile" Role="Profile" Multiplicity="1" />
+          <End Type="FriendlyDBModel.Profile_Location" Role="Profile_Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="email" />
+            </Principal>
+            <Dependent Role="Profile_Location">
+              <PropertyRef Name="email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_LocationPurpose">
+          <End Type="FriendlyDBModel.Purpos" Role="Purpos" Multiplicity="1" />
+          <End Type="FriendlyDBModel.Profile_Location" Role="Profile_Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purpos">
+              <PropertyRef Name="ptype" />
+            </Principal>
+            <Dependent Role="Profile_Location">
+              <PropertyRef Name="ptype_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Profile_Interest">
+          <End Type="FriendlyDBModel.Interest" Role="Interest" Multiplicity="*" />
+          <End Type="FriendlyDBModel.Profile" Role="Profile" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -21,7 +339,80 @@
       <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
         <Alias Key="Model" Value="FriendlyDBModel" />
         <Alias Key="Target" Value="FriendlyDBModel.Store" />
-        <EntityContainerMapping CdmEntityContainer="FriendlyDBModelContainer" StorageEntityContainer="FriendlyDBModelTargetContainer">
+        <EntityContainerMapping CdmEntityContainer="FriendlyDBModelContainer" StorageEntityContainer="FriendlyDBModelStoreContainer">
+          <EntitySetMapping Name="FieldOfProfessions">
+            <EntityTypeMapping TypeName="FriendlyDBModel.FieldOfProfession">
+              <MappingFragment StoreEntitySet="FieldOfProfessions">
+                <ScalarProperty Name="industry" ColumnName="industry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Interests">
+            <EntityTypeMapping TypeName="FriendlyDBModel.Interest">
+              <MappingFragment StoreEntitySet="Interests">
+                <ScalarProperty Name="itype" ColumnName="itype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="FriendlyDBModel.Location">
+              <MappingFragment StoreEntitySet="Locations">
+                <ScalarProperty Name="city" ColumnName="city" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profile_Location">
+            <EntityTypeMapping TypeName="FriendlyDBModel.Profile_Location">
+              <MappingFragment StoreEntitySet="Profile_Location">
+                <ScalarProperty Name="ptype_fk" ColumnName="ptype_fk" />
+                <ScalarProperty Name="todate" ColumnName="todate" />
+                <ScalarProperty Name="fromdate" ColumnName="fromdate" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="city" ColumnName="city" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiles">
+            <EntityTypeMapping TypeName="FriendlyDBModel.Profile">
+              <MappingFragment StoreEntitySet="Profiles">
+                <ScalarProperty Name="industry_fk" ColumnName="industry_fk" />
+                <ScalarProperty Name="hometown_fk" ColumnName="hometown_fk" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="profession" ColumnName="profession" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Purposes">
+            <EntityTypeMapping TypeName="FriendlyDBModel.Purpos">
+              <MappingFragment StoreEntitySet="Purposes">
+                <ScalarProperty Name="ptype" ColumnName="ptype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="FriendlyDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Profile_Interest" TypeName="FriendlyDBModel.Profile_Interest" StoreEntitySet="Profile_Interest">
+            <EndProperty Name="Profile">
+              <ScalarProperty Name="email" ColumnName="Profiles_email" />
+            </EndProperty>
+            <EndProperty Name="Interest">
+              <ScalarProperty Name="itype" ColumnName="Interests_itype" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -36,8 +427,10 @@
     <edmx:Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
