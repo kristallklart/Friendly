@@ -26,6 +26,26 @@ namespace Friendly.View
 
         }
 
+        private void txtBox_FirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label_Location_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //private void tabSearchMatch_Click(object sender, EventArgs e)
         //{
 
@@ -33,7 +53,7 @@ namespace Friendly.View
 
         //private void tabMyProfile_Click(object sender, EventArgs e)
         //{
-            
+
         //}
 
         //private void panel1_Paint(object sender, PaintEventArgs e)

@@ -30,23 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabMyProfile = new System.Windows.Forms.TabPage();
-            this.panel_Location = new System.Windows.Forms.Panel();
-            this.label_Location = new System.Windows.Forms.Label();
+            this.tab_MyProfile = new System.Windows.Forms.TabPage();
+            this.panel_IWant = new System.Windows.Forms.Panel();
+            this.comboBox_InterestedIn = new System.Windows.Forms.ComboBox();
+            this.checkBox_Longterm = new System.Windows.Forms.CheckBox();
+            this.button_AddLocation = new System.Windows.Forms.Button();
+            this.label_Wantings = new System.Windows.Forms.Label();
             this.label_To = new System.Windows.Forms.Label();
-            this.comboBox_Hometown = new System.Windows.Forms.ComboBox();
             this.label_From = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox_TempLoc = new System.Windows.Forms.ComboBox();
+            this.comboBox_City = new System.Windows.Forms.ComboBox();
             this.pnl_PersDet = new System.Windows.Forms.Panel();
-            this.label_InShort = new System.Windows.Forms.Label();
-            this.checkBox_Kids = new System.Windows.Forms.CheckBox();
-            this.checkBox_Freedom = new System.Windows.Forms.CheckBox();
-            this.checkBox_Money = new System.Windows.Forms.CheckBox();
-            this.checkBox_Time = new System.Windows.Forms.CheckBox();
-            this.checkBox_Countryside = new System.Windows.Forms.CheckBox();
-            this.checkBox_City = new System.Windows.Forms.CheckBox();
+            this.button_UpdateDetails = new System.Windows.Forms.Button();
             this.label_AboutMe = new System.Windows.Forms.Label();
             this.txtBox_AboutMe = new System.Windows.Forms.TextBox();
             this.txtBox_LastName = new System.Windows.Forms.TextBox();
@@ -58,18 +54,18 @@
             this.txtBox_FirstName = new System.Windows.Forms.TextBox();
             this.lblPersonalDetails = new System.Windows.Forms.Label();
             this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
-            this.tabSearchMatch = new System.Windows.Forms.TabPage();
+            this.tab_MyMatches = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
-            this.tabMyProfile.SuspendLayout();
-            this.panel_Location.SuspendLayout();
+            this.tab_MyProfile.SuspendLayout();
+            this.panel_IWant.SuspendLayout();
             this.pnl_PersDet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabMyProfile);
-            this.tabControl1.Controls.Add(this.tabSearchMatch);
+            this.tabControl1.Controls.Add(this.tab_MyProfile);
+            this.tabControl1.Controls.Add(this.tab_MyMatches);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 21);
             this.tabControl1.Name = "tabControl1";
@@ -77,216 +73,100 @@
             this.tabControl1.Size = new System.Drawing.Size(814, 446);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabMyProfile
+            // tab_MyProfile
             // 
-            this.tabMyProfile.Controls.Add(this.panel_Location);
-            this.tabMyProfile.Controls.Add(this.pnl_PersDet);
-            this.tabMyProfile.Location = new System.Drawing.Point(4, 22);
-            this.tabMyProfile.Name = "tabMyProfile";
-            this.tabMyProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMyProfile.Size = new System.Drawing.Size(806, 420);
-            this.tabMyProfile.TabIndex = 0;
-            this.tabMyProfile.Text = "My Profile";
-            this.tabMyProfile.UseVisualStyleBackColor = true;
-           // this.tabMyProfile.Click += new System.EventHandler(this.tabMyProfile_Click);
+            this.tab_MyProfile.Controls.Add(this.panel_IWant);
+            this.tab_MyProfile.Controls.Add(this.pnl_PersDet);
+            this.tab_MyProfile.Location = new System.Drawing.Point(4, 22);
+            this.tab_MyProfile.Name = "tab_MyProfile";
+            this.tab_MyProfile.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_MyProfile.Size = new System.Drawing.Size(806, 420);
+            this.tab_MyProfile.TabIndex = 0;
+            this.tab_MyProfile.Text = "My profile";
+            this.tab_MyProfile.UseVisualStyleBackColor = true;
             // 
-            // panel_Location
+            // panel_IWant
             // 
-            this.panel_Location.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_Location.Controls.Add(this.label_Location);
-            this.panel_Location.Controls.Add(this.label_To);
-            this.panel_Location.Controls.Add(this.comboBox_Hometown);
-            this.panel_Location.Controls.Add(this.label_From);
-            this.panel_Location.Controls.Add(this.dateTimePicker1);
-            this.panel_Location.Controls.Add(this.dateTimePicker2);
-            this.panel_Location.Controls.Add(this.comboBox_TempLoc);
-            this.panel_Location.Location = new System.Drawing.Point(449, 15);
-            this.panel_Location.Name = "panel_Location";
-            this.panel_Location.Size = new System.Drawing.Size(341, 388);
-            this.panel_Location.TabIndex = 2;
+            this.panel_IWant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_IWant.Controls.Add(this.comboBox_InterestedIn);
+            this.panel_IWant.Controls.Add(this.checkBox_Longterm);
+            this.panel_IWant.Controls.Add(this.button_AddLocation);
+            this.panel_IWant.Controls.Add(this.label_Wantings);
+            this.panel_IWant.Controls.Add(this.label_To);
+            this.panel_IWant.Controls.Add(this.label_From);
+            this.panel_IWant.Controls.Add(this.dateTimePicker1);
+            this.panel_IWant.Controls.Add(this.dateTimePicker2);
+            this.panel_IWant.Controls.Add(this.comboBox_City);
+            this.panel_IWant.Location = new System.Drawing.Point(449, 15);
+            this.panel_IWant.Name = "panel_IWant";
+            this.panel_IWant.Size = new System.Drawing.Size(341, 388);
+            this.panel_IWant.TabIndex = 2;
             // 
-            // label_Location
+            // comboBox_InterestedIn
             // 
-            this.label_Location.AutoSize = true;
-            this.label_Location.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Location.Location = new System.Drawing.Point(237, 22);
-            this.label_Location.Name = "label_Location";
-            this.label_Location.Size = new System.Drawing.Size(89, 25);
-            this.label_Location.TabIndex = 16;
-            this.label_Location.Text = "Location";
+            this.comboBox_InterestedIn.FormattingEnabled = true;
+            this.comboBox_InterestedIn.Location = new System.Drawing.Point(43, 67);
+            this.comboBox_InterestedIn.Name = "comboBox_InterestedIn";
+            this.comboBox_InterestedIn.Size = new System.Drawing.Size(136, 21);
+            this.comboBox_InterestedIn.TabIndex = 19;
+            this.comboBox_InterestedIn.Text = "Interested in";
+            // 
+            // checkBox_Longterm
+            // 
+            this.checkBox_Longterm.AutoSize = true;
+            this.checkBox_Longterm.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox_Longterm.Location = new System.Drawing.Point(97, 91);
+            this.checkBox_Longterm.Name = "checkBox_Longterm";
+            this.checkBox_Longterm.Size = new System.Drawing.Size(82, 17);
+            this.checkBox_Longterm.TabIndex = 18;
+            this.checkBox_Longterm.Text = "Longterm?";
+            this.checkBox_Longterm.UseVisualStyleBackColor = true;
+            // 
+            // button_AddLocation
+            // 
+            this.button_AddLocation.Location = new System.Drawing.Point(104, 202);
+            this.button_AddLocation.Name = "button_AddLocation";
+            this.button_AddLocation.Size = new System.Drawing.Size(75, 23);
+            this.button_AddLocation.TabIndex = 17;
+            this.button_AddLocation.Text = "Add";
+            this.button_AddLocation.UseVisualStyleBackColor = true;
+            this.button_AddLocation.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label_Wantings
+            // 
+            this.label_Wantings.AutoSize = true;
+            this.label_Wantings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Wantings.Location = new System.Drawing.Point(43, 22);
+            this.label_Wantings.Name = "label_Wantings";
+            this.label_Wantings.Size = new System.Drawing.Size(72, 25);
+            this.label_Wantings.TabIndex = 16;
+            this.label_Wantings.Text = "I want ";
+            this.label_Wantings.Click += new System.EventHandler(this.label_Location_Click);
             // 
             // label_To
             // 
             this.label_To.AutoSize = true;
             this.label_To.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_To.Location = new System.Drawing.Point(202, 130);
+            this.label_To.Location = new System.Drawing.Point(43, 152);
             this.label_To.Name = "label_To";
             this.label_To.Size = new System.Drawing.Size(18, 13);
             this.label_To.TabIndex = 15;
             this.label_To.Text = "Til";
-          //  this.label_To.Click += new System.EventHandler(this.label_To_Click);
-            // 
-            // comboBox_Hometown
-            // 
-            this.comboBox_Hometown.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Hometown.FormattingEnabled = true;
-            this.comboBox_Hometown.Items.AddRange(new object[] {
-            "STOCKHOLM",
-            "GÖTEBORG",
-            "MALMÖ",
-            "",
-            "Alingsås",
-            "Arboga\t",
-            "Arvika",
-            "Askersund",
-            "Avesta\t",
-            "Boden",
-            "Bollnäs",
-            "Borgholm",
-            "Borlänge",
-            "Borås",
-            "Djursholm",
-            "Eksjö",
-            "Enköping",
-            "Eskilstuna",
-            "Eslöv",
-            "Fagersta",
-            "Falkenberg",
-            "Falköping",
-            "Falsterbo",
-            "Falun",
-            "Filipstad",
-            "Flen",
-            "Gränna",
-            "Gävle",
-            "Hagfors",
-            "Halmstad",
-            "Haparanda",
-            "Hedemora",
-            "Helsingborg",
-            "Hjo",
-            "Hudiksvall",
-            "Huskvarna",
-            "Härnösand",
-            "Hässleholm",
-            "Höganäs",
-            "Jönköping",
-            "Kalmar",
-            "Karlshamn",
-            "Karlskoga",
-            "Karlskrona",
-            "Karlstad",
-            "Katrineholm",
-            "Kiruna",
-            "Kramfors",
-            "Kristianstad",
-            "Kristinehamn",
-            "Kumla",
-            "Kungsbacka",
-            "Kungälv",
-            "Köping",
-            "Laholm",
-            "Landskrona",
-            "Lidingö",
-            "Lidköping",
-            "Lindesberg",
-            "Linköping",
-            "Ljungby",
-            "Ludvika",
-            "Luleå",
-            "Lund",
-            "Lycksele",
-            "Lysekil",
-            "Mariefred",
-            "Mariestad",
-            "Marstrand",
-            "Mjölby",
-            "Motala",
-            "Nacka",
-            "Nora",
-            "Norrköping",
-            "Norrtälje",
-            "Nybro",
-            "Nyköping",
-            "Nynäshamn",
-            "Nässjö",
-            "Oskarshamn",
-            "Oxelösund",
-            "Piteå",
-            "Ronneby",
-            "Sala",
-            "Sandviken",
-            "Sigtuna",
-            "Simrishamn",
-            "Skanör",
-            "Skara",
-            "Skellefteå",
-            "Skänninge",
-            "Skövde",
-            "Sollefteå",
-            "Solna",
-            "Strängnäs",
-            "Strömstad",
-            "Sundbyberg",
-            "Sundsvall",
-            "Säffle",
-            "Säter",
-            "Sävsjö",
-            "Söderhamn",
-            "Söderköping",
-            "Södertälje",
-            "Sölvesborg",
-            "Tidaholm",
-            "Torshälla",
-            "Tranås",
-            "Trelleborg",
-            "Trollhättan",
-            "Trosa",
-            "Uddevalla",
-            "Ulricehamn",
-            "Umeå",
-            "Uppsala",
-            "Vadstena",
-            "Varberg",
-            "Vaxholm",
-            "Vetlanda",
-            "Vimmerby",
-            "Visby",
-            "Vänersborg",
-            "Värnamo",
-            "Västervik",
-            "Västerås",
-            "Växjö",
-            "Ystad",
-            "Ängelholm",
-            "Åmål",
-            "Örebro",
-            "Öregrund",
-            "Örnsköldsvik",
-            "Östersund",
-            "Östhammar"});
-            this.comboBox_Hometown.Location = new System.Drawing.Point(17, 65);
-            this.comboBox_Hometown.Name = "comboBox_Hometown";
-            this.comboBox_Hometown.Size = new System.Drawing.Size(140, 21);
-            this.comboBox_Hometown.TabIndex = 10;
-            this.comboBox_Hometown.Text = "Hometown";
-       //     this.comboBox_Hometown.SelectedIndexChanged += new System.EventHandler(this.comboBox_Hometown_SelectedIndexChanged);
             // 
             // label_From
             // 
             this.label_From.AutoSize = true;
             this.label_From.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_From.Location = new System.Drawing.Point(187, 101);
+            this.label_From.Location = new System.Drawing.Point(43, 123);
             this.label_From.Name = "label_From";
             this.label_From.Size = new System.Drawing.Size(33, 13);
             this.label_From.TabIndex = 14;
             this.label_From.Text = "From";
-            //this.label_From.Click += new System.EventHandler(this.label_From_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(227, 94);
+            this.dateTimePicker1.Location = new System.Drawing.Point(80, 114);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(99, 22);
             this.dateTimePicker1.TabIndex = 12;
@@ -294,16 +174,16 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(227, 123);
+            this.dateTimePicker2.Location = new System.Drawing.Point(80, 147);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(99, 22);
             this.dateTimePicker2.TabIndex = 13;
             // 
-            // comboBox_TempLoc
+            // comboBox_City
             // 
-            this.comboBox_TempLoc.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_TempLoc.FormattingEnabled = true;
-            this.comboBox_TempLoc.Items.AddRange(new object[] {
+            this.comboBox_City.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_City.FormattingEnabled = true;
+            this.comboBox_City.Items.AddRange(new object[] {
             "STOCKHOLM",
             "GÖTEBORG",
             "MALMÖ",
@@ -438,22 +318,16 @@
             "Örnsköldsvik",
             "Östersund",
             "Östhammar"});
-            this.comboBox_TempLoc.Location = new System.Drawing.Point(186, 67);
-            this.comboBox_TempLoc.Name = "comboBox_TempLoc";
-            this.comboBox_TempLoc.Size = new System.Drawing.Size(140, 21);
-            this.comboBox_TempLoc.TabIndex = 11;
-            this.comboBox_TempLoc.Text = "Temporary location";
+            this.comboBox_City.Location = new System.Drawing.Point(39, 175);
+            this.comboBox_City.Name = "comboBox_City";
+            this.comboBox_City.Size = new System.Drawing.Size(140, 21);
+            this.comboBox_City.TabIndex = 11;
+            this.comboBox_City.Text = "City";
             // 
             // pnl_PersDet
             // 
             this.pnl_PersDet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_PersDet.Controls.Add(this.label_InShort);
-            this.pnl_PersDet.Controls.Add(this.checkBox_Kids);
-            this.pnl_PersDet.Controls.Add(this.checkBox_Freedom);
-            this.pnl_PersDet.Controls.Add(this.checkBox_Money);
-            this.pnl_PersDet.Controls.Add(this.checkBox_Time);
-            this.pnl_PersDet.Controls.Add(this.checkBox_Countryside);
-            this.pnl_PersDet.Controls.Add(this.checkBox_City);
+            this.pnl_PersDet.Controls.Add(this.button_UpdateDetails);
             this.pnl_PersDet.Controls.Add(this.label_AboutMe);
             this.pnl_PersDet.Controls.Add(this.txtBox_AboutMe);
             this.pnl_PersDet.Controls.Add(this.txtBox_LastName);
@@ -469,85 +343,21 @@
             this.pnl_PersDet.Name = "pnl_PersDet";
             this.pnl_PersDet.Size = new System.Drawing.Size(417, 388);
             this.pnl_PersDet.TabIndex = 1;
-          //  this.pnl_PersDet.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label_InShort
+            // button_UpdateDetails
             // 
-            this.label_InShort.AutoSize = true;
-            this.label_InShort.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_InShort.Location = new System.Drawing.Point(16, 310);
-            this.label_InShort.Name = "label_InShort";
-            this.label_InShort.Size = new System.Drawing.Size(56, 17);
-            this.label_InShort.TabIndex = 18;
-            this.label_InShort.Text = "In short";
-            // 
-            // checkBox_Kids
-            // 
-            this.checkBox_Kids.AutoSize = true;
-            this.checkBox_Kids.Location = new System.Drawing.Point(19, 354);
-            this.checkBox_Kids.Name = "checkBox_Kids";
-            this.checkBox_Kids.Size = new System.Drawing.Size(48, 17);
-            this.checkBox_Kids.TabIndex = 17;
-            this.checkBox_Kids.Text = "Kids";
-            this.checkBox_Kids.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_Freedom
-            // 
-            this.checkBox_Freedom.AutoSize = true;
-            this.checkBox_Freedom.Location = new System.Drawing.Point(19, 330);
-            this.checkBox_Freedom.Name = "checkBox_Freedom";
-            this.checkBox_Freedom.Size = new System.Drawing.Size(72, 17);
-            this.checkBox_Freedom.TabIndex = 16;
-            this.checkBox_Freedom.Text = "Freedom";
-            this.checkBox_Freedom.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_Money
-            // 
-            this.checkBox_Money.AutoSize = true;
-            this.checkBox_Money.Location = new System.Drawing.Point(177, 354);
-            this.checkBox_Money.Name = "checkBox_Money";
-            this.checkBox_Money.Size = new System.Drawing.Size(63, 17);
-            this.checkBox_Money.TabIndex = 15;
-            this.checkBox_Money.Text = "Money";
-            this.checkBox_Money.UseVisualStyleBackColor = true;
-           // this.checkBox_Money.CheckedChanged += new System.EventHandler(this.checkBox_Money_CheckedChanged);
-            // 
-            // checkBox_Time
-            // 
-            this.checkBox_Time.AutoSize = true;
-            this.checkBox_Time.Location = new System.Drawing.Point(177, 330);
-            this.checkBox_Time.Name = "checkBox_Time";
-            this.checkBox_Time.Size = new System.Drawing.Size(51, 17);
-            this.checkBox_Time.TabIndex = 14;
-            this.checkBox_Time.Text = "Time";
-            this.checkBox_Time.UseVisualStyleBackColor = true;
-           // this.checkBox_Time.CheckedChanged += new System.EventHandler(this.checkBox_Time_CheckedChanged);
-            // 
-            // checkBox_Countryside
-            // 
-            this.checkBox_Countryside.AutoSize = true;
-            this.checkBox_Countryside.Location = new System.Drawing.Point(316, 354);
-            this.checkBox_Countryside.Name = "checkBox_Countryside";
-            this.checkBox_Countryside.Size = new System.Drawing.Size(89, 17);
-            this.checkBox_Countryside.TabIndex = 13;
-            this.checkBox_Countryside.Text = "Countryside";
-            this.checkBox_Countryside.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_City
-            // 
-            this.checkBox_City.AutoSize = true;
-            this.checkBox_City.Location = new System.Drawing.Point(316, 330);
-            this.checkBox_City.Name = "checkBox_City";
-            this.checkBox_City.Size = new System.Drawing.Size(46, 17);
-            this.checkBox_City.TabIndex = 12;
-            this.checkBox_City.Text = "City";
-            this.checkBox_City.UseVisualStyleBackColor = true;
+            this.button_UpdateDetails.Location = new System.Drawing.Point(324, 352);
+            this.button_UpdateDetails.Name = "button_UpdateDetails";
+            this.button_UpdateDetails.Size = new System.Drawing.Size(75, 23);
+            this.button_UpdateDetails.TabIndex = 12;
+            this.button_UpdateDetails.Text = "Update";
+            this.button_UpdateDetails.UseVisualStyleBackColor = true;
             // 
             // label_AboutMe
             // 
             this.label_AboutMe.AutoSize = true;
             this.label_AboutMe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AboutMe.Location = new System.Drawing.Point(16, 181);
+            this.label_AboutMe.Location = new System.Drawing.Point(16, 190);
             this.label_AboutMe.Name = "label_AboutMe";
             this.label_AboutMe.Size = new System.Drawing.Size(69, 17);
             this.label_AboutMe.TabIndex = 11;
@@ -555,11 +365,11 @@
             // 
             // txtBox_AboutMe
             // 
-            this.txtBox_AboutMe.Location = new System.Drawing.Point(19, 201);
+            this.txtBox_AboutMe.Location = new System.Drawing.Point(19, 209);
             this.txtBox_AboutMe.MaxLength = 300;
             this.txtBox_AboutMe.Multiline = true;
             this.txtBox_AboutMe.Name = "txtBox_AboutMe";
-            this.txtBox_AboutMe.Size = new System.Drawing.Size(380, 95);
+            this.txtBox_AboutMe.Size = new System.Drawing.Size(380, 123);
             this.txtBox_AboutMe.TabIndex = 10;
             // 
             // txtBox_LastName
@@ -579,7 +389,6 @@
             this.txtBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
             this.txtBox_ProfessionalTitle.TabIndex = 8;
             this.txtBox_ProfessionalTitle.Text = "Professional title";
-           // this.txtBox_ProfessionalTitle.TextChanged += new System.EventHandler(this.txtBox_ProfessionalTitle_TextChanged);
             // 
             // comboBox_ProfessionalField
             // 
@@ -677,7 +486,6 @@
             this.comboBox_Month.Size = new System.Drawing.Size(62, 21);
             this.comboBox_Month.TabIndex = 4;
             this.comboBox_Month.Text = "Month";
-        //    this.comboBox_Month.SelectedIndexChanged += new System.EventHandler(this.comboBox_Month_SelectedIndexChanged);
             // 
             // comboBox_Year
             // 
@@ -697,12 +505,13 @@
             this.txtBox_FirstName.Size = new System.Drawing.Size(108, 22);
             this.txtBox_FirstName.TabIndex = 2;
             this.txtBox_FirstName.Text = "First name";
+            this.txtBox_FirstName.TextChanged += new System.EventHandler(this.txtBox_FirstName_TextChanged);
             // 
             // lblPersonalDetails
             // 
             this.lblPersonalDetails.AutoSize = true;
-            this.lblPersonalDetails.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblPersonalDetails.Location = new System.Drawing.Point(14, 15);
+            this.lblPersonalDetails.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblPersonalDetails.Location = new System.Drawing.Point(14, 22);
             this.lblPersonalDetails.Name = "lblPersonalDetails";
             this.lblPersonalDetails.Size = new System.Drawing.Size(150, 25);
             this.lblPersonalDetails.TabIndex = 1;
@@ -719,18 +528,16 @@
             this.picBox_ProfilePic.TabIndex = 0;
             this.picBox_ProfilePic.TabStop = false;
             this.picBox_ProfilePic.WaitOnLoad = true;
-            //this.picBox_ProfilePic.Click += new System.EventHandler(this.picBox_ProfilePic_Click);
             // 
-            // tabSearchMatch
+            // tab_MyMatches
             // 
-            this.tabSearchMatch.Location = new System.Drawing.Point(4, 22);
-            this.tabSearchMatch.Name = "tabSearchMatch";
-            this.tabSearchMatch.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSearchMatch.Size = new System.Drawing.Size(806, 420);
-            this.tabSearchMatch.TabIndex = 1;
-            this.tabSearchMatch.Text = "Search and Match";
-            this.tabSearchMatch.UseVisualStyleBackColor = true;
-           // this.tabSearchMatch.Click += new System.EventHandler(this.tabSearchMatch_Click);
+            this.tab_MyMatches.Location = new System.Drawing.Point(4, 22);
+            this.tab_MyMatches.Name = "tab_MyMatches";
+            this.tab_MyMatches.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_MyMatches.Size = new System.Drawing.Size(806, 420);
+            this.tab_MyMatches.TabIndex = 1;
+            this.tab_MyMatches.Text = "My matches";
+            this.tab_MyMatches.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -741,13 +548,13 @@
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Modern No. 20", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Name = "FormContainer";
+            this.Name = "MainForm";
             this.Text = " ";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabMyProfile.ResumeLayout(false);
-            this.panel_Location.ResumeLayout(false);
-            this.panel_Location.PerformLayout();
+            this.tab_MyProfile.ResumeLayout(false);
+            this.panel_IWant.ResumeLayout(false);
+            this.panel_IWant.PerformLayout();
             this.pnl_PersDet.ResumeLayout(false);
             this.pnl_PersDet.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).EndInit();
@@ -758,8 +565,8 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabSearchMatch;
-        private System.Windows.Forms.TabPage tabMyProfile;
+        private System.Windows.Forms.TabPage tab_MyMatches;
+        private System.Windows.Forms.TabPage tab_MyProfile;
         private System.Windows.Forms.Panel pnl_PersDet;
         private System.Windows.Forms.PictureBox picBox_ProfilePic;
         private System.Windows.Forms.Label lblPersonalDetails;
@@ -770,23 +577,19 @@
         private System.Windows.Forms.ComboBox comboBox_ProfessionalField;
         private System.Windows.Forms.TextBox txtBox_ProfessionalTitle;
         private System.Windows.Forms.TextBox txtBox_LastName;
-        private System.Windows.Forms.ComboBox comboBox_Hometown;
         private System.Windows.Forms.Label label_To;
         private System.Windows.Forms.Label label_From;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox_TempLoc;
-        private System.Windows.Forms.Panel panel_Location;
-        private System.Windows.Forms.Label label_Location;
-        private System.Windows.Forms.Label label_InShort;
-        private System.Windows.Forms.CheckBox checkBox_Kids;
-        private System.Windows.Forms.CheckBox checkBox_Freedom;
-        private System.Windows.Forms.CheckBox checkBox_Money;
-        private System.Windows.Forms.CheckBox checkBox_Time;
-        private System.Windows.Forms.CheckBox checkBox_Countryside;
-        private System.Windows.Forms.CheckBox checkBox_City;
+        private System.Windows.Forms.ComboBox comboBox_City;
+        private System.Windows.Forms.Panel panel_IWant;
+        private System.Windows.Forms.Label label_Wantings;
         private System.Windows.Forms.Label label_AboutMe;
         private System.Windows.Forms.TextBox txtBox_AboutMe;
+        private System.Windows.Forms.Button button_AddLocation;
+        private System.Windows.Forms.Button button_UpdateDetails;
+        private System.Windows.Forms.ComboBox comboBox_InterestedIn;
+        private System.Windows.Forms.CheckBox checkBox_Longterm;
     }
 }
 
