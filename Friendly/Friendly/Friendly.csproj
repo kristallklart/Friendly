@@ -56,10 +56,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBModel\FieldOfProfession.cs">
+      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\FriendlyDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FriendlyDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\FriendlyDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBModel\FriendlyDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FriendlyDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Interest.cs">
+      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Location.cs">
+      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Profile.cs">
+      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Profile_Location.cs">
+      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Purpos.cs">
+      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\sysdiagram.cs">
+      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Member.cs" />
     <Compile Include="View\CreateAccountForm.cs">
@@ -128,7 +159,18 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DBModel\FriendlyDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FriendlyDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>FriendlyDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DBModel\FriendlyDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FriendlyDBModel.cs</LastGenOutput>
+      <DependentUpon>FriendlyDBModel.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
