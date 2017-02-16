@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseAccessLayer\DatabaseAccessLayer.cs" />
     <Compile Include="Model\FieldOfProfession.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -87,6 +88,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Utils.cs" />
+    <Compile Include="Utilities\WatermarkTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,9 +178,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DatabaseAccessLayer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
