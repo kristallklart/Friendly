@@ -12,17 +12,17 @@ namespace Friendly.DBModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Interest
+    public partial class Purpose
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Interest()
+        public Purpose()
         {
-            this.Profiles = new HashSet<Profile>();
+            this.Profile_Location = new HashSet<Profile_Location_Purpose>();
         }
     
-        public string itype { get; set; }
+        public string ptype { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Profile> Profiles { get; set; }
+        public virtual ICollection<Profile_Location_Purpose> Profile_Location { get; set; }
     }
 }

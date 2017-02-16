@@ -12,6 +12,8 @@ namespace Friendly.View
 {
     public partial class MainForm : Form
     {
+        
+
         public MainForm()
         {
             InitializeComponent();
@@ -21,14 +23,19 @@ namespace Friendly.View
             }
         }
 
-        private void tab_MyMatches_Click(object sender, EventArgs e)
+        
+
+        private void button_UpdateDetails_Click(object sender, EventArgs e)
         {
+           
+            
 
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void txtBox_LastName_TextChanged(object sender, EventArgs e)
         {
 
         }
+        
     }
 }

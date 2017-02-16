@@ -17,8 +17,7 @@ namespace Friendly.DBModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Profile()
         {
-            this.Profile_Location = new HashSet<Profile_Location>();
-            this.Interests = new HashSet<Interest>();
+            this.Profile_Location = new HashSet<Profile_Location_Purpose>();
         }
     
         public string email { get; set; }
@@ -28,13 +27,10 @@ namespace Friendly.DBModel
         public byte[] picture { get; set; }
         public string profession { get; set; }
         public string password { get; set; }
-        public string hometown_fk { get; set; }
         public string industry_fk { get; set; }
     
         public virtual FieldOfProfession FieldOfProfession { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Profile_Location> Profile_Location { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Interest> Interests { get; set; }
+        public virtual ICollection<Profile_Location_Purpose> Profile_Location { get; set; }
     }
 }

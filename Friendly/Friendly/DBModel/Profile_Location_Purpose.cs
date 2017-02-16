@@ -12,16 +12,16 @@ namespace Friendly.DBModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Profile_Location
+    public partial class Profile_Location_Purpose
     {
         public string city { get; set; }
         public string email { get; set; }
+        public string ptype { get; set; }
         public Nullable<System.DateTime> fromdate { get; set; }
         public Nullable<System.DateTime> todate { get; set; }
-        public string ptype_fk { get; set; }
     
         public virtual Location Location { get; set; }
         public virtual Profile Profile { get; set; }
-        public virtual Purpos Purpos { get; set; }
+        public virtual Purpose Purpose { get; set; }
     }
 }
