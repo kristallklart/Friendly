@@ -32,6 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_MyProfile = new System.Windows.Forms.TabPage();
             this.panel_IWant = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox_InterestedIn = new System.Windows.Forms.ComboBox();
             this.checkBox_Longterm = new System.Windows.Forms.CheckBox();
             this.button_AddLocation = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox_City = new System.Windows.Forms.ComboBox();
             this.panel_PersonalDetails = new System.Windows.Forms.Panel();
+            this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
             this.button_UpdateDetails = new System.Windows.Forms.Button();
             this.label_AboutMe = new System.Windows.Forms.Label();
             this.textBox_AboutMe = new System.Windows.Forms.TextBox();
@@ -53,13 +55,14 @@
             this.comboBox_Year = new System.Windows.Forms.ComboBox();
             this.textBox_FirstName = new System.Windows.Forms.TextBox();
             this.label_PersonalDetails = new System.Windows.Forms.Label();
-            this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
             this.tab_MyMatches = new System.Windows.Forms.TabPage();
             this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
             this.label_Messages = new System.Windows.Forms.Label();
+            this.button_Delete = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_PersonalDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).BeginInit();
             this.tab_MyMatches.SuspendLayout();
@@ -92,6 +95,8 @@
             // panel_IWant
             // 
             this.panel_IWant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_IWant.Controls.Add(this.button_Delete);
+            this.panel_IWant.Controls.Add(this.dataGridView1);
             this.panel_IWant.Controls.Add(this.comboBox_InterestedIn);
             this.panel_IWant.Controls.Add(this.checkBox_Longterm);
             this.panel_IWant.Controls.Add(this.button_AddLocation);
@@ -105,6 +110,14 @@
             this.panel_IWant.Name = "panel_IWant";
             this.panel_IWant.Size = new System.Drawing.Size(341, 388);
             this.panel_IWant.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(23, 259);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(220, 116);
+            this.dataGridView1.TabIndex = 20;
             // 
             // comboBox_InterestedIn
             // 
@@ -320,15 +333,16 @@
             "Örnsköldsvik",
             "Östersund",
             "Östhammar"});
-            this.comboBox_City.Location = new System.Drawing.Point(39, 175);
+            this.comboBox_City.Location = new System.Drawing.Point(46, 175);
             this.comboBox_City.Name = "comboBox_City";
-            this.comboBox_City.Size = new System.Drawing.Size(140, 21);
+            this.comboBox_City.Size = new System.Drawing.Size(133, 21);
             this.comboBox_City.TabIndex = 11;
             this.comboBox_City.Text = "City";
             // 
             // panel_PersonalDetails
             // 
             this.panel_PersonalDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_PersonalDetails.Controls.Add(this.picBox_ProfilePic);
             this.panel_PersonalDetails.Controls.Add(this.button_UpdateDetails);
             this.panel_PersonalDetails.Controls.Add(this.label_AboutMe);
             this.panel_PersonalDetails.Controls.Add(this.textBox_AboutMe);
@@ -340,11 +354,22 @@
             this.panel_PersonalDetails.Controls.Add(this.comboBox_Year);
             this.panel_PersonalDetails.Controls.Add(this.textBox_FirstName);
             this.panel_PersonalDetails.Controls.Add(this.label_PersonalDetails);
-            this.panel_PersonalDetails.Controls.Add(this.picBox_ProfilePic);
             this.panel_PersonalDetails.Location = new System.Drawing.Point(15, 15);
             this.panel_PersonalDetails.Name = "panel_PersonalDetails";
             this.panel_PersonalDetails.Size = new System.Drawing.Size(417, 388);
             this.panel_PersonalDetails.TabIndex = 1;
+            // 
+            // picBox_ProfilePic
+            // 
+            this.picBox_ProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.Image")));
+            this.picBox_ProfilePic.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.InitialImage")));
+            this.picBox_ProfilePic.Location = new System.Drawing.Point(19, 65);
+            this.picBox_ProfilePic.Name = "picBox_ProfilePic";
+            this.picBox_ProfilePic.Size = new System.Drawing.Size(116, 104);
+            this.picBox_ProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_ProfilePic.TabIndex = 0;
+            this.picBox_ProfilePic.TabStop = false;
+            this.picBox_ProfilePic.WaitOnLoad = true;
             // 
             // button_UpdateDetails
             // 
@@ -519,18 +544,6 @@
             this.label_PersonalDetails.TabIndex = 1;
             this.label_PersonalDetails.Text = "Personal details";
             // 
-            // picBox_ProfilePic
-            // 
-            this.picBox_ProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.Image")));
-            this.picBox_ProfilePic.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.InitialImage")));
-            this.picBox_ProfilePic.Location = new System.Drawing.Point(19, 65);
-            this.picBox_ProfilePic.Name = "picBox_ProfilePic";
-            this.picBox_ProfilePic.Size = new System.Drawing.Size(116, 104);
-            this.picBox_ProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picBox_ProfilePic.TabIndex = 0;
-            this.picBox_ProfilePic.TabStop = false;
-            this.picBox_ProfilePic.WaitOnLoad = true;
-            // 
             // tab_MyMatches
             // 
             this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatches);
@@ -559,6 +572,15 @@
             this.label_Messages.TabIndex = 1;
             this.label_Messages.Text = "Messages";
             // 
+            // button_Delete
+            // 
+            this.button_Delete.Location = new System.Drawing.Point(249, 352);
+            this.button_Delete.Name = "button_Delete";
+            this.button_Delete.Size = new System.Drawing.Size(75, 23);
+            this.button_Delete.TabIndex = 21;
+            this.button_Delete.Text = "Delete";
+            this.button_Delete.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -575,6 +597,7 @@
             this.tab_MyProfile.ResumeLayout(false);
             this.panel_IWant.ResumeLayout(false);
             this.panel_IWant.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel_PersonalDetails.ResumeLayout(false);
             this.panel_PersonalDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).EndInit();
@@ -615,6 +638,8 @@
         private System.Windows.Forms.CheckBox checkBox_Longterm;
         private System.Windows.Forms.DataGridView dataGridView_MyMatches;
         private System.Windows.Forms.Label label_Messages;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button_Delete;
     }
 }
 
