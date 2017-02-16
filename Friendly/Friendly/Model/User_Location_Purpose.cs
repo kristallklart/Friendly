@@ -7,21 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Friendly.DBModel
+namespace Friendly.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Profile_Location_Purpose
+    public partial class User_Location_Purpose
     {
-        public string city { get; set; }
-        public string email { get; set; }
-        public string ptype { get; set; }
-        public Nullable<System.DateTime> fromdate { get; set; }
-        public Nullable<System.DateTime> todate { get; set; }
+        public string City { get; set; }
+        public string Username { get; set; }
+        public string Purposetype { get; set; }
+        public Nullable<System.DateTime> FromDate { get; set; }
+        public Nullable<System.DateTime> ToDate { get; set; }
     
         public virtual Location Location { get; set; }
-        public virtual Profile Profile { get; set; }
         public virtual Purpose Purpose { get; set; }
+        public virtual User User { get; set; }
     }
 }

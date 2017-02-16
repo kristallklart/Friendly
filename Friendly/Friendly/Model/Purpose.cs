@@ -7,22 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Friendly.DBModel
+namespace Friendly.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class FieldOfProfession
+    public partial class Purpose
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public FieldOfProfession()
+        public Purpose()
         {
-            this.Profiles = new HashSet<Profile>();
+            this.User_Location_Purposes = new HashSet<User_Location_Purpose>();
         }
     
-        public string industry { get; set; }
+        public string Purposetype { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Profile> Profiles { get; set; }
+        public virtual ICollection<User_Location_Purpose> User_Location_Purposes { get; set; }
     }
 }

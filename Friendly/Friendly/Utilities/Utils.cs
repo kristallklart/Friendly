@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Friendly
+namespace Friendly.Utilities
 {
-    class MemberRegister
+    public static class Utils
     {
-
     }
 }
