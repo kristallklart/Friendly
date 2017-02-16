@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="90c8522421354567b75f30c6d99371ca" Name="Diagram1" ZoomLevel="94" >
-        <EntityTypeShape EntityType="FriendlyDBModel.FieldOfProfession" Width="1.5" PointX="0.75" PointY="2" />
-        <EntityTypeShape EntityType="FriendlyDBModel.Interest" Width="1.5" PointX="0.75" PointY="6" />
-        <EntityTypeShape EntityType="FriendlyDBModel.Location" Width="1.5" PointX="3" PointY="5.875" />
+      <Diagram DiagramId="90c8522421354567b75f30c6d99371ca" Name="Diagram1" ZoomLevel="81" >
+        <EntityTypeShape EntityType="FriendlyDBModel.FieldOfProfession" Width="1.5" PointX="0.75" PointY="0.875" />
+        <EntityTypeShape EntityType="FriendlyDBModel.Interest" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="FriendlyDBModel.Location" Width="1.5" PointX="8" PointY="1.25" />
         <EntityTypeShape EntityType="FriendlyDBModel.Profile_Location" Width="1.5" PointX="5.25" PointY="1.375" />
         <EntityTypeShape EntityType="FriendlyDBModel.Profile" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="FriendlyDBModel.Purpos" Width="1.5" PointX="3" PointY="8" />
+        <EntityTypeShape EntityType="FriendlyDBModel.Purpos" Width="1.5" PointX="8.5" PointY="2.875" />
         <EntityTypeShape EntityType="FriendlyDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" />
         <AssociationConnector Association="FriendlyDBModel.FK_FieldOfProfessionProfile" />
         <AssociationConnector Association="FriendlyDBModel.FK_Profile_Location_Location" />
