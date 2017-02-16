@@ -56,6 +56,7 @@
             this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
             this.tab_MyMatches = new System.Windows.Forms.TabPage();
             this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
+            this.label_Messages = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
@@ -353,6 +354,7 @@
             this.button_UpdateDetails.TabIndex = 12;
             this.button_UpdateDetails.Text = "Update";
             this.button_UpdateDetails.UseVisualStyleBackColor = true;
+            this.button_UpdateDetails.Click += new System.EventHandler(this.button_UpdateDetails_Click);
             // 
             // label_AboutMe
             // 
@@ -539,7 +541,6 @@
             this.tab_MyMatches.TabIndex = 1;
             this.tab_MyMatches.Text = "My matches";
             this.tab_MyMatches.UseVisualStyleBackColor = true;
-            this.tab_MyMatches.Click += new System.EventHandler(this.tab_MyMatches_Click);
             // 
             // dataGridView_MyMatches
             // 
@@ -549,14 +550,24 @@
             this.dataGridView_MyMatches.Size = new System.Drawing.Size(240, 344);
             this.dataGridView_MyMatches.TabIndex = 0;
             // 
+            // label_Messages
+            // 
+            this.label_Messages.AutoSize = true;
+            this.label_Messages.Location = new System.Drawing.Point(16, 470);
+            this.label_Messages.Name = "label_Messages";
+            this.label_Messages.Size = new System.Drawing.Size(0, 13);
+            this.label_Messages.TabIndex = 1;
+            this.label_Messages.Text = "Messages";
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(834, 477);
+            this.ClientSize = new System.Drawing.Size(834, 483);
+            this.Controls.Add(this.label_Messages);
             this.Controls.Add(this.tabControl1);
-            this.Font = new System.Drawing.Font("Modern No. 20", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "MainForm";
             this.Text = " ";
@@ -570,6 +581,7 @@
             this.tab_MyMatches.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatches)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -602,6 +614,7 @@
         private System.Windows.Forms.ComboBox comboBox_InterestedIn;
         private System.Windows.Forms.CheckBox checkBox_Longterm;
         private System.Windows.Forms.DataGridView dataGridView_MyMatches;
+        private System.Windows.Forms.Label label_Messages;
     }
 }
 

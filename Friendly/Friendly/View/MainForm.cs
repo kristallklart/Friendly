@@ -32,10 +32,6 @@ namespace Friendly.View
 
         }
 
-        private void txtBox_LastName_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-        
     }
 }
