@@ -86,6 +86,7 @@
     <Compile Include="Model\User_Location_Purpose.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Utils.cs" />
     <Compile Include="View\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
