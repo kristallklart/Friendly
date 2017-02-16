@@ -20,5 +20,15 @@ namespace Friendly.View
                 comboBox_Year.Items.Add(i);
             }
         }
+
+        private void tab_MyMatches_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 }
