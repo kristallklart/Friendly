@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Friendly.Utilities;
 
 namespace Friendly.View
 {
@@ -20,6 +21,16 @@ namespace Friendly.View
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonCreateAccount_Click(object sender, EventArgs e)
+        {
+            //if(textBoxUsername.Text.Trim() != "" && textBoxPassword.Text.Trim() != "" && textBoxFirstName.Text.Trim() != "" &&)
+            //{
+            //    textBoxLastName.Text = "haha";
+            //}
+            if (Utils.CheckTextBoxes(this))
+                textBoxFirstName.Text = "haha";
         }
     }
 }
