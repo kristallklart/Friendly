@@ -539,7 +539,6 @@
             this.tab_MyMatches.TabIndex = 1;
             this.tab_MyMatches.Text = "My matches";
             this.tab_MyMatches.UseVisualStyleBackColor = true;
-            this.tab_MyMatches.Click += new System.EventHandler(this.tab_MyMatches_Click);
             // 
             // dataGridView_MyMatches
             // 
