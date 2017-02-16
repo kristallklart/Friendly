@@ -555,7 +555,7 @@
             this.label_Messages.AutoSize = true;
             this.label_Messages.Location = new System.Drawing.Point(16, 470);
             this.label_Messages.Name = "label_Messages";
-            this.label_Messages.Size = new System.Drawing.Size(0, 13);
+            this.label_Messages.Size = new System.Drawing.Size(63, 13);
             this.label_Messages.TabIndex = 1;
             this.label_Messages.Text = "Messages";
             // 
