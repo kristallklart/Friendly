@@ -16,5 +16,10 @@ namespace Friendly.View
         {
             InitializeComponent();
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
