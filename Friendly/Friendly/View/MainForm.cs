@@ -12,6 +12,8 @@ namespace Friendly.View
 {
     public partial class MainForm : Form
     {
+        
+
         public MainForm()
         {
             InitializeComponent();
@@ -20,5 +22,20 @@ namespace Friendly.View
                 comboBox_Year.Items.Add(i);
             }
         }
+
+        
+
+        private void button_UpdateDetails_Click(object sender, EventArgs e)
+        {
+           
+            
+
+        }
+
+        private void txtBox_LastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

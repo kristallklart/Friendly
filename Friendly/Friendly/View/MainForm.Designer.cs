@@ -350,6 +350,7 @@
             this.button_UpdateDetails.TabIndex = 12;
             this.button_UpdateDetails.Text = "Update";
             this.button_UpdateDetails.UseVisualStyleBackColor = true;
+            this.button_UpdateDetails.Click += new System.EventHandler(this.button_UpdateDetails_Click);
             // 
             // label_AboutMe
             // 
@@ -378,6 +379,7 @@
             this.txtBox_LastName.Size = new System.Drawing.Size(108, 22);
             this.txtBox_LastName.TabIndex = 9;
             this.txtBox_LastName.Text = "Last name";
+            this.txtBox_LastName.TextChanged += new System.EventHandler(this.txtBox_LastName_TextChanged);
             // 
             // txtBox_ProfessionalTitle
             // 
@@ -503,7 +505,7 @@
             this.txtBox_FirstName.Size = new System.Drawing.Size(108, 22);
             this.txtBox_FirstName.TabIndex = 2;
             this.txtBox_FirstName.Text = "First name";
-            // 
+           //
             // lblPersonalDetails
             // 
             this.lblPersonalDetails.AutoSize = true;
@@ -538,12 +540,12 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(834, 477);
             this.Controls.Add(this.tabControl1);
-            this.Font = new System.Drawing.Font("Modern No. 20", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "MainForm";
             this.Text = " ";
