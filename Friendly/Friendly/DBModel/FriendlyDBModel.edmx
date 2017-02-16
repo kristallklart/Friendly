@@ -11,25 +11,11 @@
           </Key>
           <Property Name="industry" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="Interests">
-          <Key>
-            <PropertyRef Name="itype" />
-          </Key>
-          <Property Name="itype" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="Locations">
           <Key>
             <PropertyRef Name="city" />
           </Key>
           <Property Name="city" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Profile_Interest">
-          <Key>
-            <PropertyRef Name="Interests_itype" />
-            <PropertyRef Name="Profiles_email" />
-          </Key>
-          <Property Name="Interests_itype" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Profiles_email" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Profile_Location">
           <Key>
@@ -84,30 +70,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Profile_Interest_Interest">
-          <End Role="Interests" Type="Self.Interests" Multiplicity="1" />
-          <End Role="Profile_Interest" Type="Self.Profile_Interest" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Interests">
-              <PropertyRef Name="itype" />
-            </Principal>
-            <Dependent Role="Profile_Interest">
-              <PropertyRef Name="Interests_itype" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Profile_Interest_Profile">
-          <End Role="Profiles" Type="Self.Profiles" Multiplicity="1" />
-          <End Role="Profile_Interest" Type="Self.Profile_Interest" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Profiles">
-              <PropertyRef Name="email" />
-            </Principal>
-            <Dependent Role="Profile_Interest">
-              <PropertyRef Name="Profiles_email" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Profile_Location_Location">
           <End Role="Locations" Type="Self.Locations" Multiplicity="1" />
           <End Role="Profile_Location" Type="Self.Profile_Location" Multiplicity="*" />
@@ -146,9 +108,7 @@
         </Association>
         <EntityContainer Name="FriendlyDBModelStoreContainer">
           <EntitySet Name="FieldOfProfessions" EntityType="Self.FieldOfProfessions" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Interests" EntityType="Self.Interests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Profile_Interest" EntityType="Self.Profile_Interest" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profile_Location" EntityType="Self.Profile_Location" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profiles" EntityType="Self.Profiles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Purposes" EntityType="Self.Purposes" Schema="dbo" store:Type="Tables" />
@@ -156,14 +116,6 @@
           <AssociationSet Name="FK_FieldOfProfessionProfile" Association="Self.FK_FieldOfProfessionProfile">
             <End Role="FieldOfProfessions" EntitySet="FieldOfProfessions" />
             <End Role="Profiles" EntitySet="Profiles" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Profile_Interest_Interest" Association="Self.FK_Profile_Interest_Interest">
-            <End Role="Interests" EntitySet="Interests" />
-            <End Role="Profile_Interest" EntitySet="Profile_Interest" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Profile_Interest_Profile" Association="Self.FK_Profile_Interest_Profile">
-            <End Role="Profiles" EntitySet="Profiles" />
-            <End Role="Profile_Interest" EntitySet="Profile_Interest" />
           </AssociationSet>
           <AssociationSet Name="FK_Profile_Location_Location" Association="Self.FK_Profile_Location_Location">
             <End Role="Locations" EntitySet="Locations" />
@@ -184,11 +136,10 @@
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="FriendlyDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="FriendlyDBModelContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="FieldOfProfessions" EntityType="FriendlyDBModel.FieldOfProfession" />
-          <EntitySet Name="Interests" EntityType="FriendlyDBModel.Interest" />
           <EntitySet Name="Locations" EntityType="FriendlyDBModel.Location" />
-          <EntitySet Name="Profile_Location_Purpos" EntityType="FriendlyDBModel.Profile_Location" />
+          <EntitySet Name="Profile_Location_Purpos" EntityType="FriendlyDBModel.Profile_Location_Purpose" />
           <EntitySet Name="Profiles" EntityType="FriendlyDBModel.Profile" />
-          <EntitySet Name="Purposes" EntityType="FriendlyDBModel.Purpos" />
+          <EntitySet Name="Purposes" EntityType="FriendlyDBModel.Purpose" />
           <EntitySet Name="sysdiagrams" EntityType="FriendlyDBModel.sysdiagram" />
           <AssociationSet Name="FK_FieldOfProfessionProfile" Association="FriendlyDBModel.FK_FieldOfProfessionProfile">
             <End Role="FieldOfProfession" EntitySet="FieldOfProfessions" />
@@ -206,10 +157,6 @@
             <End Role="Purpos" EntitySet="Purposes" />
             <End Role="Profile_Location" EntitySet="Profile_Location_Purpos" />
           </AssociationSet>
-          <AssociationSet Name="Profile_Interest" Association="FriendlyDBModel.Profile_Interest">
-            <End Role="Interest" EntitySet="Interests" />
-            <End Role="Profile" EntitySet="Profiles" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="FieldOfProfession">
           <Key>
@@ -218,13 +165,6 @@
           <Property Name="industry" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Profiles" Relationship="FriendlyDBModel.FK_FieldOfProfessionProfile" FromRole="FieldOfProfession" ToRole="Profile" />
         </EntityType>
-        <EntityType Name="Interest">
-          <Key>
-            <PropertyRef Name="itype" />
-          </Key>
-          <Property Name="itype" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Profiles" Relationship="FriendlyDBModel.Profile_Interest" FromRole="Interest" ToRole="Profile" />
-        </EntityType>
         <EntityType Name="Location">
           <Key>
             <PropertyRef Name="city" />
@@ -232,17 +172,17 @@
           <Property Name="city" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Profile_Location" Relationship="FriendlyDBModel.FK_Profile_Location_Location" FromRole="Location" ToRole="Profile_Location" />
         </EntityType>
-        <EntityType Name="Profile_Location">
+        <EntityType Name="Profile_Location_Purpose">
           <Key>
             <PropertyRef Name="city" />
             <PropertyRef Name="email" />
-            <PropertyRef Name="ptype_fk" />
+            <PropertyRef Name="ptype" />
           </Key>
           <Property Name="city" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ptype" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="fromdate" Type="DateTime" Precision="3" />
           <Property Name="todate" Type="DateTime" Precision="3" />
-          <Property Name="ptype_fk" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Location" Relationship="FriendlyDBModel.FK_Profile_Location_Location" FromRole="Profile_Location" ToRole="Location" />
           <NavigationProperty Name="Profile" Relationship="FriendlyDBModel.FK_Profile_Location_Profile" FromRole="Profile_Location" ToRole="Profile" />
           <NavigationProperty Name="Purpos" Relationship="FriendlyDBModel.FK_Profile_LocationPurpose" FromRole="Profile_Location" ToRole="Purpos" />
@@ -258,13 +198,11 @@
           <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="profession" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="hometown_fk" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="industry_fk" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="FieldOfProfession" Relationship="FriendlyDBModel.FK_FieldOfProfessionProfile" FromRole="Profile" ToRole="FieldOfProfession" />
           <NavigationProperty Name="Profile_Location" Relationship="FriendlyDBModel.FK_Profile_Location_Profile" FromRole="Profile" ToRole="Profile_Location" />
-          <NavigationProperty Name="Interests" Relationship="FriendlyDBModel.Profile_Interest" FromRole="Profile" ToRole="Interest" />
         </EntityType>
-        <EntityType Name="Purpos">
+        <EntityType Name="Purpose">
           <Key>
             <PropertyRef Name="ptype" />
           </Key>
@@ -295,7 +233,7 @@
         </Association>
         <Association Name="FK_Profile_Location_Location">
           <End Type="FriendlyDBModel.Location" Role="Location" Multiplicity="1" />
-          <End Type="FriendlyDBModel.Profile_Location" Role="Profile_Location" Multiplicity="*" />
+          <End Type="FriendlyDBModel.Profile_Location_Purpose" Role="Profile_Location" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Location">
               <PropertyRef Name="city" />
@@ -307,7 +245,7 @@
         </Association>
         <Association Name="FK_Profile_Location_Profile">
           <End Type="FriendlyDBModel.Profile" Role="Profile" Multiplicity="1" />
-          <End Type="FriendlyDBModel.Profile_Location" Role="Profile_Location" Multiplicity="*" />
+          <End Type="FriendlyDBModel.Profile_Location_Purpose" Role="Profile_Location" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Profile">
               <PropertyRef Name="email" />
@@ -318,20 +256,16 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Profile_LocationPurpose">
-          <End Type="FriendlyDBModel.Purpos" Role="Purpos" Multiplicity="1" />
-          <End Type="FriendlyDBModel.Profile_Location" Role="Profile_Location" Multiplicity="*" />
+          <End Type="FriendlyDBModel.Purpose" Role="Purpos" Multiplicity="1" />
+          <End Type="FriendlyDBModel.Profile_Location_Purpose" Role="Profile_Location" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Purpos">
               <PropertyRef Name="ptype" />
             </Principal>
             <Dependent Role="Profile_Location">
-              <PropertyRef Name="ptype_fk" />
+              <PropertyRef Name="ptype" />
             </Dependent>
           </ReferentialConstraint>
-        </Association>
-        <Association Name="Profile_Interest">
-          <End Type="FriendlyDBModel.Interest" Role="Interest" Multiplicity="*" />
-          <End Type="FriendlyDBModel.Profile" Role="Profile" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -348,13 +282,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Interests">
-            <EntityTypeMapping TypeName="FriendlyDBModel.Interest">
-              <MappingFragment StoreEntitySet="Interests">
-                <ScalarProperty Name="itype" ColumnName="itype" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Locations">
             <EntityTypeMapping TypeName="FriendlyDBModel.Location">
               <MappingFragment StoreEntitySet="Locations">
@@ -363,9 +290,9 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Profile_Location_Purpos">
-            <EntityTypeMapping TypeName="FriendlyDBModel.Profile_Location">
+            <EntityTypeMapping TypeName="FriendlyDBModel.Profile_Location_Purpose">
               <MappingFragment StoreEntitySet="Profile_Location">
-                <ScalarProperty Name="ptype_fk" ColumnName="ptype_fk" />
+                <ScalarProperty Name="ptype" ColumnName="ptype_fk" />
                 <ScalarProperty Name="todate" ColumnName="todate" />
                 <ScalarProperty Name="fromdate" ColumnName="fromdate" />
                 <ScalarProperty Name="email" ColumnName="email" />
@@ -377,7 +304,6 @@
             <EntityTypeMapping TypeName="FriendlyDBModel.Profile">
               <MappingFragment StoreEntitySet="Profiles">
                 <ScalarProperty Name="industry_fk" ColumnName="industry_fk" />
-                <ScalarProperty Name="hometown_fk" ColumnName="hometown_fk" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="profession" ColumnName="profession" />
                 <ScalarProperty Name="picture" ColumnName="picture" />
@@ -389,7 +315,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Purposes">
-            <EntityTypeMapping TypeName="FriendlyDBModel.Purpos">
+            <EntityTypeMapping TypeName="FriendlyDBModel.Purpose">
               <MappingFragment StoreEntitySet="Purposes">
                 <ScalarProperty Name="ptype" ColumnName="ptype" />
               </MappingFragment>
@@ -406,14 +332,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Profile_Interest" TypeName="FriendlyDBModel.Profile_Interest" StoreEntitySet="Profile_Interest">
-            <EndProperty Name="Profile">
-              <ScalarProperty Name="email" ColumnName="Profiles_email" />
-            </EndProperty>
-            <EndProperty Name="Interest">
-              <ScalarProperty Name="itype" ColumnName="Interests_itype" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

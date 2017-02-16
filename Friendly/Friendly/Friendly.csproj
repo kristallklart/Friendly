@@ -74,19 +74,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FriendlyDBModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DBModel\Interest.cs">
-      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DBModel\Location.cs">
       <DependentUpon>FriendlyDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBModel\Profile.cs">
       <DependentUpon>FriendlyDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBModel\Profile_Location.cs">
+    <Compile Include="DBModel\Profile_Location_Purpose.cs">
       <DependentUpon>FriendlyDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBModel\Purpos.cs">
+    <Compile Include="DBModel\Purpose.cs">
       <DependentUpon>FriendlyDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBModel\sysdiagram.cs">
