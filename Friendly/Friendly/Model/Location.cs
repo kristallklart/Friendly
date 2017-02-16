@@ -7,30 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Friendly.DBModel
+namespace Friendly.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Profile
+    public partial class Location
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Profile()
+        public Location()
         {
-            this.Profile_Location = new HashSet<Profile_Location_Purpose>();
+            this.User_Location_Purposes = new HashSet<User_Location_Purpose>();
         }
     
-        public string email { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public Nullable<System.DateTime> birthdate { get; set; }
-        public byte[] picture { get; set; }
-        public string profession { get; set; }
-        public string password { get; set; }
-        public string industry_fk { get; set; }
+        public string City { get; set; }
     
-        public virtual FieldOfProfession FieldOfProfession { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Profile_Location_Purpose> Profile_Location { get; set; }
+        public virtual ICollection<User_Location_Purpose> User_Location_Purposes { get; set; }
     }
 }

@@ -56,35 +56,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBModel\FieldOfProfession.cs">
-      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+    <Compile Include="Model\FieldOfProfession.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBModel\FriendlyDBModel.Context.cs">
+    <Compile Include="Model\Location.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FriendlyDBModel.Context.tt</DependentUpon>
+      <DependentUpon>Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBModel\FriendlyDBModel.cs">
+    <Compile Include="Model\Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBModel\FriendlyDBModel.Designer.cs">
+    <Compile Include="Model\Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FriendlyDBModel.edmx</DependentUpon>
+      <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DBModel\Location.cs">
-      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+    <Compile Include="Model\Purpose.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBModel\Profile.cs">
-      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBModel\Profile_Location_Purpose.cs">
-      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBModel\Purpose.cs">
-      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
+    <Compile Include="Model\User_Location_Purpose.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="View\CreateAccountForm.cs">
       <SubType>Form</SubType>
@@ -125,12 +125,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="DBModel\FriendlyDBModel.edmx">
+    <EntityDeploy Include="Model\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FriendlyDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DBModel\FriendlyDBModel.edmx.diagram">
-      <DependentUpon>FriendlyDBModel.edmx</DependentUpon>
+    <None Include="Model\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -149,16 +149,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBModel\FriendlyDBModel.Context.tt">
+    <Content Include="Model\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>FriendlyDBModel.Context.cs</LastGenOutput>
-      <DependentUpon>FriendlyDBModel.edmx</DependentUpon>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DBModel\FriendlyDBModel.edmx.sql" />
-    <Content Include="DBModel\FriendlyDBModel.tt">
+    <Content Include="Model\Model.edmx.sql" />
+    <Content Include="Model\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>FriendlyDBModel.cs</LastGenOutput>
-      <DependentUpon>FriendlyDBModel.edmx</DependentUpon>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

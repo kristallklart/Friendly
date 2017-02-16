@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Friendly.DBModel
+namespace Friendly.Model
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FriendlyDBModelContainer : DbContext
+    public partial class FriendlyDBEntities : DbContext
     {
-        public FriendlyDBModelContainer()
-            : base("name=FriendlyDBModelContainer")
+        public FriendlyDBEntities()
+            : base("name=FriendlyDBEntities")
         {
         }
     
@@ -27,8 +27,8 @@ namespace Friendly.DBModel
     
         public virtual DbSet<FieldOfProfession> FieldOfProfessions { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
-        public virtual DbSet<Profile_Location_Purpose> Profile_Location_Purpos { get; set; }
-        public virtual DbSet<Profile> Profiles { get; set; }
         public virtual DbSet<Purpose> Purposes { get; set; }
+        public virtual DbSet<User_Location_Purpose> User_Location_Purpose { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
