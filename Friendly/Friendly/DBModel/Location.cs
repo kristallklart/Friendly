@@ -17,12 +17,12 @@ namespace Friendly.DBModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Location()
         {
-            this.Profile_Location = new HashSet<Profile_Location>();
+            this.Profile_Location = new HashSet<Profile_Location_Purpose>();
         }
     
         public string city { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Profile_Location> Profile_Location { get; set; }
+        public virtual ICollection<Profile_Location_Purpose> Profile_Location { get; set; }
     }
 }
