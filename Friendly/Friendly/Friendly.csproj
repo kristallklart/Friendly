@@ -86,9 +86,6 @@
     <Compile Include="DBModel\Purpose.cs">
       <DependentUpon>FriendlyDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBModel\sysdiagram.cs">
-      <DependentUpon>FriendlyDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Member.cs" />
     <Compile Include="View\CreateAccountForm.cs">
       <SubType>Form</SubType>
@@ -162,6 +159,7 @@
       <LastGenOutput>FriendlyDBModel.Context.cs</LastGenOutput>
       <DependentUpon>FriendlyDBModel.edmx</DependentUpon>
     </Content>
+    <Content Include="DBModel\FriendlyDBModel.edmx.sql" />
     <Content Include="DBModel\FriendlyDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FriendlyDBModel.cs</LastGenOutput>

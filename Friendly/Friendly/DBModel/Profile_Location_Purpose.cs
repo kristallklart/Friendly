@@ -22,6 +22,6 @@ namespace Friendly.DBModel
     
         public virtual Location Location { get; set; }
         public virtual Profile Profile { get; set; }
-        public virtual Purpose Purpos { get; set; }
+        public virtual Purpose Purpose { get; set; }
     }
 }

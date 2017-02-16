@@ -30,6 +30,5 @@ namespace Friendly.DBModel
         public virtual DbSet<Profile_Location_Purpose> Profile_Location_Purpos { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
         public virtual DbSet<Purpose> Purposes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }
