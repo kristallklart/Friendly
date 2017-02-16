@@ -21,5 +21,14 @@ namespace Friendly.View
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        private void linkLabelCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CreateAccountForm form = new CreateAccountForm();
+           // this.Visible = false;
+            form.ShowDialog();
+           // this.Visible = true;
+            
+        }
     }
 }
