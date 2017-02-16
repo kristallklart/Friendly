@@ -35,31 +35,34 @@
             this.comboBox_InterestedIn = new System.Windows.Forms.ComboBox();
             this.checkBox_Longterm = new System.Windows.Forms.CheckBox();
             this.button_AddLocation = new System.Windows.Forms.Button();
-            this.label_Wantings = new System.Windows.Forms.Label();
+            this.label_Preferences = new System.Windows.Forms.Label();
             this.label_To = new System.Windows.Forms.Label();
             this.label_From = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox_City = new System.Windows.Forms.ComboBox();
-            this.pnl_PersDet = new System.Windows.Forms.Panel();
+            this.panel_PersonalDetails = new System.Windows.Forms.Panel();
             this.button_UpdateDetails = new System.Windows.Forms.Button();
             this.label_AboutMe = new System.Windows.Forms.Label();
-            this.txtBox_AboutMe = new System.Windows.Forms.TextBox();
-            this.txtBox_LastName = new System.Windows.Forms.TextBox();
-            this.txtBox_ProfessionalTitle = new System.Windows.Forms.TextBox();
+            this.textBox_AboutMe = new System.Windows.Forms.TextBox();
+            this.textBox_LastName = new System.Windows.Forms.TextBox();
+            this.textBox_ProfessionalTitle = new System.Windows.Forms.TextBox();
             this.comboBox_ProfessionalField = new System.Windows.Forms.ComboBox();
             this.comboBox_Day = new System.Windows.Forms.ComboBox();
             this.comboBox_Month = new System.Windows.Forms.ComboBox();
             this.comboBox_Year = new System.Windows.Forms.ComboBox();
-            this.txtBox_FirstName = new System.Windows.Forms.TextBox();
-            this.lblPersonalDetails = new System.Windows.Forms.Label();
+            this.textBox_FirstName = new System.Windows.Forms.TextBox();
+            this.label_PersonalDetails = new System.Windows.Forms.Label();
             this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
             this.tab_MyMatches = new System.Windows.Forms.TabPage();
+            this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
-            this.pnl_PersDet.SuspendLayout();
+            this.panel_PersonalDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).BeginInit();
+            this.tab_MyMatches.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatches)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -76,7 +79,7 @@
             // tab_MyProfile
             // 
             this.tab_MyProfile.Controls.Add(this.panel_IWant);
-            this.tab_MyProfile.Controls.Add(this.pnl_PersDet);
+            this.tab_MyProfile.Controls.Add(this.panel_PersonalDetails);
             this.tab_MyProfile.Location = new System.Drawing.Point(4, 22);
             this.tab_MyProfile.Name = "tab_MyProfile";
             this.tab_MyProfile.Padding = new System.Windows.Forms.Padding(3);
@@ -91,7 +94,7 @@
             this.panel_IWant.Controls.Add(this.comboBox_InterestedIn);
             this.panel_IWant.Controls.Add(this.checkBox_Longterm);
             this.panel_IWant.Controls.Add(this.button_AddLocation);
-            this.panel_IWant.Controls.Add(this.label_Wantings);
+            this.panel_IWant.Controls.Add(this.label_Preferences);
             this.panel_IWant.Controls.Add(this.label_To);
             this.panel_IWant.Controls.Add(this.label_From);
             this.panel_IWant.Controls.Add(this.dateTimePicker1);
@@ -131,15 +134,15 @@
             this.button_AddLocation.Text = "Add";
             this.button_AddLocation.UseVisualStyleBackColor = true;
             // 
-            // label_Wantings
+            // label_Preferences
             // 
-            this.label_Wantings.AutoSize = true;
-            this.label_Wantings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Wantings.Location = new System.Drawing.Point(43, 22);
-            this.label_Wantings.Name = "label_Wantings";
-            this.label_Wantings.Size = new System.Drawing.Size(72, 25);
-            this.label_Wantings.TabIndex = 16;
-            this.label_Wantings.Text = "I want ";
+            this.label_Preferences.AutoSize = true;
+            this.label_Preferences.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Preferences.Location = new System.Drawing.Point(43, 22);
+            this.label_Preferences.Name = "label_Preferences";
+            this.label_Preferences.Size = new System.Drawing.Size(121, 25);
+            this.label_Preferences.TabIndex = 16;
+            this.label_Preferences.Text = "Preferences ";
             // 
             // label_To
             // 
@@ -322,25 +325,25 @@
             this.comboBox_City.TabIndex = 11;
             this.comboBox_City.Text = "City";
             // 
-            // pnl_PersDet
+            // panel_PersonalDetails
             // 
-            this.pnl_PersDet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_PersDet.Controls.Add(this.button_UpdateDetails);
-            this.pnl_PersDet.Controls.Add(this.label_AboutMe);
-            this.pnl_PersDet.Controls.Add(this.txtBox_AboutMe);
-            this.pnl_PersDet.Controls.Add(this.txtBox_LastName);
-            this.pnl_PersDet.Controls.Add(this.txtBox_ProfessionalTitle);
-            this.pnl_PersDet.Controls.Add(this.comboBox_ProfessionalField);
-            this.pnl_PersDet.Controls.Add(this.comboBox_Day);
-            this.pnl_PersDet.Controls.Add(this.comboBox_Month);
-            this.pnl_PersDet.Controls.Add(this.comboBox_Year);
-            this.pnl_PersDet.Controls.Add(this.txtBox_FirstName);
-            this.pnl_PersDet.Controls.Add(this.lblPersonalDetails);
-            this.pnl_PersDet.Controls.Add(this.picBox_ProfilePic);
-            this.pnl_PersDet.Location = new System.Drawing.Point(15, 15);
-            this.pnl_PersDet.Name = "pnl_PersDet";
-            this.pnl_PersDet.Size = new System.Drawing.Size(417, 388);
-            this.pnl_PersDet.TabIndex = 1;
+            this.panel_PersonalDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_PersonalDetails.Controls.Add(this.button_UpdateDetails);
+            this.panel_PersonalDetails.Controls.Add(this.label_AboutMe);
+            this.panel_PersonalDetails.Controls.Add(this.textBox_AboutMe);
+            this.panel_PersonalDetails.Controls.Add(this.textBox_LastName);
+            this.panel_PersonalDetails.Controls.Add(this.textBox_ProfessionalTitle);
+            this.panel_PersonalDetails.Controls.Add(this.comboBox_ProfessionalField);
+            this.panel_PersonalDetails.Controls.Add(this.comboBox_Day);
+            this.panel_PersonalDetails.Controls.Add(this.comboBox_Month);
+            this.panel_PersonalDetails.Controls.Add(this.comboBox_Year);
+            this.panel_PersonalDetails.Controls.Add(this.textBox_FirstName);
+            this.panel_PersonalDetails.Controls.Add(this.label_PersonalDetails);
+            this.panel_PersonalDetails.Controls.Add(this.picBox_ProfilePic);
+            this.panel_PersonalDetails.Location = new System.Drawing.Point(15, 15);
+            this.panel_PersonalDetails.Name = "panel_PersonalDetails";
+            this.panel_PersonalDetails.Size = new System.Drawing.Size(417, 388);
+            this.panel_PersonalDetails.TabIndex = 1;
             // 
             // button_UpdateDetails
             // 
@@ -350,7 +353,6 @@
             this.button_UpdateDetails.TabIndex = 12;
             this.button_UpdateDetails.Text = "Update";
             this.button_UpdateDetails.UseVisualStyleBackColor = true;
-            this.button_UpdateDetails.Click += new System.EventHandler(this.button_UpdateDetails_Click);
             // 
             // label_AboutMe
             // 
@@ -362,33 +364,32 @@
             this.label_AboutMe.TabIndex = 11;
             this.label_AboutMe.Text = "About me";
             // 
-            // txtBox_AboutMe
+            // textBox_AboutMe
             // 
-            this.txtBox_AboutMe.Location = new System.Drawing.Point(19, 209);
-            this.txtBox_AboutMe.MaxLength = 300;
-            this.txtBox_AboutMe.Multiline = true;
-            this.txtBox_AboutMe.Name = "txtBox_AboutMe";
-            this.txtBox_AboutMe.Size = new System.Drawing.Size(380, 123);
-            this.txtBox_AboutMe.TabIndex = 10;
+            this.textBox_AboutMe.Location = new System.Drawing.Point(19, 209);
+            this.textBox_AboutMe.MaxLength = 300;
+            this.textBox_AboutMe.Multiline = true;
+            this.textBox_AboutMe.Name = "textBox_AboutMe";
+            this.textBox_AboutMe.Size = new System.Drawing.Size(380, 123);
+            this.textBox_AboutMe.TabIndex = 10;
             // 
-            // txtBox_LastName
+            // textBox_LastName
             // 
-            this.txtBox_LastName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_LastName.Location = new System.Drawing.Point(291, 66);
-            this.txtBox_LastName.Name = "txtBox_LastName";
-            this.txtBox_LastName.Size = new System.Drawing.Size(108, 22);
-            this.txtBox_LastName.TabIndex = 9;
-            this.txtBox_LastName.Text = "Last name";
-            this.txtBox_LastName.TextChanged += new System.EventHandler(this.txtBox_LastName_TextChanged);
+            this.textBox_LastName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_LastName.Location = new System.Drawing.Point(291, 66);
+            this.textBox_LastName.Name = "textBox_LastName";
+            this.textBox_LastName.Size = new System.Drawing.Size(108, 22);
+            this.textBox_LastName.TabIndex = 9;
+            this.textBox_LastName.Text = "Last name";
             // 
-            // txtBox_ProfessionalTitle
+            // textBox_ProfessionalTitle
             // 
-            this.txtBox_ProfessionalTitle.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
-            this.txtBox_ProfessionalTitle.Name = "txtBox_ProfessionalTitle";
-            this.txtBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
-            this.txtBox_ProfessionalTitle.TabIndex = 8;
-            this.txtBox_ProfessionalTitle.Text = "Professional title";
+            this.textBox_ProfessionalTitle.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
+            this.textBox_ProfessionalTitle.Name = "textBox_ProfessionalTitle";
+            this.textBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
+            this.textBox_ProfessionalTitle.TabIndex = 8;
+            this.textBox_ProfessionalTitle.Text = "Professional title";
             // 
             // comboBox_ProfessionalField
             // 
@@ -497,24 +498,24 @@
             this.comboBox_Year.TabIndex = 3;
             this.comboBox_Year.Text = "Year of birth";
             // 
-            // txtBox_FirstName
+            // textBox_FirstName
             // 
-            this.txtBox_FirstName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_FirstName.Location = new System.Drawing.Point(177, 65);
-            this.txtBox_FirstName.Name = "txtBox_FirstName";
-            this.txtBox_FirstName.Size = new System.Drawing.Size(108, 22);
-            this.txtBox_FirstName.TabIndex = 2;
-            this.txtBox_FirstName.Text = "First name";
-           //
-            // lblPersonalDetails
+            this.textBox_FirstName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_FirstName.Location = new System.Drawing.Point(177, 65);
+            this.textBox_FirstName.Name = "textBox_FirstName";
+            this.textBox_FirstName.Size = new System.Drawing.Size(108, 22);
+            this.textBox_FirstName.TabIndex = 2;
+            this.textBox_FirstName.Text = "First name";
             // 
-            this.lblPersonalDetails.AutoSize = true;
-            this.lblPersonalDetails.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblPersonalDetails.Location = new System.Drawing.Point(14, 22);
-            this.lblPersonalDetails.Name = "lblPersonalDetails";
-            this.lblPersonalDetails.Size = new System.Drawing.Size(150, 25);
-            this.lblPersonalDetails.TabIndex = 1;
-            this.lblPersonalDetails.Text = "Personal details";
+            // label_PersonalDetails
+            // 
+            this.label_PersonalDetails.AutoSize = true;
+            this.label_PersonalDetails.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label_PersonalDetails.Location = new System.Drawing.Point(14, 22);
+            this.label_PersonalDetails.Name = "label_PersonalDetails";
+            this.label_PersonalDetails.Size = new System.Drawing.Size(150, 25);
+            this.label_PersonalDetails.TabIndex = 1;
+            this.label_PersonalDetails.Text = "Personal details";
             // 
             // picBox_ProfilePic
             // 
@@ -530,6 +531,7 @@
             // 
             // tab_MyMatches
             // 
+            this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatches);
             this.tab_MyMatches.Location = new System.Drawing.Point(4, 22);
             this.tab_MyMatches.Name = "tab_MyMatches";
             this.tab_MyMatches.Padding = new System.Windows.Forms.Padding(3);
@@ -537,15 +539,24 @@
             this.tab_MyMatches.TabIndex = 1;
             this.tab_MyMatches.Text = "My matches";
             this.tab_MyMatches.UseVisualStyleBackColor = true;
+            this.tab_MyMatches.Click += new System.EventHandler(this.tab_MyMatches_Click);
+            // 
+            // dataGridView_MyMatches
+            // 
+            this.dataGridView_MyMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_MyMatches.Location = new System.Drawing.Point(31, 42);
+            this.dataGridView_MyMatches.Name = "dataGridView_MyMatches";
+            this.dataGridView_MyMatches.Size = new System.Drawing.Size(240, 344);
+            this.dataGridView_MyMatches.TabIndex = 0;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(834, 477);
             this.Controls.Add(this.tabControl1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Modern No. 20", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "MainForm";
             this.Text = " ";
@@ -553,9 +564,11 @@
             this.tab_MyProfile.ResumeLayout(false);
             this.panel_IWant.ResumeLayout(false);
             this.panel_IWant.PerformLayout();
-            this.pnl_PersDet.ResumeLayout(false);
-            this.pnl_PersDet.PerformLayout();
+            this.panel_PersonalDetails.ResumeLayout(false);
+            this.panel_PersonalDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).EndInit();
+            this.tab_MyMatches.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatches)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -565,29 +578,30 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tab_MyMatches;
         private System.Windows.Forms.TabPage tab_MyProfile;
-        private System.Windows.Forms.Panel pnl_PersDet;
+        private System.Windows.Forms.Panel panel_PersonalDetails;
         private System.Windows.Forms.PictureBox picBox_ProfilePic;
-        private System.Windows.Forms.Label lblPersonalDetails;
+        private System.Windows.Forms.Label label_PersonalDetails;
         private System.Windows.Forms.ComboBox comboBox_Day;
         private System.Windows.Forms.ComboBox comboBox_Month;
         private System.Windows.Forms.ComboBox comboBox_Year;
-        private System.Windows.Forms.TextBox txtBox_FirstName;
+        private System.Windows.Forms.TextBox textBox_FirstName;
         private System.Windows.Forms.ComboBox comboBox_ProfessionalField;
-        private System.Windows.Forms.TextBox txtBox_ProfessionalTitle;
-        private System.Windows.Forms.TextBox txtBox_LastName;
+        private System.Windows.Forms.TextBox textBox_ProfessionalTitle;
+        private System.Windows.Forms.TextBox textBox_LastName;
         private System.Windows.Forms.Label label_To;
         private System.Windows.Forms.Label label_From;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox_City;
         private System.Windows.Forms.Panel panel_IWant;
-        private System.Windows.Forms.Label label_Wantings;
+        private System.Windows.Forms.Label label_Preferences;
         private System.Windows.Forms.Label label_AboutMe;
-        private System.Windows.Forms.TextBox txtBox_AboutMe;
+        private System.Windows.Forms.TextBox textBox_AboutMe;
         private System.Windows.Forms.Button button_AddLocation;
         private System.Windows.Forms.Button button_UpdateDetails;
         private System.Windows.Forms.ComboBox comboBox_InterestedIn;
         private System.Windows.Forms.CheckBox checkBox_Longterm;
+        private System.Windows.Forms.DataGridView dataGridView_MyMatches;
     }
 }
 
