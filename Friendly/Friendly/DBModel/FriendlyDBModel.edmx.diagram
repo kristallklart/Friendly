@@ -8,10 +8,10 @@
         <EntityTypeShape EntityType="FriendlyDBModel.FieldOfProfession" Width="1.5" PointX="0.75" PointY="2" />
         <EntityTypeShape EntityType="FriendlyDBModel.Interest" Width="1.5" PointX="0.75" PointY="6" />
         <EntityTypeShape EntityType="FriendlyDBModel.Location" Width="1.5" PointX="3" PointY="5.875" />
-        <EntityTypeShape EntityType="FriendlyDBModel.Profile_Location" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="FriendlyDBModel.Profile_Location" Width="1.875" PointX="5.25" PointY="1.375" />
         <EntityTypeShape EntityType="FriendlyDBModel.Profile" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="FriendlyDBModel.Purpos" Width="1.5" PointX="3" PointY="8" />
-        <EntityTypeShape EntityType="FriendlyDBModel.sysdiagram" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="FriendlyDBModel.sysdiagram" Width="1.5" PointX="7.25" PointY="4.5" />
         <AssociationConnector Association="FriendlyDBModel.FK_FieldOfProfessionProfile" />
         <AssociationConnector Association="FriendlyDBModel.FK_Profile_Location_Location" />
         <AssociationConnector Association="FriendlyDBModel.FK_Profile_Location_Profile" />

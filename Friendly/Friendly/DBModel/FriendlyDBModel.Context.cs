@@ -28,7 +28,7 @@ namespace Friendly.DBModel
         public virtual DbSet<FieldOfProfession> FieldOfProfessions { get; set; }
         public virtual DbSet<Interest> Interests { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
-        public virtual DbSet<Profile_Location> Profile_Location { get; set; }
+        public virtual DbSet<Profile_Location> Profile_Location_Purpos { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
         public virtual DbSet<Purpos> Purposes { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }

@@ -186,7 +186,7 @@
           <EntitySet Name="FieldOfProfessions" EntityType="FriendlyDBModel.FieldOfProfession" />
           <EntitySet Name="Interests" EntityType="FriendlyDBModel.Interest" />
           <EntitySet Name="Locations" EntityType="FriendlyDBModel.Location" />
-          <EntitySet Name="Profile_Location" EntityType="FriendlyDBModel.Profile_Location" />
+          <EntitySet Name="Profile_Location_Purpos" EntityType="FriendlyDBModel.Profile_Location" />
           <EntitySet Name="Profiles" EntityType="FriendlyDBModel.Profile" />
           <EntitySet Name="Purposes" EntityType="FriendlyDBModel.Purpos" />
           <EntitySet Name="sysdiagrams" EntityType="FriendlyDBModel.sysdiagram" />
@@ -196,15 +196,15 @@
           </AssociationSet>
           <AssociationSet Name="FK_Profile_Location_Location" Association="FriendlyDBModel.FK_Profile_Location_Location">
             <End Role="Location" EntitySet="Locations" />
-            <End Role="Profile_Location" EntitySet="Profile_Location" />
+            <End Role="Profile_Location" EntitySet="Profile_Location_Purpos" />
           </AssociationSet>
           <AssociationSet Name="FK_Profile_Location_Profile" Association="FriendlyDBModel.FK_Profile_Location_Profile">
             <End Role="Profile" EntitySet="Profiles" />
-            <End Role="Profile_Location" EntitySet="Profile_Location" />
+            <End Role="Profile_Location" EntitySet="Profile_Location_Purpos" />
           </AssociationSet>
           <AssociationSet Name="FK_Profile_LocationPurpose" Association="FriendlyDBModel.FK_Profile_LocationPurpose">
             <End Role="Purpos" EntitySet="Purposes" />
-            <End Role="Profile_Location" EntitySet="Profile_Location" />
+            <End Role="Profile_Location" EntitySet="Profile_Location_Purpos" />
           </AssociationSet>
           <AssociationSet Name="Profile_Interest" Association="FriendlyDBModel.Profile_Interest">
             <End Role="Interest" EntitySet="Interests" />
@@ -236,6 +236,7 @@
           <Key>
             <PropertyRef Name="city" />
             <PropertyRef Name="email" />
+            <PropertyRef Name="ptype_fk" />
           </Key>
           <Property Name="city" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -361,7 +362,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Profile_Location">
+          <EntitySetMapping Name="Profile_Location_Purpos">
             <EntityTypeMapping TypeName="FriendlyDBModel.Profile_Location">
               <MappingFragment StoreEntitySet="Profile_Location">
                 <ScalarProperty Name="ptype_fk" ColumnName="ptype_fk" />
