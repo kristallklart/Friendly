@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/16/2017 10:59:02
+-- Date Created: 02/16/2017 11:13:18
 -- Generated from EDMX file: C:\Users\Ann-Kathrine\Source\Repos\Friendly\Friendly\Friendly\DBModel\FriendlyDBModel.edmx
 -- --------------------------------------------------
 
@@ -21,13 +21,13 @@ IF OBJECT_ID(N'[dbo].[FK_FieldOfProfessionProfile]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Profiles] DROP CONSTRAINT [FK_FieldOfProfessionProfile];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Profile_Location_Location]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Profile_Location] DROP CONSTRAINT [FK_Profile_Location_Location];
+    ALTER TABLE [dbo].[Profile_Location_Purpos] DROP CONSTRAINT [FK_Profile_Location_Location];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Profile_Location_Profile]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Profile_Location] DROP CONSTRAINT [FK_Profile_Location_Profile];
+    ALTER TABLE [dbo].[Profile_Location_Purpos] DROP CONSTRAINT [FK_Profile_Location_Profile];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Profile_LocationPurpose]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Profile_Location] DROP CONSTRAINT [FK_Profile_LocationPurpose];
+    ALTER TABLE [dbo].[Profile_Location_Purpos] DROP CONSTRAINT [FK_Profile_LocationPurpose];
 GO
 
 -- --------------------------------------------------
@@ -40,17 +40,14 @@ GO
 IF OBJECT_ID(N'[dbo].[Locations]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Locations];
 GO
-IF OBJECT_ID(N'[dbo].[Profile_Location]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Profile_Location];
+IF OBJECT_ID(N'[dbo].[Profile_Location_Purpos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Profile_Location_Purpos];
 GO
 IF OBJECT_ID(N'[dbo].[Profiles]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Profiles];
 GO
 IF OBJECT_ID(N'[dbo].[Purposes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Purposes];
-GO
-IF OBJECT_ID(N'[dbo].[sysdiagrams]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[sysdiagrams];
 GO
 
 -- --------------------------------------------------
@@ -98,16 +95,6 @@ CREATE TABLE [dbo].[Purposes] (
 );
 GO
 
--- Creating table 'sysdiagrams'
-CREATE TABLE [dbo].[sysdiagrams] (
-    [name] nvarchar(128)  NOT NULL,
-    [principal_id] int  NOT NULL,
-    [diagram_id] int IDENTITY(1,1) NOT NULL,
-    [version] int  NULL,
-    [definition] varbinary(max)  NULL
-);
-GO
-
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -140,12 +127,6 @@ GO
 ALTER TABLE [dbo].[Purposes]
 ADD CONSTRAINT [PK_Purposes]
     PRIMARY KEY CLUSTERED ([ptype] ASC);
-GO
-
--- Creating primary key on [diagram_id] in table 'sysdiagrams'
-ALTER TABLE [dbo].[sysdiagrams]
-ADD CONSTRAINT [PK_sysdiagrams]
-    PRIMARY KEY CLUSTERED ([diagram_id] ASC);
 GO
 
 -- --------------------------------------------------
