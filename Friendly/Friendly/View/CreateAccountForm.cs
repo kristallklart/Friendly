@@ -7,7 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.Entity.Core;
+using System.Data.SqlClient;
 using Friendly.Utilities;
+using Friendly.Model;
+using Friendly.DatabaseAccessLayer;
+using Friendly.ControllerLayer;
 
 namespace Friendly.View
 {
@@ -29,9 +35,26 @@ namespace Friendly.View
             labelFeedback.Text = "";
             if (this.ValidateChildren())
             {
-
+                User user = new User();
+                user.Username = textBoxUsername.Text.Trim();
+                user.Password = textBoxPassword.Text.Trim();
+                user.FirstName = textBoxFirstName.Text.Trim();
+                user.LastName = textBoxLastName.Text.Trim();
+                try
+                {
+                    Controller.AddNewUser(user);
+                }
+                catch (SqlException ex)
+                {
+                   labelFeedback.Text = ErrorHandler.HandleError(ex);
+                }
+                catch (Exception ex)
+                {
+                   labelFeedback.Text = ErrorHandler.HandleError(ex);
+                }
             }
         }
+
         private void textBox_Validating(object sender, CancelEventArgs e)
         {
             TextBox tempBox = sender as TextBox;

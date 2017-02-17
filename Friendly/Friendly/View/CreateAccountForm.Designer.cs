@@ -194,7 +194,7 @@
             // labelFeedback
             // 
             this.labelFeedback.AutoSize = true;
-            this.labelFeedback.Location = new System.Drawing.Point(12, 283);
+            this.labelFeedback.Location = new System.Drawing.Point(12, 235);
             this.labelFeedback.Name = "labelFeedback";
             this.labelFeedback.Size = new System.Drawing.Size(0, 13);
             this.labelFeedback.TabIndex = 13;
@@ -218,7 +218,7 @@
             this.groupBoxComponents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxComponents.Location = new System.Drawing.Point(15, 12);
             this.groupBoxComponents.Name = "groupBoxComponents";
-            this.groupBoxComponents.Size = new System.Drawing.Size(344, 260);
+            this.groupBoxComponents.Size = new System.Drawing.Size(270, 203);
             this.groupBoxComponents.TabIndex = 14;
             this.groupBoxComponents.TabStop = false;
             this.groupBoxComponents.Text = "Please fill in your details";
@@ -233,7 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 305);
+            this.ClientSize = new System.Drawing.Size(303, 257);
             this.Controls.Add(this.groupBoxComponents);
             this.Controls.Add(this.labelFeedback);
             this.Name = "CreateAccountForm";
