@@ -32,6 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_MyProfile = new System.Windows.Forms.TabPage();
             this.panel_IWant = new System.Windows.Forms.Panel();
+            this.button_Delete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox_InterestedIn = new System.Windows.Forms.ComboBox();
             this.checkBox_Longterm = new System.Windows.Forms.CheckBox();
@@ -56,9 +57,9 @@
             this.textBox_FirstName = new System.Windows.Forms.TextBox();
             this.label_PersonalDetails = new System.Windows.Forms.Label();
             this.tab_MyMatches = new System.Windows.Forms.TabPage();
-            this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
+            this.dataGridView_MyMatchesCities = new System.Windows.Forms.DataGridView();
             this.label_Messages = new System.Windows.Forms.Label();
-            this.button_Delete = new System.Windows.Forms.Button();
+            this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
@@ -66,6 +67,7 @@
             this.panel_PersonalDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).BeginInit();
             this.tab_MyMatches.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatchesCities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatches)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,6 +112,15 @@
             this.panel_IWant.Name = "panel_IWant";
             this.panel_IWant.Size = new System.Drawing.Size(341, 388);
             this.panel_IWant.TabIndex = 2;
+            // 
+            // button_Delete
+            // 
+            this.button_Delete.Location = new System.Drawing.Point(249, 352);
+            this.button_Delete.Name = "button_Delete";
+            this.button_Delete.Size = new System.Drawing.Size(75, 23);
+            this.button_Delete.TabIndex = 21;
+            this.button_Delete.Text = "Delete";
+            this.button_Delete.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -547,6 +558,7 @@
             // tab_MyMatches
             // 
             this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatches);
+            this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatchesCities);
             this.tab_MyMatches.Location = new System.Drawing.Point(4, 22);
             this.tab_MyMatches.Name = "tab_MyMatches";
             this.tab_MyMatches.Padding = new System.Windows.Forms.Padding(3);
@@ -555,13 +567,13 @@
             this.tab_MyMatches.Text = "My matches";
             this.tab_MyMatches.UseVisualStyleBackColor = true;
             // 
-            // dataGridView_MyMatches
+            // dataGridView_MyMatchesCities
             // 
-            this.dataGridView_MyMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_MyMatches.Location = new System.Drawing.Point(31, 42);
-            this.dataGridView_MyMatches.Name = "dataGridView_MyMatches";
-            this.dataGridView_MyMatches.Size = new System.Drawing.Size(240, 344);
-            this.dataGridView_MyMatches.TabIndex = 0;
+            this.dataGridView_MyMatchesCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_MyMatchesCities.Location = new System.Drawing.Point(31, 42);
+            this.dataGridView_MyMatchesCities.Name = "dataGridView_MyMatchesCities";
+            this.dataGridView_MyMatchesCities.Size = new System.Drawing.Size(240, 344);
+            this.dataGridView_MyMatchesCities.TabIndex = 0;
             // 
             // label_Messages
             // 
@@ -572,14 +584,13 @@
             this.label_Messages.TabIndex = 1;
             this.label_Messages.Text = "Messages";
             // 
-            // button_Delete
+            // dataGridView_MyMatches
             // 
-            this.button_Delete.Location = new System.Drawing.Point(249, 352);
-            this.button_Delete.Name = "button_Delete";
-            this.button_Delete.Size = new System.Drawing.Size(75, 23);
-            this.button_Delete.TabIndex = 21;
-            this.button_Delete.Text = "Delete";
-            this.button_Delete.UseVisualStyleBackColor = true;
+            this.dataGridView_MyMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_MyMatches.Location = new System.Drawing.Point(311, 44);
+            this.dataGridView_MyMatches.Name = "dataGridView_MyMatches";
+            this.dataGridView_MyMatches.Size = new System.Drawing.Size(468, 342);
+            this.dataGridView_MyMatches.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -602,6 +613,7 @@
             this.panel_PersonalDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).EndInit();
             this.tab_MyMatches.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatchesCities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatches)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -636,10 +648,11 @@
         private System.Windows.Forms.Button button_UpdateDetails;
         private System.Windows.Forms.ComboBox comboBox_InterestedIn;
         private System.Windows.Forms.CheckBox checkBox_Longterm;
-        private System.Windows.Forms.DataGridView dataGridView_MyMatches;
+        private System.Windows.Forms.DataGridView dataGridView_MyMatchesCities;
         private System.Windows.Forms.Label label_Messages;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button_Delete;
+        private System.Windows.Forms.DataGridView dataGridView_MyMatches;
     }
 }
 
