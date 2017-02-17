@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Friendly.Controller
 {
-    class Controller
+    public class Controller
     {
         
         
