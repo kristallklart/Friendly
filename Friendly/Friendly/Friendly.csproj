@@ -56,7 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseAccessLayer\DatabaseAccessLayer.cs" />
+    <Compile Include="DatabaseAccessLayer\Dal.cs" />
     <Compile Include="Model\FieldOfProfession.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -87,6 +87,7 @@
     <Compile Include="Model\User_Location_Purpose.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\ErrorHandler.cs" />
     <Compile Include="Utilities\Utils.cs" />
     <Compile Include="Utilities\WatermarkTextBox.cs">
       <SubType>Component</SubType>
@@ -117,7 +118,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controller\Controller.cs" />
+    <Compile Include="ControllerLayer\Controller.cs" />
     <EmbeddedResource Include="View\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </EmbeddedResource>
