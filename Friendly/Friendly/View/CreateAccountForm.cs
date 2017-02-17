@@ -16,6 +16,7 @@ namespace Friendly.View
         public CreateAccountForm()
         {
             InitializeComponent();
+            AutoValidate = AutoValidate.Disable;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -25,12 +26,45 @@ namespace Friendly.View
 
         private void buttonCreateAccount_Click(object sender, EventArgs e)
         {
-            //if(textBoxUsername.Text.Trim() != "" && textBoxPassword.Text.Trim() != "" && textBoxFirstName.Text.Trim() != "" &&)
-            //{
-            //    textBoxLastName.Text = "haha";
-            //}
-            if (Utils.CheckTextBoxes(this))
-                textBoxFirstName.Text = "haha";
+            labelFeedback.Text = "";
+            if (this.ValidateChildren())
+            {
+
+            }
+        }
+        private void textBox_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox tempBox = sender as TextBox;
+            if (tempBox.Text.Trim().Length == 0)
+            {
+                e.Cancel = true;
+                labelFeedback.Text = "Please fill in all the details";
+                switch (tempBox.Name.Trim())
+                {
+                    case ("textBoxUsername"):
+                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter a username");
+                        break;
+                    case ("textBoxPassword"):
+                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter a password");
+                        break;
+                    case ("textBoxFirstName"):
+                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter your firstname");
+                        break;
+                    case ("textBoxLastName"):
+                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter your lastname");
+                        break;
+                    default:
+                        this.errorProviderTextBoxes.SetError(tempBox, "Please fill in all the details");
+                        break;
+                }
+            }
+            else
+                e.Cancel = false;
+        }
+
+        private void textBox_Validated(object sender, EventArgs e)
+        {
+            this.errorProviderTextBoxes.SetError(sender as Control, string.Empty);
         }
     }
 }

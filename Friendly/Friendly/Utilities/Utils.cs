@@ -9,10 +9,6 @@ namespace Friendly.Utilities
 {
     public static class Utils
     {
-        public static bool CheckTextBoxes(Form form)
-        {
 
-            return false;
-        }
     }
 }
