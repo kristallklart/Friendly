@@ -35,9 +35,14 @@ namespace Friendly.View
             {
                 case 0:
                     dataGridView1.DataSource = Controller.GetUserLocations(currentUser.Username);
+                    for (int i =1;  i < dataGridView1.Columns.Count; i++ )
+                    dataGridView1.Columns[i].Visible = false;
+                    
                     break;
                 case 1:
                     dataGridView_MyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
+                    for (int i = 1; i < dataGridView_MyMatchesCities.Columns.Count; i++)
+                        dataGridView_MyMatchesCities.Columns[i].Visible = false;
                     break;
             }
         }

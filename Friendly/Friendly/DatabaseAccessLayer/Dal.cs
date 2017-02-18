@@ -64,10 +64,8 @@ namespace Friendly.DatabaseAccessLayer
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-                List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(r => r.Username == username).ToList();
-                
-
-
+                List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(l => l.Username == username).ToList();
+              
                 return locations; }
         }
     }
