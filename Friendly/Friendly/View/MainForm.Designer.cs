@@ -1,4 +1,6 @@
-﻿namespace Friendly.View
+﻿using System;
+
+namespace Friendly.View
 {
     partial class MainForm
     {
@@ -79,6 +81,7 @@
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(814, 446);
             this.tabControlMain.TabIndex = 0;
+            tabControlMain.SelectedIndexChanged += new EventHandler(TabControlMain_SelectedIndexChanged);
             // 
             // tab_MyProfile
             // 
@@ -374,7 +377,6 @@
             this.label_Age.Size = new System.Drawing.Size(28, 13);
             this.label_Age.TabIndex = 23;
             this.label_Age.Text = "Age";
-            this.label_Age.Click += new System.EventHandler(this.label_Age_Click);
             // 
             // picBox_ProfilePic
             // 
@@ -528,7 +530,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatchesCities)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

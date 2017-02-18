@@ -10,12 +10,10 @@ using System.Windows.Forms;
 using Friendly.Model;
 using Friendly.ControllerLayer;
 
-
 namespace Friendly.View
 {
     public partial class MainForm : Form
     {
-
         private User currentUser;
         public MainForm()
         {
@@ -25,9 +23,7 @@ namespace Friendly.View
         {
             currentUser = user;
             InitializeComponent();
-            tabControlMain.SelectedIndexChanged += new EventHandler(TabControlMain_SelectedIndexChanged);
         }
-
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch ((sender as TabControl).SelectedIndex)
@@ -59,10 +55,7 @@ namespace Friendly.View
             dataGridView_MyMatches.DataSource = Controller.GetUsersByCity(selectedCity, currentuser);
             for (int i = 5; i < dataGridView_MyMatches.Columns.Count; i++)
                 dataGridView_MyMatches.Columns[i].Visible = false;
-
         }
-
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             UsersLocationsTimesToDataGrid();
@@ -103,11 +96,6 @@ namespace Friendly.View
             comboBox_City.Text = "In City";
         }
 
-        private void label_Age_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -115,8 +103,6 @@ namespace Friendly.View
                 DataGridViewRow selectedRow = dataGridView_MyMatchesCities.Rows[e.RowIndex];
                 string selectedCity = selectedRow.Cells[0].Value.ToString();
                 UsersByCityToDataGrid(selectedCity, currentUser);
-
-
             }
         }
 
@@ -128,7 +114,6 @@ namespace Friendly.View
                 string selectedUser = selectedRow.Cells[1].Value.ToString();
                 PopUpForm showUserForm = new PopUpForm(selectedUser);
                 showUserForm.Show();
-
             }
         }
 

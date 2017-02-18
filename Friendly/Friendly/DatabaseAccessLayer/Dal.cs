@@ -76,17 +76,14 @@ namespace Friendly.DatabaseAccessLayer
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-                List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(l => l.Username == username).ToList();
-              
+                List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(l => l.Username == username).ToList();           
                 return locations; }
         }
-
         public static List<FieldOfProfession> GetFieldOfProfessions()
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
                 List<FieldOfProfession> industries = context.FieldOfProfessions.ToList();
-
                 return industries; 
             }
         }
@@ -95,11 +92,9 @@ namespace Friendly.DatabaseAccessLayer
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
                 List<User_Location_Purpose> cities = context.User_Location_Purpose.Where(l => l.City == city).Where(l => l.Username != currentuser.Username).ToList();
-
                 return cities;
             }
         }
-
         public static int GetAge(string username)
         {
            using (FriendlyDBEntities context = new FriendlyDBEntities())
@@ -110,11 +105,9 @@ namespace Friendly.DatabaseAccessLayer
                 age = DateTime.Now.Year - dateOfBirth.Year;
                 if (DateTime.Now.DayOfYear < dateOfBirth.DayOfYear)
                    age = age - 1;
-
                return age;
             }
         }
-
         public static List<Purpose> GetPurposes()
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())

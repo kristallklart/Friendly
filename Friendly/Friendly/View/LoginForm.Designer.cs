@@ -35,7 +35,6 @@
             this.labelUsername = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.linkLabelCreateAccount = new System.Windows.Forms.LinkLabel();
-            this.buttonNoLogin = new System.Windows.Forms.Button();
             this.groupBoxLogin = new System.Windows.Forms.GroupBox();
             this.labelMustPassword = new System.Windows.Forms.Label();
             this.labelMustUsername = new System.Windows.Forms.Label();
@@ -105,22 +104,11 @@
             this.linkLabelCreateAccount.Text = "Create account";
             this.linkLabelCreateAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelCreateAccount_LinkClicked);
             // 
-            // buttonNoLogin
-            // 
-            this.buttonNoLogin.Location = new System.Drawing.Point(123, 183);
-            this.buttonNoLogin.Name = "buttonNoLogin";
-            this.buttonNoLogin.Size = new System.Drawing.Size(75, 23);
-            this.buttonNoLogin.TabIndex = 6;
-            this.buttonNoLogin.Text = "LAD MI VA!";
-            this.buttonNoLogin.UseVisualStyleBackColor = true;
-            this.buttonNoLogin.Click += new System.EventHandler(this.buttonNoLogin_Click);
-            // 
             // groupBoxLogin
             // 
             this.groupBoxLogin.Controls.Add(this.labelMustPassword);
             this.groupBoxLogin.Controls.Add(this.labelMustUsername);
             this.groupBoxLogin.Controls.Add(this.textBoxUsername);
-            this.groupBoxLogin.Controls.Add(this.buttonNoLogin);
             this.groupBoxLogin.Controls.Add(this.textBoxPassword);
             this.groupBoxLogin.Controls.Add(this.linkLabelCreateAccount);
             this.groupBoxLogin.Controls.Add(this.labelPassword);
@@ -191,7 +179,6 @@
         private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.LinkLabel linkLabelCreateAccount;
-        private System.Windows.Forms.Button buttonNoLogin;
         private System.Windows.Forms.GroupBox groupBoxLogin;
         private System.Windows.Forms.Label labelFeedback;
         private System.Windows.Forms.ErrorProvider errorProviderTextBoxes;

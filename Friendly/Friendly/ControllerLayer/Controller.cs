@@ -39,13 +39,10 @@ namespace Friendly.ControllerLayer
         {
             return Dal.GetUsersByCity(city,currentuser);
         }
-            
-
         public static int GetAge(string username)
-       {
+        {
            return Dal.GetAge(username);
         }
-
         public static List<Purpose> GetPurposes()
         {
             return Dal.GetPurposes();
