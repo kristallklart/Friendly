@@ -41,5 +41,14 @@ namespace Friendly.ControllerLayer
        {
            return Dal.GetAge(username);
         }
+
+        public static List<Purpose> GetPurposes()
+        {
+            return Dal.GetPurposes();
+        }
+        public static List<Location> GetLocations()
+        {
+            return Dal.GetLocations();
+        }
     }
 }
