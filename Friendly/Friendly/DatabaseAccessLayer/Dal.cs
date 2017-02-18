@@ -78,6 +78,15 @@ namespace Friendly.DatabaseAccessLayer
                 return industries; 
             }
         }
+        public static List<User_Location_Purpose> GetUsersByCity(string city)
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                List<User_Location_Purpose> cities = context.User_Location_Purpose.Where(l => l.City == city).ToList();
+
+                return cities;
+            }
+        }
 
         public static int GetAge(string username)
         {

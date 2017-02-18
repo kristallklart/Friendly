@@ -27,6 +27,9 @@ namespace Friendly.View
             InitializeComponent();
             tabControlMain.SelectedIndexChanged += new EventHandler(TabControlMain_SelectedIndexChanged);
             
+            
+
+
         }
 
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,11 +58,13 @@ namespace Friendly.View
             for (int i = 1; i < dataGridView_MyMatchesCities.Columns.Count; i++)
                 dataGridView_MyMatchesCities.Columns[i].Visible = false;
         }
+        public void UsersByCityToDataGrid(string selectedCity)
+        {
+            dataGridView_MyMatches.DataSource = Controller.GetUsersByCity(selectedCity);
+            
+        }
 
 
-    
-
-         
         private void MainForm_Load(object sender, EventArgs e)
         {
             UsersLocationsTimesToDataGrid();
@@ -91,11 +96,21 @@ namespace Friendly.View
             }
         }
 
-       
-
         private void label_Age_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView_MyMatchesCities.Rows[e.RowIndex];
+                string selectedCity = selectedRow.Cells[0].Value.ToString();
+                UsersByCityToDataGrid(selectedCity);
+                
+
+            }
         }
     }
 }
