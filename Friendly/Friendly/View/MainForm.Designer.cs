@@ -44,7 +44,6 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox_City = new System.Windows.Forms.ComboBox();
             this.panel_PersonalDetails = new System.Windows.Forms.Panel();
-            this.cueTextBox_ProfessionalTitle = new Friendly.Utilities.CueTextBox();
             this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
             this.button_UpdateDetails = new System.Windows.Forms.Button();
             this.label_AboutMe = new System.Windows.Forms.Label();
@@ -60,6 +59,7 @@
             this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
             this.dataGridView_MyMatchesCities = new System.Windows.Forms.DataGridView();
             this.label_Messages = new System.Windows.Forms.Label();
+            this.cueTextBox_ProfessionalTitle = new Friendly.Utilities.CueTextBox();
             this.tabControlMain.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
@@ -71,13 +71,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatchesCities)).BeginInit();
             this.SuspendLayout();
             // 
-            // TabControlMain
+            // tabControlMain
             // 
             this.tabControlMain.Controls.Add(this.tab_MyProfile);
             this.tabControlMain.Controls.Add(this.tab_MyMatches);
             this.tabControlMain.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMain.Location = new System.Drawing.Point(12, 21);
-            this.tabControlMain.Name = "TabControlMain";
+            this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(814, 446);
             this.tabControlMain.TabIndex = 0;
@@ -370,14 +370,6 @@
             this.panel_PersonalDetails.Size = new System.Drawing.Size(417, 388);
             this.panel_PersonalDetails.TabIndex = 1;
             // 
-            // cueTextBox_ProfessionalTitle
-            // 
-            this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
-            this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
-            this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
-            this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
-            this.cueTextBox_ProfessionalTitle.TabIndex = 22;
-            // 
             // picBox_ProfilePic
             // 
             this.picBox_ProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.Image")));
@@ -431,28 +423,6 @@
             // 
             this.comboBox_ProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_ProfessionalField.FormattingEnabled = true;
-            //this.comboBox_ProfessionalField.Items.AddRange(new object[] {
-            //"Administration, economics, law",
-            //"Agriculture",
-            //"Beauty care",
-            //"Building and construction",
-            //"Computer / IT",
-            //"Craft professions",
-            //"Culture, media, design",
-            //"Educational work",
-            //"Healthcare",
-            //"Hotel and restaurant",
-            //"Industrial manufacturing",
-            //"Installation, operation, maintenance",
-            //"Managers and executive directors",
-            //"Military",
-            //"Sales, purchases and marketing",
-            //"Sanitation and cleaning",
-            //"Scientific work",
-            //"Security",
-            //"Social work",
-            //"Technical work",
-            //"Transport"});
             this.comboBox_ProfessionalField.Location = new System.Drawing.Point(177, 119);
             this.comboBox_ProfessionalField.Name = "comboBox_ProfessionalField";
             this.comboBox_ProfessionalField.Size = new System.Drawing.Size(222, 21);
@@ -580,6 +550,7 @@
             this.dataGridView_MyMatchesCities.Name = "dataGridView_MyMatchesCities";
             this.dataGridView_MyMatchesCities.Size = new System.Drawing.Size(240, 344);
             this.dataGridView_MyMatchesCities.TabIndex = 0;
+            this.dataGridView_MyMatchesCities.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatchesCities_CellContentClick);
             // 
             // label_Messages
             // 
@@ -589,6 +560,14 @@
             this.label_Messages.Size = new System.Drawing.Size(63, 13);
             this.label_Messages.TabIndex = 1;
             this.label_Messages.Text = "Messages";
+            // 
+            // cueTextBox_ProfessionalTitle
+            // 
+            this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
+            this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
+            this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
+            this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
+            this.cueTextBox_ProfessionalTitle.TabIndex = 22;
             // 
             // MainForm
             // 

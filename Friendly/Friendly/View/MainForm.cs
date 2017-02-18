@@ -38,10 +38,10 @@ namespace Friendly.View
             switch ((sender as TabControl).SelectedIndex)
             {
                 case 0:
-                    MessageBox.Show("Not it works");
+                    dataGridView1.DataSource = Controller.GetUserLocations(currentUser.Username);
                     break;
                 case 1:
-                    dataGridView1.DataSource = Controller.GetUserLocations(currentUser.Username);
+                    dataGridView_MyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
                     break;
             }
         }
@@ -55,6 +55,11 @@ namespace Friendly.View
         }
 
         private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_MyMatchesCities_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
