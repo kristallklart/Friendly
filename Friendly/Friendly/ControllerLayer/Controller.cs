@@ -33,8 +33,8 @@ namespace Friendly.ControllerLayer
         }
 
         public static int GetAge(string username)
-        {
-            return Dal.GetAge(username);
+       {
+           return Dal.GetAge(username);
         }
     }
 }

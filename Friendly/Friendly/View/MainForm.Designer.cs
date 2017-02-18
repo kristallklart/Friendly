@@ -481,7 +481,6 @@
             this.dataGridView_MyMatchesCities.Name = "dataGridView_MyMatchesCities";
             this.dataGridView_MyMatchesCities.Size = new System.Drawing.Size(240, 344);
             this.dataGridView_MyMatchesCities.TabIndex = 0;
-            this.dataGridView_MyMatchesCities.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatchesCities_CellContentClick);
             // 
             // label_Messages
             // 

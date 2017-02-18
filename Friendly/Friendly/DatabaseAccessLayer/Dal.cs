@@ -81,16 +81,16 @@ namespace Friendly.DatabaseAccessLayer
 
         public static int GetAge(string username)
         {
-            using (FriendlyDBEntities context = new FriendlyDBEntities())
+           using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-                int age = 0;
+               int age = 0;
                 //kolla med labb
                 DateTime dateOfBirth = (DateTime)context.Users.Where(u => u.Username == username).Select(u => u.Birthdate).FirstOrDefault();
                 age = DateTime.Now.Year - dateOfBirth.Year;
                 if (DateTime.Now.DayOfYear < dateOfBirth.DayOfYear)
-                    age = age - 1;
+                   age = age - 1;
 
-                return age;
+               return age;
             }
         }
     }

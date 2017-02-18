@@ -34,35 +34,41 @@ namespace Friendly.View
             switch ((sender as TabControl).SelectedIndex)
             {
                 case 0:
-                    dataGridView1.DataSource = Controller.GetUserLocations(currentUser.Username);
-                    dataGridView1.Columns[1].Visible = false;
-                    for (int i = 5;  i < dataGridView1.Columns.Count ; i++)
-                        dataGridView1.Columns[i].Visible = false;
-
-
+                    UsersLocationsTimesToDataGrid();
 
                     break;
                 case 1:
-                    dataGridView_MyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
-                    for (int i = 1; i < dataGridView_MyMatchesCities.Columns.Count; i++)
-                        dataGridView_MyMatchesCities.Columns[i].Visible = false;
+                    UsersLocationsToDataGrid();
                     break;
             }
         }
+        public void UsersLocationsTimesToDataGrid()
+        {
+            dataGridView1.DataSource = Controller.GetUserLocations(currentUser.Username);
+            dataGridView1.Columns[1].Visible = false;
+            for (int i = 5; i < dataGridView1.Columns.Count; i++)
+                dataGridView1.Columns[i].Visible = false;
+        }
+        public void UsersLocationsToDataGrid()
+        {
+            dataGridView_MyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
+            for (int i = 1; i < dataGridView_MyMatchesCities.Columns.Count; i++)
+                dataGridView_MyMatchesCities.Columns[i].Visible = false;
+        }
+
+
     
 
-
-
-        private void button_UpdateDetails_Click(object sender, EventArgs e)
-        {
-
-        }
          
         private void MainForm_Load(object sender, EventArgs e)
         {
+            UsersLocationsTimesToDataGrid();
             textBox_FirstName.Text = currentUser.FirstName;
-            textBox_LastName.Text = currentUser.LastName;
+            textBox_LastName.Text = currentUser.LastName;     
+                  
+            if (currentUser.Birthdate != null)
             label_Age.Text = Controller.GetAge(currentUser.Username).ToString();
+
             comboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
             comboBox_ProfessionalField.DisplayMember = "Industry";
             
@@ -85,10 +91,7 @@ namespace Friendly.View
             }
         }
 
-        private void dataGridView_MyMatchesCities_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void label_Age_Click(object sender, EventArgs e)
         {
