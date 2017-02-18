@@ -44,6 +44,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox_City = new System.Windows.Forms.ComboBox();
             this.panel_PersonalDetails = new System.Windows.Forms.Panel();
+            this.label_Age = new System.Windows.Forms.Label();
             this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
             this.button_UpdateDetails = new System.Windows.Forms.Button();
             this.label_AboutMe = new System.Windows.Forms.Label();
@@ -56,7 +57,7 @@
             this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
             this.dataGridView_MyMatchesCities = new System.Windows.Forms.DataGridView();
             this.label_Messages = new System.Windows.Forms.Label();
-            this.label_Age = new System.Windows.Forms.Label();
+            this.cueTextBox_ProfessionalTitle = new Friendly.Utilities.CueTextBox();
             this.tabControlMain.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
@@ -83,10 +84,10 @@
             // 
             this.tab_MyProfile.Controls.Add(this.panel_IWant);
             this.tab_MyProfile.Controls.Add(this.panel_PersonalDetails);
-            this.tab_MyProfile.Location = new System.Drawing.Point(4, 22);
+            this.tab_MyProfile.Location = new System.Drawing.Point(4, 30);
             this.tab_MyProfile.Name = "tab_MyProfile";
             this.tab_MyProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_MyProfile.Size = new System.Drawing.Size(806, 420);
+            this.tab_MyProfile.Size = new System.Drawing.Size(806, 412);
             this.tab_MyProfile.TabIndex = 0;
             this.tab_MyProfile.Text = "My profile";
             this.tab_MyProfile.UseVisualStyleBackColor = true;
@@ -132,7 +133,7 @@
             this.comboBox_InterestedIn.FormattingEnabled = true;
             this.comboBox_InterestedIn.Location = new System.Drawing.Point(43, 67);
             this.comboBox_InterestedIn.Name = "comboBox_InterestedIn";
-            this.comboBox_InterestedIn.Size = new System.Drawing.Size(136, 21);
+            this.comboBox_InterestedIn.Size = new System.Drawing.Size(136, 29);
             this.comboBox_InterestedIn.TabIndex = 19;
             this.comboBox_InterestedIn.Text = "Interested in";
             // 
@@ -142,7 +143,7 @@
             this.checkBox_Longterm.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox_Longterm.Location = new System.Drawing.Point(97, 91);
             this.checkBox_Longterm.Name = "checkBox_Longterm";
-            this.checkBox_Longterm.Size = new System.Drawing.Size(82, 17);
+            this.checkBox_Longterm.Size = new System.Drawing.Size(117, 25);
             this.checkBox_Longterm.TabIndex = 18;
             this.checkBox_Longterm.Text = "Longterm?";
             this.checkBox_Longterm.UseVisualStyleBackColor = true;
@@ -162,7 +163,7 @@
             this.label_Preferences.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Preferences.Location = new System.Drawing.Point(43, 22);
             this.label_Preferences.Name = "label_Preferences";
-            this.label_Preferences.Size = new System.Drawing.Size(121, 25);
+            this.label_Preferences.Size = new System.Drawing.Size(187, 40);
             this.label_Preferences.TabIndex = 16;
             this.label_Preferences.Text = "Preferences ";
             // 
@@ -172,7 +173,7 @@
             this.label_To.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_To.Location = new System.Drawing.Point(43, 152);
             this.label_To.Name = "label_To";
-            this.label_To.Size = new System.Drawing.Size(18, 13);
+            this.label_To.Size = new System.Drawing.Size(27, 23);
             this.label_To.TabIndex = 15;
             this.label_To.Text = "Til";
             // 
@@ -182,7 +183,7 @@
             this.label_From.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_From.Location = new System.Drawing.Point(43, 123);
             this.label_From.Name = "label_From";
-            this.label_From.Size = new System.Drawing.Size(33, 13);
+            this.label_From.Size = new System.Drawing.Size(49, 23);
             this.label_From.TabIndex = 14;
             this.label_From.Text = "From";
             // 
@@ -191,7 +192,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(80, 114);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(99, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(99, 29);
             this.dateTimePicker1.TabIndex = 12;
             // 
             // dateTimePicker2
@@ -199,7 +200,7 @@
             this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Location = new System.Drawing.Point(80, 147);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(99, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(99, 29);
             this.dateTimePicker2.TabIndex = 13;
             // 
             // comboBox_City
@@ -343,7 +344,7 @@
             "Östhammar"});
             this.comboBox_City.Location = new System.Drawing.Point(46, 175);
             this.comboBox_City.Name = "comboBox_City";
-            this.comboBox_City.Size = new System.Drawing.Size(133, 21);
+            this.comboBox_City.Size = new System.Drawing.Size(133, 31);
             this.comboBox_City.TabIndex = 11;
             this.comboBox_City.Text = "City";
             // 
@@ -364,6 +365,16 @@
             this.panel_PersonalDetails.Name = "panel_PersonalDetails";
             this.panel_PersonalDetails.Size = new System.Drawing.Size(417, 388);
             this.panel_PersonalDetails.TabIndex = 1;
+            // 
+            // label_Age
+            // 
+            this.label_Age.AutoSize = true;
+            this.label_Age.Location = new System.Drawing.Point(174, 95);
+            this.label_Age.Name = "label_Age";
+            this.label_Age.Size = new System.Drawing.Size(40, 21);
+            this.label_Age.TabIndex = 23;
+            this.label_Age.Text = "Age";
+            this.label_Age.Click += new System.EventHandler(this.label_Age_Click);
             // 
             // picBox_ProfilePic
             // 
@@ -392,7 +403,7 @@
             this.label_AboutMe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_AboutMe.Location = new System.Drawing.Point(16, 190);
             this.label_AboutMe.Name = "label_AboutMe";
-            this.label_AboutMe.Size = new System.Drawing.Size(69, 17);
+            this.label_AboutMe.Size = new System.Drawing.Size(105, 28);
             this.label_AboutMe.TabIndex = 11;
             this.label_AboutMe.Text = "About me";
             // 
@@ -410,7 +421,7 @@
             this.textBox_LastName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_LastName.Location = new System.Drawing.Point(291, 65);
             this.textBox_LastName.Name = "textBox_LastName";
-            this.textBox_LastName.Size = new System.Drawing.Size(108, 22);
+            this.textBox_LastName.Size = new System.Drawing.Size(108, 29);
             this.textBox_LastName.TabIndex = 9;
             this.textBox_LastName.Text = "Last name";
             // 
@@ -420,7 +431,7 @@
             this.comboBox_ProfessionalField.FormattingEnabled = true;
             this.comboBox_ProfessionalField.Location = new System.Drawing.Point(177, 119);
             this.comboBox_ProfessionalField.Name = "comboBox_ProfessionalField";
-            this.comboBox_ProfessionalField.Size = new System.Drawing.Size(222, 21);
+            this.comboBox_ProfessionalField.Size = new System.Drawing.Size(222, 29);
             this.comboBox_ProfessionalField.TabIndex = 6;
             this.comboBox_ProfessionalField.Text = "Field of profession";
             // 
@@ -429,7 +440,7 @@
             this.textBox_FirstName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_FirstName.Location = new System.Drawing.Point(177, 65);
             this.textBox_FirstName.Name = "textBox_FirstName";
-            this.textBox_FirstName.Size = new System.Drawing.Size(108, 22);
+            this.textBox_FirstName.Size = new System.Drawing.Size(108, 29);
             this.textBox_FirstName.TabIndex = 2;
             this.textBox_FirstName.Text = "First name";
             // 
@@ -439,7 +450,7 @@
             this.label_PersonalDetails.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.label_PersonalDetails.Location = new System.Drawing.Point(14, 22);
             this.label_PersonalDetails.Name = "label_PersonalDetails";
-            this.label_PersonalDetails.Size = new System.Drawing.Size(150, 25);
+            this.label_PersonalDetails.Size = new System.Drawing.Size(233, 40);
             this.label_PersonalDetails.TabIndex = 1;
             this.label_PersonalDetails.Text = "Personal details";
             // 
@@ -447,10 +458,10 @@
             // 
             this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatches);
             this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatchesCities);
-            this.tab_MyMatches.Location = new System.Drawing.Point(4, 22);
+            this.tab_MyMatches.Location = new System.Drawing.Point(4, 30);
             this.tab_MyMatches.Name = "tab_MyMatches";
             this.tab_MyMatches.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_MyMatches.Size = new System.Drawing.Size(806, 420);
+            this.tab_MyMatches.Size = new System.Drawing.Size(806, 412);
             this.tab_MyMatches.TabIndex = 1;
             this.tab_MyMatches.Text = "My matches";
             this.tab_MyMatches.UseVisualStyleBackColor = true;
@@ -477,32 +488,22 @@
             this.label_Messages.AutoSize = true;
             this.label_Messages.Location = new System.Drawing.Point(16, 470);
             this.label_Messages.Name = "label_Messages";
-            this.label_Messages.Size = new System.Drawing.Size(63, 13);
+            this.label_Messages.Size = new System.Drawing.Size(90, 20);
             this.label_Messages.TabIndex = 1;
             this.label_Messages.Text = "Messages";
             // 
-            // label_Age
-            // 
-            this.label_Age.AutoSize = true;
-            this.label_Age.Location = new System.Drawing.Point(174, 95);
-            this.label_Age.Name = "label_Age";
-            this.label_Age.Size = new System.Drawing.Size(28, 13);
-            this.label_Age.TabIndex = 23;
-            this.label_Age.Text = "Age";
-            this.label_Age.Click += new System.EventHandler(this.label_Age_Click);
-            // 
             // cueTextBox_ProfessionalTitle
             // 
-            this.cueTextBox_ProfessionalTitle = new Utilities.CueTextBox();
             this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
+            this.cueTextBox_ProfessionalTitle.HideSelection = false;
             this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
             this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
-            this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
+            this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 29);
             this.cueTextBox_ProfessionalTitle.TabIndex = 22;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(834, 483);
