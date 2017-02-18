@@ -41,7 +41,7 @@ namespace Friendly.View
                     MessageBox.Show("Not it works");
                     break;
                 case 1:
-                    MessageBox.Show("YMjip it works");
+                    dataGridView1.DataSource = Controller.GetUserLocations(currentUser.Username);
                     break;
             }
         }

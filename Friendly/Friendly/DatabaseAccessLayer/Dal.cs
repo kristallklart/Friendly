@@ -60,5 +60,12 @@ namespace Friendly.DatabaseAccessLayer
                 return context.Users.FirstOrDefault(user => user.Username.Equals(username, StringComparison.Ordinal));
             }
         }
+        public static List<User_Location_Purpose> GetUserLocations(string username)
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(r => r.Username == username).ToList();
+                return locations; }
+        }
     }
 }
