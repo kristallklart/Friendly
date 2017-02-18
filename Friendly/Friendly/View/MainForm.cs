@@ -25,7 +25,7 @@ namespace Friendly.View
         {
             currentUser = user;
             InitializeComponent();
-            TabControlMain.SelectedIndexChanged += new EventHandler(TabControlMain_SelectedIndexChanged);
+            tabControlMain.SelectedIndexChanged += new EventHandler(TabControlMain_SelectedIndexChanged);
             for (int i = 1940; i <= 1999; i++)
             {
                 comboBox_Year.Items.Add(i);
@@ -45,7 +45,7 @@ namespace Friendly.View
                     break;
             }
         }
-    }
+    
 
 
 
@@ -60,5 +60,5 @@ namespace Friendly.View
         }
     }
 }
-}
+
 

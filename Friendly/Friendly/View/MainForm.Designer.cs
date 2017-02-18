@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.TabControlMain = new System.Windows.Forms.TabControl();
+            this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tab_MyProfile = new System.Windows.Forms.TabPage();
             this.panel_IWant = new System.Windows.Forms.Panel();
             this.button_Delete = new System.Windows.Forms.Button();
@@ -73,14 +73,14 @@
             // 
             // TabControlMain
             // 
-            this.TabControlMain.Controls.Add(this.tab_MyProfile);
-            this.TabControlMain.Controls.Add(this.tab_MyMatches);
-            this.TabControlMain.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabControlMain.Location = new System.Drawing.Point(12, 21);
-            this.TabControlMain.Name = "TabControlMain";
-            this.TabControlMain.SelectedIndex = 0;
-            this.TabControlMain.Size = new System.Drawing.Size(814, 446);
-            this.TabControlMain.TabIndex = 0;
+            this.tabControlMain.Controls.Add(this.tab_MyProfile);
+            this.tabControlMain.Controls.Add(this.tab_MyMatches);
+            this.tabControlMain.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlMain.Location = new System.Drawing.Point(12, 21);
+            this.tabControlMain.Name = "TabControlMain";
+            this.tabControlMain.SelectedIndex = 0;
+            this.tabControlMain.Size = new System.Drawing.Size(814, 446);
+            this.tabControlMain.TabIndex = 0;
             // 
             // tab_MyProfile
             // 
@@ -597,12 +597,12 @@
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(834, 483);
             this.Controls.Add(this.label_Messages);
-            this.Controls.Add(this.TabControlMain);
+            this.Controls.Add(this.tabControlMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "MainForm";
             this.Text = " ";
-            this.tabControl1.ResumeLayout(false);
+            this.tabControlMain.ResumeLayout(false);
             this.tab_MyProfile.ResumeLayout(false);
             this.panel_IWant.ResumeLayout(false);
             this.panel_IWant.PerformLayout();
@@ -620,7 +620,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl TabControlMain;
+        private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tab_MyMatches;
         private System.Windows.Forms.TabPage tab_MyProfile;
         private System.Windows.Forms.Panel panel_PersonalDetails;
