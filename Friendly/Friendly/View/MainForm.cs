@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Friendly.View
 {
     public partial class MainForm : Form
@@ -17,20 +18,30 @@ namespace Friendly.View
         public MainForm()
         {
             InitializeComponent();
+            TabControlMain.SelectedIndexChanged += new EventHandler(TabControlMain_SelectedIndexChanged);
             for (int i = 1940; i <= 1999; i++)
             {
                 comboBox_Year.Items.Add(i);
             }
-        }
-
-        
-
-        private void button_UpdateDetails_Click(object sender, EventArgs e)
-        {
-           
             
-
         }
 
+        private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch ((sender as TabControl).SelectedIndex)
+            {
+                case 0:
+                    MessageBox.Show("Not it works");
+                    break;
+                case 1:
+                    MessageBox.Show("YMjip it works");
+                    break;
+            }
+        }
     }
+
+
+
+
 }
+
