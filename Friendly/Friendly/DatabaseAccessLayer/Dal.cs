@@ -53,6 +53,18 @@ namespace Friendly.DatabaseAccessLayer
                 }
             }
         }
+        public static void UpdateUser (User u)
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                
+                context.Users.Attach(u);
+                var entry = context.Entry(u);
+                entry.Property(e => e.About).IsModified = true;
+                context.SaveChanges();
+                
+            }
+        }
         public static User GetUser(string username)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())

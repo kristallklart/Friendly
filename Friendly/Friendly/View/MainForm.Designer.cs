@@ -396,6 +396,7 @@
             this.button_UpdateDetails.TabIndex = 12;
             this.button_UpdateDetails.Text = "Update";
             this.button_UpdateDetails.UseVisualStyleBackColor = true;
+            this.button_UpdateDetails.Click += new System.EventHandler(this.button_UpdateDetails_Click);
             // 
             // label_AboutMe
             // 
