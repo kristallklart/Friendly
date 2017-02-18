@@ -493,6 +493,7 @@
             // 
             // cueTextBox_ProfessionalTitle
             // 
+            this.cueTextBox_ProfessionalTitle = new Utilities.CueTextBox();
             this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
             this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
             this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
