@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Friendly.Model;
 
 namespace Friendly.View
 {
     public partial class PopUpForm : Form
     {
-        public PopUpForm()
+        
+        public PopUpForm(string selectedUser)
         {
             InitializeComponent();
+            
+            
         }
 
         private void picBoxMatchImage_Click(object sender, EventArgs e)
