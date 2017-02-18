@@ -28,58 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBoxUsername = new System.Windows.Forms.TextBox();
-            this.txtBoxPassword = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelUsername = new System.Windows.Forms.Label();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.linkLabelCreateAccount = new System.Windows.Forms.LinkLabel();
             this.buttonNoLogin = new System.Windows.Forms.Button();
             this.groupBoxLogin = new System.Windows.Forms.GroupBox();
+            this.labelMustPassword = new System.Windows.Forms.Label();
+            this.labelMustUsername = new System.Windows.Forms.Label();
+            this.labelFeedback = new System.Windows.Forms.Label();
+            this.errorProviderTextBoxes = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTextBoxes)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtBoxUsername
+            // textBoxUsername
             // 
-            this.txtBoxUsername.Location = new System.Drawing.Point(98, 64);
-            this.txtBoxUsername.Name = "txtBoxUsername";
-            this.txtBoxUsername.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxUsername.TabIndex = 0;
+            this.errorProviderTextBoxes.SetIconPadding(this.textBoxUsername, 4);
+            this.textBoxUsername.Location = new System.Drawing.Point(98, 64);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(100, 20);
+            this.textBoxUsername.TabIndex = 0;
+            this.textBoxUsername.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
+            this.textBoxUsername.Validated += new System.EventHandler(this.textBox_Validated);
             // 
-            // txtBoxPassword
+            // textBoxPassword
             // 
-            this.txtBoxPassword.Location = new System.Drawing.Point(98, 101);
-            this.txtBoxPassword.Name = "txtBoxPassword";
-            this.txtBoxPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxPassword.TabIndex = 1;
-            this.txtBoxPassword.UseSystemPasswordChar = true;
+            this.errorProviderTextBoxes.SetIconPadding(this.textBoxPassword, 4);
+            this.textBoxPassword.Location = new System.Drawing.Point(98, 101);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPassword.TabIndex = 1;
+            this.textBoxPassword.UseSystemPasswordChar = true;
+            this.textBoxPassword.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
+            this.textBoxPassword.Validated += new System.EventHandler(this.textBox_Validated);
             // 
-            // lblPassword
+            // labelPassword
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(36, 104);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblPassword.TabIndex = 2;
-            this.lblPassword.Text = "Password:";
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(36, 104);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(56, 13);
+            this.labelPassword.TabIndex = 2;
+            this.labelPassword.Text = "Password:";
             // 
-            // lblUsername
+            // labelUsername
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(34, 67);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblUsername.TabIndex = 3;
-            this.lblUsername.Text = "Username:";
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Location = new System.Drawing.Point(34, 67);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(58, 13);
+            this.labelUsername.TabIndex = 3;
+            this.labelUsername.Text = "Username:";
             // 
-            // btnLogin
+            // buttonLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(123, 127);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Location = new System.Drawing.Point(123, 127);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(75, 23);
+            this.buttonLogin.TabIndex = 4;
+            this.buttonLogin.Text = "Login";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // linkLabelCreateAccount
             // 
@@ -104,43 +117,85 @@
             // 
             // groupBoxLogin
             // 
-            this.groupBoxLogin.Controls.Add(this.txtBoxUsername);
+            this.groupBoxLogin.Controls.Add(this.labelMustPassword);
+            this.groupBoxLogin.Controls.Add(this.labelMustUsername);
+            this.groupBoxLogin.Controls.Add(this.textBoxUsername);
             this.groupBoxLogin.Controls.Add(this.buttonNoLogin);
-            this.groupBoxLogin.Controls.Add(this.txtBoxPassword);
+            this.groupBoxLogin.Controls.Add(this.textBoxPassword);
             this.groupBoxLogin.Controls.Add(this.linkLabelCreateAccount);
-            this.groupBoxLogin.Controls.Add(this.lblPassword);
-            this.groupBoxLogin.Controls.Add(this.btnLogin);
-            this.groupBoxLogin.Controls.Add(this.lblUsername);
+            this.groupBoxLogin.Controls.Add(this.labelPassword);
+            this.groupBoxLogin.Controls.Add(this.buttonLogin);
+            this.groupBoxLogin.Controls.Add(this.labelUsername);
             this.groupBoxLogin.Location = new System.Drawing.Point(31, 32);
             this.groupBoxLogin.Name = "groupBoxLogin";
-            this.groupBoxLogin.Size = new System.Drawing.Size(259, 290);
+            this.groupBoxLogin.Size = new System.Drawing.Size(259, 248);
             this.groupBoxLogin.TabIndex = 7;
             this.groupBoxLogin.TabStop = false;
             this.groupBoxLogin.Text = "Login";
+            // 
+            // labelMustPassword
+            // 
+            this.labelMustPassword.AutoSize = true;
+            this.labelMustPassword.ForeColor = System.Drawing.Color.Red;
+            this.labelMustPassword.Location = new System.Drawing.Point(205, 107);
+            this.labelMustPassword.Name = "labelMustPassword";
+            this.labelMustPassword.Size = new System.Drawing.Size(11, 13);
+            this.labelMustPassword.TabIndex = 8;
+            this.labelMustPassword.Text = "*";
+            // 
+            // labelMustUsername
+            // 
+            this.labelMustUsername.AutoSize = true;
+            this.labelMustUsername.ForeColor = System.Drawing.Color.Red;
+            this.labelMustUsername.Location = new System.Drawing.Point(205, 70);
+            this.labelMustUsername.Name = "labelMustUsername";
+            this.labelMustUsername.Size = new System.Drawing.Size(11, 13);
+            this.labelMustUsername.TabIndex = 7;
+            this.labelMustUsername.Text = "*";
+            // 
+            // labelFeedback
+            // 
+            this.labelFeedback.AutoSize = true;
+            this.labelFeedback.Location = new System.Drawing.Point(13, 309);
+            this.labelFeedback.Name = "labelFeedback";
+            this.labelFeedback.Size = new System.Drawing.Size(0, 13);
+            this.labelFeedback.TabIndex = 8;
+            // 
+            // errorProviderTextBoxes
+            // 
+            this.errorProviderTextBoxes.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderTextBoxes.ContainerControl = this;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 334);
+            this.Controls.Add(this.labelFeedback);
             this.Controls.Add(this.groupBoxLogin);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.groupBoxLogin.ResumeLayout(false);
             this.groupBoxLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTextBoxes)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtBoxUsername;
-        private System.Windows.Forms.TextBox txtBoxPassword;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Label labelUsername;
+        private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.LinkLabel linkLabelCreateAccount;
         private System.Windows.Forms.Button buttonNoLogin;
         private System.Windows.Forms.GroupBox groupBoxLogin;
+        private System.Windows.Forms.Label labelFeedback;
+        private System.Windows.Forms.ErrorProvider errorProviderTextBoxes;
+        private System.Windows.Forms.Label labelMustPassword;
+        private System.Windows.Forms.Label labelMustUsername;
     }
 }

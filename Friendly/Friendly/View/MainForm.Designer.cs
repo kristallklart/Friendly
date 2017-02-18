@@ -60,7 +60,7 @@
             this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
             this.dataGridView_MyMatchesCities = new System.Windows.Forms.DataGridView();
             this.label_Messages = new System.Windows.Forms.Label();
-            this.TabControlMain.SuspendLayout();
+            this.tabControlMain.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -431,28 +431,28 @@
             // 
             this.comboBox_ProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_ProfessionalField.FormattingEnabled = true;
-            this.comboBox_ProfessionalField.Items.AddRange(new object[] {
-            "Administration, economics, law",
-            "Agriculture",
-            "Beauty care",
-            "Building and construction",
-            "Computer / IT",
-            "Craft professions",
-            "Culture, media, design",
-            "Educational work",
-            "Healthcare",
-            "Hotel and restaurant",
-            "Industrial manufacturing",
-            "Installation, operation, maintenance",
-            "Managers and executive directors",
-            "Military",
-            "Sales, purchases and marketing",
-            "Sanitation and cleaning",
-            "Scientific work",
-            "Security",
-            "Social work",
-            "Technical work",
-            "Transport"});
+            //this.comboBox_ProfessionalField.Items.AddRange(new object[] {
+            //"Administration, economics, law",
+            //"Agriculture",
+            //"Beauty care",
+            //"Building and construction",
+            //"Computer / IT",
+            //"Craft professions",
+            //"Culture, media, design",
+            //"Educational work",
+            //"Healthcare",
+            //"Hotel and restaurant",
+            //"Industrial manufacturing",
+            //"Installation, operation, maintenance",
+            //"Managers and executive directors",
+            //"Military",
+            //"Sales, purchases and marketing",
+            //"Sanitation and cleaning",
+            //"Scientific work",
+            //"Security",
+            //"Social work",
+            //"Technical work",
+            //"Transport"});
             this.comboBox_ProfessionalField.Location = new System.Drawing.Point(177, 119);
             this.comboBox_ProfessionalField.Name = "comboBox_ProfessionalField";
             this.comboBox_ProfessionalField.Size = new System.Drawing.Size(222, 21);
@@ -602,7 +602,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "MainForm";
             this.Text = " ";
-            this.TabControlMain.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.tab_MyProfile.ResumeLayout(false);
             this.panel_IWant.ResumeLayout(false);
             this.panel_IWant.PerformLayout();

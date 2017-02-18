@@ -7,16 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Friendly.Model;
+using Friendly.ControllerLayer;
 
 
 namespace Friendly.View
 {
     public partial class MainForm : Form
     {
-        
 
+        private User currentUser;
         public MainForm()
         {
+            InitializeComponent();
+        }
+        public MainForm(User user)
+        {
+            currentUser = user;
             InitializeComponent();
             TabControlMain.SelectedIndexChanged += new EventHandler(TabControlMain_SelectedIndexChanged);
             for (int i = 1940; i <= 1999; i++)
@@ -42,6 +49,16 @@ namespace Friendly.View
 
 
 
+        private void button_UpdateDetails_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
 }
 
