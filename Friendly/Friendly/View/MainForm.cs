@@ -58,9 +58,9 @@ namespace Friendly.View
             for (int i = 1; i < dataGridView_MyMatchesCities.Columns.Count; i++)
                 dataGridView_MyMatchesCities.Columns[i].Visible = false;
         }
-        public void UsersByCityToDataGrid(string selectedCity)
+        public void UsersByCityToDataGrid(string selectedCity, User currentuser)
         {
-            dataGridView_MyMatches.DataSource = Controller.GetUsersByCity(selectedCity);
+            dataGridView_MyMatches.DataSource = Controller.GetUsersByCity(selectedCity,currentuser);
             
         }
 
@@ -107,7 +107,7 @@ namespace Friendly.View
             {
                 DataGridViewRow selectedRow = dataGridView_MyMatchesCities.Rows[e.RowIndex];
                 string selectedCity = selectedRow.Cells[0].Value.ToString();
-                UsersByCityToDataGrid(selectedCity);
+                UsersByCityToDataGrid(selectedCity, currentUser);
                 
 
             }

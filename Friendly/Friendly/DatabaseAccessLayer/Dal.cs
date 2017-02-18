@@ -78,11 +78,11 @@ namespace Friendly.DatabaseAccessLayer
                 return industries; 
             }
         }
-        public static List<User_Location_Purpose> GetUsersByCity(string city)
+        public static List<User_Location_Purpose> GetUsersByCity(string city,User currentuser)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-                List<User_Location_Purpose> cities = context.User_Location_Purpose.Where(l => l.City == city).ToList();
+                List<User_Location_Purpose> cities = context.User_Location_Purpose.Where(l => l.City == city).Where(l => l.Username != currentuser.Username).ToList();
 
                 return cities;
             }

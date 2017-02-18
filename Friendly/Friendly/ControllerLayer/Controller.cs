@@ -31,9 +31,9 @@ namespace Friendly.ControllerLayer
         {
             return Dal.GetFieldOfProfessions();
         }
-        public static List<User_Location_Purpose> GetUsersByCity(string city)
+        public static List<User_Location_Purpose> GetUsersByCity(string city, User currentuser)
         {
-            return Dal.GetUsersByCity(city);
+            return Dal.GetUsersByCity(city,currentuser);
         }
             
 
