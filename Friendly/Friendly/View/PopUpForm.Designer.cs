@@ -46,7 +46,6 @@
             this.picBoxMatchImage.Size = new System.Drawing.Size(100, 86);
             this.picBoxMatchImage.TabIndex = 0;
             this.picBoxMatchImage.TabStop = false;
-            this.picBoxMatchImage.Click += new System.EventHandler(this.picBoxMatchImage_Click);
             // 
             // label_MatchFirstName
             // 
@@ -63,7 +62,6 @@
             this.label_MatchLastName.Size = new System.Drawing.Size(100, 20);
             this.label_MatchLastName.TabIndex = 10;
             this.label_MatchLastName.Text = "LastName";
-            this.label_MatchLastName.Click += new System.EventHandler(this.label_MatchLastName_Click);
             // 
             // label_MatchAge
             // 
@@ -72,7 +70,6 @@
             this.label_MatchAge.Size = new System.Drawing.Size(100, 20);
             this.label_MatchAge.TabIndex = 11;
             this.label_MatchAge.Text = "Age";
-            this.label_MatchAge.Click += new System.EventHandler(this.label_MatchAge_Click);
             // 
             // label_MatchProfessionalField
             // 
@@ -89,7 +86,6 @@
             this.label_ProfessionalTitle.Size = new System.Drawing.Size(150, 20);
             this.label_ProfessionalTitle.TabIndex = 13;
             this.label_ProfessionalTitle.Text = "ProfessionalTitle";
-            this.label_ProfessionalTitle.Click += new System.EventHandler(this.label_ProfessionalTitle_Click);
             // 
             // label_Aboutme
             // 
