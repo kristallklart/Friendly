@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.Entity.Core;
 using System.Data.SqlClient;
 using Friendly.Utilities;
 using Friendly.Model;
 using Friendly.DatabaseAccessLayer;
 using Friendly.ControllerLayer;
+using Sodium;
+using Sodium.Exceptions;
 
 namespace Friendly.View
 {
@@ -37,7 +38,7 @@ namespace Friendly.View
             {
                 User user = new User();
                 user.Username = textBoxUsername.Text.Trim();
-                user.Password = textBoxPassword.Text.Trim();
+                user.Password = PasswordHash.ScryptHashString(textBoxPassword.Text.Trim(), PasswordHash.Strength.Medium);
                 user.FirstName = textBoxFirstName.Text.Trim();
                 user.LastName = textBoxLastName.Text.Trim();
                 try
@@ -61,23 +62,23 @@ namespace Friendly.View
             if (tempBox.Text.Trim().Length == 0)
             {
                 e.Cancel = true;
-                labelFeedback.Text = "Please fill in all the details";
+                labelFeedback.Text = "Please fill in all the details.";
                 switch (tempBox.Name.Trim())
                 {
                     case ("textBoxUsername"):
-                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter a username");
+                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter a username.");
                         break;
                     case ("textBoxPassword"):
-                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter a password");
+                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter a password.");
                         break;
                     case ("textBoxFirstName"):
-                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter your firstname");
+                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter your firstname.");
                         break;
                     case ("textBoxLastName"):
-                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter your lastname");
+                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter your lastname.");
                         break;
                     default:
-                        this.errorProviderTextBoxes.SetError(tempBox, "Please fill in all the details");
+                        this.errorProviderTextBoxes.SetError(tempBox, "Please fill in all the details.");
                         break;
                 }
             }

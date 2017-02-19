@@ -26,6 +26,10 @@ namespace Friendly.Utilities
                         break;
                 }
             }
+            else if (e is InvalidUserOrPasswordException)
+            {
+                message = e.Message;
+            }
             return message;
         }
     }
