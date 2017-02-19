@@ -9,12 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Friendly.ControllerLayer;
+using Friendly.Model;
 using Friendly.Utilities;
 
 namespace Friendly.View
 {
     public partial class LoginForm : Form
     {
+        private User user;
+
+        public User User
+        {
+            get { return user; }
+            set { user = value; }
+        }
+
         public LoginForm()
         {
             InitializeComponent();
@@ -39,8 +48,10 @@ namespace Friendly.View
             {
                 try
                 {
-                    if (Controller.CheckUsernameAndPassword(textBoxUsername.Text.Trim(), textBoxPassword.Text.Trim()))
+                    User tempUser = Controller.CheckUsernameAndPassword(textBoxUsername.Text.Trim(), textBoxPassword.Text.Trim());
+                    if (tempUser != null)
                     {
+                        User = tempUser;
                         this.DialogResult = DialogResult.OK;
                     }
                 }

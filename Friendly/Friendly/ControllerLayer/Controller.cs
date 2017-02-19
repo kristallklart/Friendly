@@ -15,9 +15,13 @@ namespace Friendly.ControllerLayer
         {
             Dal.AddNewUser(user);
         }
-        public static bool CheckUsernameAndPassword(string username, string password)
+        public static User CheckUsernameAndPassword(string username, string password)
         {
             return Dal.CheckUsernameAndPassword(username, password);
-        }    
+        }
+        public static User GetUser(string username)
+        {
+            return Dal.GetUser(username);
+        }
     }
 }

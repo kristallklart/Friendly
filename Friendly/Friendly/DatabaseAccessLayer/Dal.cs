@@ -30,7 +30,7 @@ namespace Friendly.DatabaseAccessLayer
                 }
             }
         }
-        public static bool CheckUsernameAndPassword(string username, string password)
+        public static User CheckUsernameAndPassword(string username, string password)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
@@ -44,13 +44,20 @@ namespace Friendly.DatabaseAccessLayer
                     User tempUser = context.Users.FirstOrDefault(user => user.Username.Equals(username, StringComparison.Ordinal));
                     if (PasswordHash.ScryptHashStringVerify(tempUser.Password, password))
                     {
-                        return true;
+                        return tempUser;
                     }
                     else
                     {
                         throw new InvalidUserOrPasswordException("The entered password doesn't match for username: " + username);
                     }
                 }
+            }
+        }
+        public static User GetUser(string username)
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                return context.Users.FirstOrDefault(user => user.Username.Equals(username, StringComparison.Ordinal));
             }
         }
     }
