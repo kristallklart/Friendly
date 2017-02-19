@@ -30,26 +30,6 @@ namespace Friendly.DatabaseAccessLayer
                 }
             }
         }
-        public static bool CheckUserExists(string username)
-        {
-            bool userExists;
-            using (FriendlyDBEntities context = new FriendlyDBEntities())
-            {
-                try
-                {
-                    userExists = context.Users.Any(user => user.Username.Equals(username, StringComparison.Ordinal));                   
-                }
-                catch (SqlException)
-                {
-                    throw;
-                }
-                catch (ArgumentNullException)
-                {
-                    throw;
-                }
-                return userExists;
-            }
-        }
         public static bool CheckUsernameAndPassword(string username, string password)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
