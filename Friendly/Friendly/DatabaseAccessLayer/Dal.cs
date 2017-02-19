@@ -52,18 +52,16 @@ namespace Friendly.DatabaseAccessLayer
         }
         public static bool CheckUsernameAndPassword(string username, string password)
         {
-            bool userExists;
-            User tempUser;
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-                userExists = context.Users.Any(user => user.Username.Equals(username, StringComparison.Ordinal));
+                bool userExists = context.Users.Any(user => user.Username.Equals(username, StringComparison.Ordinal));
                 if (!userExists)
                 {
                     throw new InvalidUserOrPasswordException("Couldn't find user with username: " + username);
                 }
                 else
                 {
-                    tempUser = context.Users.FirstOrDefault(user => user.Username.Equals(username, StringComparison.Ordinal));
+                    User tempUser = context.Users.FirstOrDefault(user => user.Username.Equals(username, StringComparison.Ordinal));
                     if (PasswordHash.ScryptHashStringVerify(tempUser.Password, password))
                     {
                         return true;
