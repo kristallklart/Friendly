@@ -41,7 +41,7 @@
             // 
             // picBoxMatchImage
             // 
-            this.picBoxMatchImage.Location = new System.Drawing.Point(34, 79);
+            this.picBoxMatchImage.Location = new System.Drawing.Point(46, 82);
             this.picBoxMatchImage.Name = "picBoxMatchImage";
             this.picBoxMatchImage.Size = new System.Drawing.Size(100, 86);
             this.picBoxMatchImage.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // label_MatchFirstName
             // 
-            this.label_MatchFirstName.Location = new System.Drawing.Point(140, 82);
+            this.label_MatchFirstName.Location = new System.Drawing.Point(152, 82);
             this.label_MatchFirstName.Name = "label_MatchFirstName";
             this.label_MatchFirstName.Size = new System.Drawing.Size(100, 20);
             this.label_MatchFirstName.TabIndex = 9;
@@ -63,18 +63,20 @@
             this.label_MatchLastName.Size = new System.Drawing.Size(100, 20);
             this.label_MatchLastName.TabIndex = 10;
             this.label_MatchLastName.Text = "LastName";
+            this.label_MatchLastName.Click += new System.EventHandler(this.label_MatchLastName_Click);
             // 
             // label_MatchAge
             // 
-            this.label_MatchAge.Location = new System.Drawing.Point(141, 102);
+            this.label_MatchAge.Location = new System.Drawing.Point(152, 107);
             this.label_MatchAge.Name = "label_MatchAge";
             this.label_MatchAge.Size = new System.Drawing.Size(100, 20);
             this.label_MatchAge.TabIndex = 11;
             this.label_MatchAge.Text = "Age";
+            this.label_MatchAge.Click += new System.EventHandler(this.label_MatchAge_Click);
             // 
             // label_MatchProfessionalField
             // 
-            this.label_MatchProfessionalField.Location = new System.Drawing.Point(140, 127);
+            this.label_MatchProfessionalField.Location = new System.Drawing.Point(152, 127);
             this.label_MatchProfessionalField.Name = "label_MatchProfessionalField";
             this.label_MatchProfessionalField.Size = new System.Drawing.Size(150, 20);
             this.label_MatchProfessionalField.TabIndex = 12;
@@ -82,16 +84,17 @@
             // 
             // label_ProfessionalTitle
             // 
-            this.label_ProfessionalTitle.Location = new System.Drawing.Point(141, 168);
+            this.label_ProfessionalTitle.Location = new System.Drawing.Point(152, 148);
             this.label_ProfessionalTitle.Name = "label_ProfessionalTitle";
             this.label_ProfessionalTitle.Size = new System.Drawing.Size(150, 20);
             this.label_ProfessionalTitle.TabIndex = 13;
             this.label_ProfessionalTitle.Text = "ProfessionalTitle";
+            this.label_ProfessionalTitle.Click += new System.EventHandler(this.label_ProfessionalTitle_Click);
             // 
             // label_Aboutme
             // 
             this.label_Aboutme.AutoSize = true;
-            this.label_Aboutme.Location = new System.Drawing.Point(43, 217);
+            this.label_Aboutme.Location = new System.Drawing.Point(43, 235);
             this.label_Aboutme.Name = "label_Aboutme";
             this.label_Aboutme.Size = new System.Drawing.Size(50, 13);
             this.label_Aboutme.TabIndex = 14;

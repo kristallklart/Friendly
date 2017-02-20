@@ -22,5 +22,19 @@ namespace Friendly.View
 
         }
 
+        private void label_MatchLastName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_ProfessionalTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_MatchAge_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
