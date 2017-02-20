@@ -23,5 +23,9 @@ namespace Friendly.ControllerLayer
         {
             return Dal.GetUser(username);
         }
+        public static List<User_Location_Purpose> GetUserLocations(string username)
+        {
+            return Dal.GetUserLocations(username);
+        }
     }
 }

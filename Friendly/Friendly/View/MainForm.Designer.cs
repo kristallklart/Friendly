@@ -44,7 +44,6 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox_City = new System.Windows.Forms.ComboBox();
             this.panel_PersonalDetails = new System.Windows.Forms.Panel();
-            this.cueTextBox_ProfessionalTitle = new Friendly.Utilities.CueTextBox();
             this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
             this.button_UpdateDetails = new System.Windows.Forms.Button();
             this.label_AboutMe = new System.Windows.Forms.Label();
@@ -366,14 +365,6 @@
             this.panel_PersonalDetails.Size = new System.Drawing.Size(417, 388);
             this.panel_PersonalDetails.TabIndex = 1;
             // 
-            // cueTextBox_ProfessionalTitle
-            // 
-            this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
-            this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
-            this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
-            this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
-            this.cueTextBox_ProfessionalTitle.TabIndex = 22;
-            // 
             // picBox_ProfilePic
             // 
             this.picBox_ProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.Image")));
@@ -479,6 +470,7 @@
             this.dataGridView_MyMatchesCities.Name = "dataGridView_MyMatchesCities";
             this.dataGridView_MyMatchesCities.Size = new System.Drawing.Size(240, 344);
             this.dataGridView_MyMatchesCities.TabIndex = 0;
+            this.dataGridView_MyMatchesCities.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatchesCities_CellContentClick);
             // 
             // label_Messages
             // 
@@ -498,6 +490,14 @@
             this.label_Age.TabIndex = 23;
             this.label_Age.Text = "Age";
             this.label_Age.Click += new System.EventHandler(this.label_Age_Click);
+            // 
+            // cueTextBox_ProfessionalTitle
+            // 
+            this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
+            this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
+            this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
+            this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
+            this.cueTextBox_ProfessionalTitle.TabIndex = 22;
             // 
             // MainForm
             // 
