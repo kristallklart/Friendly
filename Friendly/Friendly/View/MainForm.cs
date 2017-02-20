@@ -68,7 +68,7 @@ namespace Friendly.View
             textBox_LastName.Text = currentUser.LastName;
 
             if (currentUser.Birthdate != null)
-                label_Age.Text = Controller.GetAge(currentUser.Username).ToString() + "years";
+                label_Age.Text = Controller.GetAge(currentUser.Username).ToString() + " years";
 
             comboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
             comboBox_ProfessionalField.DisplayMember = "Industry";
@@ -91,12 +91,14 @@ namespace Friendly.View
             {
                 textBox_AboutMe.Text = currentUser.About;
             }
-
+            
             comboBox_InterestedIn.DataSource = Controller.GetPurposes();
             comboBox_InterestedIn.DisplayMember = "Purposetype";
+            comboBox_InterestedIn.Text = "Interested In";
 
             comboBox_City.DataSource = Controller.GetLocations();
             comboBox_City.DisplayMember = "City";
+            comboBox_City.Text = "In City";
         }
 
         private void label_Age_Click(object sender, EventArgs e)
