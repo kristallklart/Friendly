@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Friendly.Model;
+using Friendly.ControllerLayer;
 
 namespace Friendly.View
 {
@@ -29,6 +30,11 @@ namespace Friendly.View
             }
         }
         private void button_UpdateDetails_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
