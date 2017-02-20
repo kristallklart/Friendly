@@ -49,10 +49,32 @@ namespace Friendly.View
         {
 
         }
-
+         
         private void MainForm_Load(object sender, EventArgs e)
         {
+            textBox_FirstName.Text = currentUser.FirstName;
+            textBox_LastName.Text = currentUser.LastName;
+            label_Age.Text = Controller.GetAge(currentUser.Username).ToString();
+            comboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
+            comboBox_ProfessionalField.DisplayMember = "Industry";
+            
+            if (currentUser.Industry != null)
+            {
+                comboBox_ProfessionalField.Text = currentUser.Industry;
+            }else
+            {
+                comboBox_ProfessionalField.Text = "Field of profession";
+            }
 
+            if (currentUser.Profession != null)
+            {
+                cueTextBox_ProfessionalTitle.Text = currentUser.Profession;
+            }
+
+            if(currentUser.About != null)
+            {
+                textBox_AboutMe.Text = currentUser.About;
+            }
         }
 
         private void dataGridView_MyMatchesCities_CellContentClick(object sender, DataGridViewCellEventArgs e)

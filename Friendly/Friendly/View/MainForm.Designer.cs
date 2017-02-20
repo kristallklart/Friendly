@@ -495,7 +495,6 @@
             // cueTextBox_ProfessionalTitle
             // 
             this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
-            this.cueTextBox_ProfessionalTitle.HideSelection = false;
             this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
             this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
             this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 29);
@@ -513,6 +512,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "MainForm";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControlMain.ResumeLayout(false);
             this.tab_MyProfile.ResumeLayout(false);
             this.panel_IWant.ResumeLayout(false);

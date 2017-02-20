@@ -27,5 +27,14 @@ namespace Friendly.ControllerLayer
         {
             return Dal.GetUserLocations(username);
         }
+        public static List<FieldOfProfession> GetFieldOfProfessions()
+        {
+            return Dal.GetFieldOfProfessions();
+        }
+
+        public static int GetAge(string username)
+        {
+            return Dal.GetAge(username);
+        }
     }
 }
