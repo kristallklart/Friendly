@@ -57,6 +57,8 @@ namespace Friendly.View
         public void UsersByCityToDataGrid(string selectedCity, User currentuser)
         {
             dataGridView_MyMatches.DataSource = Controller.GetUsersByCity(selectedCity, currentuser);
+            for (int i = 5; i < dataGridView_MyMatches.Columns.Count; i++)
+                dataGridView_MyMatches.Columns[i].Visible = false;
 
         }
 
