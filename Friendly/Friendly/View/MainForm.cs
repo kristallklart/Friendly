@@ -26,10 +26,6 @@ namespace Friendly.View
             currentUser = user;
             InitializeComponent();
             tabControlMain.SelectedIndexChanged += new EventHandler(TabControlMain_SelectedIndexChanged);
-            for (int i = 1940; i <= 1999; i++)
-            {
-                comboBox_Year.Items.Add(i);
-            }
             
         }
 
@@ -55,6 +51,11 @@ namespace Friendly.View
         }
 
         private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Age_Click(object sender, EventArgs e)
         {
 
         }
