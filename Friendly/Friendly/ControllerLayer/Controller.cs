@@ -31,10 +31,15 @@ namespace Friendly.ControllerLayer
         {
             return Dal.GetFieldOfProfessions();
         }
+        public static List<User_Location_Purpose> GetUsersByCity(string city, User currentuser)
+        {
+            return Dal.GetUsersByCity(city,currentuser);
+        }
+            
 
         public static int GetAge(string username)
-        {
-            return Dal.GetAge(username);
+       {
+           return Dal.GetAge(username);
         }
 
         public static List<Purpose> GetPurposes()

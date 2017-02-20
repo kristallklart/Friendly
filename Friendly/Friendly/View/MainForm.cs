@@ -26,7 +26,6 @@ namespace Friendly.View
             currentUser = user;
             InitializeComponent();
             tabControlMain.SelectedIndexChanged += new EventHandler(TabControlMain_SelectedIndexChanged);
-            
         }
 
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
@@ -34,42 +33,51 @@ namespace Friendly.View
             switch ((sender as TabControl).SelectedIndex)
             {
                 case 0:
-                    dataGridView1.DataSource = Controller.GetUserLocations(currentUser.Username);
-                    dataGridView1.Columns[1].Visible = false;
-                    for (int i = 5;  i < dataGridView1.Columns.Count ; i++)
-                        dataGridView1.Columns[i].Visible = false;
-
-
+                    UsersLocationsTimesToDataGrid();
 
                     break;
                 case 1:
-                    dataGridView_MyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
-                    for (int i = 1; i < dataGridView_MyMatchesCities.Columns.Count; i++)
-                        dataGridView_MyMatchesCities.Columns[i].Visible = false;
+                    UsersLocationsToDataGrid();
                     break;
             }
         }
-    
-
-
-
-        private void button_UpdateDetails_Click(object sender, EventArgs e)
+        public void UsersLocationsTimesToDataGrid()
         {
+            dataGridView1.DataSource = Controller.GetUserLocations(currentUser.Username);
+            dataGridView1.Columns[1].Visible = false;
+            for (int i = 5; i < dataGridView1.Columns.Count; i++)
+                dataGridView1.Columns[i].Visible = false;
+        }
+        public void UsersLocationsToDataGrid()
+        {
+            dataGridView_MyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
+            for (int i = 1; i < dataGridView_MyMatchesCities.Columns.Count; i++)
+                dataGridView_MyMatchesCities.Columns[i].Visible = false;
+        }
+        public void UsersByCityToDataGrid(string selectedCity, User currentuser)
+        {
+            dataGridView_MyMatches.DataSource = Controller.GetUsersByCity(selectedCity, currentuser);
 
         }
-         
+
+
         private void MainForm_Load(object sender, EventArgs e)
         {
+            UsersLocationsTimesToDataGrid();
             textBox_FirstName.Text = currentUser.FirstName;
             textBox_LastName.Text = currentUser.LastName;
-            label_Age.Text = Controller.GetAge(currentUser.Username) + " years";
+
+            if (currentUser.Birthdate != null)
+                label_Age.Text = Controller.GetAge(currentUser.Username).ToString();
+
             comboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
             comboBox_ProfessionalField.DisplayMember = "Industry";
-            
+
             if (currentUser.Industry != null)
             {
                 comboBox_ProfessionalField.Text = currentUser.Industry;
-            }else
+            }
+            else
             {
                 comboBox_ProfessionalField.Text = "Field of profession";
             }
@@ -79,26 +87,39 @@ namespace Friendly.View
                 cueTextBox_ProfessionalTitle.Text = currentUser.Profession;
             }
 
-            if(currentUser.About != null)
+            if (currentUser.About != null)
             {
                 textBox_AboutMe.Text = currentUser.About;
             }
-
-            comboBox_InterestedIn.DataSource = Controller.GetPurposes();
-            comboBox_InterestedIn.DisplayMember = "Purposetype";
-
-            comboBox_City.DataSource = Controller.GetLocations();
-            comboBox_City.DisplayMember = "City";
-        }
-
-        private void dataGridView_MyMatchesCities_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void label_Age_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView_MyMatchesCities.Rows[e.RowIndex];
+                string selectedCity = selectedRow.Cells[0].Value.ToString();
+                UsersByCityToDataGrid(selectedCity, currentUser);
+
+
+            }
+        }
+
+        private void dataGridView_MyMatches_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView_MyMatches.Rows[e.RowIndex];
+                string selectedUser = selectedRow.Cells[1].Value.ToString();
+                PopUpForm showUserForm = new PopUpForm(selectedUser);
+                showUserForm.Show();
+
+            }
         }
     }
 }

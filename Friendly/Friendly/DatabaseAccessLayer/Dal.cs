@@ -78,19 +78,28 @@ namespace Friendly.DatabaseAccessLayer
                 return industries; 
             }
         }
-
-        public static int GetAge(string username)
+        public static List<User_Location_Purpose> GetUsersByCity(string city,User currentuser)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-                int age = 0;
+                List<User_Location_Purpose> cities = context.User_Location_Purpose.Where(l => l.City == city).Where(l => l.Username != currentuser.Username).ToList();
+
+                return cities;
+            }
+        }
+
+        public static int GetAge(string username)
+        {
+           using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+               int age = 0;
                 //kolla med labb
                 DateTime dateOfBirth = Convert.ToDateTime(context.Users.Where(u => u.Username == username).Select(u => u.Birthdate).FirstOrDefault());
                 age = DateTime.Now.Year - dateOfBirth.Year;
                 if (DateTime.Now.DayOfYear < dateOfBirth.DayOfYear)
-                    age = age - 1;
+                   age = age - 1;
 
-                return age;
+               return age;
             }
         }
 
