@@ -85,12 +85,29 @@ namespace Friendly.DatabaseAccessLayer
             {
                 int age = 0;
                 //kolla med labb
-                DateTime dateOfBirth = (DateTime)context.Users.Where(u => u.Username == username).Select(u => u.Birthdate).FirstOrDefault();
+                DateTime dateOfBirth = Convert.ToDateTime(context.Users.Where(u => u.Username == username).Select(u => u.Birthdate).FirstOrDefault());
                 age = DateTime.Now.Year - dateOfBirth.Year;
                 if (DateTime.Now.DayOfYear < dateOfBirth.DayOfYear)
                     age = age - 1;
 
                 return age;
+            }
+        }
+
+        public static List<Purpose> GetPurposes()
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                List<Purpose> purposes = context.Purposes.ToList();
+                return purposes;
+            }
+        }
+        public static List<Location> GetLocations()
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                List<Location> locations = context.Locations.ToList();
+                return locations;
             }
         }
     }
