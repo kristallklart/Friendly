@@ -17,30 +17,21 @@ namespace Friendly.View
     public partial class LoginForm : Form
     {
         private User user;
-
         public User User
         {
             get { return user; }
             set { user = value; }
         }
-
         public LoginForm()
         {
             InitializeComponent();
             AutoValidate = AutoValidate.Disable;
         }
-
-        private void buttonNoLogin_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-        }
-
         private void linkLabelCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CreateAccountForm form = new CreateAccountForm();
             form.ShowDialog();
         }
-
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             labelFeedback.Text = "";
@@ -69,7 +60,6 @@ namespace Friendly.View
                 }              
             }
         }
-
         private void textBox_Validating(object sender, CancelEventArgs e)
         {
             TextBox tempBox = sender as TextBox;

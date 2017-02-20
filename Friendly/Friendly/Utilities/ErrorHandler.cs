@@ -8,8 +8,7 @@ using System.Data.SqlClient;
 namespace Friendly.Utilities
 {
     public static class ErrorHandler
-    {
-        
+    {       
         public static string HandleError(Exception e)
         {
             string message = "";
