@@ -66,6 +66,8 @@ namespace Friendly.DatabaseAccessLayer
             {
                 List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(r => r.Username == username).ToList();
                 
+
+
                 return locations; }
         }
     }
