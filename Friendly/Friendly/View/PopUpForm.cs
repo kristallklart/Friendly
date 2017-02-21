@@ -23,7 +23,7 @@ namespace Friendly.View
             label_MatchFirstName.Text = user.FirstName.ToString();
             label_MatchLastName.Text = user.LastName.ToString();
             label_ProfessionalTitle.Text = user.Profession.ToString();
-            label_MatchAge.Text = Controller.GetAge(selectedUser).ToString();
+            label_MatchAge.Text = Controller.GetAge(selectedUser).ToString() + " years";
             label_MatchProfessionalField.Text = user.Industry.ToString();
             textBox_AboutMe.Text = user.About.ToString();
 

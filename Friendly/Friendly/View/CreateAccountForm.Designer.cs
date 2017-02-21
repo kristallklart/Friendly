@@ -46,11 +46,11 @@
             this.labelFeedback = new System.Windows.Forms.Label();
             this.groupBoxComponents = new System.Windows.Forms.GroupBox();
             this.labelMustBirthdate = new System.Windows.Forms.Label();
-            this.labelBirthdate = new System.Windows.Forms.Label();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.cueComboBoxYear = new Friendly.Utilities.CueComboBox();
             this.cueComboBoxMonth = new Friendly.Utilities.CueComboBox();
             this.cueComboBoxDay = new Friendly.Utilities.CueComboBox();
+            this.labelBirthdate = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxComponents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -244,21 +244,6 @@
             this.labelMustBirthdate.TabIndex = 23;
             this.labelMustBirthdate.Text = "*";
             // 
-            // labelBirthdate
-            // 
-            this.labelBirthdate.AutoSize = true;
-            this.labelBirthdate.Location = new System.Drawing.Point(22, 146);
-            this.labelBirthdate.Name = "labelBirthdate";
-            this.labelBirthdate.Size = new System.Drawing.Size(52, 13);
-            this.labelBirthdate.TabIndex = 13;
-            this.labelBirthdate.Text = "Birthdate:";
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.BlinkRate = 50;
-            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider.ContainerControl = this;
-            // 
             // cueComboBoxYear
             // 
             this.cueComboBoxYear.CueText = "Year";
@@ -296,8 +281,24 @@
             this.cueComboBoxDay.Validating += new System.ComponentModel.CancelEventHandler(this.cueComboBox_Validating);
             this.cueComboBoxDay.Validated += new System.EventHandler(this.control_Validated);
             // 
+            // labelBirthdate
+            // 
+            this.labelBirthdate.AutoSize = true;
+            this.labelBirthdate.Location = new System.Drawing.Point(22, 146);
+            this.labelBirthdate.Name = "labelBirthdate";
+            this.labelBirthdate.Size = new System.Drawing.Size(52, 13);
+            this.labelBirthdate.TabIndex = 13;
+            this.labelBirthdate.Text = "Birthdate:";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkRate = 50;
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // CreateAccountForm
             // 
+            this.AcceptButton = this.buttonCreateAccount;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(327, 249);

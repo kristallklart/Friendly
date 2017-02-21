@@ -60,7 +60,7 @@ namespace Friendly.DatabaseAccessLayer
                 User updateUser = context.Users.SingleOrDefault(b => b.Username == u.Username);
                 context.Entry(updateUser).CurrentValues.SetValues(u);
                 context.SaveChanges();
-                }
+            }
         }
         public static User GetUser(string username)
         {
