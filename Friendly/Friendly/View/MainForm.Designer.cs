@@ -42,11 +42,12 @@ namespace Friendly.View
             this.label_Preferences = new System.Windows.Forms.Label();
             this.label_To = new System.Windows.Forms.Label();
             this.label_From = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
             this.comboBox_City = new System.Windows.Forms.ComboBox();
             this.panel_PersonalDetails = new System.Windows.Forms.Panel();
             this.label_Age = new System.Windows.Forms.Label();
+            this.cueTextBox_ProfessionalTitle = new Friendly.Utilities.CueTextBox();
             this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
             this.button_UpdateDetails = new System.Windows.Forms.Button();
             this.label_AboutMe = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@ namespace Friendly.View
             this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
             this.dataGridView_MyMatchesCities = new System.Windows.Forms.DataGridView();
             this.label_Messages = new System.Windows.Forms.Label();
-            this.cueTextBox_ProfessionalTitle = new Friendly.Utilities.CueTextBox();
             this.tabControlMain.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
@@ -81,7 +81,7 @@ namespace Friendly.View
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(814, 446);
             this.tabControlMain.TabIndex = 0;
-            tabControlMain.SelectedIndexChanged += new EventHandler(TabControlMain_SelectedIndexChanged);
+            this.tabControlMain.SelectedIndexChanged += new System.EventHandler(this.TabControlMain_SelectedIndexChanged);
             // 
             // tab_MyProfile
             // 
@@ -106,8 +106,8 @@ namespace Friendly.View
             this.panel_IWant.Controls.Add(this.label_Preferences);
             this.panel_IWant.Controls.Add(this.label_To);
             this.panel_IWant.Controls.Add(this.label_From);
-            this.panel_IWant.Controls.Add(this.dateTimePicker1);
-            this.panel_IWant.Controls.Add(this.dateTimePicker2);
+            this.panel_IWant.Controls.Add(this.dateTimePickerFrom);
+            this.panel_IWant.Controls.Add(this.dateTimePickerTo);
             this.panel_IWant.Controls.Add(this.comboBox_City);
             this.panel_IWant.Location = new System.Drawing.Point(449, 15);
             this.panel_IWant.Name = "panel_IWant";
@@ -150,6 +150,7 @@ namespace Friendly.View
             this.checkBox_Longterm.TabIndex = 18;
             this.checkBox_Longterm.Text = "Longterm?";
             this.checkBox_Longterm.UseVisualStyleBackColor = true;
+            this.checkBox_Longterm.CheckedChanged += new System.EventHandler(this.checkBox_Longterm_CheckedChanged);
             // 
             // button_AddLocation
             // 
@@ -190,21 +191,21 @@ namespace Friendly.View
             this.label_From.TabIndex = 14;
             this.label_From.Text = "From";
             // 
-            // dateTimePicker1
+            // dateTimePickerFrom
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(80, 114);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(99, 22);
-            this.dateTimePicker1.TabIndex = 12;
+            this.dateTimePickerFrom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(80, 114);
+            this.dateTimePickerFrom.Name = "dateTimePickerFrom";
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(99, 22);
+            this.dateTimePickerFrom.TabIndex = 12;
             // 
-            // dateTimePicker2
+            // dateTimePickerTo
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(80, 147);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(99, 22);
-            this.dateTimePicker2.TabIndex = 13;
+            this.dateTimePickerTo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerTo.Location = new System.Drawing.Point(80, 147);
+            this.dateTimePickerTo.Name = "dateTimePickerTo";
+            this.dateTimePickerTo.Size = new System.Drawing.Size(99, 22);
+            this.dateTimePickerTo.TabIndex = 13;
             // 
             // comboBox_City
             // 
@@ -378,6 +379,14 @@ namespace Friendly.View
             this.label_Age.TabIndex = 23;
             this.label_Age.Text = "Age";
             // 
+            // cueTextBox_ProfessionalTitle
+            // 
+            this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
+            this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
+            this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
+            this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
+            this.cueTextBox_ProfessionalTitle.TabIndex = 22;
+            // 
             // picBox_ProfilePic
             // 
             this.picBox_ProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.Image")));
@@ -496,14 +505,6 @@ namespace Friendly.View
             this.label_Messages.TabIndex = 1;
             this.label_Messages.Text = "Messages";
             // 
-            // cueTextBox_ProfessionalTitle
-            // 
-            this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
-            this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
-            this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
-            this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
-            this.cueTextBox_ProfessionalTitle.TabIndex = 22;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -530,6 +531,7 @@ namespace Friendly.View
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatchesCities)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -545,8 +547,8 @@ namespace Friendly.View
         private System.Windows.Forms.TextBox textBox_LastName;
         private System.Windows.Forms.Label label_To;
         private System.Windows.Forms.Label label_From;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTo;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
         private System.Windows.Forms.ComboBox comboBox_City;
         private System.Windows.Forms.Panel panel_IWant;
         private System.Windows.Forms.Label label_Preferences;

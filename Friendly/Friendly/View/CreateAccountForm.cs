@@ -90,5 +90,18 @@ namespace Friendly.View
         {
             this.errorProviderTextBoxes.SetError(sender as Control, string.Empty);
         }
+
+        private void CreateAccountForm_Load(object sender, EventArgs e)
+        {
+            //int[] days = Enumerable.Range(1, 31).ToArray();
+            //comboBoxDay.Items.Add("Day");
+            //foreach (int day in days)
+            //{
+            //    comboBoxDay.Items.Add(day);
+            //}
+            
+            //comboBoxDay.SelectedIndex = 0;
+            
+        }
     }
 }
