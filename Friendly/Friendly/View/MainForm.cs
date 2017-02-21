@@ -90,12 +90,16 @@ namespace Friendly.View
             {
                 textBox_AboutMe.Text = currentUser.About;
             }
-            
+
+
+            DefaultValuesLocation();
+        }
+        private void DefaultValuesLocation()
+        {
             comboBox_InterestedIn.DataSource = Controller.GetPurposes();
             comboBox_InterestedIn.DisplayMember = "Purposetype";
             comboBox_InterestedIn.ValueMember = "Purposetype";
             comboBox_InterestedIn.Text = "Interested In";
-
             comboBox_City.DataSource = Controller.GetLocations();
             comboBox_City.DisplayMember = "City";
             comboBox_City.ValueMember = "City";
@@ -154,6 +158,7 @@ namespace Friendly.View
             {
                 Controller.AddUserLocationPurpose(ulp);
                 UsersLocationsTimesToDataGrid();
+                DefaultValuesLocation();
             }
             catch(DbUpdateException ex)
             {
