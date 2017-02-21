@@ -33,8 +33,20 @@ namespace Friendly.View
                 user.Password = PasswordHash.ScryptHashString(textBoxPassword.Text.Trim(), PasswordHash.Strength.Medium);
                 user.FirstName = textBoxFirstName.Text.Trim();
                 user.LastName = textBoxLastName.Text.Trim();
-
-
+                int day;
+                int month;
+                int year;
+                if (Int32.TryParse(cueComboBoxDay.SelectedItem.ToString(), out day) &&
+                    Int32.TryParse(cueComboBoxMonth.SelectedItem.ToString(), out month) && 
+                    Int32.TryParse(cueComboBoxYear.SelectedItem.ToString(), out year))
+                {
+                    DateTime birthdate = new DateTime(year, month, day);
+                    user.Birthdate = birthdate;
+                }
+                else
+                {
+                    errorProvider.SetError(cueComboBoxYear, "That is not a valid birthdate.");
+                }
                 try
                 {
                     Controller.AddNewUser(user);
@@ -47,6 +59,7 @@ namespace Friendly.View
                 {
                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
+                this.DialogResult = DialogResult.OK;
             }
         }
 
@@ -93,6 +106,8 @@ namespace Friendly.View
                 labelFeedback.Text = "Please fill in all the details.";
                 this.errorProvider.SetError(cueComboBoxYear, "Please fill in a complete birthdate.");
             }
+            else
+                e.Cancel = false;
         }
  
         private void CreateAccountForm_Load(object sender, EventArgs e)
