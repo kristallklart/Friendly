@@ -60,6 +60,8 @@ namespace Friendly.View
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            dateTimePickerFrom.MinDate = DateTime.Today;
+            dateTimePickerTo.MinDate = DateTime.Today;
             UsersLocationsTimesToDataGrid();
             textBox_FirstName.Text = currentUser.FirstName;
             textBox_LastName.Text = currentUser.LastName;
