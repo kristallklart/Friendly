@@ -47,7 +47,6 @@ namespace Friendly.View
             this.comboBox_City = new System.Windows.Forms.ComboBox();
             this.panel_PersonalDetails = new System.Windows.Forms.Panel();
             this.label_Age = new System.Windows.Forms.Label();
-            this.cueTextBox_ProfessionalTitle = new Friendly.Utilities.CueTextBox();
             this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
             this.button_UpdateDetails = new System.Windows.Forms.Button();
             this.label_AboutMe = new System.Windows.Forms.Label();
@@ -60,7 +59,7 @@ namespace Friendly.View
             this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
             this.dataGridView_MyMatchesCities = new System.Windows.Forms.DataGridView();
             this.label_Messages = new System.Windows.Forms.Label();
-            this.tab_MyMessages = new System.Windows.Forms.TabPage();
+            this.cueTextBox_ProfessionalTitle = new Friendly.Utilities.CueTextBox();
             this.tabControlMain.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
@@ -76,7 +75,6 @@ namespace Friendly.View
             // 
             this.tabControlMain.Controls.Add(this.tab_MyProfile);
             this.tabControlMain.Controls.Add(this.tab_MyMatches);
-            this.tabControlMain.Controls.Add(this.tab_MyMessages);
             this.tabControlMain.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMain.Location = new System.Drawing.Point(12, 21);
             this.tabControlMain.Name = "tabControlMain";
@@ -162,6 +160,7 @@ namespace Friendly.View
             this.button_AddLocation.TabIndex = 17;
             this.button_AddLocation.Text = "Add";
             this.button_AddLocation.UseVisualStyleBackColor = true;
+            this.button_AddLocation.Click += new System.EventHandler(this.button_AddLocation_Click);
             // 
             // label_Preferences
             // 
@@ -208,6 +207,7 @@ namespace Friendly.View
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(99, 22);
             this.dateTimePickerTo.TabIndex = 13;
+            this.dateTimePickerFrom.ValueChanged += new System.EventHandler(this.dateTimePickerFrom_ValueChanged);
             // 
             // comboBox_City
             // 
@@ -381,14 +381,6 @@ namespace Friendly.View
             this.label_Age.TabIndex = 23;
             this.label_Age.Text = "Age";
             // 
-            // cueTextBox_ProfessionalTitle
-            // 
-            this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
-            this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
-            this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
-            this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
-            this.cueTextBox_ProfessionalTitle.TabIndex = 22;
-            // 
             // picBox_ProfilePic
             // 
             this.picBox_ProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.Image")));
@@ -507,14 +499,13 @@ namespace Friendly.View
             this.label_Messages.TabIndex = 1;
             this.label_Messages.Text = "Messages";
             // 
-            // tab_MyMessages
+            // cueTextBox_ProfessionalTitle
             // 
-            this.tab_MyMessages.Location = new System.Drawing.Point(4, 22);
-            this.tab_MyMessages.Name = "tab_MyMessages";
-            this.tab_MyMessages.Size = new System.Drawing.Size(806, 420);
-            this.tab_MyMessages.TabIndex = 2;
-            this.tab_MyMessages.Text = "My Messages";
-            this.tab_MyMessages.UseVisualStyleBackColor = true;
+            this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
+            this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
+            this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
+            this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
+            this.cueTextBox_ProfessionalTitle.TabIndex = 22;
             // 
             // MainForm
             // 
@@ -576,7 +567,6 @@ namespace Friendly.View
         private System.Windows.Forms.DataGridView dataGridView_MyMatches;
         private Utilities.CueTextBox cueTextBox_ProfessionalTitle;
         private System.Windows.Forms.Label label_Age;
-        private System.Windows.Forms.TabPage tab_MyMessages;
     }
 }
 

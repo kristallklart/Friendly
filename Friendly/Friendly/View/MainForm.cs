@@ -60,6 +60,8 @@ namespace Friendly.View
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            dateTimePickerFrom.MinDate = DateTime.Today;
+            dateTimePickerTo.MinDate = DateTime.Today;
             UsersLocationsTimesToDataGrid();
             textBox_FirstName.Text = currentUser.FirstName;
             textBox_LastName.Text = currentUser.LastName;
@@ -88,12 +90,16 @@ namespace Friendly.View
             {
                 textBox_AboutMe.Text = currentUser.About;
             }
-            
+
+
+            DefaultValuesLocation();
+        }
+        private void DefaultValuesLocation()
+        {
             comboBox_InterestedIn.DataSource = Controller.GetPurposes();
             comboBox_InterestedIn.DisplayMember = "Purposetype";
             comboBox_InterestedIn.ValueMember = "Purposetype";
             comboBox_InterestedIn.Text = "Interested In";
-
             comboBox_City.DataSource = Controller.GetLocations();
             comboBox_City.DisplayMember = "City";
             comboBox_City.ValueMember = "City";
@@ -123,10 +129,12 @@ namespace Friendly.View
 
         private void button_UpdateDetails_Click(object sender, EventArgs e)
         {
-            User u = new User();
-            u.Username = currentUser.Username;          
-            u.About = textBox_AboutMe.Text.ToString();
-            Controller.UpdateUser(u);
+
+                    
+            currentUser.About = textBox_AboutMe.Text.ToString();
+            currentUser.Profession = cueTextBox_ProfessionalTitle.Text.ToString();
+            currentUser.Industry = comboBox_ProfessionalField.Text.ToString();
+            Controller.UpdateUser(currentUser);
         }
 
         private void button_AddLocation_Click(object sender, EventArgs e)
@@ -135,6 +143,7 @@ namespace Friendly.View
             ulp.Username = currentUser.Username;
             ulp.Purposetype = comboBox_InterestedIn.SelectedValue.ToString().Trim();
             ulp.City = comboBox_City.SelectedValue.ToString().Trim();
+            
             if (checkBox_Longterm.Checked)
             {
                 ulp.FromDate = null;
@@ -148,6 +157,8 @@ namespace Friendly.View
             try
             {
                 Controller.AddUserLocationPurpose(ulp);
+                UsersLocationsTimesToDataGrid();
+                DefaultValuesLocation();
             }
             catch(DbUpdateException ex)
             {
@@ -169,6 +180,10 @@ namespace Friendly.View
             }
         }
 
+        private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
+        }
     }
 }
 
