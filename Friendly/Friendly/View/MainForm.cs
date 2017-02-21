@@ -90,8 +90,6 @@ namespace Friendly.View
             {
                 textBox_AboutMe.Text = currentUser.About;
             }
-
-
             DefaultValuesLocation();
         }
         private void DefaultValuesLocation()
@@ -129,8 +127,8 @@ namespace Friendly.View
 
         private void button_UpdateDetails_Click(object sender, EventArgs e)
         {
-
-                    
+            currentUser.FirstName= textBox_FirstName.Text.ToString();
+            currentUser.LastName = textBox_LastName.Text.ToString();
             currentUser.About = textBox_AboutMe.Text.ToString();
             currentUser.Profession = cueTextBox_ProfessionalTitle.Text.ToString();
             currentUser.Industry = comboBox_ProfessionalField.Text.ToString();
