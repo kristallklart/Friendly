@@ -128,6 +128,8 @@ namespace Friendly.View
 
                     
             currentUser.About = textBox_AboutMe.Text.ToString();
+            currentUser.Profession = cueTextBox_ProfessionalTitle.Text.ToString();
+            currentUser.Industry = comboBox_ProfessionalField.Text.ToString();
             Controller.UpdateUser(currentUser);
         }
 
@@ -171,6 +173,8 @@ namespace Friendly.View
             }
         }
 
+        
+        
     }
 }
 
