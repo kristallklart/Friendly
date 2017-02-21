@@ -60,6 +60,7 @@ namespace Friendly.View
             this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
             this.dataGridView_MyMatchesCities = new System.Windows.Forms.DataGridView();
             this.label_Messages = new System.Windows.Forms.Label();
+            this.tab_MyMessages = new System.Windows.Forms.TabPage();
             this.tabControlMain.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
@@ -75,6 +76,7 @@ namespace Friendly.View
             // 
             this.tabControlMain.Controls.Add(this.tab_MyProfile);
             this.tabControlMain.Controls.Add(this.tab_MyMatches);
+            this.tabControlMain.Controls.Add(this.tab_MyMessages);
             this.tabControlMain.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMain.Location = new System.Drawing.Point(12, 21);
             this.tabControlMain.Name = "tabControlMain";
@@ -505,6 +507,15 @@ namespace Friendly.View
             this.label_Messages.TabIndex = 1;
             this.label_Messages.Text = "Messages";
             // 
+            // tab_MyMessages
+            // 
+            this.tab_MyMessages.Location = new System.Drawing.Point(4, 22);
+            this.tab_MyMessages.Name = "tab_MyMessages";
+            this.tab_MyMessages.Size = new System.Drawing.Size(806, 420);
+            this.tab_MyMessages.TabIndex = 2;
+            this.tab_MyMessages.Text = "My Messages";
+            this.tab_MyMessages.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -565,6 +576,7 @@ namespace Friendly.View
         private System.Windows.Forms.DataGridView dataGridView_MyMatches;
         private Utilities.CueTextBox cueTextBox_ProfessionalTitle;
         private System.Windows.Forms.Label label_Age;
+        private System.Windows.Forms.TabPage tab_MyMessages;
     }
 }
 
