@@ -45,7 +45,12 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelFeedback = new System.Windows.Forms.Label();
             this.groupBoxComponents = new System.Windows.Forms.GroupBox();
+            this.labelBirthdate = new System.Windows.Forms.Label();
             this.errorProviderTextBoxes = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cueComboBoxYear = new Friendly.Utilities.CueComboBox();
+            this.cueComboBoxMonth = new Friendly.Utilities.CueComboBox();
+            this.cueComboBoxDay = new Friendly.Utilities.CueComboBox();
+            this.labelMustBirthdate = new System.Windows.Forms.Label();
             this.groupBoxComponents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTextBoxes)).BeginInit();
             this.SuspendLayout();
@@ -82,7 +87,7 @@
             this.errorProviderTextBoxes.SetIconPadding(this.textBoxUsername, 4);
             this.textBoxUsername.Location = new System.Drawing.Point(86, 39);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(136, 20);
+            this.textBoxUsername.Size = new System.Drawing.Size(180, 20);
             this.textBoxUsername.TabIndex = 3;
             this.textBoxUsername.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.textBoxUsername.Validated += new System.EventHandler(this.textBox_Validated);
@@ -92,7 +97,7 @@
             this.errorProviderTextBoxes.SetIconPadding(this.textBoxPassword, 4);
             this.textBoxPassword.Location = new System.Drawing.Point(86, 65);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(136, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(180, 20);
             this.textBoxPassword.TabIndex = 4;
             this.textBoxPassword.UseSystemPasswordChar = true;
             this.textBoxPassword.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
@@ -103,14 +108,14 @@
             this.errorProviderTextBoxes.SetIconPadding(this.textBoxFirstName, 4);
             this.textBoxFirstName.Location = new System.Drawing.Point(86, 91);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(136, 20);
+            this.textBoxFirstName.Size = new System.Drawing.Size(180, 20);
             this.textBoxFirstName.TabIndex = 5;
             this.textBoxFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.textBoxFirstName.Validated += new System.EventHandler(this.textBox_Validated);
             // 
             // buttonCreateAccount
             // 
-            this.buttonCreateAccount.Location = new System.Drawing.Point(25, 153);
+            this.buttonCreateAccount.Location = new System.Drawing.Point(51, 183);
             this.buttonCreateAccount.Name = "buttonCreateAccount";
             this.buttonCreateAccount.Size = new System.Drawing.Size(91, 23);
             this.buttonCreateAccount.TabIndex = 7;
@@ -132,7 +137,7 @@
             this.errorProviderTextBoxes.SetIconPadding(this.textBoxLastName, 4);
             this.textBoxLastName.Location = new System.Drawing.Point(86, 117);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(136, 20);
+            this.textBoxLastName.Size = new System.Drawing.Size(180, 20);
             this.textBoxLastName.TabIndex = 6;
             this.textBoxLastName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.textBoxLastName.Validated += new System.EventHandler(this.textBox_Validated);
@@ -142,7 +147,7 @@
             this.labelMustLastName.AutoSize = true;
             this.labelMustLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMustLastName.ForeColor = System.Drawing.Color.Red;
-            this.labelMustLastName.Location = new System.Drawing.Point(228, 121);
+            this.labelMustLastName.Location = new System.Drawing.Point(272, 121);
             this.labelMustLastName.Name = "labelMustLastName";
             this.labelMustLastName.Size = new System.Drawing.Size(13, 17);
             this.labelMustLastName.TabIndex = 12;
@@ -153,7 +158,7 @@
             this.labelMustPassword.AutoSize = true;
             this.labelMustPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMustPassword.ForeColor = System.Drawing.Color.Red;
-            this.labelMustPassword.Location = new System.Drawing.Point(228, 68);
+            this.labelMustPassword.Location = new System.Drawing.Point(272, 68);
             this.labelMustPassword.Name = "labelMustPassword";
             this.labelMustPassword.Size = new System.Drawing.Size(13, 17);
             this.labelMustPassword.TabIndex = 11;
@@ -164,7 +169,7 @@
             this.labelMustFirstName.AutoSize = true;
             this.labelMustFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMustFirstName.ForeColor = System.Drawing.Color.Red;
-            this.labelMustFirstName.Location = new System.Drawing.Point(228, 94);
+            this.labelMustFirstName.Location = new System.Drawing.Point(272, 94);
             this.labelMustFirstName.Name = "labelMustFirstName";
             this.labelMustFirstName.Size = new System.Drawing.Size(13, 17);
             this.labelMustFirstName.TabIndex = 10;
@@ -175,7 +180,7 @@
             this.labelMustUsername.AutoSize = true;
             this.labelMustUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMustUsername.ForeColor = System.Drawing.Color.Red;
-            this.labelMustUsername.Location = new System.Drawing.Point(228, 42);
+            this.labelMustUsername.Location = new System.Drawing.Point(272, 42);
             this.labelMustUsername.Name = "labelMustUsername";
             this.labelMustUsername.Size = new System.Drawing.Size(13, 17);
             this.labelMustUsername.TabIndex = 9;
@@ -183,7 +188,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(131, 153);
+            this.buttonCancel.Location = new System.Drawing.Point(148, 183);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(91, 23);
             this.buttonCancel.TabIndex = 8;
@@ -194,13 +199,18 @@
             // labelFeedback
             // 
             this.labelFeedback.AutoSize = true;
-            this.labelFeedback.Location = new System.Drawing.Point(12, 235);
+            this.labelFeedback.Location = new System.Drawing.Point(12, 296);
             this.labelFeedback.Name = "labelFeedback";
             this.labelFeedback.Size = new System.Drawing.Size(0, 13);
             this.labelFeedback.TabIndex = 13;
             // 
             // groupBoxComponents
             // 
+            this.groupBoxComponents.Controls.Add(this.labelMustBirthdate);
+            this.groupBoxComponents.Controls.Add(this.cueComboBoxYear);
+            this.groupBoxComponents.Controls.Add(this.cueComboBoxMonth);
+            this.groupBoxComponents.Controls.Add(this.cueComboBoxDay);
+            this.groupBoxComponents.Controls.Add(this.labelBirthdate);
             this.groupBoxComponents.Controls.Add(this.textBoxUsername);
             this.groupBoxComponents.Controls.Add(this.textBoxPassword);
             this.groupBoxComponents.Controls.Add(this.textBoxFirstName);
@@ -218,10 +228,19 @@
             this.groupBoxComponents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxComponents.Location = new System.Drawing.Point(15, 12);
             this.groupBoxComponents.Name = "groupBoxComponents";
-            this.groupBoxComponents.Size = new System.Drawing.Size(270, 203);
+            this.groupBoxComponents.Size = new System.Drawing.Size(300, 271);
             this.groupBoxComponents.TabIndex = 14;
             this.groupBoxComponents.TabStop = false;
             this.groupBoxComponents.Text = "Please fill in your details";
+            // 
+            // labelBirthdate
+            // 
+            this.labelBirthdate.AutoSize = true;
+            this.labelBirthdate.Location = new System.Drawing.Point(22, 146);
+            this.labelBirthdate.Name = "labelBirthdate";
+            this.labelBirthdate.Size = new System.Drawing.Size(52, 13);
+            this.labelBirthdate.TabIndex = 13;
+            this.labelBirthdate.Text = "Birthdate:";
             // 
             // errorProviderTextBoxes
             // 
@@ -229,15 +248,57 @@
             this.errorProviderTextBoxes.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderTextBoxes.ContainerControl = this;
             // 
+            // cueComboBoxYear
+            // 
+            this.cueComboBoxYear.CueText = "Year";
+            this.cueComboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cueComboBoxYear.FormattingEnabled = true;
+            this.cueComboBoxYear.Location = new System.Drawing.Point(210, 143);
+            this.cueComboBoxYear.Name = "cueComboBoxYear";
+            this.cueComboBoxYear.Size = new System.Drawing.Size(56, 21);
+            this.cueComboBoxYear.TabIndex = 22;
+            // 
+            // cueComboBoxMonth
+            // 
+            this.cueComboBoxMonth.CueText = "Month";
+            this.cueComboBoxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cueComboBoxMonth.FormattingEnabled = true;
+            this.cueComboBoxMonth.Location = new System.Drawing.Point(148, 143);
+            this.cueComboBoxMonth.Name = "cueComboBoxMonth";
+            this.cueComboBoxMonth.Size = new System.Drawing.Size(56, 21);
+            this.cueComboBoxMonth.TabIndex = 21;
+            // 
+            // cueComboBoxDay
+            // 
+            this.cueComboBoxDay.CueText = "Day";
+            this.cueComboBoxDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cueComboBoxDay.FormattingEnabled = true;
+            this.cueComboBoxDay.Location = new System.Drawing.Point(86, 143);
+            this.cueComboBoxDay.Name = "cueComboBoxDay";
+            this.cueComboBoxDay.Size = new System.Drawing.Size(56, 21);
+            this.cueComboBoxDay.TabIndex = 20;
+            // 
+            // labelMustBirthdate
+            // 
+            this.labelMustBirthdate.AutoSize = true;
+            this.labelMustBirthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMustBirthdate.ForeColor = System.Drawing.Color.Red;
+            this.labelMustBirthdate.Location = new System.Drawing.Point(272, 148);
+            this.labelMustBirthdate.Name = "labelMustBirthdate";
+            this.labelMustBirthdate.Size = new System.Drawing.Size(13, 16);
+            this.labelMustBirthdate.TabIndex = 23;
+            this.labelMustBirthdate.Text = "*";
+            // 
             // CreateAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 257);
+            this.ClientSize = new System.Drawing.Size(327, 318);
             this.Controls.Add(this.groupBoxComponents);
             this.Controls.Add(this.labelFeedback);
             this.Name = "CreateAccountForm";
             this.Text = "Create account";
+            this.Load += new System.EventHandler(this.CreateAccountForm_Load);
             this.groupBoxComponents.ResumeLayout(false);
             this.groupBoxComponents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTextBoxes)).EndInit();
@@ -265,5 +326,10 @@
         private System.Windows.Forms.Label labelFeedback;
         private System.Windows.Forms.GroupBox groupBoxComponents;
         private System.Windows.Forms.ErrorProvider errorProviderTextBoxes;
+        private System.Windows.Forms.Label labelBirthdate;
+        private Utilities.CueComboBox cueComboBoxDay;
+        private Utilities.CueComboBox cueComboBoxYear;
+        private Utilities.CueComboBox cueComboBoxMonth;
+        private System.Windows.Forms.Label labelMustBirthdate;
     }
 }
