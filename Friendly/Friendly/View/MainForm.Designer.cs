@@ -207,6 +207,7 @@ namespace Friendly.View
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(99, 22);
             this.dateTimePickerTo.TabIndex = 13;
+            this.dateTimePickerFrom.ValueChanged += new System.EventHandler(this.dateTimePickerFrom_ValueChanged);
             // 
             // comboBox_City
             // 

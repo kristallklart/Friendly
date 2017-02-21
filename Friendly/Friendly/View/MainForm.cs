@@ -176,7 +176,12 @@ namespace Friendly.View
                 dateTimePickerFrom.Enabled = true;
                 dateTimePickerTo.Enabled = true;
             }
-        }      
+        }
+
+        private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
+        }
     }
 }
 
