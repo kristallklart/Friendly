@@ -64,9 +64,7 @@ namespace Friendly.View
             UsersLocationsTimesToDataGrid();
             textBox_FirstName.Text = currentUser.FirstName;
             textBox_LastName.Text = currentUser.LastName;
-
-            if (currentUser.Birthdate != null)
-                label_Age.Text = Controller.GetAge(currentUser.Username).ToString() + " years";
+            label_Age.Text = Controller.GetAge(currentUser.Username).ToString() + " years";
 
             cueComboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
             cueComboBox_ProfessionalField.DisplayMember = "Industry";
@@ -74,10 +72,6 @@ namespace Friendly.View
             if (currentUser.Industry != null)
             {
                 cueComboBox_ProfessionalField.Text = currentUser.Industry;
-            }
-            else
-            {
-                cueComboBox_ProfessionalField.Text = "Field of profession";
             }
 
             if (currentUser.Profession != null)
@@ -96,11 +90,9 @@ namespace Friendly.View
             cueComboBox_InterestedIn.DataSource = Controller.GetPurposes();
             cueComboBox_InterestedIn.DisplayMember = "Purposetype";
             cueComboBox_InterestedIn.ValueMember = "Purposetype";
-            cueComboBox_InterestedIn.Text = "Interested In";
             cueComboBox_City.DataSource = Controller.GetLocations();
             cueComboBox_City.DisplayMember = "City";
             cueComboBox_City.ValueMember = "City";
-            cueComboBox_City.Text = "In City";
         }
 
         private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -126,12 +118,18 @@ namespace Friendly.View
 
         private void button_UpdateDetails_Click(object sender, EventArgs e)
         {
-            currentUser.FirstName= textBox_FirstName.Text.ToString();
-            currentUser.LastName = textBox_LastName.Text.ToString();
-            currentUser.About = textBox_AboutMe.Text.ToString();
-            currentUser.Profession = cueTextBox_ProfessionalTitle.Text.ToString();
-            currentUser.Industry = cueComboBox_ProfessionalField.Text.ToString();
-            Controller.UpdateUser(currentUser);
+            currentUser.FirstName= textBox_FirstName.Text.ToString().Trim();
+            currentUser.LastName = textBox_LastName.Text.ToString().Trim();
+            currentUser.About = textBox_AboutMe.Text.ToString().Trim();
+            currentUser.Profession = cueTextBox_ProfessionalTitle.Text.ToString().Trim();
+            currentUser.Industry = cueComboBox_ProfessionalField.Text.ToString().Trim();
+            try
+            {
+                Controller.UpdateUser(currentUser);
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void button_AddLocation_Click(object sender, EventArgs e)
