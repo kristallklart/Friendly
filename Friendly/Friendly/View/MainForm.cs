@@ -68,6 +68,8 @@ namespace Friendly.View
 
             cueComboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
             cueComboBox_ProfessionalField.DisplayMember = "Industry";
+            cueComboBox_ProfessionalField.SelectedIndex = -1;
+            cueComboBox_ProfessionalField.CueText = "Field of profession";
 
             if (currentUser.Industry != null)
             {
@@ -90,9 +92,14 @@ namespace Friendly.View
             cueComboBox_InterestedIn.DataSource = Controller.GetPurposes();
             cueComboBox_InterestedIn.DisplayMember = "Purposetype";
             cueComboBox_InterestedIn.ValueMember = "Purposetype";
+            cueComboBox_InterestedIn.SelectedIndex = -1;
+            cueComboBox_InterestedIn.CueText = "Interested in";
             cueComboBox_City.DataSource = Controller.GetLocations();
             cueComboBox_City.DisplayMember = "City";
             cueComboBox_City.ValueMember = "City";
+            cueComboBox_City.SelectedIndex = -1;
+            cueComboBox_City.CueText = "City";
+            checkBox_Longterm.Checked = false; 
         }
 
         private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -139,6 +146,7 @@ namespace Friendly.View
             ulp.Purposetype = cueComboBox_InterestedIn.SelectedValue.ToString().Trim();
             ulp.City = cueComboBox_City.SelectedValue.ToString().Trim();
             
+
             if (checkBox_Longterm.Checked)
             {
                 ulp.FromDate = null;
