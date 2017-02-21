@@ -139,6 +139,7 @@ namespace Friendly.View
             ulp.Username = currentUser.Username;
             ulp.Purposetype = comboBox_InterestedIn.SelectedValue.ToString().Trim();
             ulp.City = comboBox_City.SelectedValue.ToString().Trim();
+            
             if (checkBox_Longterm.Checked)
             {
                 ulp.FromDate = null;
@@ -152,6 +153,7 @@ namespace Friendly.View
             try
             {
                 Controller.AddUserLocationPurpose(ulp);
+                UsersLocationsTimesToDataGrid();
             }
             catch(DbUpdateException ex)
             {
