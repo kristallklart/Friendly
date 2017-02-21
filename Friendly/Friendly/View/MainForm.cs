@@ -32,7 +32,6 @@ namespace Friendly.View
             {
                 case 0:
                     UsersLocationsTimesToDataGrid();
-
                     break;
                 case 1:
                     UsersLocationsToDataGrid();

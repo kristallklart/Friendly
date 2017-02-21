@@ -30,7 +30,10 @@ namespace Friendly.View
         private void linkLabelCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CreateAccountForm form = new CreateAccountForm();
-            form.ShowDialog();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                labelFeedback.Text = "Successfully created a new user";
+            }
         }
         private void buttonLogin_Click(object sender, EventArgs e)
         {

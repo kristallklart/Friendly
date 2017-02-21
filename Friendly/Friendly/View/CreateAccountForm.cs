@@ -59,7 +59,7 @@ namespace Friendly.View
                 {
                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
-                this.Close();
+                this.DialogResult = DialogResult.OK;
             }
         }
 
