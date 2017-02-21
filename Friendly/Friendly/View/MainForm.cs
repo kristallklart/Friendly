@@ -73,10 +73,6 @@ namespace Friendly.View
             {
                 cueComboBox_ProfessionalField.Text = currentUser.Industry;
             }
-            else
-            {
-                cueComboBox_ProfessionalField.Text = "Field of profession";
-            }
 
             if (currentUser.Profession != null)
             {
@@ -94,11 +90,9 @@ namespace Friendly.View
             cueComboBox_InterestedIn.DataSource = Controller.GetPurposes();
             cueComboBox_InterestedIn.DisplayMember = "Purposetype";
             cueComboBox_InterestedIn.ValueMember = "Purposetype";
-            cueComboBox_InterestedIn.Text = "Interested In";
             cueComboBox_City.DataSource = Controller.GetLocations();
             cueComboBox_City.DisplayMember = "City";
             cueComboBox_City.ValueMember = "City";
-            cueComboBox_City.Text = "In City";
         }
 
         private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -128,7 +122,7 @@ namespace Friendly.View
             currentUser.LastName = textBox_LastName.Text.ToString().Trim();
             currentUser.About = textBox_AboutMe.Text.ToString().Trim();
             currentUser.Profession = cueTextBox_ProfessionalTitle.Text.ToString().Trim();
-            currentUser.Industry = comboBox_ProfessionalField.Text.ToString().Trim();
+            currentUser.Industry = cueComboBox_ProfessionalField.Text.ToString().Trim();
             try
             {
                 Controller.UpdateUser(currentUser);

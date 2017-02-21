@@ -37,7 +37,6 @@ namespace Friendly.View
             this.panel_IWant = new System.Windows.Forms.Panel();
             this.button_Delete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cueComboBox_InterestedIn = new Friendly.Utilities.CueComboBox();
             this.checkBox_Longterm = new System.Windows.Forms.CheckBox();
             this.button_AddLocation = new System.Windows.Forms.Button();
             this.label_Preferences = new System.Windows.Forms.Label();
@@ -45,22 +44,23 @@ namespace Friendly.View
             this.label_From = new System.Windows.Forms.Label();
             this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
-            this.cueComboBox_City = new Friendly.Utilities.CueComboBox();
             this.panel_PersonalDetails = new System.Windows.Forms.Panel();
             this.label_Age = new System.Windows.Forms.Label();
-            this.cueTextBox_ProfessionalTitle = new Friendly.Utilities.CueTextBox();
             this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
             this.button_UpdateDetails = new System.Windows.Forms.Button();
             this.label_AboutMe = new System.Windows.Forms.Label();
             this.textBox_AboutMe = new System.Windows.Forms.TextBox();
             this.textBox_LastName = new System.Windows.Forms.TextBox();
-            this.cueComboBox_ProfessionalField = new Friendly.Utilities.CueComboBox();
             this.textBox_FirstName = new System.Windows.Forms.TextBox();
             this.label_PersonalDetails = new System.Windows.Forms.Label();
             this.tab_MyMatches = new System.Windows.Forms.TabPage();
             this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
             this.dataGridView_MyMatchesCities = new System.Windows.Forms.DataGridView();
             this.label_Messages = new System.Windows.Forms.Label();
+            this.cueComboBox_InterestedIn = new Friendly.Utilities.CueComboBox();
+            this.cueComboBox_City = new Friendly.Utilities.CueComboBox();
+            this.cueTextBox_ProfessionalTitle = new Friendly.Utilities.CueTextBox();
+            this.cueComboBox_ProfessionalField = new Friendly.Utilities.CueComboBox();
             this.tabControlMain.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
@@ -133,15 +133,6 @@ namespace Friendly.View
             this.dataGridView1.Size = new System.Drawing.Size(220, 116);
             this.dataGridView1.TabIndex = 20;
             // 
-            // cueComboBox_InterestedIn
-            // 
-            this.cueComboBox_InterestedIn.CueText = "Interested in";
-            this.cueComboBox_InterestedIn.FormattingEnabled = true;
-            this.cueComboBox_InterestedIn.Location = new System.Drawing.Point(43, 67);
-            this.cueComboBox_InterestedIn.Name = "cueComboBox_InterestedIn";
-            this.cueComboBox_InterestedIn.Size = new System.Drawing.Size(136, 21);
-            this.cueComboBox_InterestedIn.TabIndex = 19;
-            // 
             // checkBox_Longterm
             // 
             this.checkBox_Longterm.AutoSize = true;
@@ -211,9 +202,155 @@ namespace Friendly.View
             this.dateTimePickerTo.Size = new System.Drawing.Size(99, 22);
             this.dateTimePickerTo.TabIndex = 13;
             // 
+            // panel_PersonalDetails
+            // 
+            this.panel_PersonalDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_PersonalDetails.Controls.Add(this.label_Age);
+            this.panel_PersonalDetails.Controls.Add(this.cueTextBox_ProfessionalTitle);
+            this.panel_PersonalDetails.Controls.Add(this.picBox_ProfilePic);
+            this.panel_PersonalDetails.Controls.Add(this.button_UpdateDetails);
+            this.panel_PersonalDetails.Controls.Add(this.label_AboutMe);
+            this.panel_PersonalDetails.Controls.Add(this.textBox_AboutMe);
+            this.panel_PersonalDetails.Controls.Add(this.textBox_LastName);
+            this.panel_PersonalDetails.Controls.Add(this.cueComboBox_ProfessionalField);
+            this.panel_PersonalDetails.Controls.Add(this.textBox_FirstName);
+            this.panel_PersonalDetails.Controls.Add(this.label_PersonalDetails);
+            this.panel_PersonalDetails.Location = new System.Drawing.Point(15, 15);
+            this.panel_PersonalDetails.Name = "panel_PersonalDetails";
+            this.panel_PersonalDetails.Size = new System.Drawing.Size(417, 388);
+            this.panel_PersonalDetails.TabIndex = 1;
+            // 
+            // label_Age
+            // 
+            this.label_Age.AutoSize = true;
+            this.label_Age.Location = new System.Drawing.Point(174, 95);
+            this.label_Age.Name = "label_Age";
+            this.label_Age.Size = new System.Drawing.Size(28, 13);
+            this.label_Age.TabIndex = 23;
+            this.label_Age.Text = "Age";
+            // 
+            // picBox_ProfilePic
+            // 
+            this.picBox_ProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.Image")));
+            this.picBox_ProfilePic.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.InitialImage")));
+            this.picBox_ProfilePic.Location = new System.Drawing.Point(19, 65);
+            this.picBox_ProfilePic.Name = "picBox_ProfilePic";
+            this.picBox_ProfilePic.Size = new System.Drawing.Size(116, 104);
+            this.picBox_ProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox_ProfilePic.TabIndex = 0;
+            this.picBox_ProfilePic.TabStop = false;
+            this.picBox_ProfilePic.WaitOnLoad = true;
+            // 
+            // button_UpdateDetails
+            // 
+            this.button_UpdateDetails.Location = new System.Drawing.Point(324, 352);
+            this.button_UpdateDetails.Name = "button_UpdateDetails";
+            this.button_UpdateDetails.Size = new System.Drawing.Size(75, 23);
+            this.button_UpdateDetails.TabIndex = 12;
+            this.button_UpdateDetails.Text = "Update";
+            this.button_UpdateDetails.UseVisualStyleBackColor = true;
+            this.button_UpdateDetails.Click += new System.EventHandler(this.button_UpdateDetails_Click);
+            // 
+            // label_AboutMe
+            // 
+            this.label_AboutMe.AutoSize = true;
+            this.label_AboutMe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AboutMe.Location = new System.Drawing.Point(16, 190);
+            this.label_AboutMe.Name = "label_AboutMe";
+            this.label_AboutMe.Size = new System.Drawing.Size(69, 17);
+            this.label_AboutMe.TabIndex = 11;
+            this.label_AboutMe.Text = "About me";
+            // 
+            // textBox_AboutMe
+            // 
+            this.textBox_AboutMe.Location = new System.Drawing.Point(19, 209);
+            this.textBox_AboutMe.MaxLength = 300;
+            this.textBox_AboutMe.Multiline = true;
+            this.textBox_AboutMe.Name = "textBox_AboutMe";
+            this.textBox_AboutMe.Size = new System.Drawing.Size(380, 123);
+            this.textBox_AboutMe.TabIndex = 10;
+            // 
+            // textBox_LastName
+            // 
+            this.textBox_LastName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_LastName.Location = new System.Drawing.Point(291, 65);
+            this.textBox_LastName.Name = "textBox_LastName";
+            this.textBox_LastName.Size = new System.Drawing.Size(108, 22);
+            this.textBox_LastName.TabIndex = 9;
+            this.textBox_LastName.Text = "Last name";
+            // 
+            // textBox_FirstName
+            // 
+            this.textBox_FirstName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_FirstName.Location = new System.Drawing.Point(177, 65);
+            this.textBox_FirstName.Name = "textBox_FirstName";
+            this.textBox_FirstName.Size = new System.Drawing.Size(108, 22);
+            this.textBox_FirstName.TabIndex = 2;
+            this.textBox_FirstName.Text = "First name";
+            // 
+            // label_PersonalDetails
+            // 
+            this.label_PersonalDetails.AutoSize = true;
+            this.label_PersonalDetails.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label_PersonalDetails.Location = new System.Drawing.Point(14, 22);
+            this.label_PersonalDetails.Name = "label_PersonalDetails";
+            this.label_PersonalDetails.Size = new System.Drawing.Size(150, 25);
+            this.label_PersonalDetails.TabIndex = 1;
+            this.label_PersonalDetails.Text = "Personal details";
+            // 
+            // tab_MyMatches
+            // 
+            this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatches);
+            this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatchesCities);
+            this.tab_MyMatches.Location = new System.Drawing.Point(4, 22);
+            this.tab_MyMatches.Name = "tab_MyMatches";
+            this.tab_MyMatches.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_MyMatches.Size = new System.Drawing.Size(806, 420);
+            this.tab_MyMatches.TabIndex = 1;
+            this.tab_MyMatches.Text = "My matches";
+            this.tab_MyMatches.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView_MyMatches
+            // 
+            this.dataGridView_MyMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_MyMatches.Location = new System.Drawing.Point(311, 44);
+            this.dataGridView_MyMatches.Name = "dataGridView_MyMatches";
+            this.dataGridView_MyMatches.Size = new System.Drawing.Size(468, 342);
+            this.dataGridView_MyMatches.TabIndex = 1;
+            this.dataGridView_MyMatches.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatches_CellClick);
+            // 
+            // dataGridView_MyMatchesCities
+            // 
+            this.dataGridView_MyMatchesCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_MyMatchesCities.Location = new System.Drawing.Point(31, 42);
+            this.dataGridView_MyMatchesCities.Name = "dataGridView_MyMatchesCities";
+            this.dataGridView_MyMatchesCities.Size = new System.Drawing.Size(240, 344);
+            this.dataGridView_MyMatchesCities.TabIndex = 0;
+            this.dataGridView_MyMatchesCities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatchesCities_CellClick);
+            // 
+            // label_Messages
+            // 
+            this.label_Messages.AutoSize = true;
+            this.label_Messages.Location = new System.Drawing.Point(16, 470);
+            this.label_Messages.Name = "label_Messages";
+            this.label_Messages.Size = new System.Drawing.Size(63, 13);
+            this.label_Messages.TabIndex = 1;
+            this.label_Messages.Text = "Messages";
+            // 
+            // cueComboBox_InterestedIn
+            // 
+            this.cueComboBox_InterestedIn.CueText = "Interested in";
+            this.cueComboBox_InterestedIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cueComboBox_InterestedIn.FormattingEnabled = true;
+            this.cueComboBox_InterestedIn.Location = new System.Drawing.Point(43, 67);
+            this.cueComboBox_InterestedIn.Name = "cueComboBox_InterestedIn";
+            this.cueComboBox_InterestedIn.Size = new System.Drawing.Size(136, 21);
+            this.cueComboBox_InterestedIn.TabIndex = 19;
+            // 
             // cueComboBox_City
             // 
             this.cueComboBox_City.CueText = "City";
+            this.cueComboBox_City.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cueComboBox_City.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cueComboBox_City.FormattingEnabled = true;
             this.cueComboBox_City.Items.AddRange(new object[] {
@@ -356,33 +493,6 @@ namespace Friendly.View
             this.cueComboBox_City.Size = new System.Drawing.Size(133, 21);
             this.cueComboBox_City.TabIndex = 11;
             // 
-            // panel_PersonalDetails
-            // 
-            this.panel_PersonalDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_PersonalDetails.Controls.Add(this.label_Age);
-            this.panel_PersonalDetails.Controls.Add(this.cueTextBox_ProfessionalTitle);
-            this.panel_PersonalDetails.Controls.Add(this.picBox_ProfilePic);
-            this.panel_PersonalDetails.Controls.Add(this.button_UpdateDetails);
-            this.panel_PersonalDetails.Controls.Add(this.label_AboutMe);
-            this.panel_PersonalDetails.Controls.Add(this.textBox_AboutMe);
-            this.panel_PersonalDetails.Controls.Add(this.textBox_LastName);
-            this.panel_PersonalDetails.Controls.Add(this.cueComboBox_ProfessionalField);
-            this.panel_PersonalDetails.Controls.Add(this.textBox_FirstName);
-            this.panel_PersonalDetails.Controls.Add(this.label_PersonalDetails);
-            this.panel_PersonalDetails.Location = new System.Drawing.Point(15, 15);
-            this.panel_PersonalDetails.Name = "panel_PersonalDetails";
-            this.panel_PersonalDetails.Size = new System.Drawing.Size(417, 388);
-            this.panel_PersonalDetails.TabIndex = 1;
-            // 
-            // label_Age
-            // 
-            this.label_Age.AutoSize = true;
-            this.label_Age.Location = new System.Drawing.Point(174, 95);
-            this.label_Age.Name = "label_Age";
-            this.label_Age.Size = new System.Drawing.Size(28, 13);
-            this.label_Age.TabIndex = 23;
-            this.label_Age.Text = "Age";
-            // 
             // cueTextBox_ProfessionalTitle
             // 
             this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
@@ -391,123 +501,16 @@ namespace Friendly.View
             this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
             this.cueTextBox_ProfessionalTitle.TabIndex = 22;
             // 
-            // picBox_ProfilePic
-            // 
-            this.picBox_ProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.Image")));
-            this.picBox_ProfilePic.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.InitialImage")));
-            this.picBox_ProfilePic.Location = new System.Drawing.Point(19, 65);
-            this.picBox_ProfilePic.Name = "picBox_ProfilePic";
-            this.picBox_ProfilePic.Size = new System.Drawing.Size(116, 104);
-            this.picBox_ProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBox_ProfilePic.TabIndex = 0;
-            this.picBox_ProfilePic.TabStop = false;
-            this.picBox_ProfilePic.WaitOnLoad = true;
-            // 
-            // button_UpdateDetails
-            // 
-            this.button_UpdateDetails.Location = new System.Drawing.Point(324, 352);
-            this.button_UpdateDetails.Name = "button_UpdateDetails";
-            this.button_UpdateDetails.Size = new System.Drawing.Size(75, 23);
-            this.button_UpdateDetails.TabIndex = 12;
-            this.button_UpdateDetails.Text = "Update";
-            this.button_UpdateDetails.UseVisualStyleBackColor = true;
-            this.button_UpdateDetails.Click += new System.EventHandler(this.button_UpdateDetails_Click);
-            // 
-            // label_AboutMe
-            // 
-            this.label_AboutMe.AutoSize = true;
-            this.label_AboutMe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AboutMe.Location = new System.Drawing.Point(16, 190);
-            this.label_AboutMe.Name = "label_AboutMe";
-            this.label_AboutMe.Size = new System.Drawing.Size(69, 17);
-            this.label_AboutMe.TabIndex = 11;
-            this.label_AboutMe.Text = "About me";
-            // 
-            // textBox_AboutMe
-            // 
-            this.textBox_AboutMe.Location = new System.Drawing.Point(19, 209);
-            this.textBox_AboutMe.MaxLength = 300;
-            this.textBox_AboutMe.Multiline = true;
-            this.textBox_AboutMe.Name = "textBox_AboutMe";
-            this.textBox_AboutMe.Size = new System.Drawing.Size(380, 123);
-            this.textBox_AboutMe.TabIndex = 10;
-            // 
-            // textBox_LastName
-            // 
-            this.textBox_LastName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_LastName.Location = new System.Drawing.Point(291, 65);
-            this.textBox_LastName.Name = "textBox_LastName";
-            this.textBox_LastName.Size = new System.Drawing.Size(108, 22);
-            this.textBox_LastName.TabIndex = 9;
-            this.textBox_LastName.Text = "Last name";
-            // 
             // cueComboBox_ProfessionalField
             // 
             this.cueComboBox_ProfessionalField.CueText = "Field of profession";
+            this.cueComboBox_ProfessionalField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cueComboBox_ProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cueComboBox_ProfessionalField.FormattingEnabled = true;
             this.cueComboBox_ProfessionalField.Location = new System.Drawing.Point(177, 119);
             this.cueComboBox_ProfessionalField.Name = "cueComboBox_ProfessionalField";
             this.cueComboBox_ProfessionalField.Size = new System.Drawing.Size(222, 21);
             this.cueComboBox_ProfessionalField.TabIndex = 6;
-            // 
-            // textBox_FirstName
-            // 
-            this.textBox_FirstName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_FirstName.Location = new System.Drawing.Point(177, 65);
-            this.textBox_FirstName.Name = "textBox_FirstName";
-            this.textBox_FirstName.Size = new System.Drawing.Size(108, 22);
-            this.textBox_FirstName.TabIndex = 2;
-            this.textBox_FirstName.Text = "First name";
-            // 
-            // label_PersonalDetails
-            // 
-            this.label_PersonalDetails.AutoSize = true;
-            this.label_PersonalDetails.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label_PersonalDetails.Location = new System.Drawing.Point(14, 22);
-            this.label_PersonalDetails.Name = "label_PersonalDetails";
-            this.label_PersonalDetails.Size = new System.Drawing.Size(150, 25);
-            this.label_PersonalDetails.TabIndex = 1;
-            this.label_PersonalDetails.Text = "Personal details";
-            // 
-            // tab_MyMatches
-            // 
-            this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatches);
-            this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatchesCities);
-            this.tab_MyMatches.Location = new System.Drawing.Point(4, 22);
-            this.tab_MyMatches.Name = "tab_MyMatches";
-            this.tab_MyMatches.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_MyMatches.Size = new System.Drawing.Size(806, 420);
-            this.tab_MyMatches.TabIndex = 1;
-            this.tab_MyMatches.Text = "My matches";
-            this.tab_MyMatches.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView_MyMatches
-            // 
-            this.dataGridView_MyMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_MyMatches.Location = new System.Drawing.Point(311, 44);
-            this.dataGridView_MyMatches.Name = "dataGridView_MyMatches";
-            this.dataGridView_MyMatches.Size = new System.Drawing.Size(468, 342);
-            this.dataGridView_MyMatches.TabIndex = 1;
-            this.dataGridView_MyMatches.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatches_CellClick);
-            // 
-            // dataGridView_MyMatchesCities
-            // 
-            this.dataGridView_MyMatchesCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_MyMatchesCities.Location = new System.Drawing.Point(31, 42);
-            this.dataGridView_MyMatchesCities.Name = "dataGridView_MyMatchesCities";
-            this.dataGridView_MyMatchesCities.Size = new System.Drawing.Size(240, 344);
-            this.dataGridView_MyMatchesCities.TabIndex = 0;
-            this.dataGridView_MyMatchesCities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatchesCities_CellClick);
-            // 
-            // label_Messages
-            // 
-            this.label_Messages.AutoSize = true;
-            this.label_Messages.Location = new System.Drawing.Point(16, 470);
-            this.label_Messages.Name = "label_Messages";
-            this.label_Messages.Size = new System.Drawing.Size(63, 13);
-            this.label_Messages.TabIndex = 1;
-            this.label_Messages.Text = "Messages";
             // 
             // MainForm
             // 
