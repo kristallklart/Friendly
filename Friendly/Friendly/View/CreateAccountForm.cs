@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Entity.Core;
 using System.Data.SqlClient;
 using Friendly.Utilities;
 using Friendly.Model;
-using Friendly.DatabaseAccessLayer;
 using Friendly.ControllerLayer;
 using Sodium;
-using Sodium.Exceptions;
 
 namespace Friendly.View
 {
@@ -41,6 +33,8 @@ namespace Friendly.View
                 user.Password = PasswordHash.ScryptHashString(textBoxPassword.Text.Trim(), PasswordHash.Strength.Medium);
                 user.FirstName = textBoxFirstName.Text.Trim();
                 user.LastName = textBoxLastName.Text.Trim();
+
+
                 try
                 {
                     Controller.AddNewUser(user);
@@ -66,19 +60,19 @@ namespace Friendly.View
                 switch (tempBox.Name.Trim())
                 {
                     case ("textBoxUsername"):
-                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter a username.");
+                        this.errorProvider.SetError(tempBox, "Please enter a username.");
                         break;
                     case ("textBoxPassword"):
-                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter a password.");
+                        this.errorProvider.SetError(tempBox, "Please enter a password.");
                         break;
                     case ("textBoxFirstName"):
-                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter your firstname.");
+                        this.errorProvider.SetError(tempBox, "Please enter your firstname.");
                         break;
                     case ("textBoxLastName"):
-                        this.errorProviderTextBoxes.SetError(tempBox, "Please enter your lastname.");
+                        this.errorProvider.SetError(tempBox, "Please enter your lastname.");
                         break;
                     default:
-                        this.errorProviderTextBoxes.SetError(tempBox, "Please fill in all the details.");
+                        this.errorProvider.SetError(tempBox, "Please fill in all the details.");
                         break;
                 }
             }
@@ -86,22 +80,39 @@ namespace Friendly.View
                 e.Cancel = false;
         }
 
-        private void textBox_Validated(object sender, EventArgs e)
+        private void control_Validated(object sender, EventArgs e)
         {
-            this.errorProviderTextBoxes.SetError(sender as Control, string.Empty);
+            this.errorProvider.SetError(sender as Control, string.Empty);
         }
-
+        private void cueComboBox_Validating(object sender, CancelEventArgs e)
+        {
+            CueComboBox tempCueBox = sender as CueComboBox;
+            if (tempCueBox.SelectedIndex < 0)
+            {
+                e.Cancel = true;
+                labelFeedback.Text = "Please fill in all the details.";
+                this.errorProvider.SetError(cueComboBoxYear, "Please fill in a complete birthdate.");
+            }
+        }
+ 
         private void CreateAccountForm_Load(object sender, EventArgs e)
         {
-            //int[] days = Enumerable.Range(1, 31).ToArray();
-            //comboBoxDay.Items.Add("Day");
-            //foreach (int day in days)
-            //{
-            //    comboBoxDay.Items.Add(day);
-            //}
-            
-            //comboBoxDay.SelectedIndex = 0;
-            
+            int[] days = Enumerable.Range(1, 31).ToArray();
+            foreach (int day in days)
+            {
+                cueComboBoxDay.Items.Add(day);
+            }
+            int[] months = Enumerable.Range(1, 12).ToArray();
+            foreach (int month in months)
+            {
+                cueComboBoxMonth.Items.Add(month);
+            }
+            int startYear = 1899;
+            int[] years = Enumerable.Range(startYear, (DateTime.Now.Year - 17) - startYear).ToArray();
+            foreach (int year in years)
+            {
+                cueComboBoxYear.Items.Add(year);
+            }
         }
     }
 }
