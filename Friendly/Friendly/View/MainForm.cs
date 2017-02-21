@@ -66,16 +66,16 @@ namespace Friendly.View
             textBox_LastName.Text = currentUser.LastName;
             label_Age.Text = Controller.GetAge(currentUser.Username).ToString() + " years";
 
-            comboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
-            comboBox_ProfessionalField.DisplayMember = "Industry";
+            cueComboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
+            cueComboBox_ProfessionalField.DisplayMember = "Industry";
 
             if (currentUser.Industry != null)
             {
-                comboBox_ProfessionalField.Text = currentUser.Industry;
+                cueComboBox_ProfessionalField.Text = currentUser.Industry;
             }
             else
             {
-                comboBox_ProfessionalField.Text = "Field of profession";
+                cueComboBox_ProfessionalField.Text = "Field of profession";
             }
 
             if (currentUser.Profession != null)
@@ -91,14 +91,14 @@ namespace Friendly.View
         }
         private void DefaultValuesLocation()
         {
-            comboBox_InterestedIn.DataSource = Controller.GetPurposes();
-            comboBox_InterestedIn.DisplayMember = "Purposetype";
-            comboBox_InterestedIn.ValueMember = "Purposetype";
-            comboBox_InterestedIn.Text = "Interested In";
-            comboBox_City.DataSource = Controller.GetLocations();
-            comboBox_City.DisplayMember = "City";
-            comboBox_City.ValueMember = "City";
-            comboBox_City.Text = "In City";
+            cueComboBox_InterestedIn.DataSource = Controller.GetPurposes();
+            cueComboBox_InterestedIn.DisplayMember = "Purposetype";
+            cueComboBox_InterestedIn.ValueMember = "Purposetype";
+            cueComboBox_InterestedIn.Text = "Interested In";
+            cueComboBox_City.DataSource = Controller.GetLocations();
+            cueComboBox_City.DisplayMember = "City";
+            cueComboBox_City.ValueMember = "City";
+            cueComboBox_City.Text = "In City";
         }
 
         private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -142,8 +142,8 @@ namespace Friendly.View
         {
             User_Location_Purpose ulp = new User_Location_Purpose();
             ulp.Username = currentUser.Username;
-            ulp.Purposetype = comboBox_InterestedIn.SelectedValue.ToString().Trim();
-            ulp.City = comboBox_City.SelectedValue.ToString().Trim();
+            ulp.Purposetype = cueComboBox_InterestedIn.SelectedValue.ToString().Trim();
+            ulp.City = cueComboBox_City.SelectedValue.ToString().Trim();
             
             if (checkBox_Longterm.Checked)
             {
@@ -170,6 +170,13 @@ namespace Friendly.View
         private void button_Delete_Click(object sender, EventArgs e)
         {
             User_Location_Purpose ulp = new User_Location_Purpose();
+            DataGridViewRow selectedRow = dataGridView1.CurrentRow;
+            ulp.City = selectedRow.Cells[0].Value.ToString();
+            ulp.Purposetype = selectedRow.Cells[2].Value.ToString();
+            ulp.Username = currentUser.Username;
+
+            Controller.DeleteUserLocatioPurpose(ulp);
+            UsersLocationsTimesToDataGrid();
 
         }
 
@@ -190,17 +197,6 @@ namespace Friendly.View
         private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
         {
             dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = dataGridView_MyMatchesCities.Rows[e.RowIndex];
-                string selectedCity = selectedRow.Cells[0].Value.ToString();
-                string selectedPurpose = selectedRow.Cells[1].Value.ToString();
-                //button_Delete_Click(selectedCity, selectedPurpose, currentUser);
-            }
         }
     }
 }
