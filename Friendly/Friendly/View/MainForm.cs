@@ -101,6 +101,7 @@ namespace Friendly.View
             comboBox_City.DisplayMember = "City";
             comboBox_City.ValueMember = "City";
             comboBox_City.Text = "In City";
+            checkBox_Longterm.Checked = false;
         }
 
         private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
