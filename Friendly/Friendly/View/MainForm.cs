@@ -90,12 +90,14 @@ namespace Friendly.View
             {
                 textBox_AboutMe.Text = currentUser.About;
             }
-            
+            DefaultValuesLocation();
+        }
+        private void DefaultValuesLocation()
+        {
             comboBox_InterestedIn.DataSource = Controller.GetPurposes();
             comboBox_InterestedIn.DisplayMember = "Purposetype";
             comboBox_InterestedIn.ValueMember = "Purposetype";
             comboBox_InterestedIn.Text = "Interested In";
-
             comboBox_City.DataSource = Controller.GetLocations();
             comboBox_City.DisplayMember = "City";
             comboBox_City.ValueMember = "City";
@@ -125,8 +127,8 @@ namespace Friendly.View
 
         private void button_UpdateDetails_Click(object sender, EventArgs e)
         {
-
-                    
+            currentUser.FirstName= textBox_FirstName.Text.ToString();
+            currentUser.LastName = textBox_LastName.Text.ToString();
             currentUser.About = textBox_AboutMe.Text.ToString();
             currentUser.Profession = cueTextBox_ProfessionalTitle.Text.ToString();
             currentUser.Industry = comboBox_ProfessionalField.Text.ToString();
@@ -139,6 +141,7 @@ namespace Friendly.View
             ulp.Username = currentUser.Username;
             ulp.Purposetype = comboBox_InterestedIn.SelectedValue.ToString().Trim();
             ulp.City = comboBox_City.SelectedValue.ToString().Trim();
+            
             if (checkBox_Longterm.Checked)
             {
                 ulp.FromDate = null;
@@ -152,11 +155,19 @@ namespace Friendly.View
             try
             {
                 Controller.AddUserLocationPurpose(ulp);
+                UsersLocationsTimesToDataGrid();
+                DefaultValuesLocation();
             }
             catch(DbUpdateException ex)
             {
                 label_Messages.Text = ErrorHandler.HandleError(ex);
             }
+        }
+
+        private void button_Delete_Click(object sender, EventArgs e)
+        {
+            User_Location_Purpose ulp = new User_Location_Purpose();
+            
         }
 
         private void checkBox_Longterm_CheckedChanged(object sender, EventArgs e)
@@ -173,8 +184,21 @@ namespace Friendly.View
             }
         }
 
-        
-        
+        private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView_MyMatchesCities.Rows[e.RowIndex];
+                string selectedCity = selectedRow.Cells[0].Value.ToString();
+                string selectedPurpose = selectedRow.Cells[1].Value.ToString();
+                //button_Delete_Click(selectedCity, selectedPurpose, currentUser);
+            }
+        }
     }
 }
 
