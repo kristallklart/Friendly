@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Friendly.Model;
 using Friendly.ControllerLayer;
+using System.Data.Entity.Infrastructure;
+using Friendly.Utilities;
 
 namespace Friendly.View
 {
@@ -58,6 +60,8 @@ namespace Friendly.View
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            dateTimePickerFrom.MinDate = DateTime.Today;
+            dateTimePickerTo.MinDate = DateTime.Today;
             UsersLocationsTimesToDataGrid();
             textBox_FirstName.Text = currentUser.FirstName;
             textBox_LastName.Text = currentUser.LastName;
@@ -89,10 +93,12 @@ namespace Friendly.View
             
             comboBox_InterestedIn.DataSource = Controller.GetPurposes();
             comboBox_InterestedIn.DisplayMember = "Purposetype";
+            comboBox_InterestedIn.ValueMember = "Purposetype";
             comboBox_InterestedIn.Text = "Interested In";
 
             comboBox_City.DataSource = Controller.GetLocations();
             comboBox_City.DisplayMember = "City";
+            comboBox_City.ValueMember = "City";
             comboBox_City.Text = "In City";
         }
 
@@ -119,10 +125,38 @@ namespace Friendly.View
 
         private void button_UpdateDetails_Click(object sender, EventArgs e)
         {
-            User u = new User();
-            u.Username = currentUser.Username;          
-            u.About = textBox_AboutMe.Text.ToString();
-            Controller.UpdateUser(u);
+
+                    
+            currentUser.About = textBox_AboutMe.Text.ToString();
+            currentUser.Profession = cueTextBox_ProfessionalTitle.Text.ToString();
+            currentUser.Industry = comboBox_ProfessionalField.Text.ToString();
+            Controller.UpdateUser(currentUser);
+        }
+
+        private void button_AddLocation_Click(object sender, EventArgs e)
+        {
+            User_Location_Purpose ulp = new User_Location_Purpose();
+            ulp.Username = currentUser.Username;
+            ulp.Purposetype = comboBox_InterestedIn.SelectedValue.ToString().Trim();
+            ulp.City = comboBox_City.SelectedValue.ToString().Trim();
+            if (checkBox_Longterm.Checked)
+            {
+                ulp.FromDate = null;
+                ulp.ToDate = null;
+            }
+            else if (!checkBox_Longterm.Checked)
+            {
+                ulp.FromDate = dateTimePickerFrom.Value.Date;
+                ulp.ToDate = dateTimePickerTo.Value.Date;
+            }
+            try
+            {
+                Controller.AddUserLocationPurpose(ulp);
+            }
+            catch(DbUpdateException ex)
+            {
+                label_Messages.Text = ErrorHandler.HandleError(ex);
+            }
         }
 
         private void checkBox_Longterm_CheckedChanged(object sender, EventArgs e)
@@ -138,6 +172,9 @@ namespace Friendly.View
                 dateTimePickerTo.Enabled = true;
             }
         }
+
+        
+        
     }
 }
 

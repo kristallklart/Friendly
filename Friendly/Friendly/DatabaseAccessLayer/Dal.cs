@@ -57,13 +57,10 @@ namespace Friendly.DatabaseAccessLayer
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-                
-                context.Users.Attach(u);
-                var entry = context.Entry(u);
-                entry.Property(e => e.About).IsModified = true;
+                User updateUser = context.Users.SingleOrDefault(b => b.Username == u.Username);
+                context.Entry(updateUser).CurrentValues.SetValues(u);
                 context.SaveChanges();
-                
-            }
+                }
         }
         public static User GetUser(string username)
         {
@@ -122,6 +119,14 @@ namespace Friendly.DatabaseAccessLayer
             {
                 List<Location> locations = context.Locations.ToList();
                 return locations;
+            }
+        }
+        public static void AddUserLocationPurpose(User_Location_Purpose ulp)
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                context.User_Location_Purpose.Add(ulp);
+                context.SaveChanges();
             }
         }
     }

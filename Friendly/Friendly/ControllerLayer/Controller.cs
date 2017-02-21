@@ -51,5 +51,9 @@ namespace Friendly.ControllerLayer
         {
             return Dal.GetLocations();
         }
+        public static void AddUserLocationPurpose(User_Location_Purpose ulp)
+        {
+            Dal.AddUserLocationPurpose(ulp);
+        }
     }
 }
