@@ -23,7 +23,7 @@ namespace Friendly.Model
         public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Nullable<System.DateTime> Birthdate { get; set; }
+        public System.DateTime Birthdate { get; set; }
         public byte[] Picture { get; set; }
         public string Profession { get; set; }
         public string Password { get; set; }

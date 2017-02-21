@@ -19,6 +19,7 @@ namespace Friendly.Model
         public string Purposetype { get; set; }
         public Nullable<System.DateTime> FromDate { get; set; }
         public Nullable<System.DateTime> ToDate { get; set; }
+    
         public virtual Location Location { get; set; }
         public virtual Purpose Purpose { get; set; }
         public virtual User User { get; set; }
