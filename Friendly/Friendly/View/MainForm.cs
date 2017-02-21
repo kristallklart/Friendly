@@ -165,7 +165,12 @@ namespace Friendly.View
 
         private void button_Delete_Click(object sender, EventArgs e)
         {
-            dataGridView1_CellClick
+            User_Location_Purpose ulp = new User_Location_Purpose();
+            DataGridViewRow selectedRow = dataGridView1.CurrentRow;
+            ulp.City = selectedRow.Cells[0].Value.ToString();
+            ulp.Purposetype = selectedRow.Cells[2].Value.ToString();
+            ulp.Username = currentUser.Username;
+
             Controller.DeleteUserLocatioPurpose(ulp);
             UsersLocationsTimesToDataGrid();
 
@@ -188,19 +193,6 @@ namespace Friendly.View
         private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
         {
             dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                User_Location_Purpose ulp = new User_Location_Purpose();
-                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-                ulp.City = selectedRow.Cells[0].Value.ToString();
-                ulp.Purposetype = selectedRow.Cells[2].Value.ToString();
-                ulp.Username = currentUser.Username;
-                
-            }
         }
     }
 }

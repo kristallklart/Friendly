@@ -131,7 +131,6 @@ namespace Friendly.View
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(220, 116);
             this.dataGridView1.TabIndex = 20;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // comboBox_InterestedIn
             // 
