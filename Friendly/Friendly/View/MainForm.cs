@@ -180,8 +180,10 @@ namespace Friendly.View
             }
         }
 
-        
-        
+        private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
+        }
     }
 }
 
