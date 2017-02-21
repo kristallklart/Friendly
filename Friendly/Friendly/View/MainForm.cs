@@ -202,6 +202,8 @@ namespace Friendly.View
         {
             dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
         }
+
+     
     }
 }
 
