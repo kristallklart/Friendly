@@ -124,6 +124,22 @@ namespace Friendly.View
             u.About = textBox_AboutMe.Text.ToString();
             Controller.UpdateUser(u);
         }
+
+        private void button_AddLocation_Click(object sender, EventArgs e)
+        {
+            User_Location_Purpose ulp = new User_Location_Purpose();
+            ulp.Purposetype = comboBox_InterestedIn.SelectedValue.ToString().Trim();
+            ulp.City = comboBox_City.SelectedValue.ToString().Trim();
+            if (checkBox_Longterm.Checked)
+            {
+                ulp.FromDate = null;
+                ulp.ToDate = null;
+            }
+            else if (!checkBox_Longterm.Checked)
+            {
+                
+            }
+        }
     }
 }
 
