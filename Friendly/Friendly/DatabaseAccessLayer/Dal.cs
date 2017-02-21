@@ -57,12 +57,10 @@ namespace Friendly.DatabaseAccessLayer
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-                User updateUser =context.Users.SingleOrDefault(b => b.Username == u.Username);
+                User updateUser = context.Users.SingleOrDefault(b => b.Username == u.Username);
                 context.Entry(updateUser).CurrentValues.SetValues(u);
                 context.SaveChanges();
                 }
- 
-
         }
         public static User GetUser(string username)
         {
