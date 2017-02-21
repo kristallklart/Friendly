@@ -124,5 +124,13 @@ namespace Friendly.DatabaseAccessLayer
                 return locations;
             }
         }
+        public static void AddUserLocationPurpose(User_Location_Purpose ulp)
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                context.User_Location_Purpose.Add(ulp);
+                context.SaveChanges();
+            }
+        }
     }
 }
