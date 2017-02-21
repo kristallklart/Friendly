@@ -50,6 +50,8 @@ namespace Friendly.View
             dataGridView_MyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
             for (int i = 1; i < dataGridView_MyMatchesCities.Columns.Count; i++)
                 dataGridView_MyMatchesCities.Columns[i].Visible = false;
+            
+
         }
         public void UsersByCityToDataGrid(string selectedCity, User currentuser)
         {
