@@ -119,10 +119,10 @@ namespace Friendly.View
 
         private void button_UpdateDetails_Click(object sender, EventArgs e)
         {
-            User u = new User();
-            u.Username = currentUser.Username;          
-            u.About = textBox_AboutMe.Text.ToString();
-            Controller.UpdateUser(u);
+
+                    
+            currentUser.About = textBox_AboutMe.Text.ToString();
+            Controller.UpdateUser(currentUser);
         }
     }
 }
