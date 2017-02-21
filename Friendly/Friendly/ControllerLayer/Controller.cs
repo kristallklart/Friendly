@@ -55,5 +55,9 @@ namespace Friendly.ControllerLayer
         {
             Dal.AddUserLocationPurpose(ulp);
         }
+        public static void DeleteUserLocatioPurpose(User_Location_Purpose ulp)
+        {
+            Dal.DeleteUserLocatioPurpose(ulp);
+        }
     }
 }

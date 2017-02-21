@@ -166,8 +166,10 @@ namespace Friendly.View
 
         private void button_Delete_Click(object sender, EventArgs e)
         {
-            User_Location_Purpose ulp = new User_Location_Purpose();
-            
+            dataGridView1_CellClick
+            Controller.DeleteUserLocatioPurpose(ulp);
+            UsersLocationsTimesToDataGrid();
+
         }
 
         private void checkBox_Longterm_CheckedChanged(object sender, EventArgs e)
@@ -193,10 +195,12 @@ namespace Friendly.View
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow selectedRow = dataGridView_MyMatchesCities.Rows[e.RowIndex];
-                string selectedCity = selectedRow.Cells[0].Value.ToString();
-                string selectedPurpose = selectedRow.Cells[1].Value.ToString();
-                //button_Delete_Click(selectedCity, selectedPurpose, currentUser);
+                User_Location_Purpose ulp = new User_Location_Purpose();
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                ulp.City = selectedRow.Cells[0].Value.ToString();
+                ulp.Purposetype = selectedRow.Cells[2].Value.ToString();
+                ulp.Username = currentUser.Username;
+                
             }
         }
     }
