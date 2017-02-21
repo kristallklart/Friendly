@@ -166,6 +166,12 @@ namespace Friendly.View
             }
         }
 
+        private void button_Delete_Click(object sender, EventArgs e)
+        {
+            User_Location_Purpose ulp = new User_Location_Purpose();
+            
+        }
+
         private void checkBox_Longterm_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_Longterm.Checked)
@@ -183,6 +189,17 @@ namespace Friendly.View
         private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
         {
             dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView_MyMatchesCities.Rows[e.RowIndex];
+                string selectedCity = selectedRow.Cells[0].Value.ToString();
+                string selectedPurpose = selectedRow.Cells[1].Value.ToString();
+                //button_Delete_Click(selectedCity, selectedPurpose, currentUser);
+            }
         }
     }
 }
