@@ -95,6 +95,9 @@
     <Compile Include="Model\User_Location_Purpose.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\CueComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\ErrorHandler.cs" />
     <Compile Include="Utilities\InvalidUserOrPasswordException.cs" />
     <Compile Include="Utilities\Utils.cs" />

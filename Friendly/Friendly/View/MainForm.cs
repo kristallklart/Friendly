@@ -140,6 +140,20 @@ namespace Friendly.View
                 
             }
         }
+
+        private void checkBox_Longterm_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_Longterm.Checked)
+            {
+                dateTimePickerFrom.Enabled = false;
+                dateTimePickerTo.Enabled = false;
+            }
+            else
+            {
+                dateTimePickerFrom.Enabled = true;
+                dateTimePickerTo.Enabled = true;
+            }
+        }
     }
 }
 
