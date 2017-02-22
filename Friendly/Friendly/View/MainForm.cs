@@ -129,6 +129,7 @@ namespace Friendly.View
             {
                 label_Age.Text = Controller.GetAge(currentUser.Username).ToString() + " years";
                 cueComboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
+                picBox_ProfilePic.Image = (Image)new ImageConverter().ConvertFrom(currentUser.Picture);
                 DefaultValuesLocation();
             }
             catch (ArgumentNullException ex)
