@@ -17,8 +17,8 @@ namespace Friendly.Model
         public string City { get; set; }
         public string Username { get; set; }
         public string Purposetype { get; set; }
-        public Nullable<System.DateTime> FromDate { get; set; }
-        public Nullable<System.DateTime> ToDate { get; set; }
+        public System.DateTime FromDate { get; set; }
+        public System.DateTime ToDate { get; set; }
     
         public virtual Location Location { get; set; }
         public virtual Purpose Purpose { get; set; }

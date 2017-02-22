@@ -51,12 +51,14 @@
       <PropertyRef Name="City" />
       <PropertyRef Name="Username" />
       <PropertyRef Name="Purposetype" />
+      <PropertyRef Name="FromDate" />
+      <PropertyRef Name="ToDate" />
     </Key>
     <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Purposetype" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="FromDate" Type="datetime" Nullable="true" />
-    <Property Name="ToDate" Type="datetime" Nullable="true" />
+    <Property Name="FromDate" Type="datetime" Nullable="false" />
+    <Property Name="ToDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -65,7 +67,7 @@
     <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Birthdate" Type="datetime" Nullable="true" />
+    <Property Name="Birthdate" Type="datetime" Nullable="false" />
     <Property Name="Picture" Type="varbinary(max)" Nullable="true" />
     <Property Name="Profession" Type="nvarchar" Nullable="true" MaxLength="50" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
@@ -150,12 +152,14 @@
             <PropertyRef Name="City" />
             <PropertyRef Name="Username" />
             <PropertyRef Name="Purposetype" />
+            <PropertyRef Name="FromDate" />
+            <PropertyRef Name="ToDate" />
           </Key>
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Purposetype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="FromDate" Type="DateTime" Precision="3" />
-          <Property Name="ToDate" Type="DateTime" Precision="3" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="ToDate" Type="DateTime" Precision="3" Nullable="false" />
           <NavigationProperty Name="Location" Relationship="Self.FK_User_Location_Location" FromRole="User_Location_Purpose" ToRole="Locations" />
           <NavigationProperty Name="Purpose" Relationship="Self.FK_User_LocationPurpose" FromRole="User_Location_Purpose" ToRole="Purposes" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Location_User" FromRole="User_Location_Purpose" ToRole="Users" />

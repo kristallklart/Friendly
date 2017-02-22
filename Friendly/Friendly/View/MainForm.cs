@@ -170,6 +170,8 @@ namespace Friendly.View
             DataGridViewRow selectedRow = dataGridView1.CurrentRow;
             ulp.City = selectedRow.Cells[0].Value.ToString();
             ulp.Purposetype = selectedRow.Cells[2].Value.ToString();
+            ulp.FromDate = Convert.ToDateTime(selectedRow.Cells[3].Value.ToString());
+            ulp.ToDate = Convert.ToDateTime(selectedRow.Cells[4].Value.ToString());
             ulp.Username = currentUser.Username;
 
             Controller.DeleteUserLocatioPurpose(ulp);

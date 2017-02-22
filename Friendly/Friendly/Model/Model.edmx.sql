@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/16/2017 13:29:34
--- Generated from EDMX file: C:\Users\Kalle\git\Friendly\Friendly\Friendly\Model\Model.edmx
+-- Date Created: 02/22/2017 09:45:50
+-- Generated from EDMX file: C:\Users\Ann-Kathrine\Source\Repos\Friendly\Friendly\Friendly\Model\Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -23,11 +23,11 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_User_Location_Location]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[User_Location_Purpose] DROP CONSTRAINT [FK_User_Location_Location];
 GO
-IF OBJECT_ID(N'[dbo].[FK_User_Location_User]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[User_Location_Purpose] DROP CONSTRAINT [FK_User_Location_User];
-GO
 IF OBJECT_ID(N'[dbo].[FK_User_LocationPurpose]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[User_Location_Purpose] DROP CONSTRAINT [FK_User_LocationPurpose];
+GO
+IF OBJECT_ID(N'[dbo].[FK_User_Location_User]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[User_Location_Purpose] DROP CONSTRAINT [FK_User_Location_User];
 GO
 
 -- --------------------------------------------------
@@ -77,8 +77,8 @@ CREATE TABLE [dbo].[User_Location_Purpose] (
     [City] nvarchar(50)  NOT NULL,
     [Username] nvarchar(50)  NOT NULL,
     [Purposetype] nvarchar(50)  NOT NULL,
-    [FromDate] datetime  NULL,
-    [ToDate] datetime  NULL
+    [FromDate] datetime  NOT NULL,
+    [ToDate] datetime  NOT NULL
 );
 GO
 
@@ -87,7 +87,7 @@ CREATE TABLE [dbo].[Users] (
     [Username] nvarchar(50)  NOT NULL,
     [FirstName] nvarchar(50)  NOT NULL,
     [LastName] nvarchar(50)  NOT NULL,
-    [Birthdate] datetime  NULL,
+    [Birthdate] datetime  NOT NULL,
     [Picture] varbinary(max)  NULL,
     [Profession] nvarchar(50)  NULL,
     [Password] nvarchar(max)  NOT NULL,
@@ -118,10 +118,10 @@ ADD CONSTRAINT [PK_Purposes]
     PRIMARY KEY CLUSTERED ([Purposetype] ASC);
 GO
 
--- Creating primary key on [City], [Username], [Purposetype] in table 'User_Location_Purpose'
+-- Creating primary key on [City], [Username], [Purposetype], [FromDate], [ToDate] in table 'User_Location_Purpose'
 ALTER TABLE [dbo].[User_Location_Purpose]
 ADD CONSTRAINT [PK_User_Location_Purpose]
-    PRIMARY KEY CLUSTERED ([City], [Username], [Purposetype] ASC);
+    PRIMARY KEY CLUSTERED ([City], [Username], [Purposetype], [FromDate], [ToDate] ASC);
 GO
 
 -- Creating primary key on [Username] in table 'Users'
