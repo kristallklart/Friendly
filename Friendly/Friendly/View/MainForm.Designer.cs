@@ -65,6 +65,7 @@ namespace Friendly.View
             this.textBox_Messages = new System.Windows.Forms.TextBox();
             this.dataGridView_MyMessagesTab = new System.Windows.Forms.DataGridView();
             this.label_Messages = new System.Windows.Forms.Label();
+            this.buttonAddPicture = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
@@ -355,6 +356,7 @@ namespace Friendly.View
             // panel_PersonalDetails
             // 
             this.panel_PersonalDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_PersonalDetails.Controls.Add(this.buttonAddPicture);
             this.panel_PersonalDetails.Controls.Add(this.label_Age);
             this.panel_PersonalDetails.Controls.Add(this.cueTextBox_ProfessionalTitle);
             this.panel_PersonalDetails.Controls.Add(this.picBox_ProfilePic);
@@ -413,7 +415,7 @@ namespace Friendly.View
             // 
             this.label_AboutMe.AutoSize = true;
             this.label_AboutMe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AboutMe.Location = new System.Drawing.Point(16, 190);
+            this.label_AboutMe.Location = new System.Drawing.Point(16, 208);
             this.label_AboutMe.Name = "label_AboutMe";
             this.label_AboutMe.Size = new System.Drawing.Size(69, 17);
             this.label_AboutMe.TabIndex = 11;
@@ -421,11 +423,11 @@ namespace Friendly.View
             // 
             // textBox_AboutMe
             // 
-            this.textBox_AboutMe.Location = new System.Drawing.Point(19, 209);
+            this.textBox_AboutMe.Location = new System.Drawing.Point(19, 236);
             this.textBox_AboutMe.MaxLength = 300;
             this.textBox_AboutMe.Multiline = true;
             this.textBox_AboutMe.Name = "textBox_AboutMe";
-            this.textBox_AboutMe.Size = new System.Drawing.Size(380, 123);
+            this.textBox_AboutMe.Size = new System.Drawing.Size(380, 110);
             this.textBox_AboutMe.TabIndex = 10;
             // 
             // textBox_LastName
@@ -553,6 +555,16 @@ namespace Friendly.View
             this.label_Messages.TabIndex = 1;
             this.label_Messages.Text = "Messages";
             // 
+            // buttonAddPicture
+            // 
+            this.buttonAddPicture.Location = new System.Drawing.Point(19, 182);
+            this.buttonAddPicture.Name = "buttonAddPicture";
+            this.buttonAddPicture.Size = new System.Drawing.Size(116, 23);
+            this.buttonAddPicture.TabIndex = 24;
+            this.buttonAddPicture.Text = "Add Picture";
+            this.buttonAddPicture.UseVisualStyleBackColor = true;
+            this.buttonAddPicture.Click += new System.EventHandler(this.buttonAddPicture_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -620,6 +632,7 @@ namespace Friendly.View
         private System.Windows.Forms.DataGridView dataGridView_MyMessagesTab;
         private Utilities.CueTextBox cueTextBox_Message;
         private System.Windows.Forms.Button button_SendMessage;
+        private System.Windows.Forms.Button buttonAddPicture;
     }
 }
 
