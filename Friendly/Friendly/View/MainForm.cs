@@ -95,14 +95,14 @@ namespace Friendly.View
             dateTimePickerFrom.MinDate = DateTime.Today;
             dateTimePickerTo.MinDate = DateTime.Today;
             UsersLocationsTimesToDataGrid();
-            textBox_FirstName.Text = currentUser.FirstName;
-            textBox_LastName.Text = currentUser.LastName;
-            label_Age.Text = Controller.GetAge(currentUser.Username).ToString() + " years";
+            textBoxFirstName.Text = currentUser.FirstName;
+            textBoxLastName.Text = currentUser.LastName;
+            labelAge.Text = Controller.GetAge(currentUser.Username).ToString() + " years";
 
-            cueComboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
-            cueComboBox_ProfessionalField.DisplayMember = "Industry";
-            cueComboBox_ProfessionalField.SelectedIndex = -1;
-            cueComboBox_ProfessionalField.CueText = "Field of profession";
+            cueComboBoxProfessionalField.DataSource = Controller.GetFieldOfProfessions();
+            cueComboBoxProfessionalField.DisplayMember = "Industry";
+            cueComboBoxProfessionalField.SelectedIndex = -1;
+            cueComboBoxProfessionalField.CueText = "Field of profession";
 
             if (currentUser.Industry != null)
             {
@@ -263,7 +263,7 @@ namespace Friendly.View
                 fileContent = openFile.FileName;
                 Image newImage = Image.FromFile(fileContent);
                 byte[] result = (byte[])new ImageConverter().ConvertTo(newImage, typeof(byte[]));
-                picBox_ProfilePic.Image = newImage;
+                picBoxProfilePic.Image = newImage;
                 Controller.SaveProfilePicture(currentUser.Username, result);
 
 
