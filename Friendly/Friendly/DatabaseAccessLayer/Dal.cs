@@ -18,12 +18,9 @@ namespace Friendly.DatabaseAccessLayer
         public static void AddNewUser(User user)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
-            {
-                try
-                {
+            {   
                     context.Users.Add(user);
                     context.SaveChanges();
-                }
             }
         }
         public static User CheckUsernameAndPassword(string username, string password)
