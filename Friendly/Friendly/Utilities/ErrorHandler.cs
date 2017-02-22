@@ -25,6 +25,10 @@ namespace Friendly.Utilities
                         break;
                 }
             }
+            else if (e is ArgumentNullException)
+            {
+                message = "Du fick ett exception, grattis! Gå och gör lite thé medans smurfarna städar upp efter dig.";
+            }
             else if (e is InvalidUserOrPasswordException)
             {
                 message = e.Message;
