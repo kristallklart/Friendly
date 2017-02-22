@@ -184,7 +184,10 @@ namespace Friendly.View
             dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
         }
 
-     
+        private void buttonAddPicture_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
