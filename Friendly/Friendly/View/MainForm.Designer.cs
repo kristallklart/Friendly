@@ -331,7 +331,7 @@ namespace Friendly.View
             // label_Messages
             // 
             this.label_Messages.AutoSize = true;
-            this.label_Messages.Location = new System.Drawing.Point(16, 470);
+            this.label_Messages.Location = new System.Drawing.Point(13, 471);
             this.label_Messages.Name = "label_Messages";
             this.label_Messages.Size = new System.Drawing.Size(63, 13);
             this.label_Messages.TabIndex = 1;
@@ -517,7 +517,7 @@ namespace Friendly.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(834, 483);
+            this.ClientSize = new System.Drawing.Size(834, 493);
             this.Controls.Add(this.label_Messages);
             this.Controls.Add(this.tabControlMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

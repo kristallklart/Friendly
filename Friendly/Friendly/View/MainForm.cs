@@ -136,29 +136,31 @@ namespace Friendly.View
         {
             User_Location_Purpose ulp = new User_Location_Purpose();
             ulp.Username = currentUser.Username;
-            ulp.Purposetype = cueComboBox_InterestedIn.SelectedValue.ToString().Trim();
-            ulp.City = cueComboBox_City.SelectedValue.ToString().Trim();
-            
-            if (checkBox_Longterm.Checked)
+            if (cueComboBox_InterestedIn.SelectedIndex >= 0 && cueComboBox_City.SelectedIndex >= 0)
             {
-                ulp.FromDate = null;
-                ulp.ToDate = null;
-            }
-            else if (!checkBox_Longterm.Checked)
-            {
-                ulp.FromDate = dateTimePickerFrom.Value.Date;
-                ulp.ToDate = dateTimePickerTo.Value.Date;
-            }
-            try
-            {
-                Controller.AddUserLocationPurpose(ulp);
-                UsersLocationsTimesToDataGrid();
-                DefaultValuesLocation();
-            }
-            catch(DbUpdateException ex)
-            {
-                label_Messages.Text = ErrorHandler.HandleError(ex);
-            }
+                ulp.Purposetype = cueComboBox_InterestedIn.SelectedValue.ToString().Trim();
+                ulp.City = cueComboBox_City.SelectedValue.ToString().Trim();
+                if (checkBox_Longterm.Checked)
+                {
+                    ulp.FromDate = null;
+                    ulp.ToDate = null;
+                }
+                else
+                {
+                    ulp.FromDate = dateTimePickerFrom.Value.Date;
+                    ulp.ToDate = dateTimePickerTo.Value.Date;
+                }
+                try
+                {
+                    Controller.AddUserLocationPurpose(ulp);
+                    UsersLocationsTimesToDataGrid();
+                    DefaultValuesLocation();
+                }
+                catch (DbUpdateException ex)
+                {
+                    label_Messages.Text = ErrorHandler.HandleError(ex);
+                }
+            } 
         }
 
         private void button_Delete_Click(object sender, EventArgs e)
