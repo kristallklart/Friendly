@@ -539,6 +539,7 @@ namespace Friendly.View
             this.buttonSendMessage.TabIndex = 2;
             this.buttonSendMessage.Text = "Send";
             this.buttonSendMessage.UseVisualStyleBackColor = true;
+            this.buttonSendMessage.Click += new System.EventHandler(this.buttonSendMessage_Click);
             // 
             // textBoxMessages
             // 

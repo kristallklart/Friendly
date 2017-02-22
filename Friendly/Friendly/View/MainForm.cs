@@ -273,6 +273,13 @@ namespace Friendly.View
 
             }
         }
+
+        private void buttonSendMessage_Click(object sender, EventArgs e)
+        {
+            string message = cueTextBoxMessage.Text;
+            DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
+            //DelegateBroadcastClient dcc2 = new DelegateBroadcastClient();
+        }
     }
 }
 
