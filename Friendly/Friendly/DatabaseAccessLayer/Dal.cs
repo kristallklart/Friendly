@@ -67,7 +67,8 @@ namespace Friendly.DatabaseAccessLayer
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
                 List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(l => l.Username == username).ToList();           
-                return locations; }
+                return locations;
+            }
         }
         public static List<FieldOfProfession> GetFieldOfProfessions()
         {
@@ -90,11 +91,12 @@ namespace Friendly.DatabaseAccessLayer
            using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
                int age = 0;
-                //kolla med labb
                 DateTime dateOfBirth = Convert.ToDateTime(context.Users.Where(u => u.Username == username).Select(u => u.Birthdate).FirstOrDefault());
                 age = DateTime.Now.Year - dateOfBirth.Year;
                 if (DateTime.Now.DayOfYear < dateOfBirth.DayOfYear)
-                   age = age - 1;
+                {
+                    age = age - 1;
+                }                 
                return age;
             }
         }
@@ -126,7 +128,6 @@ namespace Friendly.DatabaseAccessLayer
         {
             using(FriendlyDBEntities context = new FriendlyDBEntities())
             {
-
                 context.User_Location_Purpose.Attach(ulp);
                 context.User_Location_Purpose.Remove(ulp);
                 context.SaveChanges();
