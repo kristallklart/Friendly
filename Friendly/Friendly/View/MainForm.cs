@@ -101,7 +101,7 @@ namespace Friendly.View
             cueComboBox_City.ValueMember = "City";
             cueComboBox_City.SelectedIndex = -1;
             cueComboBox_City.CueText = "City";
-            checkBox_Longterm.Checked = false; 
+            
         }
 
         private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -149,16 +149,10 @@ namespace Friendly.View
             ulp.City = cueComboBox_City.SelectedValue.ToString().Trim();
             
 
-            if (checkBox_Longterm.Checked)
-            {
-                ulp.FromDate = null;
-                ulp.ToDate = null;
-            }
-            else if (!checkBox_Longterm.Checked)
-            {
+            
                 ulp.FromDate = dateTimePickerFrom.Value.Date;
                 ulp.ToDate = dateTimePickerTo.Value.Date;
-            }
+            
             try
             {
                 Controller.AddUserLocationPurpose(ulp);
@@ -182,20 +176,6 @@ namespace Friendly.View
             Controller.DeleteUserLocatioPurpose(ulp);
             UsersLocationsTimesToDataGrid();
 
-        }
-
-        private void checkBox_Longterm_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox_Longterm.Checked)
-            {
-                dateTimePickerFrom.Enabled = false;
-                dateTimePickerTo.Enabled = false;
-            }
-            else
-            {
-                dateTimePickerFrom.Enabled = true;
-                dateTimePickerTo.Enabled = true;
-            }
         }
 
         private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)

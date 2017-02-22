@@ -38,7 +38,6 @@ namespace Friendly.View
             this.button_Delete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cueComboBox_InterestedIn = new Friendly.Utilities.CueComboBox();
-            this.checkBox_Longterm = new System.Windows.Forms.CheckBox();
             this.button_AddLocation = new System.Windows.Forms.Button();
             this.label_Preferences = new System.Windows.Forms.Label();
             this.label_To = new System.Windows.Forms.Label();
@@ -110,7 +109,6 @@ namespace Friendly.View
             this.panel_IWant.Controls.Add(this.button_Delete);
             this.panel_IWant.Controls.Add(this.dataGridView1);
             this.panel_IWant.Controls.Add(this.cueComboBox_InterestedIn);
-            this.panel_IWant.Controls.Add(this.checkBox_Longterm);
             this.panel_IWant.Controls.Add(this.button_AddLocation);
             this.panel_IWant.Controls.Add(this.label_Preferences);
             this.panel_IWant.Controls.Add(this.label_To);
@@ -150,18 +148,6 @@ namespace Friendly.View
             this.cueComboBox_InterestedIn.Name = "cueComboBox_InterestedIn";
             this.cueComboBox_InterestedIn.Size = new System.Drawing.Size(136, 21);
             this.cueComboBox_InterestedIn.TabIndex = 19;
-            // 
-            // checkBox_Longterm
-            // 
-            this.checkBox_Longterm.AutoSize = true;
-            this.checkBox_Longterm.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox_Longterm.Location = new System.Drawing.Point(97, 91);
-            this.checkBox_Longterm.Name = "checkBox_Longterm";
-            this.checkBox_Longterm.Size = new System.Drawing.Size(82, 17);
-            this.checkBox_Longterm.TabIndex = 18;
-            this.checkBox_Longterm.Text = "Longterm?";
-            this.checkBox_Longterm.UseVisualStyleBackColor = true;
-            this.checkBox_Longterm.CheckedChanged += new System.EventHandler(this.checkBox_Longterm_CheckedChanged);
             // 
             // button_AddLocation
             // 
@@ -621,7 +607,6 @@ namespace Friendly.View
         private System.Windows.Forms.Button button_AddLocation;
         private System.Windows.Forms.Button button_UpdateDetails;
         private Utilities.CueComboBox cueComboBox_InterestedIn;
-        private System.Windows.Forms.CheckBox checkBox_Longterm;
         private System.Windows.Forms.DataGridView dataGridView_MyMatchesCities;
         private System.Windows.Forms.Label label_Messages;
         private System.Windows.Forms.DataGridView dataGridView1;
