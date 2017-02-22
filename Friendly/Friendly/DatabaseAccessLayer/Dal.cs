@@ -133,5 +133,14 @@ namespace Friendly.DatabaseAccessLayer
                 context.SaveChanges();
             }
         }
+        public static void SaveProfilePicture(string username, byte[] picture)
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                var user = context.Users.FirstOrDefault(u => u.Username == username);
+                user.Picture = picture;
+                context.SaveChanges();
+            }
+        }
     }
 }

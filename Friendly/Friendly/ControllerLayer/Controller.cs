@@ -59,5 +59,9 @@ namespace Friendly.ControllerLayer
         {
             Dal.DeleteUserLocatioPurpose(ulp);
         }
+        public static void SaveProfilePicture(string username, byte[] picture)
+        {
+            Dal.SaveProfilePicture(username, picture);
+        }
     }
 }

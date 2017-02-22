@@ -18,6 +18,7 @@ namespace Friendly.View
     public partial class MainForm : Form
     {
         private User currentUser;
+        private OpenFileDialog openFile = new OpenFileDialog();
         public MainForm()
         {
             InitializeComponent();
@@ -91,6 +92,18 @@ namespace Friendly.View
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            dateTimePickerFrom.MinDate = DateTime.Today;
+            dateTimePickerTo.MinDate = DateTime.Today;
+            UsersLocationsTimesToDataGrid();
+            textBox_FirstName.Text = currentUser.FirstName;
+            textBox_LastName.Text = currentUser.LastName;
+            label_Age.Text = Controller.GetAge(currentUser.Username).ToString() + " years";
+
+            cueComboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
+            cueComboBox_ProfessionalField.DisplayMember = "Industry";
+            cueComboBox_ProfessionalField.SelectedIndex = -1;
+            cueComboBox_ProfessionalField.CueText = "Field of profession";
+
             if (currentUser.Industry != null)
             {
                 cueComboBoxProfessionalField.Text = currentUser.Industry;
@@ -243,7 +256,18 @@ namespace Friendly.View
 
         private void buttonAddPicture_Click(object sender, EventArgs e)
         {
+            
+             if (openFile.ShowDialog() == DialogResult.OK) // Ser till att koden inte fortsätter om man inte valt att öppna en fil.
+            {
+                string fileContent;
+                fileContent = openFile.FileName;
+                Image newImage = Image.FromFile(fileContent);
+                byte[] result = (byte[])new ImageConverter().ConvertTo(newImage, typeof(byte[]));
+                picBox_ProfilePic.Image = newImage;
+                Controller.SaveProfilePicture(currentUser.Username, result);
 
+
+            }
         }
     }
 }
