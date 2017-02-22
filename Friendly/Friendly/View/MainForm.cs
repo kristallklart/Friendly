@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Friendly.Model;
 using Friendly.ControllerLayer;
 using System.Data.Entity.Infrastructure;
+using System.Linq.Expressions;
 using Friendly.Utilities;
 
 namespace Friendly.View
@@ -17,6 +18,7 @@ namespace Friendly.View
     public partial class MainForm : Form
     {
         private User currentUser;
+        private OpenFileDialog openFile = new OpenFileDialog();
         public MainForm()
         {
             InitializeComponent();
@@ -28,88 +30,140 @@ namespace Friendly.View
         }
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch ((sender as TabControl).SelectedIndex)
+            TabControl tempTabControl = sender as TabControl;
+            if (tempTabControl != null)
             {
+                switch (tempTabControl.SelectedIndex)
+                {
                 case 0:
                     UsersLocationsTimesToDataGrid();
                     break;
                 case 1:
                     UsersLocationsToDataGrid();
                     break;
-            }
+                }
+            }            
         }
         public void UsersLocationsTimesToDataGrid()
         {
-            dataGridView1.DataSource = Controller.GetUserLocations(currentUser.Username);
-            dataGridView1.Columns[1].Visible = false;
-            for (int i = 5; i < dataGridView1.Columns.Count; i++)
-                dataGridView1.Columns[i].Visible = false;
+            try
+            {
+                dataGridViewMyCities.DataSource = Controller.GetUserLocations(currentUser.Username);
+                dataGridViewMyCities.Columns[1].Visible = false;
+                for (int i = 5; i < dataGridViewMyCities.Columns.Count; i++)
+                {
+                    dataGridViewMyCities.Columns[i].Visible = false;
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                labelMessages.Text = ErrorHandler.HandleError(ex);
+            }
         }
         public void UsersLocationsToDataGrid()
         {
-            dataGridView_MyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
-            for (int i = 1; i < dataGridView_MyMatchesCities.Columns.Count; i++)
-                dataGridView_MyMatchesCities.Columns[i].Visible = false;
-            
-
+            try
+            {
+                dataGridViewMyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
+                for (int i = 1; i < dataGridViewMyMatchesCities.Columns.Count; i++)
+                {
+                    dataGridViewMyMatchesCities.Columns[i].Visible = false;
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                labelMessages.Text = ErrorHandler.HandleError(ex);
+            }
         }
         public void UsersByCityToDataGrid(string selectedCity, User currentuser)
         {
-            dataGridView_MyMatches.DataSource = Controller.GetUsersByCity(selectedCity, currentuser);
-            for (int i = 5; i < dataGridView_MyMatches.Columns.Count; i++)
-                dataGridView_MyMatches.Columns[i].Visible = false;
+            try
+            {
+                dataGridViewMyMatches.DataSource = Controller.GetUsersByCity(selectedCity, currentuser);
+                for (int i = 5; i < dataGridViewMyMatches.Columns.Count; i++)
+                {
+                    dataGridViewMyMatches.Columns[i].Visible = false;
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                labelMessages.Text = ErrorHandler.HandleError(ex);
+            }
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
             dateTimePickerFrom.MinDate = DateTime.Today;
             dateTimePickerTo.MinDate = DateTime.Today;
             UsersLocationsTimesToDataGrid();
-            textBox_FirstName.Text = currentUser.FirstName;
-            textBox_LastName.Text = currentUser.LastName;
-            label_Age.Text = Controller.GetAge(currentUser.Username).ToString() + " years";
+            textBoxFirstName.Text = currentUser.FirstName;
+            textBoxLastName.Text = currentUser.LastName;
+            labelAge.Text = Controller.GetAge(currentUser.Username).ToString().Trim() + " years";
 
-            cueComboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
-            cueComboBox_ProfessionalField.DisplayMember = "Industry";
-            cueComboBox_ProfessionalField.SelectedIndex = -1;
-            cueComboBox_ProfessionalField.CueText = "Field of profession";
+            cueComboBoxProfessionalField.DataSource = Controller.GetFieldOfProfessions();
+            cueComboBoxProfessionalField.DisplayMember = "Industry";
+            cueComboBoxProfessionalField.SelectedIndex = -1;
+            cueComboBoxProfessionalField.CueText = "Field of profession";
 
             if (currentUser.Industry != null)
             {
-                cueComboBox_ProfessionalField.Text = currentUser.Industry;
+                cueComboBoxProfessionalField.Text = currentUser.Industry;
             }
 
             if (currentUser.Profession != null)
             {
-                cueTextBox_ProfessionalTitle.Text = currentUser.Profession;
+                cueTextBoxProfessionalTitle.Text = currentUser.Profession;
             }
 
             if (currentUser.About != null)
             {
-                textBox_AboutMe.Text = currentUser.About;
+                textBoxAboutMe.Text = currentUser.About;
             }
-            DefaultValuesLocation();
+            if (currentUser.Picture != null)
+            {
+                picBoxProfilePic.Image = (Image)new ImageConverter().ConvertFrom(currentUser.Picture);
+            }
+
+            dateTimePickerFrom.MinDate = DateTime.Today;
+            dateTimePickerTo.MinDate = DateTime.Today;
+            UsersLocationsTimesToDataGrid();
+            textBoxFirstName.Text = currentUser.FirstName;
+            textBoxLastName.Text = currentUser.LastName;
+
+            try
+            {
+                labelAge.Text = Controller.GetAge(currentUser.Username).ToString().Trim() + " years";
+                cueComboBoxProfessionalField.DataSource = Controller.GetFieldOfProfessions();                
+                DefaultValuesLocation();
+            }
+            catch (ArgumentNullException ex)
+            {
+                labelMessages.Text = ErrorHandler.HandleError(ex);
+            }
+
+            cueComboBoxProfessionalField.DisplayMember = "Industry";
+            cueComboBoxProfessionalField.SelectedIndex = -1;
+            cueComboBoxProfessionalField.CueText = "Field of profession";            
         }
         private void DefaultValuesLocation()
         {
-            cueComboBox_InterestedIn.DataSource = Controller.GetPurposes();
-            cueComboBox_InterestedIn.DisplayMember = "Purposetype";
-            cueComboBox_InterestedIn.ValueMember = "Purposetype";
-            cueComboBox_InterestedIn.SelectedIndex = -1;
-            cueComboBox_InterestedIn.CueText = "Interested in";
-            cueComboBox_City.DataSource = Controller.GetLocations();
-            cueComboBox_City.DisplayMember = "City";
-            cueComboBox_City.ValueMember = "City";
-            cueComboBox_City.SelectedIndex = -1;
-            cueComboBox_City.CueText = "City";
-            
+            cueComboBoxInterestedIn.DataSource = Controller.GetPurposes();
+            cueComboBoxInterestedIn.DisplayMember = "Purposetype";
+            cueComboBoxInterestedIn.ValueMember = "Purposetype";
+            cueComboBoxInterestedIn.SelectedIndex = -1;
+            cueComboBoxInterestedIn.CueText = "Interested in";
+            cueComboBoxCity.DataSource = Controller.GetLocations();
+            cueComboBoxCity.DisplayMember = "City";
+            cueComboBoxCity.ValueMember = "City";
+            cueComboBoxCity.SelectedIndex = -1;
+            cueComboBoxCity.CueText = "City";            
         }
 
         private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow selectedRow = dataGridView_MyMatchesCities.Rows[e.RowIndex];
-                string selectedCity = selectedRow.Cells[0].Value.ToString();
+                DataGridViewRow selectedRow = dataGridViewMyMatchesCities.Rows[e.RowIndex];
+                string selectedCity = selectedRow.Cells[0].Value.ToString().Trim();
                 UsersByCityToDataGrid(selectedCity, currentUser);
             }
         }
@@ -118,26 +172,36 @@ namespace Friendly.View
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow selectedRow = dataGridView_MyMatches.Rows[e.RowIndex];
-                string selectedUser = selectedRow.Cells[1].Value.ToString();
-                PopUpForm showUserForm = new PopUpForm(selectedUser);
-                showUserForm.Show();
+                DataGridViewRow selectedRow = dataGridViewMyMatches.Rows[e.RowIndex];
+                string selectedUser = selectedRow.Cells[1].Value.ToString().Trim();
+                using (PopUpForm showUserForm = new PopUpForm(selectedUser))
+                {
+                    showUserForm.Show();
+                }
             }
         }
 
         private void button_UpdateDetails_Click(object sender, EventArgs e)
         {
-            currentUser.FirstName= textBox_FirstName.Text.ToString().Trim();
-            currentUser.LastName = textBox_LastName.Text.ToString().Trim();
-            currentUser.About = textBox_AboutMe.Text.ToString().Trim();
-            currentUser.Profession = cueTextBox_ProfessionalTitle.Text.ToString().Trim();
-            currentUser.Industry = cueComboBox_ProfessionalField.Text.ToString().Trim();
+            currentUser.FirstName= textBoxFirstName.Text.ToString().Trim();
+            currentUser.LastName = textBoxLastName.Text.ToString().Trim();
+            currentUser.About = textBoxAboutMe.Text.ToString().Trim();
+            currentUser.Profession = cueTextBoxProfessionalTitle.Text.ToString().Trim();
+            if (!cueComboBoxProfessionalField.Text.ToString().Trim().Equals(""))
+            {
+                currentUser.Industry = cueComboBoxProfessionalField.Text.ToString().Trim();
+            }            
             try
             {
                 Controller.UpdateUser(currentUser);
             }
-            catch (Exception)
+            catch (DbUpdateException ex)
             {
+                labelMessages.Text = ErrorHandler.HandleError(ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                labelMessages.Text = ErrorHandler.HandleError(ex);
             }
         }
 
@@ -145,12 +209,12 @@ namespace Friendly.View
         {
             User_Location_Purpose ulp = new User_Location_Purpose();
             ulp.Username = currentUser.Username;
-            if (cueComboBox_InterestedIn.SelectedIndex >= 0 && cueComboBox_City.SelectedIndex >= 0)
+            if (cueComboBoxInterestedIn.SelectedIndex >= 0 && cueComboBoxCity.SelectedIndex >= 0)
             {
-                ulp.Purposetype = cueComboBox_InterestedIn.SelectedValue.ToString().Trim();
-                ulp.City = cueComboBox_City.SelectedValue.ToString().Trim();             
+                ulp.Purposetype = cueComboBoxInterestedIn.SelectedValue.ToString().Trim();
+                ulp.City = cueComboBoxCity.SelectedValue.ToString().Trim();             
                 ulp.FromDate = dateTimePickerFrom.Value.Date;
-                ulp.ToDate = dateTimePickerTo.Value.Date;              
+                ulp.ToDate = dateTimePickerTo.Value.Date;
                 try
                 {
                     Controller.AddUserLocationPurpose(ulp);
@@ -159,24 +223,34 @@ namespace Friendly.View
                 }
                 catch (DbUpdateException ex)
                 {
-                    label_Messages.Text = ErrorHandler.HandleError(ex);
+                    labelMessages.Text = ErrorHandler.HandleError(ex);
                 }
+                catch (ArgumentNullException ex)
+                {
+                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                }             
             } 
         }
 
         private void button_Delete_Click(object sender, EventArgs e)
         {
             User_Location_Purpose ulp = new User_Location_Purpose();
-            DataGridViewRow selectedRow = dataGridView1.CurrentRow;
-            ulp.City = selectedRow.Cells[0].Value.ToString();
-            ulp.Purposetype = selectedRow.Cells[2].Value.ToString();
-            ulp.FromDate = Convert.ToDateTime(selectedRow.Cells[3].Value.ToString());
-            ulp.ToDate = Convert.ToDateTime(selectedRow.Cells[4].Value.ToString());
+            DataGridViewRow selectedRow = dataGridViewMyCities.CurrentRow;
+            ulp.City = selectedRow.Cells[0].Value.ToString().Trim();
+            ulp.Purposetype = selectedRow.Cells[2].Value.ToString().Trim();
+            ulp.FromDate = Convert.ToDateTime(selectedRow.Cells[3].Value.ToString().Trim());
+            ulp.ToDate = Convert.ToDateTime(selectedRow.Cells[4].Value.ToString().Trim());
             ulp.Username = currentUser.Username;
 
-            Controller.DeleteUserLocatioPurpose(ulp);
+            try
+            {
+                Controller.DeleteUserLocatioPurpose(ulp);
+            }
+            catch (DbUpdateException ex)
+            {
+                labelMessages.Text = ErrorHandler.HandleError(ex);
+            }
             UsersLocationsTimesToDataGrid();
-
         }
 
         private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
@@ -186,7 +260,18 @@ namespace Friendly.View
 
         private void buttonAddPicture_Click(object sender, EventArgs e)
         {
+            
+             if (openFile.ShowDialog() == DialogResult.OK) // Ser till att koden inte fortsätter om man inte valt att öppna en fil.
+            {
+                string fileContent;
+                fileContent = openFile.FileName;
+                Image newImage = Image.FromFile(fileContent);
+                byte[] result = (byte[])new ImageConverter().ConvertTo(newImage, typeof(byte[]));
+                picBoxProfilePic.Image = newImage;
+                Controller.SaveProfilePicture(currentUser.Username, result);
 
+
+            }
         }
     }
 }

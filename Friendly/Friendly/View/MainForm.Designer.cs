@@ -1,5 +1,5 @@
 ﻿using System;
-using Friendly.Utilities;
+using Friendly;
 
 namespace Friendly.View
 {
@@ -33,57 +33,57 @@ namespace Friendly.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControlMain = new System.Windows.Forms.TabControl();
-            this.tab_MyProfile = new System.Windows.Forms.TabPage();
-            this.panel_IWant = new System.Windows.Forms.Panel();
-            this.button_Delete = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cueComboBox_InterestedIn = new Friendly.Utilities.CueComboBox();
-            this.button_AddLocation = new System.Windows.Forms.Button();
-            this.label_Preferences = new System.Windows.Forms.Label();
-            this.label_To = new System.Windows.Forms.Label();
-            this.label_From = new System.Windows.Forms.Label();
+            this.tabMyProfile = new System.Windows.Forms.TabPage();
+            this.panelIWant = new System.Windows.Forms.Panel();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.dataGridViewMyCities = new System.Windows.Forms.DataGridView();
+            this.cueComboBoxInterestedIn = new Friendly.Utilities.CueComboBox();
+            this.buttonAddLocation = new System.Windows.Forms.Button();
+            this.labelPreferences = new System.Windows.Forms.Label();
+            this.labelTo = new System.Windows.Forms.Label();
+            this.labelFrom = new System.Windows.Forms.Label();
             this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
-            this.cueComboBox_City = new Friendly.Utilities.CueComboBox();
-            this.panel_PersonalDetails = new System.Windows.Forms.Panel();
-            this.label_Age = new System.Windows.Forms.Label();
-            this.cueTextBox_ProfessionalTitle = new Friendly.Utilities.CueTextBox();
-            this.picBox_ProfilePic = new System.Windows.Forms.PictureBox();
-            this.button_UpdateDetails = new System.Windows.Forms.Button();
-            this.label_AboutMe = new System.Windows.Forms.Label();
-            this.textBox_AboutMe = new System.Windows.Forms.TextBox();
-            this.textBox_LastName = new System.Windows.Forms.TextBox();
-            this.cueComboBox_ProfessionalField = new Friendly.Utilities.CueComboBox();
-            this.textBox_FirstName = new System.Windows.Forms.TextBox();
-            this.label_PersonalDetails = new System.Windows.Forms.Label();
-            this.tab_MyMatches = new System.Windows.Forms.TabPage();
-            this.dataGridView_MyMatches = new System.Windows.Forms.DataGridView();
-            this.dataGridView_MyMatchesCities = new System.Windows.Forms.DataGridView();
-            this.tab_MyMessages = new System.Windows.Forms.TabPage();
-            this.cueTextBox_Message = new Friendly.Utilities.CueTextBox();
-            this.button_SendMessage = new System.Windows.Forms.Button();
-            this.textBox_Messages = new System.Windows.Forms.TextBox();
-            this.dataGridView_MyMessagesTab = new System.Windows.Forms.DataGridView();
-            this.label_Messages = new System.Windows.Forms.Label();
+            this.cueComboBoxCity = new Friendly.Utilities.CueComboBox();
+            this.panelPersonalDetails = new System.Windows.Forms.Panel();
             this.buttonAddPicture = new System.Windows.Forms.Button();
+            this.labelAge = new System.Windows.Forms.Label();
+            this.cueTextBoxProfessionalTitle = new Friendly.Utilities.CueTextBox();
+            this.picBoxProfilePic = new System.Windows.Forms.PictureBox();
+            this.buttonUpdateDetails = new System.Windows.Forms.Button();
+            this.labelAboutMe = new System.Windows.Forms.Label();
+            this.textBoxAboutMe = new System.Windows.Forms.TextBox();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
+            this.cueComboBoxProfessionalField = new Friendly.Utilities.CueComboBox();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
+            this.labelPersonalDetails = new System.Windows.Forms.Label();
+            this.tabMyMatches = new System.Windows.Forms.TabPage();
+            this.dataGridViewMyMatches = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMyMatchesCities = new System.Windows.Forms.DataGridView();
+            this.tabMyMessages = new System.Windows.Forms.TabPage();
+            this.cueTextBoxMessage = new Friendly.Utilities.CueTextBox();
+            this.buttonSendMessage = new System.Windows.Forms.Button();
+            this.textBoxMessages = new System.Windows.Forms.TextBox();
+            this.dataGridViewMyMessagesTab = new System.Windows.Forms.DataGridView();
+            this.labelMessages = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
-            this.tab_MyProfile.SuspendLayout();
-            this.panel_IWant.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel_PersonalDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).BeginInit();
-            this.tab_MyMatches.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatches)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatchesCities)).BeginInit();
-            this.tab_MyMessages.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMessagesTab)).BeginInit();
+            this.tabMyProfile.SuspendLayout();
+            this.panelIWant.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyCities)).BeginInit();
+            this.panelPersonalDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxProfilePic)).BeginInit();
+            this.tabMyMatches.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMatches)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMatchesCities)).BeginInit();
+            this.tabMyMessages.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMessagesTab)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMain
             // 
-            this.tabControlMain.Controls.Add(this.tab_MyProfile);
-            this.tabControlMain.Controls.Add(this.tab_MyMatches);
-            this.tabControlMain.Controls.Add(this.tab_MyMessages);
+            this.tabControlMain.Controls.Add(this.tabMyProfile);
+            this.tabControlMain.Controls.Add(this.tabMyMatches);
+            this.tabControlMain.Controls.Add(this.tabMyMessages);
             this.tabControlMain.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMain.Location = new System.Drawing.Point(12, 21);
             this.tabControlMain.Name = "tabControlMain";
@@ -92,103 +92,103 @@ namespace Friendly.View
             this.tabControlMain.TabIndex = 0;
             this.tabControlMain.SelectedIndexChanged += new System.EventHandler(this.TabControlMain_SelectedIndexChanged);
             // 
-            // tab_MyProfile
+            // tabMyProfile
             // 
-            this.tab_MyProfile.Controls.Add(this.panel_IWant);
-            this.tab_MyProfile.Controls.Add(this.panel_PersonalDetails);
-            this.tab_MyProfile.Location = new System.Drawing.Point(4, 22);
-            this.tab_MyProfile.Name = "tab_MyProfile";
-            this.tab_MyProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_MyProfile.Size = new System.Drawing.Size(806, 420);
-            this.tab_MyProfile.TabIndex = 0;
-            this.tab_MyProfile.Text = "My profile";
-            this.tab_MyProfile.UseVisualStyleBackColor = true;
+            this.tabMyProfile.Controls.Add(this.panelIWant);
+            this.tabMyProfile.Controls.Add(this.panelPersonalDetails);
+            this.tabMyProfile.Location = new System.Drawing.Point(4, 22);
+            this.tabMyProfile.Name = "tabMyProfile";
+            this.tabMyProfile.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMyProfile.Size = new System.Drawing.Size(806, 420);
+            this.tabMyProfile.TabIndex = 0;
+            this.tabMyProfile.Text = "My profile";
+            this.tabMyProfile.UseVisualStyleBackColor = true;
             // 
-            // panel_IWant
+            // panelIWant
             // 
-            this.panel_IWant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_IWant.Controls.Add(this.button_Delete);
-            this.panel_IWant.Controls.Add(this.dataGridView1);
-            this.panel_IWant.Controls.Add(this.cueComboBox_InterestedIn);
-            this.panel_IWant.Controls.Add(this.button_AddLocation);
-            this.panel_IWant.Controls.Add(this.label_Preferences);
-            this.panel_IWant.Controls.Add(this.label_To);
-            this.panel_IWant.Controls.Add(this.label_From);
-            this.panel_IWant.Controls.Add(this.dateTimePickerFrom);
-            this.panel_IWant.Controls.Add(this.dateTimePickerTo);
-            this.panel_IWant.Controls.Add(this.cueComboBox_City);
-            this.panel_IWant.Location = new System.Drawing.Point(449, 15);
-            this.panel_IWant.Name = "panel_IWant";
-            this.panel_IWant.Size = new System.Drawing.Size(341, 388);
-            this.panel_IWant.TabIndex = 2;
+            this.panelIWant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelIWant.Controls.Add(this.buttonDelete);
+            this.panelIWant.Controls.Add(this.dataGridViewMyCities);
+            this.panelIWant.Controls.Add(this.cueComboBoxInterestedIn);
+            this.panelIWant.Controls.Add(this.buttonAddLocation);
+            this.panelIWant.Controls.Add(this.labelPreferences);
+            this.panelIWant.Controls.Add(this.labelTo);
+            this.panelIWant.Controls.Add(this.labelFrom);
+            this.panelIWant.Controls.Add(this.dateTimePickerFrom);
+            this.panelIWant.Controls.Add(this.dateTimePickerTo);
+            this.panelIWant.Controls.Add(this.cueComboBoxCity);
+            this.panelIWant.Location = new System.Drawing.Point(449, 15);
+            this.panelIWant.Name = "panelIWant";
+            this.panelIWant.Size = new System.Drawing.Size(341, 388);
+            this.panelIWant.TabIndex = 2;
             // 
-            // button_Delete
+            // buttonDelete
             // 
-            this.button_Delete.Location = new System.Drawing.Point(249, 352);
-            this.button_Delete.Name = "button_Delete";
-            this.button_Delete.Size = new System.Drawing.Size(75, 23);
-            this.button_Delete.TabIndex = 21;
-            this.button_Delete.Text = "Delete";
-            this.button_Delete.UseVisualStyleBackColor = true;
-            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
+            this.buttonDelete.Location = new System.Drawing.Point(249, 352);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 21;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
-            // dataGridView1
+            // dataGridViewMyCities
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 259);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(220, 116);
-            this.dataGridView1.TabIndex = 20;
+            this.dataGridViewMyCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMyCities.Location = new System.Drawing.Point(23, 259);
+            this.dataGridViewMyCities.Name = "dataGridViewMyCities";
+            this.dataGridViewMyCities.Size = new System.Drawing.Size(220, 116);
+            this.dataGridViewMyCities.TabIndex = 20;
             // 
-            // cueComboBox_InterestedIn
+            // cueComboBoxInterestedIn
             // 
-            this.cueComboBox_InterestedIn.CueText = "Interested in";
-            this.cueComboBox_InterestedIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cueComboBox_InterestedIn.FormattingEnabled = true;
-            this.cueComboBox_InterestedIn.Location = new System.Drawing.Point(43, 67);
-            this.cueComboBox_InterestedIn.Name = "cueComboBox_InterestedIn";
-            this.cueComboBox_InterestedIn.Size = new System.Drawing.Size(136, 21);
-            this.cueComboBox_InterestedIn.TabIndex = 19;
+            this.cueComboBoxInterestedIn.CueText = "Interested in";
+            this.cueComboBoxInterestedIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cueComboBoxInterestedIn.FormattingEnabled = true;
+            this.cueComboBoxInterestedIn.Location = new System.Drawing.Point(43, 67);
+            this.cueComboBoxInterestedIn.Name = "cueComboBoxInterestedIn";
+            this.cueComboBoxInterestedIn.Size = new System.Drawing.Size(136, 21);
+            this.cueComboBoxInterestedIn.TabIndex = 19;
             // 
-            // button_AddLocation
+            // buttonAddLocation
             // 
-            this.button_AddLocation.Location = new System.Drawing.Point(104, 202);
-            this.button_AddLocation.Name = "button_AddLocation";
-            this.button_AddLocation.Size = new System.Drawing.Size(75, 23);
-            this.button_AddLocation.TabIndex = 17;
-            this.button_AddLocation.Text = "Add";
-            this.button_AddLocation.UseVisualStyleBackColor = true;
-            this.button_AddLocation.Click += new System.EventHandler(this.button_AddLocation_Click);
+            this.buttonAddLocation.Location = new System.Drawing.Point(104, 202);
+            this.buttonAddLocation.Name = "buttonAddLocation";
+            this.buttonAddLocation.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddLocation.TabIndex = 17;
+            this.buttonAddLocation.Text = "Add";
+            this.buttonAddLocation.UseVisualStyleBackColor = true;
+            this.buttonAddLocation.Click += new System.EventHandler(this.button_AddLocation_Click);
             // 
-            // label_Preferences
+            // labelPreferences
             // 
-            this.label_Preferences.AutoSize = true;
-            this.label_Preferences.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Preferences.Location = new System.Drawing.Point(43, 22);
-            this.label_Preferences.Name = "label_Preferences";
-            this.label_Preferences.Size = new System.Drawing.Size(121, 25);
-            this.label_Preferences.TabIndex = 16;
-            this.label_Preferences.Text = "Preferences ";
+            this.labelPreferences.AutoSize = true;
+            this.labelPreferences.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPreferences.Location = new System.Drawing.Point(43, 22);
+            this.labelPreferences.Name = "labelPreferences";
+            this.labelPreferences.Size = new System.Drawing.Size(121, 25);
+            this.labelPreferences.TabIndex = 16;
+            this.labelPreferences.Text = "Preferences ";
             // 
-            // label_To
+            // labelTo
             // 
-            this.label_To.AutoSize = true;
-            this.label_To.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_To.Location = new System.Drawing.Point(43, 152);
-            this.label_To.Name = "label_To";
-            this.label_To.Size = new System.Drawing.Size(18, 13);
-            this.label_To.TabIndex = 15;
-            this.label_To.Text = "Til";
+            this.labelTo.AutoSize = true;
+            this.labelTo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTo.Location = new System.Drawing.Point(43, 152);
+            this.labelTo.Name = "labelTo";
+            this.labelTo.Size = new System.Drawing.Size(18, 13);
+            this.labelTo.TabIndex = 15;
+            this.labelTo.Text = "Til";
             // 
-            // label_From
+            // labelFrom
             // 
-            this.label_From.AutoSize = true;
-            this.label_From.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_From.Location = new System.Drawing.Point(43, 123);
-            this.label_From.Name = "label_From";
-            this.label_From.Size = new System.Drawing.Size(33, 13);
-            this.label_From.TabIndex = 14;
-            this.label_From.Text = "From";
+            this.labelFrom.AutoSize = true;
+            this.labelFrom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFrom.Location = new System.Drawing.Point(43, 123);
+            this.labelFrom.Name = "labelFrom";
+            this.labelFrom.Size = new System.Drawing.Size(33, 13);
+            this.labelFrom.TabIndex = 14;
+            this.labelFrom.Text = "From";
             // 
             // dateTimePickerFrom
             // 
@@ -207,13 +207,13 @@ namespace Friendly.View
             this.dateTimePickerTo.Size = new System.Drawing.Size(99, 22);
             this.dateTimePickerTo.TabIndex = 13;
             // 
-            // cueComboBox_City
+            // cueComboBoxCity
             // 
-            this.cueComboBox_City.CueText = "City";
-            this.cueComboBox_City.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cueComboBox_City.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cueComboBox_City.FormattingEnabled = true;
-            this.cueComboBox_City.Items.AddRange(new object[] {
+            this.cueComboBoxCity.CueText = "City";
+            this.cueComboBoxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cueComboBoxCity.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cueComboBoxCity.FormattingEnabled = true;
+            this.cueComboBoxCity.Items.AddRange(new object[] {
             "STOCKHOLM",
             "GÖTEBORG",
             "MALMÖ",
@@ -348,212 +348,29 @@ namespace Friendly.View
             "Örnsköldsvik",
             "Östersund",
             "Östhammar"});
-            this.cueComboBox_City.Location = new System.Drawing.Point(46, 175);
-            this.cueComboBox_City.Name = "cueComboBox_City";
-            this.cueComboBox_City.Size = new System.Drawing.Size(133, 21);
-            this.cueComboBox_City.TabIndex = 11;
+            this.cueComboBoxCity.Location = new System.Drawing.Point(46, 175);
+            this.cueComboBoxCity.Name = "cueComboBoxCity";
+            this.cueComboBoxCity.Size = new System.Drawing.Size(133, 21);
+            this.cueComboBoxCity.TabIndex = 11;
             // 
-            // panel_PersonalDetails
+            // panelPersonalDetails
             // 
-            this.panel_PersonalDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_PersonalDetails.Controls.Add(this.buttonAddPicture);
-            this.panel_PersonalDetails.Controls.Add(this.label_Age);
-            this.panel_PersonalDetails.Controls.Add(this.cueTextBox_ProfessionalTitle);
-            this.panel_PersonalDetails.Controls.Add(this.picBox_ProfilePic);
-            this.panel_PersonalDetails.Controls.Add(this.button_UpdateDetails);
-            this.panel_PersonalDetails.Controls.Add(this.label_AboutMe);
-            this.panel_PersonalDetails.Controls.Add(this.textBox_AboutMe);
-            this.panel_PersonalDetails.Controls.Add(this.textBox_LastName);
-            this.panel_PersonalDetails.Controls.Add(this.cueComboBox_ProfessionalField);
-            this.panel_PersonalDetails.Controls.Add(this.textBox_FirstName);
-            this.panel_PersonalDetails.Controls.Add(this.label_PersonalDetails);
-            this.panel_PersonalDetails.Location = new System.Drawing.Point(15, 15);
-            this.panel_PersonalDetails.Name = "panel_PersonalDetails";
-            this.panel_PersonalDetails.Size = new System.Drawing.Size(417, 388);
-            this.panel_PersonalDetails.TabIndex = 1;
-            // 
-            // label_Age
-            // 
-            this.label_Age.AutoSize = true;
-            this.label_Age.Location = new System.Drawing.Point(174, 95);
-            this.label_Age.Name = "label_Age";
-            this.label_Age.Size = new System.Drawing.Size(28, 13);
-            this.label_Age.TabIndex = 23;
-            this.label_Age.Text = "Age";
-            // 
-            // cueTextBox_ProfessionalTitle
-            // 
-            this.cueTextBox_ProfessionalTitle.Cue = "Professional title";
-            this.cueTextBox_ProfessionalTitle.Location = new System.Drawing.Point(177, 147);
-            this.cueTextBox_ProfessionalTitle.Name = "cueTextBox_ProfessionalTitle";
-            this.cueTextBox_ProfessionalTitle.Size = new System.Drawing.Size(222, 22);
-            this.cueTextBox_ProfessionalTitle.TabIndex = 22;
-            // 
-            // picBox_ProfilePic
-            // 
-            this.picBox_ProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.Image")));
-            this.picBox_ProfilePic.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBox_ProfilePic.InitialImage")));
-            this.picBox_ProfilePic.Location = new System.Drawing.Point(19, 65);
-            this.picBox_ProfilePic.Name = "picBox_ProfilePic";
-            this.picBox_ProfilePic.Size = new System.Drawing.Size(116, 104);
-            this.picBox_ProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBox_ProfilePic.TabIndex = 0;
-            this.picBox_ProfilePic.TabStop = false;
-            this.picBox_ProfilePic.WaitOnLoad = true;
-            // 
-            // button_UpdateDetails
-            // 
-            this.button_UpdateDetails.Location = new System.Drawing.Point(324, 352);
-            this.button_UpdateDetails.Name = "button_UpdateDetails";
-            this.button_UpdateDetails.Size = new System.Drawing.Size(75, 23);
-            this.button_UpdateDetails.TabIndex = 12;
-            this.button_UpdateDetails.Text = "Update";
-            this.button_UpdateDetails.UseVisualStyleBackColor = true;
-            this.button_UpdateDetails.Click += new System.EventHandler(this.button_UpdateDetails_Click);
-            // 
-            // label_AboutMe
-            // 
-            this.label_AboutMe.AutoSize = true;
-            this.label_AboutMe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_AboutMe.Location = new System.Drawing.Point(16, 208);
-            this.label_AboutMe.Name = "label_AboutMe";
-            this.label_AboutMe.Size = new System.Drawing.Size(69, 17);
-            this.label_AboutMe.TabIndex = 11;
-            this.label_AboutMe.Text = "About me";
-            // 
-            // textBox_AboutMe
-            // 
-            this.textBox_AboutMe.Location = new System.Drawing.Point(19, 236);
-            this.textBox_AboutMe.MaxLength = 300;
-            this.textBox_AboutMe.Multiline = true;
-            this.textBox_AboutMe.Name = "textBox_AboutMe";
-            this.textBox_AboutMe.Size = new System.Drawing.Size(380, 110);
-            this.textBox_AboutMe.TabIndex = 10;
-            // 
-            // textBox_LastName
-            // 
-            this.textBox_LastName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_LastName.Location = new System.Drawing.Point(291, 65);
-            this.textBox_LastName.Name = "textBox_LastName";
-            this.textBox_LastName.Size = new System.Drawing.Size(108, 22);
-            this.textBox_LastName.TabIndex = 9;
-            this.textBox_LastName.Text = "Last name";
-            // 
-            // cueComboBox_ProfessionalField
-            // 
-            this.cueComboBox_ProfessionalField.CueText = "Field of profession";
-            this.cueComboBox_ProfessionalField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cueComboBox_ProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cueComboBox_ProfessionalField.FormattingEnabled = true;
-            this.cueComboBox_ProfessionalField.Location = new System.Drawing.Point(177, 119);
-            this.cueComboBox_ProfessionalField.Name = "cueComboBox_ProfessionalField";
-            this.cueComboBox_ProfessionalField.Size = new System.Drawing.Size(222, 21);
-            this.cueComboBox_ProfessionalField.TabIndex = 6;
-            // 
-            // textBox_FirstName
-            // 
-            this.textBox_FirstName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_FirstName.Location = new System.Drawing.Point(177, 65);
-            this.textBox_FirstName.Name = "textBox_FirstName";
-            this.textBox_FirstName.Size = new System.Drawing.Size(108, 22);
-            this.textBox_FirstName.TabIndex = 2;
-            this.textBox_FirstName.Text = "First name";
-            // 
-            // label_PersonalDetails
-            // 
-            this.label_PersonalDetails.AutoSize = true;
-            this.label_PersonalDetails.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label_PersonalDetails.Location = new System.Drawing.Point(14, 22);
-            this.label_PersonalDetails.Name = "label_PersonalDetails";
-            this.label_PersonalDetails.Size = new System.Drawing.Size(150, 25);
-            this.label_PersonalDetails.TabIndex = 1;
-            this.label_PersonalDetails.Text = "Personal details";
-            // 
-            // tab_MyMatches
-            // 
-            this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatches);
-            this.tab_MyMatches.Controls.Add(this.dataGridView_MyMatchesCities);
-            this.tab_MyMatches.Location = new System.Drawing.Point(4, 22);
-            this.tab_MyMatches.Name = "tab_MyMatches";
-            this.tab_MyMatches.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_MyMatches.Size = new System.Drawing.Size(806, 420);
-            this.tab_MyMatches.TabIndex = 1;
-            this.tab_MyMatches.Text = "My matches";
-            this.tab_MyMatches.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView_MyMatches
-            // 
-            this.dataGridView_MyMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_MyMatches.Location = new System.Drawing.Point(311, 44);
-            this.dataGridView_MyMatches.Name = "dataGridView_MyMatches";
-            this.dataGridView_MyMatches.Size = new System.Drawing.Size(468, 342);
-            this.dataGridView_MyMatches.TabIndex = 1;
-            this.dataGridView_MyMatches.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatches_CellClick);
-            // 
-            // dataGridView_MyMatchesCities
-            // 
-            this.dataGridView_MyMatchesCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_MyMatchesCities.Location = new System.Drawing.Point(31, 42);
-            this.dataGridView_MyMatchesCities.Name = "dataGridView_MyMatchesCities";
-            this.dataGridView_MyMatchesCities.Size = new System.Drawing.Size(240, 344);
-            this.dataGridView_MyMatchesCities.TabIndex = 0;
-            this.dataGridView_MyMatchesCities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatchesCities_CellClick);
-            // 
-            // tab_MyMessages
-            // 
-            this.tab_MyMessages.Controls.Add(this.cueTextBox_Message);
-            this.tab_MyMessages.Controls.Add(this.button_SendMessage);
-            this.tab_MyMessages.Controls.Add(this.textBox_Messages);
-            this.tab_MyMessages.Controls.Add(this.dataGridView_MyMessagesTab);
-            this.tab_MyMessages.Location = new System.Drawing.Point(4, 22);
-            this.tab_MyMessages.Name = "tab_MyMessages";
-            this.tab_MyMessages.Size = new System.Drawing.Size(806, 420);
-            this.tab_MyMessages.TabIndex = 2;
-            this.tab_MyMessages.Text = "My messages";
-            this.tab_MyMessages.UseVisualStyleBackColor = true;
-            // 
-            // cueTextBox_Message
-            // 
-            this.cueTextBox_Message.Cue = "Write a message...";
-            this.cueTextBox_Message.Location = new System.Drawing.Point(141, 361);
-            this.cueTextBox_Message.Multiline = true;
-            this.cueTextBox_Message.Name = "cueTextBox_Message";
-            this.cueTextBox_Message.Size = new System.Drawing.Size(581, 56);
-            this.cueTextBox_Message.TabIndex = 3;
-            // 
-            // button_SendMessage
-            // 
-            this.button_SendMessage.Location = new System.Drawing.Point(728, 394);
-            this.button_SendMessage.Name = "button_SendMessage";
-            this.button_SendMessage.Size = new System.Drawing.Size(75, 23);
-            this.button_SendMessage.TabIndex = 2;
-            this.button_SendMessage.Text = "Send";
-            this.button_SendMessage.UseVisualStyleBackColor = true;
-            // 
-            // textBox_Messages
-            // 
-            this.textBox_Messages.Location = new System.Drawing.Point(141, 4);
-            this.textBox_Messages.Multiline = true;
-            this.textBox_Messages.Name = "textBox_Messages";
-            this.textBox_Messages.Size = new System.Drawing.Size(662, 351);
-            this.textBox_Messages.TabIndex = 1;
-            // 
-            // dataGridView_MyMessagesTab
-            // 
-            this.dataGridView_MyMessagesTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_MyMessagesTab.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView_MyMessagesTab.Name = "dataGridView_MyMessagesTab";
-            this.dataGridView_MyMessagesTab.Size = new System.Drawing.Size(131, 413);
-            this.dataGridView_MyMessagesTab.TabIndex = 0;
-            // 
-            // label_Messages
-            // 
-            this.label_Messages.AutoSize = true;
-            this.label_Messages.Location = new System.Drawing.Point(16, 470);
-            this.label_Messages.Name = "label_Messages";
-            this.label_Messages.Size = new System.Drawing.Size(63, 13);
-            this.label_Messages.TabIndex = 1;
-            this.label_Messages.Text = "Messages";
+            this.panelPersonalDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPersonalDetails.Controls.Add(this.buttonAddPicture);
+            this.panelPersonalDetails.Controls.Add(this.labelAge);
+            this.panelPersonalDetails.Controls.Add(this.cueTextBoxProfessionalTitle);
+            this.panelPersonalDetails.Controls.Add(this.picBoxProfilePic);
+            this.panelPersonalDetails.Controls.Add(this.buttonUpdateDetails);
+            this.panelPersonalDetails.Controls.Add(this.labelAboutMe);
+            this.panelPersonalDetails.Controls.Add(this.textBoxAboutMe);
+            this.panelPersonalDetails.Controls.Add(this.textBoxLastName);
+            this.panelPersonalDetails.Controls.Add(this.cueComboBoxProfessionalField);
+            this.panelPersonalDetails.Controls.Add(this.textBoxFirstName);
+            this.panelPersonalDetails.Controls.Add(this.labelPersonalDetails);
+            this.panelPersonalDetails.Location = new System.Drawing.Point(15, 15);
+            this.panelPersonalDetails.Name = "panelPersonalDetails";
+            this.panelPersonalDetails.Size = new System.Drawing.Size(417, 388);
+            this.panelPersonalDetails.TabIndex = 1;
             // 
             // buttonAddPicture
             // 
@@ -565,13 +382,196 @@ namespace Friendly.View
             this.buttonAddPicture.UseVisualStyleBackColor = true;
             this.buttonAddPicture.Click += new System.EventHandler(this.buttonAddPicture_Click);
             // 
+            // labelAge
+            // 
+            this.labelAge.AutoSize = true;
+            this.labelAge.Location = new System.Drawing.Point(174, 95);
+            this.labelAge.Name = "labelAge";
+            this.labelAge.Size = new System.Drawing.Size(28, 13);
+            this.labelAge.TabIndex = 23;
+            this.labelAge.Text = "Age";
+            // 
+            // cueTextBoxProfessionalTitle
+            // 
+            this.cueTextBoxProfessionalTitle.Cue = "Professional title";
+            this.cueTextBoxProfessionalTitle.Location = new System.Drawing.Point(177, 147);
+            this.cueTextBoxProfessionalTitle.Name = "cueTextBoxProfessionalTitle";
+            this.cueTextBoxProfessionalTitle.Size = new System.Drawing.Size(222, 22);
+            this.cueTextBoxProfessionalTitle.TabIndex = 22;
+            // 
+            // picBoxProfilePic
+            // 
+            this.picBoxProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("picBoxProfilePic.Image")));
+            this.picBoxProfilePic.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxProfilePic.InitialImage")));
+            this.picBoxProfilePic.Location = new System.Drawing.Point(19, 65);
+            this.picBoxProfilePic.Name = "picBoxProfilePic";
+            this.picBoxProfilePic.Size = new System.Drawing.Size(116, 104);
+            this.picBoxProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxProfilePic.TabIndex = 0;
+            this.picBoxProfilePic.TabStop = false;
+            this.picBoxProfilePic.WaitOnLoad = true;
+            // 
+            // buttonUpdateDetails
+            // 
+            this.buttonUpdateDetails.Location = new System.Drawing.Point(324, 352);
+            this.buttonUpdateDetails.Name = "buttonUpdateDetails";
+            this.buttonUpdateDetails.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdateDetails.TabIndex = 12;
+            this.buttonUpdateDetails.Text = "Update";
+            this.buttonUpdateDetails.UseVisualStyleBackColor = true;
+            this.buttonUpdateDetails.Click += new System.EventHandler(this.button_UpdateDetails_Click);
+            // 
+            // labelAboutMe
+            // 
+            this.labelAboutMe.AutoSize = true;
+            this.labelAboutMe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAboutMe.Location = new System.Drawing.Point(16, 208);
+            this.labelAboutMe.Name = "labelAboutMe";
+            this.labelAboutMe.Size = new System.Drawing.Size(69, 17);
+            this.labelAboutMe.TabIndex = 11;
+            this.labelAboutMe.Text = "About me";
+            // 
+            // textBoxAboutMe
+            // 
+            this.textBoxAboutMe.Location = new System.Drawing.Point(19, 236);
+            this.textBoxAboutMe.MaxLength = 300;
+            this.textBoxAboutMe.Multiline = true;
+            this.textBoxAboutMe.Name = "textBoxAboutMe";
+            this.textBoxAboutMe.Size = new System.Drawing.Size(380, 110);
+            this.textBoxAboutMe.TabIndex = 10;
+            // 
+            // textBoxLastName
+            // 
+            this.textBoxLastName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLastName.Location = new System.Drawing.Point(291, 65);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(108, 22);
+            this.textBoxLastName.TabIndex = 9;
+            this.textBoxLastName.Text = "Last name";
+            // 
+            // cueComboBoxProfessionalField
+            // 
+            this.cueComboBoxProfessionalField.CueText = "Field of profession";
+            this.cueComboBoxProfessionalField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cueComboBoxProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cueComboBoxProfessionalField.FormattingEnabled = true;
+            this.cueComboBoxProfessionalField.Location = new System.Drawing.Point(177, 119);
+            this.cueComboBoxProfessionalField.Name = "cueComboBoxProfessionalField";
+            this.cueComboBoxProfessionalField.Size = new System.Drawing.Size(222, 21);
+            this.cueComboBoxProfessionalField.TabIndex = 6;
+            // 
+            // textBoxFirstName
+            // 
+            this.textBoxFirstName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFirstName.Location = new System.Drawing.Point(177, 65);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(108, 22);
+            this.textBoxFirstName.TabIndex = 2;
+            this.textBoxFirstName.Text = "First name";
+            // 
+            // labelPersonalDetails
+            // 
+            this.labelPersonalDetails.AutoSize = true;
+            this.labelPersonalDetails.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelPersonalDetails.Location = new System.Drawing.Point(14, 22);
+            this.labelPersonalDetails.Name = "labelPersonalDetails";
+            this.labelPersonalDetails.Size = new System.Drawing.Size(150, 25);
+            this.labelPersonalDetails.TabIndex = 1;
+            this.labelPersonalDetails.Text = "Personal details";
+            // 
+            // tabMyMatches
+            // 
+            this.tabMyMatches.Controls.Add(this.dataGridViewMyMatches);
+            this.tabMyMatches.Controls.Add(this.dataGridViewMyMatchesCities);
+            this.tabMyMatches.Location = new System.Drawing.Point(4, 22);
+            this.tabMyMatches.Name = "tabMyMatches";
+            this.tabMyMatches.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMyMatches.Size = new System.Drawing.Size(806, 420);
+            this.tabMyMatches.TabIndex = 1;
+            this.tabMyMatches.Text = "My matches";
+            this.tabMyMatches.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewMyMatches
+            // 
+            this.dataGridViewMyMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMyMatches.Location = new System.Drawing.Point(311, 44);
+            this.dataGridViewMyMatches.Name = "dataGridViewMyMatches";
+            this.dataGridViewMyMatches.Size = new System.Drawing.Size(468, 342);
+            this.dataGridViewMyMatches.TabIndex = 1;
+            this.dataGridViewMyMatches.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatches_CellClick);
+            // 
+            // dataGridViewMyMatchesCities
+            // 
+            this.dataGridViewMyMatchesCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMyMatchesCities.Location = new System.Drawing.Point(31, 42);
+            this.dataGridViewMyMatchesCities.Name = "dataGridViewMyMatchesCities";
+            this.dataGridViewMyMatchesCities.Size = new System.Drawing.Size(240, 344);
+            this.dataGridViewMyMatchesCities.TabIndex = 0;
+            this.dataGridViewMyMatchesCities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatchesCities_CellClick);
+            // 
+            // tabMyMessages
+            // 
+            this.tabMyMessages.Controls.Add(this.cueTextBoxMessage);
+            this.tabMyMessages.Controls.Add(this.buttonSendMessage);
+            this.tabMyMessages.Controls.Add(this.textBoxMessages);
+            this.tabMyMessages.Controls.Add(this.dataGridViewMyMessagesTab);
+            this.tabMyMessages.Location = new System.Drawing.Point(4, 22);
+            this.tabMyMessages.Name = "tabMyMessages";
+            this.tabMyMessages.Size = new System.Drawing.Size(806, 420);
+            this.tabMyMessages.TabIndex = 2;
+            this.tabMyMessages.Text = "My messages";
+            this.tabMyMessages.UseVisualStyleBackColor = true;
+            // 
+            // cueTextBoxMessage
+            // 
+            this.cueTextBoxMessage.Cue = "Write a message...";
+            this.cueTextBoxMessage.Location = new System.Drawing.Point(141, 361);
+            this.cueTextBoxMessage.Multiline = true;
+            this.cueTextBoxMessage.Name = "cueTextBoxMessage";
+            this.cueTextBoxMessage.Size = new System.Drawing.Size(581, 56);
+            this.cueTextBoxMessage.TabIndex = 3;
+            // 
+            // buttonSendMessage
+            // 
+            this.buttonSendMessage.Location = new System.Drawing.Point(728, 394);
+            this.buttonSendMessage.Name = "buttonSendMessage";
+            this.buttonSendMessage.Size = new System.Drawing.Size(75, 23);
+            this.buttonSendMessage.TabIndex = 2;
+            this.buttonSendMessage.Text = "Send";
+            this.buttonSendMessage.UseVisualStyleBackColor = true;
+            // 
+            // textBoxMessages
+            // 
+            this.textBoxMessages.Location = new System.Drawing.Point(141, 4);
+            this.textBoxMessages.Multiline = true;
+            this.textBoxMessages.Name = "textBoxMessages";
+            this.textBoxMessages.Size = new System.Drawing.Size(662, 351);
+            this.textBoxMessages.TabIndex = 1;
+            // 
+            // dataGridViewMyMessagesTab
+            // 
+            this.dataGridViewMyMessagesTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMyMessagesTab.Location = new System.Drawing.Point(4, 4);
+            this.dataGridViewMyMessagesTab.Name = "dataGridViewMyMessagesTab";
+            this.dataGridViewMyMessagesTab.Size = new System.Drawing.Size(131, 413);
+            this.dataGridViewMyMessagesTab.TabIndex = 0;
+            // 
+            // labelMessages
+            // 
+            this.labelMessages.AutoSize = true;
+            this.labelMessages.Location = new System.Drawing.Point(16, 470);
+            this.labelMessages.Name = "labelMessages";
+            this.labelMessages.Size = new System.Drawing.Size(63, 13);
+            this.labelMessages.TabIndex = 1;
+            this.labelMessages.Text = "Messages";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(834, 493);
-            this.Controls.Add(this.label_Messages);
+            this.Controls.Add(this.labelMessages);
             this.Controls.Add(this.tabControlMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -579,19 +579,19 @@ namespace Friendly.View
             this.Text = " ";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControlMain.ResumeLayout(false);
-            this.tab_MyProfile.ResumeLayout(false);
-            this.panel_IWant.ResumeLayout(false);
-            this.panel_IWant.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel_PersonalDetails.ResumeLayout(false);
-            this.panel_PersonalDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).EndInit();
-            this.tab_MyMatches.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatches)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMatchesCities)).EndInit();
-            this.tab_MyMessages.ResumeLayout(false);
-            this.tab_MyMessages.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MyMessagesTab)).EndInit();
+            this.tabMyProfile.ResumeLayout(false);
+            this.panelIWant.ResumeLayout(false);
+            this.panelIWant.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyCities)).EndInit();
+            this.panelPersonalDetails.ResumeLayout(false);
+            this.panelPersonalDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxProfilePic)).EndInit();
+            this.tabMyMatches.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMatches)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMatchesCities)).EndInit();
+            this.tabMyMessages.ResumeLayout(false);
+            this.tabMyMessages.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMessagesTab)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -600,38 +600,38 @@ namespace Friendly.View
         #endregion
 
         private System.Windows.Forms.TabControl tabControlMain;
-        private System.Windows.Forms.TabPage tab_MyMatches;
-        private System.Windows.Forms.TabPage tab_MyProfile;
-        private System.Windows.Forms.Panel panel_PersonalDetails;
-        private System.Windows.Forms.PictureBox picBox_ProfilePic;
-        private System.Windows.Forms.Label label_PersonalDetails;
-        private System.Windows.Forms.TextBox textBox_FirstName;
-        private Utilities.CueComboBox cueComboBox_ProfessionalField;
-        private System.Windows.Forms.TextBox textBox_LastName;
-        private System.Windows.Forms.Label label_To;
-        private System.Windows.Forms.Label label_From;
+        private System.Windows.Forms.TabPage tabMyMatches;
+        private System.Windows.Forms.TabPage tabMyProfile;
+        private System.Windows.Forms.Panel panelPersonalDetails;
+        private System.Windows.Forms.PictureBox picBoxProfilePic;
+        private System.Windows.Forms.Label labelPersonalDetails;
+        private System.Windows.Forms.TextBox textBoxFirstName;
+        private Utilities.CueComboBox cueComboBoxProfessionalField;
+        private System.Windows.Forms.TextBox textBoxLastName;
+        private System.Windows.Forms.Label labelTo;
+        private System.Windows.Forms.Label labelFrom;
         private System.Windows.Forms.DateTimePicker dateTimePickerTo;
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
-        private System.Windows.Forms.Panel panel_IWant;
-        private System.Windows.Forms.Label label_Preferences;
-        private System.Windows.Forms.Label label_AboutMe;
-        private System.Windows.Forms.TextBox textBox_AboutMe;
-        private System.Windows.Forms.Button button_AddLocation;
-        private System.Windows.Forms.Button button_UpdateDetails;
-        private Utilities.CueComboBox cueComboBox_InterestedIn;
-        private System.Windows.Forms.DataGridView dataGridView_MyMatchesCities;
-        private System.Windows.Forms.Label label_Messages;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button_Delete;
-        private System.Windows.Forms.DataGridView dataGridView_MyMatches;
-        private Utilities.CueTextBox cueTextBox_ProfessionalTitle;
-        private System.Windows.Forms.Label label_Age;
-        private Utilities.CueComboBox cueComboBox_City;
-        private System.Windows.Forms.TabPage tab_MyMessages;
-        private System.Windows.Forms.TextBox textBox_Messages;
-        private System.Windows.Forms.DataGridView dataGridView_MyMessagesTab;
-        private CueTextBox cueTextBox_Message;
-        private System.Windows.Forms.Button button_SendMessage;
+        private System.Windows.Forms.Panel panelIWant;
+        private System.Windows.Forms.Label labelPreferences;
+        private System.Windows.Forms.Label labelAboutMe;
+        private System.Windows.Forms.TextBox textBoxAboutMe;
+        private System.Windows.Forms.Button buttonAddLocation;
+        private System.Windows.Forms.Button buttonUpdateDetails;
+        private Utilities.CueComboBox cueComboBoxInterestedIn;
+        private System.Windows.Forms.DataGridView dataGridViewMyMatchesCities;
+        private System.Windows.Forms.Label labelMessages;
+        private System.Windows.Forms.DataGridView dataGridViewMyCities;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.DataGridView dataGridViewMyMatches;
+        private Utilities.CueTextBox cueTextBoxProfessionalTitle;
+        private System.Windows.Forms.Label labelAge;
+        private Utilities.CueComboBox cueComboBoxCity;
+        private System.Windows.Forms.TabPage tabMyMessages;
+        private System.Windows.Forms.TextBox textBoxMessages;
+        private System.Windows.Forms.DataGridView dataGridViewMyMessagesTab;
+        private Utilities.CueTextBox cueTextBoxMessage;
+        private System.Windows.Forms.Button buttonSendMessage;
         private System.Windows.Forms.Button buttonAddPicture;
     }
 }
