@@ -1,5 +1,5 @@
 ﻿using System;
-using Friendly.Utilities;
+using Friendly;
 
 namespace Friendly.View
 {
@@ -36,7 +36,7 @@ namespace Friendly.View
             this.tab_MyProfile = new System.Windows.Forms.TabPage();
             this.panel_IWant = new System.Windows.Forms.Panel();
             this.button_Delete = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMyCities = new System.Windows.Forms.DataGridView();
             this.cueComboBox_InterestedIn = new Friendly.Utilities.CueComboBox();
             this.button_AddLocation = new System.Windows.Forms.Button();
             this.label_Preferences = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@ namespace Friendly.View
             this.tabControlMain.SuspendLayout();
             this.tab_MyProfile.SuspendLayout();
             this.panel_IWant.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyCities)).BeginInit();
             this.panel_PersonalDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).BeginInit();
             this.tab_MyMatches.SuspendLayout();
@@ -108,7 +108,7 @@ namespace Friendly.View
             // 
             this.panel_IWant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_IWant.Controls.Add(this.button_Delete);
-            this.panel_IWant.Controls.Add(this.dataGridView1);
+            this.panel_IWant.Controls.Add(this.dataGridViewMyCities);
             this.panel_IWant.Controls.Add(this.cueComboBox_InterestedIn);
             this.panel_IWant.Controls.Add(this.button_AddLocation);
             this.panel_IWant.Controls.Add(this.label_Preferences);
@@ -132,13 +132,13 @@ namespace Friendly.View
             this.button_Delete.UseVisualStyleBackColor = true;
             this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
-            // dataGridView1
+            // dataGridViewMyCities
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 259);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(220, 116);
-            this.dataGridView1.TabIndex = 20;
+            this.dataGridViewMyCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMyCities.Location = new System.Drawing.Point(23, 259);
+            this.dataGridViewMyCities.Name = "dataGridViewMyCities";
+            this.dataGridViewMyCities.Size = new System.Drawing.Size(220, 116);
+            this.dataGridViewMyCities.TabIndex = 20;
             // 
             // cueComboBox_InterestedIn
             // 
@@ -582,7 +582,7 @@ namespace Friendly.View
             this.tab_MyProfile.ResumeLayout(false);
             this.panel_IWant.ResumeLayout(false);
             this.panel_IWant.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyCities)).EndInit();
             this.panel_PersonalDetails.ResumeLayout(false);
             this.panel_PersonalDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProfilePic)).EndInit();
@@ -621,7 +621,7 @@ namespace Friendly.View
         private Utilities.CueComboBox cueComboBox_InterestedIn;
         private System.Windows.Forms.DataGridView dataGridView_MyMatchesCities;
         private System.Windows.Forms.Label label_Messages;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewMyCities;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.DataGridView dataGridView_MyMatches;
         private Utilities.CueTextBox cueTextBox_ProfessionalTitle;
@@ -630,7 +630,7 @@ namespace Friendly.View
         private System.Windows.Forms.TabPage tab_MyMessages;
         private System.Windows.Forms.TextBox textBox_Messages;
         private System.Windows.Forms.DataGridView dataGridView_MyMessagesTab;
-        private CueTextBox cueTextBox_Message;
+        private Utilities.CueTextBox cueTextBox_Message;
         private System.Windows.Forms.Button button_SendMessage;
         private System.Windows.Forms.Button buttonAddPicture;
     }
