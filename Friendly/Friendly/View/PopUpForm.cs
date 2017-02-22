@@ -13,14 +13,14 @@ using Friendly.Oberverpattern;
 
 namespace Friendly.View
 {
-    public partial class PopUpForm : Form ,IObserver
+    public partial class PopUpForm : Form 
     {
         private User user;
         public PopUpForm(string selectedUser)
         {
             InitializeComponent();
             user = Controller.GetUser(selectedUser);
-        
+
             labelMatchFirstName.Text = user.FirstName.ToString().Trim();
             labelMatchLastName.Text = user.LastName.ToString().Trim();
             labelMatchAge.Text = Controller.GetAge(selectedUser).ToString().Trim() + " years";
@@ -39,7 +39,8 @@ namespace Friendly.View
             if (user.Picture != null)
             {
                 picBoxMatchImage.Image = (Image)new ImageConverter().ConvertFrom(user.Picture);
-            }          
+            }
+        }
 
 
 
