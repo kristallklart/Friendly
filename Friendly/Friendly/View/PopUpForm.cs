@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Friendly.Model;
 using Friendly.ControllerLayer;
+using Friendly.Oberverpattern;
 
 namespace Friendly.View
 {
-    public partial class PopUpForm : Form
+    public partial class PopUpForm : Form ,IObserver
     {
         private User user;
         public PopUpForm(string selectedUser)
@@ -26,13 +27,16 @@ namespace Friendly.View
             label_MatchAge.Text = Controller.GetAge(selectedUser).ToString() + " years";
             label_MatchProfessionalField.Text = user.Industry.ToString();
             textBox_AboutMe.Text = user.About.ToString();
+        }
+        public void Update(Observable o)
+        {
+            throw new NotImplementedException();
+        }
 
+        private void buttonMatchMessage_Click(object sender, EventArgs e)
+        {
             
-
-
-
-
-
+            
 
         }
     }

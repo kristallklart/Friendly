@@ -95,6 +95,10 @@
     <Compile Include="Model\User_Location_Purpose.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Oberverpattern\Message.cs" />
+    <Compile Include="Oberverpattern\UserT.cs" />
+    <Compile Include="Oberverpattern\Observable.cs" />
+    <Compile Include="Oberverpattern\IObserver.cs" />
     <Compile Include="Utilities\CueComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -192,9 +196,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Oberverpattern\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.1.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

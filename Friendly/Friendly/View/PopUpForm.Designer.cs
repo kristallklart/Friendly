@@ -36,6 +36,7 @@
             this.label_ProfessionalTitle = new System.Windows.Forms.Label();
             this.label_Aboutme = new System.Windows.Forms.Label();
             this.textBox_AboutMe = new System.Windows.Forms.TextBox();
+            this.buttonMatchMessage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMatchImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,11 +112,22 @@
             this.textBox_AboutMe.Size = new System.Drawing.Size(380, 123);
             this.textBox_AboutMe.TabIndex = 15;
             // 
+            // buttonMatchMessage
+            // 
+            this.buttonMatchMessage.Location = new System.Drawing.Point(442, 335);
+            this.buttonMatchMessage.Name = "buttonMatchMessage";
+            this.buttonMatchMessage.Size = new System.Drawing.Size(111, 39);
+            this.buttonMatchMessage.TabIndex = 16;
+            this.buttonMatchMessage.Text = "Match and Message";
+            this.buttonMatchMessage.UseVisualStyleBackColor = true;
+            this.buttonMatchMessage.Click += new System.EventHandler(this.buttonMatchMessage_Click);
+            // 
             // PopUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 400);
+            this.Controls.Add(this.buttonMatchMessage);
             this.Controls.Add(this.textBox_AboutMe);
             this.Controls.Add(this.label_Aboutme);
             this.Controls.Add(this.label_ProfessionalTitle);
@@ -142,5 +154,6 @@
         private System.Windows.Forms.Label label_ProfessionalTitle;
         private System.Windows.Forms.Label label_Aboutme;
         private System.Windows.Forms.TextBox textBox_AboutMe;
+        private System.Windows.Forms.Button buttonMatchMessage;
     }
 }
