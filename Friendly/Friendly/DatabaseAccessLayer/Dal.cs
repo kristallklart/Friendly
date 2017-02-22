@@ -24,10 +24,6 @@ namespace Friendly.DatabaseAccessLayer
                     context.Users.Add(user);
                     context.SaveChanges();
                 }
-                catch (DbUpdateException ex)
-                {
-                    throw ex.GetBaseException();
-                }
             }
         }
         public static User CheckUsernameAndPassword(string username, string password)

@@ -148,17 +148,9 @@ namespace Friendly.View
             if (cueComboBox_InterestedIn.SelectedIndex >= 0 && cueComboBox_City.SelectedIndex >= 0)
             {
                 ulp.Purposetype = cueComboBox_InterestedIn.SelectedValue.ToString().Trim();
-                ulp.City = cueComboBox_City.SelectedValue.ToString().Trim();
-                if (checkBox_Longterm.Checked)
-                {
-                    ulp.FromDate = null;
-                    ulp.ToDate = null;
-                }
-                else
-                {
-                    ulp.FromDate = dateTimePickerFrom.Value.Date;
-                    ulp.ToDate = dateTimePickerTo.Value.Date;
-                }
+                ulp.City = cueComboBox_City.SelectedValue.ToString().Trim();             
+                ulp.FromDate = dateTimePickerFrom.Value.Date;
+                ulp.ToDate = dateTimePickerTo.Value.Date;              
                 try
                 {
                     Controller.AddUserLocationPurpose(ulp);
