@@ -50,6 +50,8 @@ namespace Friendly.View
             dataGridView_MyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
             for (int i = 1; i < dataGridView_MyMatchesCities.Columns.Count; i++)
                 dataGridView_MyMatchesCities.Columns[i].Visible = false;
+            
+
         }
         public void UsersByCityToDataGrid(string selectedCity, User currentuser)
         {
@@ -68,6 +70,8 @@ namespace Friendly.View
 
             cueComboBox_ProfessionalField.DataSource = Controller.GetFieldOfProfessions();
             cueComboBox_ProfessionalField.DisplayMember = "Industry";
+            cueComboBox_ProfessionalField.SelectedIndex = -1;
+            cueComboBox_ProfessionalField.CueText = "Field of profession";
 
             if (currentUser.Industry != null)
             {
@@ -90,9 +94,14 @@ namespace Friendly.View
             cueComboBox_InterestedIn.DataSource = Controller.GetPurposes();
             cueComboBox_InterestedIn.DisplayMember = "Purposetype";
             cueComboBox_InterestedIn.ValueMember = "Purposetype";
+            cueComboBox_InterestedIn.SelectedIndex = -1;
+            cueComboBox_InterestedIn.CueText = "Interested in";
             cueComboBox_City.DataSource = Controller.GetLocations();
             cueComboBox_City.DisplayMember = "City";
             cueComboBox_City.ValueMember = "City";
+            cueComboBox_City.SelectedIndex = -1;
+            cueComboBox_City.CueText = "City";
+            checkBox_Longterm.Checked = false; 
         }
 
         private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -194,6 +203,8 @@ namespace Friendly.View
         {
             dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
         }
+
+     
     }
 }
 
