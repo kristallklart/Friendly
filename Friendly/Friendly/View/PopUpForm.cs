@@ -20,14 +20,25 @@ namespace Friendly.View
             InitializeComponent();
             user = Controller.GetUser(selectedUser);
         
-            label_MatchFirstName.Text = user.FirstName.ToString();
-            label_MatchLastName.Text = user.LastName.ToString();
-            label_ProfessionalTitle.Text = user.Profession.ToString();
-            label_MatchAge.Text = Controller.GetAge(selectedUser).ToString() + " years";
-            label_MatchProfessionalField.Text = user.Industry.ToString();
-            textBox_AboutMe.Text = user.About.ToString();
-
-            
+            labelMatchFirstName.Text = user.FirstName.ToString().Trim();
+            labelMatchLastName.Text = user.LastName.ToString().Trim();
+            labelMatchAge.Text = Controller.GetAge(selectedUser).ToString().Trim() + " years";
+            if (user.Industry != null)
+            {
+                labelMatchProfessionalField.Text = user.Industry.ToString().Trim();
+            }
+            if (user.Profession != null)
+            {
+                labelProfessionalTitle.Text = user.Profession.ToString().Trim();
+            }
+            if (user.About != null)
+            {
+                textBoxAboutMe.Text = user.About.ToString().Trim();
+            }
+            if (user.Picture != null)
+            {
+                picBoxMatchImage.Image = (Image)new ImageConverter().ConvertFrom(user.Picture);
+            }          
 
 
 

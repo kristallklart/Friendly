@@ -97,7 +97,7 @@ namespace Friendly.View
             UsersLocationsTimesToDataGrid();
             textBoxFirstName.Text = currentUser.FirstName;
             textBoxLastName.Text = currentUser.LastName;
-            labelAge.Text = Controller.GetAge(currentUser.Username).ToString() + " years";
+            labelAge.Text = Controller.GetAge(currentUser.Username).ToString().Trim() + " years";
 
             cueComboBoxProfessionalField.DataSource = Controller.GetFieldOfProfessions();
             cueComboBoxProfessionalField.DisplayMember = "Industry";
@@ -118,6 +118,10 @@ namespace Friendly.View
             {
                 textBoxAboutMe.Text = currentUser.About;
             }
+            if (currentUser.Picture != null)
+            {
+                picBoxProfilePic.Image = (Image)new ImageConverter().ConvertFrom(currentUser.Picture);
+            }
 
             dateTimePickerFrom.MinDate = DateTime.Today;
             dateTimePickerTo.MinDate = DateTime.Today;
@@ -127,9 +131,8 @@ namespace Friendly.View
 
             try
             {
-                labelAge.Text = Controller.GetAge(currentUser.Username).ToString() + " years";
-                cueComboBoxProfessionalField.DataSource = Controller.GetFieldOfProfessions();
-                picBoxProfilePic.Image = (Image)new ImageConverter().ConvertFrom(currentUser.Picture);
+                labelAge.Text = Controller.GetAge(currentUser.Username).ToString().Trim() + " years";
+                cueComboBoxProfessionalField.DataSource = Controller.GetFieldOfProfessions();                
                 DefaultValuesLocation();
             }
             catch (ArgumentNullException ex)
@@ -160,7 +163,7 @@ namespace Friendly.View
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridViewMyMatchesCities.Rows[e.RowIndex];
-                string selectedCity = selectedRow.Cells[0].Value.ToString();
+                string selectedCity = selectedRow.Cells[0].Value.ToString().Trim();
                 UsersByCityToDataGrid(selectedCity, currentUser);
             }
         }
@@ -170,7 +173,7 @@ namespace Friendly.View
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridViewMyMatches.Rows[e.RowIndex];
-                string selectedUser = selectedRow.Cells[1].Value.ToString();
+                string selectedUser = selectedRow.Cells[1].Value.ToString().Trim();
                 using (PopUpForm showUserForm = new PopUpForm(selectedUser))
                 {
                     showUserForm.Show();
