@@ -42,6 +42,8 @@ namespace Friendly.View
             this.labelAge = new System.Windows.Forms.Label();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.labelAboutMe = new System.Windows.Forms.Label();
+            this.cueTextBoxProfessionalTitle = new Friendly.Utilities.CueTextBox();
+            this.cueComboBoxProfessionalField = new Friendly.Utilities.CueComboBox();
             this.buttonUpdateDetails = new System.Windows.Forms.Button();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.groupBoxPreferences = new System.Windows.Forms.GroupBox();
@@ -63,12 +65,6 @@ namespace Friendly.View
             this.textBoxMessages = new System.Windows.Forms.TextBox();
             this.dataGridViewMyMessagesTab = new System.Windows.Forms.DataGridView();
             this.labelMessages = new System.Windows.Forms.Label();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cueTextBoxProfessionalTitle = new Friendly.Utilities.CueTextBox();
-            this.cueComboBoxProfessionalField = new Friendly.Utilities.CueComboBox();
-            this.cueComboBoxInterestedIn = new Friendly.Utilities.CueComboBox();
-            this.cueComboBoxCity = new Friendly.Utilities.CueComboBox();
-            this.cueTextBoxMessage = new Friendly.Utilities.CueTextBox();
             this.tabControlMain.SuspendLayout();
             this.tabMyProfile.SuspendLayout();
             this.groupBoxMyDetails.SuspendLayout();
@@ -187,6 +183,14 @@ namespace Friendly.View
             this.labelAboutMe.Size = new System.Drawing.Size(69, 17);
             this.labelAboutMe.TabIndex = 11;
             this.labelAboutMe.Text = "About me";
+            // 
+            // cueTextBoxProfessionalTitle
+            // 
+            this.cueTextBoxProfessionalTitle.Cue = "Professional title";
+            this.cueTextBoxProfessionalTitle.Location = new System.Drawing.Point(156, 92);
+            this.cueTextBoxProfessionalTitle.Name = "cueTextBoxProfessionalTitle";
+            this.cueTextBoxProfessionalTitle.Size = new System.Drawing.Size(222, 22);
+            this.cueTextBoxProfessionalTitle.TabIndex = 22;
             // 
             // cueComboBoxProfessionalField
             // 

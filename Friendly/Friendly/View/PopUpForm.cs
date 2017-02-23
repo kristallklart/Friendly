@@ -50,5 +50,15 @@ namespace Friendly.View
             
 
         }
+
+        private void labelMatchLastName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelMatchProfessionalField_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
