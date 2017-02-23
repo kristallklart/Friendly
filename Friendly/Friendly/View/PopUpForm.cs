@@ -43,24 +43,5 @@ namespace Friendly.View
                 picBoxMatchImage.Image = (Image)new ImageConverter().ConvertFrom(user.Picture);
             }
         }
-
-
-
-        private void buttonMatchMessage_Click(object sender, EventArgs e)
-        {
-            
-            
-
-        }
-
-        private void labelMatchLastName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelMatchProfessionalField_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
