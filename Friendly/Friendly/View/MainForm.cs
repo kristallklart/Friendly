@@ -166,7 +166,7 @@ namespace Friendly.View
                 string selectedUser = selectedRow.Cells[1].Value.ToString().Trim();
                 using (PopUpForm showUserForm = new PopUpForm(selectedUser))
                 {
-                    showUserForm.Show();
+                    showUserForm.ShowDialog();
                 }
             }
         }
