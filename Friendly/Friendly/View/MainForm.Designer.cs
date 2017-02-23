@@ -76,6 +76,7 @@ namespace Friendly.View
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMatchesCities)).BeginInit();
             this.tabMyMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMessagesTab)).BeginInit();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
