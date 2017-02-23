@@ -188,7 +188,7 @@ namespace Friendly.View
             this.buttonUpdateDetails.TabIndex = 12;
             this.buttonUpdateDetails.Text = "Update";
             this.buttonUpdateDetails.UseVisualStyleBackColor = true;
-            this.buttonUpdateDetails.Click += new System.EventHandler(this.button_UpdateDetails_Click);
+            this.buttonUpdateDetails.Click += new System.EventHandler(this.buttonUpdateDetails_Click);
             // 
             // textBoxFirstName
             // 
@@ -225,7 +225,7 @@ namespace Friendly.View
             this.buttonDelete.TabIndex = 21;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.button_Delete_Click);
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // labelFrom
             // 
@@ -280,7 +280,7 @@ namespace Friendly.View
             this.buttonAddLocation.TabIndex = 17;
             this.buttonAddLocation.Text = "Add";
             this.buttonAddLocation.UseVisualStyleBackColor = true;
-            this.buttonAddLocation.Click += new System.EventHandler(this.button_AddLocation_Click);
+            this.buttonAddLocation.Click += new System.EventHandler(this.buttonAddLocation_Click);
             // 
             // tabMyMatches
             // 
@@ -301,7 +301,7 @@ namespace Friendly.View
             this.dataGridViewMyMatches.Name = "dataGridViewMyMatches";
             this.dataGridViewMyMatches.Size = new System.Drawing.Size(468, 342);
             this.dataGridViewMyMatches.TabIndex = 1;
-            this.dataGridViewMyMatches.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatches_CellClick);
+            this.dataGridViewMyMatches.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMyMatches_CellClick);
             // 
             // dataGridViewMyMatchesCities
             // 
@@ -310,7 +310,7 @@ namespace Friendly.View
             this.dataGridViewMyMatchesCities.Name = "dataGridViewMyMatchesCities";
             this.dataGridViewMyMatchesCities.Size = new System.Drawing.Size(240, 344);
             this.dataGridViewMyMatchesCities.TabIndex = 0;
-            this.dataGridViewMyMatchesCities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MyMatchesCities_CellClick);
+            this.dataGridViewMyMatchesCities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMyMatchesCities_CellClick);
             // 
             // tabMyMessages
             // 

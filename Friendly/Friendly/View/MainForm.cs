@@ -148,7 +148,7 @@ namespace Friendly.View
             }         
         }
 
-        private void dataGridView_MyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewMyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -158,7 +158,7 @@ namespace Friendly.View
             }
         }
 
-        private void dataGridView_MyMatches_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewMyMatches_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -171,7 +171,7 @@ namespace Friendly.View
             }
         }
 
-        private void button_UpdateDetails_Click(object sender, EventArgs e)
+        private void buttonUpdateDetails_Click(object sender, EventArgs e)
         {
             currentUser.FirstName= textBoxFirstName.Text.ToString().Trim();
             currentUser.LastName = textBoxLastName.Text.ToString().Trim();
@@ -195,7 +195,7 @@ namespace Friendly.View
             }
         }
 
-        private void button_AddLocation_Click(object sender, EventArgs e)
+        private void buttonAddLocation_Click(object sender, EventArgs e)
         {
             User_Location_Purpose ulp = new User_Location_Purpose();
             ulp.Username = currentUser.Username;
@@ -224,7 +224,7 @@ namespace Friendly.View
             } 
         }
 
-        private void button_Delete_Click(object sender, EventArgs e)
+        private void buttonDelete_Click(object sender, EventArgs e)
         {
             User_Location_Purpose ulp = new User_Location_Purpose();
             DataGridViewRow selectedRow = dataGridViewMyCities.CurrentRow;
@@ -252,8 +252,7 @@ namespace Friendly.View
 
         private void buttonAddPicture_Click(object sender, EventArgs e)
         {
-            
-             if (openFile.ShowDialog() == DialogResult.OK) // Ser till att koden inte fortsätter om man inte valt att öppna en fil.
+            if (openFile.ShowDialog() == DialogResult.OK) // Ser till att koden inte fortsätter om man inte valt att öppna en fil.
             {
                 string fileContent;
                 fileContent = openFile.FileName;
@@ -261,8 +260,6 @@ namespace Friendly.View
                 byte[] result = (byte[])new ImageConverter().ConvertTo(newImage, typeof(byte[]));
                 picBoxProfilePic.Image = newImage;
                 Controller.SaveProfilePicture(currentUser.Username, result);
-
-
             }
         }
 
