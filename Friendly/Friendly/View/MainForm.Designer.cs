@@ -510,15 +510,15 @@ namespace Friendly.View
             // cueTextBoxMessage
             // 
             this.cueTextBoxMessage.Cue = "Write a message...";
-            this.cueTextBoxMessage.Location = new System.Drawing.Point(141, 361);
+            this.cueTextBoxMessage.Location = new System.Drawing.Point(203, 374);
             this.cueTextBoxMessage.Multiline = true;
             this.cueTextBoxMessage.Name = "cueTextBoxMessage";
-            this.cueTextBoxMessage.Size = new System.Drawing.Size(581, 56);
+            this.cueTextBoxMessage.Size = new System.Drawing.Size(566, 56);
             this.cueTextBoxMessage.TabIndex = 3;
             // 
             // buttonSendMessage
             // 
-            this.buttonSendMessage.Location = new System.Drawing.Point(728, 394);
+            this.buttonSendMessage.Location = new System.Drawing.Point(775, 407);
             this.buttonSendMessage.Name = "buttonSendMessage";
             this.buttonSendMessage.Size = new System.Drawing.Size(75, 23);
             this.buttonSendMessage.TabIndex = 2;
@@ -528,16 +528,16 @@ namespace Friendly.View
             // 
             // textBoxMessages
             // 
-            this.textBoxMessages.Location = new System.Drawing.Point(141, 4);
+            this.textBoxMessages.Location = new System.Drawing.Point(203, 17);
             this.textBoxMessages.Multiline = true;
             this.textBoxMessages.Name = "textBoxMessages";
-            this.textBoxMessages.Size = new System.Drawing.Size(662, 351);
+            this.textBoxMessages.Size = new System.Drawing.Size(647, 341);
             this.textBoxMessages.TabIndex = 1;
             // 
             // dataGridViewMyMessagesTab
             // 
             this.dataGridViewMyMessagesTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMyMessagesTab.Location = new System.Drawing.Point(4, 4);
+            this.dataGridViewMyMessagesTab.Location = new System.Drawing.Point(51, 17);
             this.dataGridViewMyMessagesTab.Name = "dataGridViewMyMessagesTab";
             this.dataGridViewMyMessagesTab.Size = new System.Drawing.Size(131, 413);
             this.dataGridViewMyMessagesTab.TabIndex = 0;
