@@ -152,7 +152,7 @@ namespace Friendly.View
             this.textBoxAboutMe.MaxLength = 300;
             this.textBoxAboutMe.Multiline = true;
             this.textBoxAboutMe.Name = "textBoxAboutMe";
-            this.textBoxAboutMe.Size = new System.Drawing.Size(376, 211);
+            this.textBoxAboutMe.Size = new System.Drawing.Size(405, 211);
             this.textBoxAboutMe.TabIndex = 10;
             // 
             // labelAge
@@ -206,7 +206,7 @@ namespace Friendly.View
             // 
             // buttonUpdateDetails
             // 
-            this.buttonUpdateDetails.Location = new System.Drawing.Point(307, 401);
+            this.buttonUpdateDetails.Location = new System.Drawing.Point(336, 401);
             this.buttonUpdateDetails.Name = "buttonUpdateDetails";
             this.buttonUpdateDetails.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdateDetails.TabIndex = 12;
