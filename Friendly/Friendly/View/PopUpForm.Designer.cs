@@ -43,10 +43,10 @@
             this.labelProfessionalTitle = new System.Windows.Forms.Label();
             this.labelAboutme = new System.Windows.Forms.Label();
             this.textBoxAboutMe = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelPopUpName = new System.Windows.Forms.Label();
+            this.labelPopUpAge = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelPopUpTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMatchImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,7 +113,7 @@
             // labelMatchFirstName
             // 
             this.labelMatchFirstName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMatchFirstName.Location = new System.Drawing.Point(271, 80);
+            this.labelMatchFirstName.Location = new System.Drawing.Point(310, 84);
             this.labelMatchFirstName.Name = "labelMatchFirstName";
             this.labelMatchFirstName.Size = new System.Drawing.Size(100, 20);
             this.labelMatchFirstName.TabIndex = 9;
@@ -122,7 +122,7 @@
             // labelMatchLastName
             // 
             this.labelMatchLastName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMatchLastName.Location = new System.Drawing.Point(391, 81);
+            this.labelMatchLastName.Location = new System.Drawing.Point(387, 84);
             this.labelMatchLastName.Name = "labelMatchLastName";
             this.labelMatchLastName.Size = new System.Drawing.Size(100, 20);
             this.labelMatchLastName.TabIndex = 10;
@@ -132,7 +132,7 @@
             // labelMatchAge
             // 
             this.labelMatchAge.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMatchAge.Location = new System.Drawing.Point(271, 125);
+            this.labelMatchAge.Location = new System.Drawing.Point(311, 117);
             this.labelMatchAge.Name = "labelMatchAge";
             this.labelMatchAge.Size = new System.Drawing.Size(100, 20);
             this.labelMatchAge.TabIndex = 11;
@@ -141,16 +141,17 @@
             // labelMatchProfessionalField
             // 
             this.labelMatchProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMatchProfessionalField.Location = new System.Drawing.Point(271, 147);
+            this.labelMatchProfessionalField.Location = new System.Drawing.Point(311, 147);
             this.labelMatchProfessionalField.Name = "labelMatchProfessionalField";
             this.labelMatchProfessionalField.Size = new System.Drawing.Size(150, 20);
             this.labelMatchProfessionalField.TabIndex = 12;
             this.labelMatchProfessionalField.Text = "FieldOfProfession";
+            this.labelMatchProfessionalField.Click += new System.EventHandler(this.labelMatchProfessionalField_Click);
             // 
             // labelProfessionalTitle
             // 
             this.labelProfessionalTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProfessionalTitle.Location = new System.Drawing.Point(271, 169);
+            this.labelProfessionalTitle.Location = new System.Drawing.Point(311, 177);
             this.labelProfessionalTitle.Name = "labelProfessionalTitle";
             this.labelProfessionalTitle.Size = new System.Drawing.Size(150, 20);
             this.labelProfessionalTitle.TabIndex = 13;
@@ -175,51 +176,51 @@
             this.textBoxAboutMe.Size = new System.Drawing.Size(380, 123);
             this.textBoxAboutMe.TabIndex = 15;
             // 
-            // label1
+            // labelPopUpName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "label1";
+            this.labelPopUpName.AutoSize = true;
+            this.labelPopUpName.Location = new System.Drawing.Point(179, 87);
+            this.labelPopUpName.Name = "labelPopUpName";
+            this.labelPopUpName.Size = new System.Drawing.Size(38, 13);
+            this.labelPopUpName.TabIndex = 24;
+            this.labelPopUpName.Text = "NAME";
             // 
-            // label2
+            // labelPopUpAge
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(179, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "label2";
+            this.labelPopUpAge.AutoSize = true;
+            this.labelPopUpAge.Location = new System.Drawing.Point(179, 117);
+            this.labelPopUpAge.Name = "labelPopUpAge";
+            this.labelPopUpAge.Size = new System.Drawing.Size(29, 13);
+            this.labelPopUpAge.TabIndex = 25;
+            this.labelPopUpAge.Text = "AGE";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(179, 147);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(126, 13);
             this.label3.TabIndex = 26;
-            this.label3.Text = "label3";
+            this.label3.Text = "FIELD OF PROFESSION";
             // 
-            // label4
+            // labelPopUpTitle
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(179, 177);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "label4";
+            this.labelPopUpTitle.AutoSize = true;
+            this.labelPopUpTitle.Location = new System.Drawing.Point(179, 177);
+            this.labelPopUpTitle.Name = "labelPopUpTitle";
+            this.labelPopUpTitle.Size = new System.Drawing.Size(37, 13);
+            this.labelPopUpTitle.TabIndex = 27;
+            this.labelPopUpTitle.Text = "TITLE";
             // 
             // PopUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 400);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelPopUpTitle);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelPopUpAge);
+            this.Controls.Add(this.labelPopUpName);
             this.Controls.Add(this.textBoxAboutMe);
             this.Controls.Add(this.labelAboutme);
             this.Controls.Add(this.labelProfessionalTitle);
@@ -260,9 +261,9 @@
         private System.Windows.Forms.Label labelProfessionalTitle;
         private System.Windows.Forms.Label labelAboutme;
         private System.Windows.Forms.TextBox textBoxAboutMe;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelPopUpName;
+        private System.Windows.Forms.Label labelPopUpAge;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelPopUpTitle;
     }
 }
