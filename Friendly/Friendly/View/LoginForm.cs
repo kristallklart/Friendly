@@ -26,6 +26,7 @@ namespace Friendly.View
         {
             InitializeComponent();
             AutoValidate = AutoValidate.Disable;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void linkLabelCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

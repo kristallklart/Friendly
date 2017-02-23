@@ -109,7 +109,6 @@
             this.buttonMatchMessage.TabIndex = 16;
             this.buttonMatchMessage.Text = "Match and Message";
             this.buttonMatchMessage.UseVisualStyleBackColor = true;
-            this.buttonMatchMessage.Click += new System.EventHandler(this.buttonMatchMessage_Click);
             // 
             // labelMatchFirstName
             // 
@@ -128,7 +127,6 @@
             this.labelMatchLastName.Size = new System.Drawing.Size(100, 20);
             this.labelMatchLastName.TabIndex = 10;
             this.labelMatchLastName.Text = "LastName";
-            this.labelMatchLastName.Click += new System.EventHandler(this.labelMatchLastName_Click);
             // 
             // labelMatchAge
             // 
@@ -147,7 +145,6 @@
             this.labelMatchProfessionalField.Size = new System.Drawing.Size(150, 20);
             this.labelMatchProfessionalField.TabIndex = 12;
             this.labelMatchProfessionalField.Text = "FieldOfProfession";
-            this.labelMatchProfessionalField.Click += new System.EventHandler(this.labelMatchProfessionalField_Click);
             // 
             // labelProfessionalTitle
             // 

@@ -16,6 +16,7 @@ namespace Friendly.View
         {
             InitializeComponent();
             AutoValidate = AutoValidate.Disable;
+            this.StartPosition = FormStartPosition.CenterParent;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
