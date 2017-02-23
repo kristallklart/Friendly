@@ -50,10 +50,10 @@ namespace Friendly.View
             {
                 dataGridViewMyCities.DataSource = Controller.GetUserLocations(currentUser.Username);
                 dataGridViewMyCities.Columns[1].Visible = false;
-                dataGridViewMyCities.Columns[0].HeaderText = "City";
-                dataGridViewMyCities.Columns[2].HeaderText = "Purpose";
-                dataGridViewMyCities.Columns[3].HeaderText = "From date";
-                dataGridViewMyCities.Columns[4].HeaderText = "Til date";
+                dataGridViewMyCities.Columns[0].HeaderText = "CITY";
+                dataGridViewMyCities.Columns[2].HeaderText = "PURPOSE";
+                dataGridViewMyCities.Columns[3].HeaderText = "FROM";
+                dataGridViewMyCities.Columns[4].HeaderText = "TO";
                 for (int i = 5; i < dataGridViewMyCities.Columns.Count; i++)
                 {
                    dataGridViewMyCities.Columns[i].Visible = false;
@@ -69,6 +69,7 @@ namespace Friendly.View
             try
             {
                 dataGridViewMyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
+                dataGridViewMyMatchesCities.Columns[0].HeaderText = "CITY";
                 for (int i = 1; i < dataGridViewMyMatchesCities.Columns.Count; i++)
                 {
                     dataGridViewMyMatchesCities.Columns[i].Visible = false;
@@ -84,6 +85,11 @@ namespace Friendly.View
             try
             {
                 dataGridViewMyMatches.DataSource = Controller.GetUsersByCity(selectedCity, currentuser);
+                dataGridViewMyMatches.Columns[0].HeaderText = "CITY";
+                dataGridViewMyMatches.Columns[1].HeaderText = "USERNAME";
+                dataGridViewMyMatches.Columns[2].HeaderText = "PURPOSE";
+                dataGridViewMyMatches.Columns[3].HeaderText = "FROM";
+                dataGridViewMyMatches.Columns[4].HeaderText = "TO";
                 for (int i = 5; i < dataGridViewMyMatches.Columns.Count; i++)
                 {
                     dataGridViewMyMatches.Columns[i].Visible = false;
