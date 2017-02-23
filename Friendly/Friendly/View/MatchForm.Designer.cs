@@ -1,6 +1,6 @@
 ﻿namespace Friendly.View
 {
-    partial class PopUpForm
+    partial class MatchForm
     {
         /// <summary>
         /// Required designer variable.

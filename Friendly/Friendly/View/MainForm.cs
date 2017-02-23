@@ -186,7 +186,7 @@ namespace Friendly.View
             {
                 DataGridViewRow selectedRow = dataGridViewMyMatches.Rows[e.RowIndex];
                 string selectedUser = selectedRow.Cells[1].Value.ToString().Trim();
-                using (PopUpForm showUserForm = new PopUpForm(selectedUser))
+                using (MatchForm showUserForm = new MatchForm(selectedUser))
                 {
                     showUserForm.ShowDialog();
                 }

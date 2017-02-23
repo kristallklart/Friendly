@@ -13,10 +13,10 @@ using Friendly.ControllerLayer;
 
 namespace Friendly.View
 {
-    public partial class PopUpForm : Form 
+    public partial class MatchForm : Form 
     {
         private User user;
-        public PopUpForm(string selectedUser)
+        public MatchForm(string selectedUser)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterParent;
