@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Friendly.Model;
 using Friendly.ControllerLayer;
-using Friendly.Oberverpattern;
+//using Friendly.Oberverpattern;
 
 namespace Friendly.View
 {
