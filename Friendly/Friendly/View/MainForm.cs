@@ -18,15 +18,26 @@ namespace Friendly.View
     public partial class MainForm : Form
     {
         private User currentUser;
-        private OpenFileDialog openFile = new OpenFileDialog();
+        
         public MainForm()
         {
             InitializeComponent();
+            AutoValidate = AutoValidate.Disable;
         }
         public MainForm(User user)
         {
             currentUser = user;
             InitializeComponent();
+        }
+
+        //Ser till att inga validation events körs innan "X" knappen        
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x10) // The upper right "X" was clicked
+            {
+                AutoValidate = AutoValidate.Disable;
+            }
+            base.WndProc(ref m);
         }
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -173,25 +184,33 @@ namespace Friendly.View
 
         private void buttonUpdateDetails_Click(object sender, EventArgs e)
         {
-            currentUser.FirstName= textBoxFirstName.Text.ToString().Trim();
-            currentUser.LastName = textBoxLastName.Text.ToString().Trim();
-            currentUser.About = textBoxAboutMe.Text.ToString().Trim();
-            currentUser.Profession = cueTextBoxProfessionalTitle.Text.ToString().Trim();
-            if (!cueComboBoxProfessionalField.Text.ToString().Trim().Equals(""))
+            if (this.ValidateChildren())
             {
-                currentUser.Industry = cueComboBoxProfessionalField.Text.ToString().Trim();
-            }            
-            try
-            {
-                Controller.UpdateUser(currentUser);
+                currentUser.FirstName = textBoxFirstName.Text.ToString().Trim();
+                currentUser.LastName = textBoxLastName.Text.ToString().Trim();
+                currentUser.About = textBoxAboutMe.Text.ToString().Trim();
+                currentUser.Profession = cueTextBoxProfessionalTitle.Text.ToString().Trim();
+                if (!cueComboBoxProfessionalField.Text.ToString().Trim().Equals(""))
+                {
+                    currentUser.Industry = cueComboBoxProfessionalField.Text.ToString().Trim();
+                }
+                try
+                {
+                    Controller.UpdateUser(currentUser);
+                }
+                catch (DbUpdateException ex)
+                {
+                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                }
+                catch (ArgumentNullException ex)
+                {
+                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                }
+                labelMessages.Text = "Successfully updated your details.";
             }
-            catch (DbUpdateException ex)
+            else
             {
-                labelMessages.Text = ErrorHandler.HandleError(ex);
-            }
-            catch (ArgumentNullException ex)
-            {
-                labelMessages.Text = ErrorHandler.HandleError(ex);
+                
             }
         }
 
@@ -252,15 +271,37 @@ namespace Friendly.View
 
         private void buttonAddPicture_Click(object sender, EventArgs e)
         {
-            if (openFile.ShowDialog() == DialogResult.OK) // Ser till att koden inte fortsätter om man inte valt att öppna en fil.
+            using (OpenFileDialog openFile = new OpenFileDialog())
             {
-                string fileContent;
-                fileContent = openFile.FileName;
-                Image newImage = Image.FromFile(fileContent);
-                byte[] result = (byte[])new ImageConverter().ConvertTo(newImage, typeof(byte[]));
-                picBoxProfilePic.Image = newImage;
-                Controller.SaveProfilePicture(currentUser.Username, result);
-            }
+                if (openFile.ShowDialog() == DialogResult.OK) // Ser till att koden inte fortsätter om man inte valt att öppna en fil.
+                {
+                    string fileContent = openFile.FileName;
+
+                    try
+                    {
+                        Image newImage = Image.FromFile(fileContent);
+                        byte[] result = (byte[]) new ImageConverter().ConvertTo(newImage, typeof(byte[]));
+                        picBoxProfilePic.Image = newImage;
+                        Controller.SaveProfilePicture(currentUser.Username, result);
+                    }
+                    catch (DbUpdateException ex)
+                    {
+                        labelMessages.Text = ErrorHandler.HandleError(ex);
+                    }
+                    catch (OutOfMemoryException ex)
+                    {
+                        labelMessages.Text = ErrorHandler.HandleError(ex);
+                    }
+                    catch (System.IO.FileNotFoundException ex)
+                    {
+                        labelMessages.Text = ErrorHandler.HandleError(ex);
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        labelMessages.Text = ErrorHandler.HandleError(ex);
+                    }          
+                }
+            }              
         }
 
         private void buttonSendMessage_Click(object sender, EventArgs e)
@@ -268,6 +309,26 @@ namespace Friendly.View
             string message = cueTextBoxMessage.Text;
             DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
             //DelegateBroadcastClient dcc2 = new DelegateBroadcastClient();
+        }
+
+        private void textBox_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox tempBox = sender as TextBox;
+            if (tempBox.Text.Trim().Length == 0)
+            {
+                e.Cancel = true;
+                labelMessages.Text = "Please make sure both Firstname and Lastname is entered";
+                this.errorProvider.SetError(textBoxLastName, "Please enter a firstname and lastname.");
+            }
+            else
+            {
+                e.Cancel = false;
+            }
+        }
+
+        private void control_Validated(object sender, EventArgs e)
+        {
+            this.errorProvider.SetError(sender as Control, string.Empty);
         }
     }
 }
