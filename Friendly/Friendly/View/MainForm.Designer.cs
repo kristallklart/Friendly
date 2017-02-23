@@ -66,6 +66,7 @@ namespace Friendly.View
             this.dataGridViewMyMessagesTab = new System.Windows.Forms.DataGridView();
             this.labelMessages = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelMustNames = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tabMyProfile.SuspendLayout();
             this.groupBoxMyDetails.SuspendLayout();
@@ -107,6 +108,7 @@ namespace Friendly.View
             // 
             // groupBoxMyDetails
             // 
+            this.groupBoxMyDetails.Controls.Add(this.labelMustNames);
             this.groupBoxMyDetails.Controls.Add(this.buttonAddPicture);
             this.groupBoxMyDetails.Controls.Add(this.picBoxProfilePic);
             this.groupBoxMyDetails.Controls.Add(this.textBoxAboutMe);
@@ -167,6 +169,7 @@ namespace Friendly.View
             // textBoxLastName
             // 
             this.textBoxLastName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorProvider.SetIconPadding(this.textBoxLastName, 4);
             this.textBoxLastName.Location = new System.Drawing.Point(270, 21);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(108, 22);
@@ -556,6 +559,17 @@ namespace Friendly.View
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // labelMustNames
+            // 
+            this.labelMustNames.AutoSize = true;
+            this.labelMustNames.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMustNames.ForeColor = System.Drawing.Color.Red;
+            this.labelMustNames.Location = new System.Drawing.Point(384, 26);
+            this.labelMustNames.Name = "labelMustNames";
+            this.labelMustNames.Size = new System.Drawing.Size(13, 17);
+            this.labelMustNames.TabIndex = 25;
+            this.labelMustNames.Text = "*";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -624,6 +638,7 @@ namespace Friendly.View
         private System.Windows.Forms.GroupBox groupBoxMyDetails;
         private System.Windows.Forms.GroupBox groupBoxPreferences;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Label labelMustNames;
     }
 }
 
