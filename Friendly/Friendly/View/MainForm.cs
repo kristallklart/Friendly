@@ -50,9 +50,13 @@ namespace Friendly.View
             {
                 dataGridViewMyCities.DataSource = Controller.GetUserLocations(currentUser.Username);
                 dataGridViewMyCities.Columns[1].Visible = false;
+                dataGridViewMyCities.Columns[0].HeaderText = "City";
+                dataGridViewMyCities.Columns[2].HeaderText = "Purpose";
+                dataGridViewMyCities.Columns[3].HeaderText = "From date";
+                dataGridViewMyCities.Columns[4].HeaderText = "Til date";
                 for (int i = 5; i < dataGridViewMyCities.Columns.Count; i++)
                 {
-                    dataGridViewMyCities.Columns[i].Visible = false;
+                   dataGridViewMyCities.Columns[i].Visible = false;
                 }
             }
             catch (ArgumentNullException ex)
