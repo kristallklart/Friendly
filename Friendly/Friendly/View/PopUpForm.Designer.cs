@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.picBoxMatchImage = new System.Windows.Forms.PictureBox();
-            this.label_MatchFirstName = new System.Windows.Forms.Label();
-            this.label_MatchLastName = new System.Windows.Forms.Label();
-            this.label_MatchAge = new System.Windows.Forms.Label();
-            this.label_MatchProfessionalField = new System.Windows.Forms.Label();
-            this.label_ProfessionalTitle = new System.Windows.Forms.Label();
-            this.label_Aboutme = new System.Windows.Forms.Label();
             this.buttonMatchMessage = new System.Windows.Forms.Button();
             this.labelMatchFirstName = new System.Windows.Forms.Label();
             this.labelMatchLastName = new System.Windows.Forms.Label();
@@ -58,48 +52,6 @@
             this.picBoxMatchImage.Size = new System.Drawing.Size(108, 104);
             this.picBoxMatchImage.TabIndex = 0;
             this.picBoxMatchImage.TabStop = false;
-            // 
-            // label_MatchFirstName
-            // 
-            this.label_MatchFirstName.Location = new System.Drawing.Point(0, 0);
-            this.label_MatchFirstName.Name = "label_MatchFirstName";
-            this.label_MatchFirstName.Size = new System.Drawing.Size(100, 23);
-            this.label_MatchFirstName.TabIndex = 23;
-            // 
-            // label_MatchLastName
-            // 
-            this.label_MatchLastName.Location = new System.Drawing.Point(0, 0);
-            this.label_MatchLastName.Name = "label_MatchLastName";
-            this.label_MatchLastName.Size = new System.Drawing.Size(100, 23);
-            this.label_MatchLastName.TabIndex = 22;
-            // 
-            // label_MatchAge
-            // 
-            this.label_MatchAge.Location = new System.Drawing.Point(0, 0);
-            this.label_MatchAge.Name = "label_MatchAge";
-            this.label_MatchAge.Size = new System.Drawing.Size(100, 23);
-            this.label_MatchAge.TabIndex = 21;
-            // 
-            // label_MatchProfessionalField
-            // 
-            this.label_MatchProfessionalField.Location = new System.Drawing.Point(0, 0);
-            this.label_MatchProfessionalField.Name = "label_MatchProfessionalField";
-            this.label_MatchProfessionalField.Size = new System.Drawing.Size(100, 23);
-            this.label_MatchProfessionalField.TabIndex = 20;
-            // 
-            // label_ProfessionalTitle
-            // 
-            this.label_ProfessionalTitle.Location = new System.Drawing.Point(0, 0);
-            this.label_ProfessionalTitle.Name = "label_ProfessionalTitle";
-            this.label_ProfessionalTitle.Size = new System.Drawing.Size(100, 23);
-            this.label_ProfessionalTitle.TabIndex = 19;
-            // 
-            // label_Aboutme
-            // 
-            this.label_Aboutme.Location = new System.Drawing.Point(0, 0);
-            this.label_Aboutme.Name = "label_Aboutme";
-            this.label_Aboutme.Size = new System.Drawing.Size(100, 23);
-            this.label_Aboutme.TabIndex = 18;
             // 
             // buttonMatchMessage
             // 
@@ -237,12 +189,6 @@
             this.Controls.Add(this.labelMatchLastName);
             this.Controls.Add(this.labelMatchFirstName);
             this.Controls.Add(this.buttonMatchMessage);
-            this.Controls.Add(this.label_Aboutme);
-            this.Controls.Add(this.label_ProfessionalTitle);
-            this.Controls.Add(this.label_MatchProfessionalField);
-            this.Controls.Add(this.label_MatchAge);
-            this.Controls.Add(this.label_MatchLastName);
-            this.Controls.Add(this.label_MatchFirstName);
             this.Controls.Add(this.picBoxMatchImage);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "PopUpForm";
@@ -256,12 +202,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picBoxMatchImage;
-        private System.Windows.Forms.Label label_MatchFirstName;
-        private System.Windows.Forms.Label label_MatchLastName;
-        private System.Windows.Forms.Label label_MatchAge;
-        private System.Windows.Forms.Label label_MatchProfessionalField;
-        private System.Windows.Forms.Label label_ProfessionalTitle;
-        private System.Windows.Forms.Label label_Aboutme;
         private System.Windows.Forms.Button buttonMatchMessage;
         private System.Windows.Forms.Label labelMatchFirstName;
         private System.Windows.Forms.Label labelMatchLastName;
