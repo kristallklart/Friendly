@@ -61,6 +61,7 @@ namespace Friendly.View
             this.dataGridViewMyMessagesTab = new System.Windows.Forms.DataGridView();
             this.labelMessages = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelMustNames = new System.Windows.Forms.Label();
             this.cueTextBoxProfessionalTitle = new Friendly.Utilities.CueTextBox();
             this.cueComboBoxProfessionalField = new Friendly.Utilities.CueComboBox();
             this.cueComboBoxInterestedIn = new Friendly.Utilities.CueComboBox();
@@ -107,6 +108,7 @@ namespace Friendly.View
             // 
             // groupBoxMyDetails
             // 
+            this.groupBoxMyDetails.Controls.Add(this.labelMustNames);
             this.groupBoxMyDetails.Controls.Add(this.buttonAddPicture);
             this.groupBoxMyDetails.Controls.Add(this.picBoxProfilePic);
             this.groupBoxMyDetails.Controls.Add(this.textBoxAboutMe);
@@ -234,16 +236,6 @@ namespace Friendly.View
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
-            // cueComboBoxInterestedIn
-            // 
-            this.cueComboBoxInterestedIn.CueText = "Interested in";
-            this.cueComboBoxInterestedIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cueComboBoxInterestedIn.FormattingEnabled = true;
-            this.cueComboBoxInterestedIn.Location = new System.Drawing.Point(6, 22);
-            this.cueComboBoxInterestedIn.Name = "cueComboBoxInterestedIn";
-            this.cueComboBoxInterestedIn.Size = new System.Drawing.Size(136, 21);
-            this.cueComboBoxInterestedIn.TabIndex = 19;
-            // 
             // labelFrom
             // 
             this.labelFrom.AutoSize = true;
@@ -306,7 +298,7 @@ namespace Friendly.View
             this.tabMyMatches.Location = new System.Drawing.Point(4, 22);
             this.tabMyMatches.Name = "tabMyMatches";
             this.tabMyMatches.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMyMatches.Size = new System.Drawing.Size(866, 460);
+            this.tabMyMatches.Size = new System.Drawing.Size(907, 460);
             this.tabMyMatches.TabIndex = 1;
             this.tabMyMatches.Text = "My matches";
             this.tabMyMatches.UseVisualStyleBackColor = true;
@@ -337,7 +329,7 @@ namespace Friendly.View
             this.tabMyMessages.Controls.Add(this.dataGridViewMyMessagesTab);
             this.tabMyMessages.Location = new System.Drawing.Point(4, 22);
             this.tabMyMessages.Name = "tabMyMessages";
-            this.tabMyMessages.Size = new System.Drawing.Size(866, 460);
+            this.tabMyMessages.Size = new System.Drawing.Size(907, 460);
             this.tabMyMessages.TabIndex = 2;
             this.tabMyMessages.Text = "My messages";
             this.tabMyMessages.UseVisualStyleBackColor = true;
@@ -376,6 +368,22 @@ namespace Friendly.View
             this.labelMessages.Size = new System.Drawing.Size(63, 13);
             this.labelMessages.TabIndex = 1;
             this.labelMessages.Text = "Messages";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
+            // labelMustNames
+            // 
+            this.labelMustNames.AutoSize = true;
+            this.labelMustNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMustNames.ForeColor = System.Drawing.Color.Red;
+            this.labelMustNames.Location = new System.Drawing.Point(384, 24);
+            this.labelMustNames.Name = "labelMustNames";
+            this.labelMustNames.Size = new System.Drawing.Size(13, 17);
+            this.labelMustNames.TabIndex = 25;
+            this.labelMustNames.Text = "*";
             // 
             // cueTextBoxProfessionalTitle
             // 
@@ -561,46 +569,6 @@ namespace Friendly.View
             this.cueTextBoxMessage.Size = new System.Drawing.Size(581, 56);
             this.cueTextBoxMessage.TabIndex = 3;
             // 
-            // buttonSendMessage
-            // 
-            this.buttonSendMessage.Location = new System.Drawing.Point(728, 394);
-            this.buttonSendMessage.Name = "buttonSendMessage";
-            this.buttonSendMessage.Size = new System.Drawing.Size(75, 23);
-            this.buttonSendMessage.TabIndex = 2;
-            this.buttonSendMessage.Text = "Send";
-            this.buttonSendMessage.UseVisualStyleBackColor = true;
-            this.buttonSendMessage.Click += new System.EventHandler(this.buttonSendMessage_Click);
-            // 
-            // textBoxMessages
-            // 
-            this.textBoxMessages.Location = new System.Drawing.Point(141, 4);
-            this.textBoxMessages.Multiline = true;
-            this.textBoxMessages.Name = "textBoxMessages";
-            this.textBoxMessages.Size = new System.Drawing.Size(662, 351);
-            this.textBoxMessages.TabIndex = 1;
-            // 
-            // dataGridViewMyMessagesTab
-            // 
-            this.dataGridViewMyMessagesTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMyMessagesTab.Location = new System.Drawing.Point(4, 4);
-            this.dataGridViewMyMessagesTab.Name = "dataGridViewMyMessagesTab";
-            this.dataGridViewMyMessagesTab.Size = new System.Drawing.Size(131, 413);
-            this.dataGridViewMyMessagesTab.TabIndex = 0;
-            // 
-            // labelMessages
-            // 
-            this.labelMessages.AutoSize = true;
-            this.labelMessages.Location = new System.Drawing.Point(12, 501);
-            this.labelMessages.Name = "labelMessages";
-            this.labelMessages.Size = new System.Drawing.Size(63, 13);
-            this.labelMessages.TabIndex = 1;
-            this.labelMessages.Text = "Messages";
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider.ContainerControl = this;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -669,6 +637,7 @@ namespace Friendly.View
         private System.Windows.Forms.GroupBox groupBoxMyDetails;
         private System.Windows.Forms.GroupBox groupBoxPreferences;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Label labelMustNames;
     }
 }
 
