@@ -28,6 +28,7 @@ namespace Friendly.View
         {
             currentUser = user;
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         //Ser till att inga validation events körs innan "X" knappen        

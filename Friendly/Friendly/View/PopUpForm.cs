@@ -19,6 +19,7 @@ namespace Friendly.View
         public PopUpForm(string selectedUser)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterParent;
             user = Controller.GetUser(selectedUser);
 
             labelMatchFirstName.Text = user.FirstName.ToString().Trim();
