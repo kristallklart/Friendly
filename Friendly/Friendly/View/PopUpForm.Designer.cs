@@ -45,7 +45,7 @@
             this.textBoxAboutMe = new System.Windows.Forms.TextBox();
             this.labelPopUpName = new System.Windows.Forms.Label();
             this.labelPopUpAge = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelPopUpFieldOfP = new System.Windows.Forms.Label();
             this.labelPopUpTitle = new System.Windows.Forms.Label();
             this.labelPopUpUserName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMatchImage)).BeginInit();
@@ -195,14 +195,14 @@
             this.labelPopUpAge.TabIndex = 25;
             this.labelPopUpAge.Text = "Age";
             // 
-            // label3
+            // labelPopUpFieldOfP
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(179, 147);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 13);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Field of profession";
+            this.labelPopUpFieldOfP.AutoSize = true;
+            this.labelPopUpFieldOfP.Location = new System.Drawing.Point(179, 147);
+            this.labelPopUpFieldOfP.Name = "labelPopUpFieldOfP";
+            this.labelPopUpFieldOfP.Size = new System.Drawing.Size(104, 13);
+            this.labelPopUpFieldOfP.TabIndex = 26;
+            this.labelPopUpFieldOfP.Text = "Field of profession";
             // 
             // labelPopUpTitle
             // 
@@ -229,7 +229,7 @@
             this.ClientSize = new System.Drawing.Size(565, 400);
             this.Controls.Add(this.labelPopUpUserName);
             this.Controls.Add(this.labelPopUpTitle);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelPopUpFieldOfP);
             this.Controls.Add(this.labelPopUpAge);
             this.Controls.Add(this.labelPopUpName);
             this.Controls.Add(this.textBoxAboutMe);
@@ -275,7 +275,7 @@
         private System.Windows.Forms.TextBox textBoxAboutMe;
         private System.Windows.Forms.Label labelPopUpName;
         private System.Windows.Forms.Label labelPopUpAge;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelPopUpFieldOfP;
         private System.Windows.Forms.Label labelPopUpTitle;
         private System.Windows.Forms.Label labelPopUpUserName;
     }
