@@ -23,6 +23,7 @@ namespace Friendly.View
 
             labelMatchFirstName.Text = user.FirstName.ToString().Trim();
             labelMatchLastName.Text = user.LastName.ToString().Trim();
+            labelPopUpUserName.Text = user.Username.ToString().Trim();
             labelMatchAge.Text = Controller.GetAge(selectedUser).ToString().Trim() + " years";
             if (user.Industry != null)
             {
