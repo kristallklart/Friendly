@@ -95,10 +95,8 @@
     <Compile Include="Model\User_Location_Purpose.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Oberverpattern\Message.cs" />
-    <Compile Include="Oberverpattern\UserT.cs" />
-    <Compile Include="Oberverpattern\Observable.cs" />
-    <Compile Include="Oberverpattern\IObserver.cs" />
+    <Compile Include="Utilities\DelegateBroadcastClient.cs" />
+    <Compile Include="Utilities\DelegateBroadcastServer.cs" />
     <Compile Include="Utilities\CueComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
