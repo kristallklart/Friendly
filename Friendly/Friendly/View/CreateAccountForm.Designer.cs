@@ -118,7 +118,7 @@
             this.buttonCreateAccount.Location = new System.Drawing.Point(86, 170);
             this.buttonCreateAccount.Name = "buttonCreateAccount";
             this.buttonCreateAccount.Size = new System.Drawing.Size(91, 23);
-            this.buttonCreateAccount.TabIndex = 7;
+            this.buttonCreateAccount.TabIndex = 10;
             this.buttonCreateAccount.Text = "Create Account";
             this.buttonCreateAccount.UseVisualStyleBackColor = true;
             this.buttonCreateAccount.Click += new System.EventHandler(this.buttonCreateAccount_Click);
@@ -191,7 +191,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(183, 170);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(91, 23);
-            this.buttonCancel.TabIndex = 8;
+            this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -253,7 +253,7 @@
             this.cueComboBoxYear.Location = new System.Drawing.Point(210, 143);
             this.cueComboBoxYear.Name = "cueComboBoxYear";
             this.cueComboBoxYear.Size = new System.Drawing.Size(64, 21);
-            this.cueComboBoxYear.TabIndex = 22;
+            this.cueComboBoxYear.TabIndex = 9;
             this.cueComboBoxYear.Validating += new System.ComponentModel.CancelEventHandler(this.cueComboBox_Validating);
             this.cueComboBoxYear.Validated += new System.EventHandler(this.control_Validated);
             // 
@@ -265,7 +265,7 @@
             this.cueComboBoxMonth.Location = new System.Drawing.Point(148, 143);
             this.cueComboBoxMonth.Name = "cueComboBoxMonth";
             this.cueComboBoxMonth.Size = new System.Drawing.Size(56, 21);
-            this.cueComboBoxMonth.TabIndex = 21;
+            this.cueComboBoxMonth.TabIndex = 8;
             this.cueComboBoxMonth.Validating += new System.ComponentModel.CancelEventHandler(this.cueComboBox_Validating);
             this.cueComboBoxMonth.Validated += new System.EventHandler(this.control_Validated);
             // 
@@ -277,7 +277,7 @@
             this.cueComboBoxDay.Location = new System.Drawing.Point(86, 143);
             this.cueComboBoxDay.Name = "cueComboBoxDay";
             this.cueComboBoxDay.Size = new System.Drawing.Size(56, 21);
-            this.cueComboBoxDay.TabIndex = 20;
+            this.cueComboBoxDay.TabIndex = 7;
             this.cueComboBoxDay.Validating += new System.ComponentModel.CancelEventHandler(this.cueComboBox_Validating);
             this.cueComboBoxDay.Validated += new System.EventHandler(this.control_Validated);
             // 
