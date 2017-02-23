@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,10 @@ namespace Friendly.Utilities
         {
             string message = "";
             int errorCode;
+            if (e is DbUpdateException)
+            {
+                SqlException sqlEx = e.GetBaseException() as SqlException;
+            }
             if (e is SqlException)
             {
                 errorCode = (e as SqlException).Number;

@@ -31,6 +31,7 @@ namespace Friendly.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabMyProfile = new System.Windows.Forms.TabPage();
@@ -59,6 +60,7 @@ namespace Friendly.View
             this.textBoxMessages = new System.Windows.Forms.TextBox();
             this.dataGridViewMyMessagesTab = new System.Windows.Forms.DataGridView();
             this.labelMessages = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.cueTextBoxProfessionalTitle = new Friendly.Utilities.CueTextBox();
             this.cueComboBoxProfessionalField = new Friendly.Utilities.CueComboBox();
             this.cueComboBoxInterestedIn = new Friendly.Utilities.CueComboBox();
@@ -75,6 +77,7 @@ namespace Friendly.View
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMatchesCities)).BeginInit();
             this.tabMyMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMessagesTab)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -86,7 +89,7 @@ namespace Friendly.View
             this.tabControlMain.Location = new System.Drawing.Point(12, 12);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(874, 486);
+            this.tabControlMain.Size = new System.Drawing.Size(915, 486);
             this.tabControlMain.TabIndex = 0;
             this.tabControlMain.SelectedIndexChanged += new System.EventHandler(this.TabControlMain_SelectedIndexChanged);
             // 
@@ -97,7 +100,7 @@ namespace Friendly.View
             this.tabMyProfile.Location = new System.Drawing.Point(4, 22);
             this.tabMyProfile.Name = "tabMyProfile";
             this.tabMyProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMyProfile.Size = new System.Drawing.Size(866, 460);
+            this.tabMyProfile.Size = new System.Drawing.Size(907, 460);
             this.tabMyProfile.TabIndex = 0;
             this.tabMyProfile.Text = "My profile";
             this.tabMyProfile.UseVisualStyleBackColor = true;
@@ -116,7 +119,7 @@ namespace Friendly.View
             this.groupBoxMyDetails.Controls.Add(this.textBoxFirstName);
             this.groupBoxMyDetails.Location = new System.Drawing.Point(6, 15);
             this.groupBoxMyDetails.Name = "groupBoxMyDetails";
-            this.groupBoxMyDetails.Size = new System.Drawing.Size(388, 435);
+            this.groupBoxMyDetails.Size = new System.Drawing.Size(417, 435);
             this.groupBoxMyDetails.TabIndex = 3;
             this.groupBoxMyDetails.TabStop = false;
             this.groupBoxMyDetails.Text = "My details";
@@ -149,7 +152,7 @@ namespace Friendly.View
             this.textBoxAboutMe.MaxLength = 300;
             this.textBoxAboutMe.Multiline = true;
             this.textBoxAboutMe.Name = "textBoxAboutMe";
-            this.textBoxAboutMe.Size = new System.Drawing.Size(376, 211);
+            this.textBoxAboutMe.Size = new System.Drawing.Size(405, 211);
             this.textBoxAboutMe.TabIndex = 10;
             // 
             // labelAge
@@ -169,6 +172,8 @@ namespace Friendly.View
             this.textBoxLastName.Size = new System.Drawing.Size(108, 22);
             this.textBoxLastName.TabIndex = 9;
             this.textBoxLastName.Text = "Last name";
+            this.textBoxLastName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
+            this.textBoxLastName.Validated += new System.EventHandler(this.control_Validated);
             // 
             // labelAboutMe
             // 
@@ -182,7 +187,7 @@ namespace Friendly.View
             // 
             // buttonUpdateDetails
             // 
-            this.buttonUpdateDetails.Location = new System.Drawing.Point(307, 401);
+            this.buttonUpdateDetails.Location = new System.Drawing.Point(336, 401);
             this.buttonUpdateDetails.Name = "buttonUpdateDetails";
             this.buttonUpdateDetails.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdateDetails.TabIndex = 12;
@@ -198,6 +203,8 @@ namespace Friendly.View
             this.textBoxFirstName.Size = new System.Drawing.Size(108, 22);
             this.textBoxFirstName.TabIndex = 2;
             this.textBoxFirstName.Text = "First name";
+            this.textBoxFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
+            this.textBoxFirstName.Validated += new System.EventHandler(this.control_Validated);
             // 
             // groupBoxPreferences
             // 
@@ -210,9 +217,9 @@ namespace Friendly.View
             this.groupBoxPreferences.Controls.Add(this.dateTimePickerTo);
             this.groupBoxPreferences.Controls.Add(this.buttonAddLocation);
             this.groupBoxPreferences.Controls.Add(this.cueComboBoxCity);
-            this.groupBoxPreferences.Location = new System.Drawing.Point(400, 15);
+            this.groupBoxPreferences.Location = new System.Drawing.Point(442, 15);
             this.groupBoxPreferences.Name = "groupBoxPreferences";
-            this.groupBoxPreferences.Size = new System.Drawing.Size(457, 435);
+            this.groupBoxPreferences.Size = new System.Drawing.Size(458, 435);
             this.groupBoxPreferences.TabIndex = 2;
             this.groupBoxPreferences.TabStop = false;
             this.groupBoxPreferences.Text = "Preferences";
@@ -227,11 +234,21 @@ namespace Friendly.View
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
+            // cueComboBoxInterestedIn
+            // 
+            this.cueComboBoxInterestedIn.CueText = "Interested in";
+            this.cueComboBoxInterestedIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cueComboBoxInterestedIn.FormattingEnabled = true;
+            this.cueComboBoxInterestedIn.Location = new System.Drawing.Point(6, 22);
+            this.cueComboBoxInterestedIn.Name = "cueComboBoxInterestedIn";
+            this.cueComboBoxInterestedIn.Size = new System.Drawing.Size(136, 21);
+            this.cueComboBoxInterestedIn.TabIndex = 19;
+            // 
             // labelFrom
             // 
             this.labelFrom.AutoSize = true;
             this.labelFrom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrom.Location = new System.Drawing.Point(6, 65);
+            this.labelFrom.Location = new System.Drawing.Point(3, 65);
             this.labelFrom.Name = "labelFrom";
             this.labelFrom.Size = new System.Drawing.Size(33, 13);
             this.labelFrom.TabIndex = 14;
@@ -248,7 +265,7 @@ namespace Friendly.View
             // dateTimePickerFrom
             // 
             this.dateTimePickerFrom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(45, 58);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(42, 58);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(100, 22);
             this.dateTimePickerFrom.TabIndex = 12;
@@ -258,7 +275,7 @@ namespace Friendly.View
             // 
             this.labelTo.AutoSize = true;
             this.labelTo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTo.Location = new System.Drawing.Point(161, 65);
+            this.labelTo.Location = new System.Drawing.Point(158, 65);
             this.labelTo.Name = "labelTo";
             this.labelTo.Size = new System.Drawing.Size(18, 13);
             this.labelTo.TabIndex = 15;
@@ -267,14 +284,14 @@ namespace Friendly.View
             // dateTimePickerTo
             // 
             this.dateTimePickerTo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerTo.Location = new System.Drawing.Point(185, 58);
+            this.dateTimePickerTo.Location = new System.Drawing.Point(182, 58);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(99, 22);
             this.dateTimePickerTo.TabIndex = 13;
             // 
             // buttonAddLocation
             // 
-            this.buttonAddLocation.Location = new System.Drawing.Point(209, 86);
+            this.buttonAddLocation.Location = new System.Drawing.Point(206, 86);
             this.buttonAddLocation.Name = "buttonAddLocation";
             this.buttonAddLocation.Size = new System.Drawing.Size(75, 23);
             this.buttonAddLocation.TabIndex = 17;
@@ -530,7 +547,7 @@ namespace Friendly.View
             "Örnsköldsvik",
             "Östersund",
             "Östhammar"});
-            this.cueComboBoxCity.Location = new System.Drawing.Point(151, 22);
+            this.cueComboBoxCity.Location = new System.Drawing.Point(148, 22);
             this.cueComboBoxCity.Name = "cueComboBoxCity";
             this.cueComboBoxCity.Size = new System.Drawing.Size(133, 21);
             this.cueComboBoxCity.TabIndex = 11;
@@ -544,12 +561,52 @@ namespace Friendly.View
             this.cueTextBoxMessage.Size = new System.Drawing.Size(581, 56);
             this.cueTextBoxMessage.TabIndex = 3;
             // 
+            // buttonSendMessage
+            // 
+            this.buttonSendMessage.Location = new System.Drawing.Point(728, 394);
+            this.buttonSendMessage.Name = "buttonSendMessage";
+            this.buttonSendMessage.Size = new System.Drawing.Size(75, 23);
+            this.buttonSendMessage.TabIndex = 2;
+            this.buttonSendMessage.Text = "Send";
+            this.buttonSendMessage.UseVisualStyleBackColor = true;
+            this.buttonSendMessage.Click += new System.EventHandler(this.buttonSendMessage_Click);
+            // 
+            // textBoxMessages
+            // 
+            this.textBoxMessages.Location = new System.Drawing.Point(141, 4);
+            this.textBoxMessages.Multiline = true;
+            this.textBoxMessages.Name = "textBoxMessages";
+            this.textBoxMessages.Size = new System.Drawing.Size(662, 351);
+            this.textBoxMessages.TabIndex = 1;
+            // 
+            // dataGridViewMyMessagesTab
+            // 
+            this.dataGridViewMyMessagesTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMyMessagesTab.Location = new System.Drawing.Point(4, 4);
+            this.dataGridViewMyMessagesTab.Name = "dataGridViewMyMessagesTab";
+            this.dataGridViewMyMessagesTab.Size = new System.Drawing.Size(131, 413);
+            this.dataGridViewMyMessagesTab.TabIndex = 0;
+            // 
+            // labelMessages
+            // 
+            this.labelMessages.AutoSize = true;
+            this.labelMessages.Location = new System.Drawing.Point(12, 501);
+            this.labelMessages.Name = "labelMessages";
+            this.labelMessages.Size = new System.Drawing.Size(63, 13);
+            this.labelMessages.TabIndex = 1;
+            this.labelMessages.Text = "Messages";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(899, 523);
+            this.ClientSize = new System.Drawing.Size(939, 523);
             this.Controls.Add(this.labelMessages);
             this.Controls.Add(this.tabControlMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -571,6 +628,7 @@ namespace Friendly.View
             this.tabMyMessages.ResumeLayout(false);
             this.tabMyMessages.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMessagesTab)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -610,6 +668,7 @@ namespace Friendly.View
         private System.Windows.Forms.Button buttonAddPicture;
         private System.Windows.Forms.GroupBox groupBoxMyDetails;
         private System.Windows.Forms.GroupBox groupBoxPreferences;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
 
