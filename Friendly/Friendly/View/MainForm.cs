@@ -293,6 +293,7 @@ namespace Friendly.View
                         Image newImage = Image.FromFile(fileContent);
                         byte[] result = (byte[]) new ImageConverter().ConvertTo(newImage, typeof(byte[]));
                         picBoxProfilePic.Image = newImage;
+                        currentUser.Picture = result;
                         Controller.SaveProfilePicture(currentUser.Username, result);
                     }
                     catch (DbUpdateException ex)
