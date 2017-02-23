@@ -283,6 +283,7 @@ namespace Friendly.View
             this.dataGridViewMyCities.Name = "dataGridViewMyCities";
             this.dataGridViewMyCities.Size = new System.Drawing.Size(444, 211);
             this.dataGridViewMyCities.TabIndex = 20;
+            this.dataGridViewMyCities.ReadOnly = true;
             // 
             // dateTimePickerFrom
             // 
@@ -486,6 +487,7 @@ namespace Friendly.View
             this.dataGridViewMyMatches.Name = "dataGridViewMyMatches";
             this.dataGridViewMyMatches.Size = new System.Drawing.Size(644, 378);
             this.dataGridViewMyMatches.TabIndex = 1;
+            this.dataGridViewMyMatches.ReadOnly = true;
             this.dataGridViewMyMatches.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMyMatches_CellClick);
             // 
             // dataGridViewMyMatchesCities
@@ -495,6 +497,7 @@ namespace Friendly.View
             this.dataGridViewMyMatchesCities.Name = "dataGridViewMyMatchesCities";
             this.dataGridViewMyMatchesCities.Size = new System.Drawing.Size(136, 380);
             this.dataGridViewMyMatchesCities.TabIndex = 0;
+            this.dataGridViewMyMatchesCities.ReadOnly = true;
             this.dataGridViewMyMatchesCities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMyMatchesCities_CellClick);
             // 
             // tabMyMessages
