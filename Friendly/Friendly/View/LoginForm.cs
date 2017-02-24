@@ -43,22 +43,17 @@ namespace Friendly.View
             {
                 try
                 {
-                    User tempUser = Controller.CheckUsernameAndPassword(textBoxUsername.Text.Trim(), textBoxPassword.Text.Trim());
-                    User = tempUser;
+                    User = Controller.CheckUsernameAndPassword(textBoxUsername.Text.Trim(), textBoxPassword.Text.Trim());
                     this.DialogResult = DialogResult.OK;               
                 }
                 catch (InvalidUserOrPasswordException ex)
                 {
                     labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
-                catch (SqlException ex)
+                catch (ArgumentNullException ex)
                 {
                     labelFeedback.Text = ErrorHandler.HandleError(ex);
-                }
-                catch (Exception ex)
-                {
-                    labelFeedback.Text = ErrorHandler.HandleError(ex);
-                }              
+                }           
             }
         }
         private void textBox_Validating(object sender, CancelEventArgs e)

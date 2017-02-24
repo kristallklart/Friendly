@@ -121,12 +121,14 @@
             // 
             // textBoxAboutMe
             // 
+            this.textBoxAboutMe.CausesValidation = false;
             this.textBoxAboutMe.Location = new System.Drawing.Point(46, 251);
             this.textBoxAboutMe.Multiline = true;
             this.textBoxAboutMe.Name = "textBoxAboutMe";
             this.textBoxAboutMe.ReadOnly = true;
             this.textBoxAboutMe.Size = new System.Drawing.Size(380, 123);
             this.textBoxAboutMe.TabIndex = 15;
+            this.textBoxAboutMe.TabStop = false;
             // 
             // labelHeaderName
             // 
