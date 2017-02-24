@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,26 +14,30 @@ namespace Friendly.Utilities
         public static string HandleError(Exception e)
         {
             string message = "";
-            int errorCode;
             if (e is DbUpdateException)
             {
-                SqlException sqlEx = e.GetBaseException() as SqlException;
-            }
-            if (e is SqlException)
-            {
-                errorCode = (e as SqlException).Number;
-                switch (errorCode)
+                if (e.GetBaseException() is SqlException)
                 {
-                    case 2627: // Primary key violation
-                        message = "Username already exists, please try another one";
-                        break;
-                    default:
-                        break;
-                }
+                    SqlException sqlEx = e.GetBaseException() as SqlException;                
+                    int errorCode = sqlEx.Number;
+                    switch (errorCode)
+                    {
+                        case 2627: // Primary key violation
+                            message = "Username already exists, please try another one";
+                            break;
+                        default:
+                            break;
+                    }      
+                }            
+            }
+            else if (e is DbEntityValidationException)
+            {
+                message =
+                    "One or more of the values you entered where invalid, please check your details and try again.";
             }
             else if (e is ArgumentNullException)
             {
-                message = "Du fick ett exception, grattis! Gå och gör lite thé medans smurfarna städar upp efter dig.";
+                message = "Unfortunately something went wrong, please restart the application and try again.";
             }
             else if (e is InvalidUserOrPasswordException)
             {

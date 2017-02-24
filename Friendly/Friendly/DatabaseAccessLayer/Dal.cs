@@ -46,6 +46,7 @@ namespace Friendly.DatabaseAccessLayer
                 }
             }
         }
+
         public static void UpdateUser (User u)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
