@@ -44,11 +44,8 @@ namespace Friendly.View
                 try
                 {
                     User tempUser = Controller.CheckUsernameAndPassword(textBoxUsername.Text.Trim(), textBoxPassword.Text.Trim());
-                    if (tempUser != null)
-                    {
-                        User = tempUser;
-                        this.DialogResult = DialogResult.OK;
-                    }
+                    User = tempUser;
+                    this.DialogResult = DialogResult.OK;               
                 }
                 catch (InvalidUserOrPasswordException ex)
                 {
