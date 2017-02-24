@@ -30,18 +30,18 @@
         {
             this.picBoxMatchImage = new System.Windows.Forms.PictureBox();
             this.buttonMatchMessage = new System.Windows.Forms.Button();
-            this.labelMatchFirstName = new System.Windows.Forms.Label();
-            this.labelMatchLastName = new System.Windows.Forms.Label();
-            this.labelMatchAge = new System.Windows.Forms.Label();
-            this.labelMatchProfessionalField = new System.Windows.Forms.Label();
+            this.labelFirstName = new System.Windows.Forms.Label();
+            this.labelLastName = new System.Windows.Forms.Label();
+            this.labelAge = new System.Windows.Forms.Label();
+            this.labelProfessionalField = new System.Windows.Forms.Label();
             this.labelProfessionalTitle = new System.Windows.Forms.Label();
-            this.labelAboutme = new System.Windows.Forms.Label();
+            this.labelHeaderAboutMe = new System.Windows.Forms.Label();
             this.textBoxAboutMe = new System.Windows.Forms.TextBox();
-            this.labelPopUpName = new System.Windows.Forms.Label();
-            this.labelPopUpAge = new System.Windows.Forms.Label();
-            this.labelPopUpFieldOfProfession = new System.Windows.Forms.Label();
-            this.labelPopUpTitle = new System.Windows.Forms.Label();
-            this.labelPopUpUserName = new System.Windows.Forms.Label();
+            this.labelHeaderName = new System.Windows.Forms.Label();
+            this.labelHeaderAge = new System.Windows.Forms.Label();
+            this.labelHeaderFieldOfProfession = new System.Windows.Forms.Label();
+            this.labelHeaderTitle = new System.Windows.Forms.Label();
+            this.labelUserName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMatchImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,41 +62,41 @@
             this.buttonMatchMessage.Text = "Match and Message";
             this.buttonMatchMessage.UseVisualStyleBackColor = true;
             // 
-            // labelMatchFirstName
+            // labelFirstName
             // 
-            this.labelMatchFirstName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMatchFirstName.Location = new System.Drawing.Point(282, 84);
-            this.labelMatchFirstName.Name = "labelMatchFirstName";
-            this.labelMatchFirstName.Size = new System.Drawing.Size(100, 20);
-            this.labelMatchFirstName.TabIndex = 9;
-            this.labelMatchFirstName.Text = "FirstName";
+            this.labelFirstName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFirstName.Location = new System.Drawing.Point(282, 84);
+            this.labelFirstName.Name = "labelFirstName";
+            this.labelFirstName.Size = new System.Drawing.Size(100, 20);
+            this.labelFirstName.TabIndex = 9;
+            this.labelFirstName.Text = "FirstName";
             // 
-            // labelMatchLastName
+            // labelLastName
             // 
-            this.labelMatchLastName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMatchLastName.Location = new System.Drawing.Point(359, 84);
-            this.labelMatchLastName.Name = "labelMatchLastName";
-            this.labelMatchLastName.Size = new System.Drawing.Size(100, 20);
-            this.labelMatchLastName.TabIndex = 10;
-            this.labelMatchLastName.Text = "LastName";
+            this.labelLastName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLastName.Location = new System.Drawing.Point(359, 84);
+            this.labelLastName.Name = "labelLastName";
+            this.labelLastName.Size = new System.Drawing.Size(100, 20);
+            this.labelLastName.TabIndex = 10;
+            this.labelLastName.Text = "LastName";
             // 
-            // labelMatchAge
+            // labelAge
             // 
-            this.labelMatchAge.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMatchAge.Location = new System.Drawing.Point(283, 117);
-            this.labelMatchAge.Name = "labelMatchAge";
-            this.labelMatchAge.Size = new System.Drawing.Size(100, 20);
-            this.labelMatchAge.TabIndex = 11;
-            this.labelMatchAge.Text = "Age";
+            this.labelAge.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAge.Location = new System.Drawing.Point(283, 117);
+            this.labelAge.Name = "labelAge";
+            this.labelAge.Size = new System.Drawing.Size(100, 20);
+            this.labelAge.TabIndex = 11;
+            this.labelAge.Text = "Age";
             // 
-            // labelMatchProfessionalField
+            // labelProfessionalField
             // 
-            this.labelMatchProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMatchProfessionalField.Location = new System.Drawing.Point(283, 147);
-            this.labelMatchProfessionalField.Name = "labelMatchProfessionalField";
-            this.labelMatchProfessionalField.Size = new System.Drawing.Size(150, 20);
-            this.labelMatchProfessionalField.TabIndex = 12;
-            this.labelMatchProfessionalField.Text = "FieldOfProfession";
+            this.labelProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProfessionalField.Location = new System.Drawing.Point(283, 147);
+            this.labelProfessionalField.Name = "labelProfessionalField";
+            this.labelProfessionalField.Size = new System.Drawing.Size(150, 20);
+            this.labelProfessionalField.TabIndex = 12;
+            this.labelProfessionalField.Text = "FieldOfProfession";
             // 
             // labelProfessionalTitle
             // 
@@ -107,15 +107,15 @@
             this.labelProfessionalTitle.TabIndex = 13;
             this.labelProfessionalTitle.Text = "ProfessionalTitle";
             // 
-            // labelAboutme
+            // labelHeaderAboutMe
             // 
-            this.labelAboutme.AutoSize = true;
-            this.labelAboutme.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAboutme.Location = new System.Drawing.Point(43, 235);
-            this.labelAboutme.Name = "labelAboutme";
-            this.labelAboutme.Size = new System.Drawing.Size(71, 19);
-            this.labelAboutme.TabIndex = 14;
-            this.labelAboutme.Text = "About Me";
+            this.labelHeaderAboutMe.AutoSize = true;
+            this.labelHeaderAboutMe.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeaderAboutMe.Location = new System.Drawing.Point(43, 235);
+            this.labelHeaderAboutMe.Name = "labelHeaderAboutMe";
+            this.labelHeaderAboutMe.Size = new System.Drawing.Size(71, 19);
+            this.labelHeaderAboutMe.TabIndex = 14;
+            this.labelHeaderAboutMe.Text = "About Me";
             // 
             // textBoxAboutMe
             // 
@@ -126,73 +126,73 @@
             this.textBoxAboutMe.Size = new System.Drawing.Size(380, 123);
             this.textBoxAboutMe.TabIndex = 15;
             // 
-            // labelPopUpName
+            // labelHeaderName
             // 
-            this.labelPopUpName.AutoSize = true;
-            this.labelPopUpName.Location = new System.Drawing.Point(179, 87);
-            this.labelPopUpName.Name = "labelPopUpName";
-            this.labelPopUpName.Size = new System.Drawing.Size(36, 13);
-            this.labelPopUpName.TabIndex = 24;
-            this.labelPopUpName.Text = "Name";
+            this.labelHeaderName.AutoSize = true;
+            this.labelHeaderName.Location = new System.Drawing.Point(179, 87);
+            this.labelHeaderName.Name = "labelHeaderName";
+            this.labelHeaderName.Size = new System.Drawing.Size(36, 13);
+            this.labelHeaderName.TabIndex = 24;
+            this.labelHeaderName.Text = "Name";
             // 
-            // labelPopUpAge
+            // labelHeaderAge
             // 
-            this.labelPopUpAge.AutoSize = true;
-            this.labelPopUpAge.Location = new System.Drawing.Point(179, 117);
-            this.labelPopUpAge.Name = "labelPopUpAge";
-            this.labelPopUpAge.Size = new System.Drawing.Size(27, 13);
-            this.labelPopUpAge.TabIndex = 25;
-            this.labelPopUpAge.Text = "Age";
+            this.labelHeaderAge.AutoSize = true;
+            this.labelHeaderAge.Location = new System.Drawing.Point(179, 117);
+            this.labelHeaderAge.Name = "labelHeaderAge";
+            this.labelHeaderAge.Size = new System.Drawing.Size(27, 13);
+            this.labelHeaderAge.TabIndex = 25;
+            this.labelHeaderAge.Text = "Age";
             // 
-            // labelPopUpFieldOfProfession
+            // labelHeaderFieldOfProfession
             // 
-            this.labelPopUpFieldOfProfession.AutoSize = true;
-            this.labelPopUpFieldOfProfession.Location = new System.Drawing.Point(179, 147);
-            this.labelPopUpFieldOfProfession.Name = "labelPopUpFieldOfProfession";
-            this.labelPopUpFieldOfProfession.Size = new System.Drawing.Size(104, 13);
-            this.labelPopUpFieldOfProfession.TabIndex = 26;
-            this.labelPopUpFieldOfProfession.Text = "Field of profession";
+            this.labelHeaderFieldOfProfession.AutoSize = true;
+            this.labelHeaderFieldOfProfession.Location = new System.Drawing.Point(179, 147);
+            this.labelHeaderFieldOfProfession.Name = "labelHeaderFieldOfProfession";
+            this.labelHeaderFieldOfProfession.Size = new System.Drawing.Size(104, 13);
+            this.labelHeaderFieldOfProfession.TabIndex = 26;
+            this.labelHeaderFieldOfProfession.Text = "Field of profession";
             // 
-            // labelPopUpTitle
+            // labelHeaderTitle
             // 
-            this.labelPopUpTitle.AutoSize = true;
-            this.labelPopUpTitle.Location = new System.Drawing.Point(179, 177);
-            this.labelPopUpTitle.Name = "labelPopUpTitle";
-            this.labelPopUpTitle.Size = new System.Drawing.Size(28, 13);
-            this.labelPopUpTitle.TabIndex = 27;
-            this.labelPopUpTitle.Text = "Title";
+            this.labelHeaderTitle.AutoSize = true;
+            this.labelHeaderTitle.Location = new System.Drawing.Point(179, 177);
+            this.labelHeaderTitle.Name = "labelHeaderTitle";
+            this.labelHeaderTitle.Size = new System.Drawing.Size(28, 13);
+            this.labelHeaderTitle.TabIndex = 27;
+            this.labelHeaderTitle.Text = "Title";
             // 
-            // labelPopUpUserName
+            // labelUserName
             // 
-            this.labelPopUpUserName.AutoSize = true;
-            this.labelPopUpUserName.Location = new System.Drawing.Point(46, 68);
-            this.labelPopUpUserName.Name = "labelPopUpUserName";
-            this.labelPopUpUserName.Size = new System.Drawing.Size(59, 13);
-            this.labelPopUpUserName.TabIndex = 28;
-            this.labelPopUpUserName.Text = "UserName";
+            this.labelUserName.AutoSize = true;
+            this.labelUserName.Location = new System.Drawing.Point(46, 68);
+            this.labelUserName.Name = "labelUserName";
+            this.labelUserName.Size = new System.Drawing.Size(59, 13);
+            this.labelUserName.TabIndex = 28;
+            this.labelUserName.Text = "UserName";
             // 
-            // PopUpForm
+            // MatchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 400);
-            this.Controls.Add(this.labelPopUpUserName);
-            this.Controls.Add(this.labelPopUpTitle);
-            this.Controls.Add(this.labelPopUpFieldOfProfession);
-            this.Controls.Add(this.labelPopUpAge);
-            this.Controls.Add(this.labelPopUpName);
+            this.Controls.Add(this.labelUserName);
+            this.Controls.Add(this.labelHeaderTitle);
+            this.Controls.Add(this.labelHeaderFieldOfProfession);
+            this.Controls.Add(this.labelHeaderAge);
+            this.Controls.Add(this.labelHeaderName);
             this.Controls.Add(this.textBoxAboutMe);
-            this.Controls.Add(this.labelAboutme);
+            this.Controls.Add(this.labelHeaderAboutMe);
             this.Controls.Add(this.labelProfessionalTitle);
-            this.Controls.Add(this.labelMatchProfessionalField);
-            this.Controls.Add(this.labelMatchAge);
-            this.Controls.Add(this.labelMatchLastName);
-            this.Controls.Add(this.labelMatchFirstName);
+            this.Controls.Add(this.labelProfessionalField);
+            this.Controls.Add(this.labelAge);
+            this.Controls.Add(this.labelLastName);
+            this.Controls.Add(this.labelFirstName);
             this.Controls.Add(this.buttonMatchMessage);
             this.Controls.Add(this.picBoxMatchImage);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "PopUpForm";
-            this.Text = "Potenital match";
+            this.Name = "MatchForm";
+            this.Text = "A new friend?";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMatchImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,17 +203,17 @@
 
         private System.Windows.Forms.PictureBox picBoxMatchImage;
         private System.Windows.Forms.Button buttonMatchMessage;
-        private System.Windows.Forms.Label labelMatchFirstName;
-        private System.Windows.Forms.Label labelMatchLastName;
-        private System.Windows.Forms.Label labelMatchAge;
-        private System.Windows.Forms.Label labelMatchProfessionalField;
+        private System.Windows.Forms.Label labelFirstName;
+        private System.Windows.Forms.Label labelLastName;
+        private System.Windows.Forms.Label labelAge;
+        private System.Windows.Forms.Label labelProfessionalField;
         private System.Windows.Forms.Label labelProfessionalTitle;
-        private System.Windows.Forms.Label labelAboutme;
+        private System.Windows.Forms.Label labelHeaderAboutMe;
         private System.Windows.Forms.TextBox textBoxAboutMe;
-        private System.Windows.Forms.Label labelPopUpName;
-        private System.Windows.Forms.Label labelPopUpAge;
-        private System.Windows.Forms.Label labelPopUpFieldOfProfession;
-        private System.Windows.Forms.Label labelPopUpTitle;
-        private System.Windows.Forms.Label labelPopUpUserName;
+        private System.Windows.Forms.Label labelHeaderName;
+        private System.Windows.Forms.Label labelHeaderAge;
+        private System.Windows.Forms.Label labelHeaderFieldOfProfession;
+        private System.Windows.Forms.Label labelHeaderTitle;
+        private System.Windows.Forms.Label labelUserName;
     }
 }

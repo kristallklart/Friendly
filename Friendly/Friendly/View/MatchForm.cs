@@ -22,13 +22,13 @@ namespace Friendly.View
             this.StartPosition = FormStartPosition.CenterParent;
             user = Controller.GetUser(selectedUser);
 
-            labelMatchFirstName.Text = user.FirstName.ToString().Trim();
-            labelMatchLastName.Text = user.LastName.ToString().Trim();
-            labelPopUpUserName.Text = user.Username.ToString().Trim();
-            labelMatchAge.Text = Controller.GetAge(selectedUser).ToString().Trim() + " years";
+            labelFirstName.Text = user.FirstName.ToString().Trim();
+            labelLastName.Text = user.LastName.ToString().Trim();
+            labelUserName.Text = user.Username.ToString().Trim();
+            labelAge.Text = Controller.GetAge(selectedUser).ToString().Trim() + " years";
             if (user.Industry != null)
             {
-                labelMatchProfessionalField.Text = user.Industry.ToString().Trim();
+                labelProfessionalField.Text = user.Industry.ToString().Trim();
             }
             if (user.Profession != null)
             {
