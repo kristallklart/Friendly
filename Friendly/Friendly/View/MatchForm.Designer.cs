@@ -47,9 +47,11 @@
             // 
             // picBoxMatchImage
             // 
-            this.picBoxMatchImage.Location = new System.Drawing.Point(46, 87);
+            this.picBoxMatchImage.Image = global::Friendly.Properties.Resources.Spongebob;
+            this.picBoxMatchImage.Location = new System.Drawing.Point(49, 84);
             this.picBoxMatchImage.Name = "picBoxMatchImage";
             this.picBoxMatchImage.Size = new System.Drawing.Size(108, 104);
+            this.picBoxMatchImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxMatchImage.TabIndex = 0;
             this.picBoxMatchImage.TabStop = false;
             // 
@@ -64,8 +66,8 @@
             // 
             // labelFirstName
             // 
-            this.labelFirstName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFirstName.Location = new System.Drawing.Point(282, 84);
+            this.labelFirstName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFirstName.Location = new System.Drawing.Point(283, 87);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(100, 20);
             this.labelFirstName.TabIndex = 9;
@@ -73,8 +75,8 @@
             // 
             // labelLastName
             // 
-            this.labelLastName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastName.Location = new System.Drawing.Point(359, 84);
+            this.labelLastName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLastName.Location = new System.Drawing.Point(360, 87);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(100, 20);
             this.labelLastName.TabIndex = 10;
@@ -82,7 +84,7 @@
             // 
             // labelAge
             // 
-            this.labelAge.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAge.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAge.Location = new System.Drawing.Point(283, 117);
             this.labelAge.Name = "labelAge";
             this.labelAge.Size = new System.Drawing.Size(100, 20);
@@ -91,7 +93,7 @@
             // 
             // labelProfessionalField
             // 
-            this.labelProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProfessionalField.Location = new System.Drawing.Point(283, 147);
             this.labelProfessionalField.Name = "labelProfessionalField";
             this.labelProfessionalField.Size = new System.Drawing.Size(150, 20);
@@ -100,7 +102,7 @@
             // 
             // labelProfessionalTitle
             // 
-            this.labelProfessionalTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProfessionalTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProfessionalTitle.Location = new System.Drawing.Point(283, 177);
             this.labelProfessionalTitle.Name = "labelProfessionalTitle";
             this.labelProfessionalTitle.Size = new System.Drawing.Size(150, 20);
@@ -147,6 +149,7 @@
             // labelHeaderFieldOfProfession
             // 
             this.labelHeaderFieldOfProfession.AutoSize = true;
+            this.labelHeaderFieldOfProfession.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeaderFieldOfProfession.Location = new System.Drawing.Point(179, 147);
             this.labelHeaderFieldOfProfession.Name = "labelHeaderFieldOfProfession";
             this.labelHeaderFieldOfProfession.Size = new System.Drawing.Size(104, 13);
@@ -165,9 +168,10 @@
             // labelUserName
             // 
             this.labelUserName.AutoSize = true;
-            this.labelUserName.Location = new System.Drawing.Point(46, 68);
+            this.labelUserName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserName.Location = new System.Drawing.Point(46, 64);
             this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(59, 13);
+            this.labelUserName.Size = new System.Drawing.Size(70, 17);
             this.labelUserName.TabIndex = 28;
             this.labelUserName.Text = "UserName";
             // 
