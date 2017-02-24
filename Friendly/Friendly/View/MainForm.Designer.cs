@@ -163,6 +163,7 @@ namespace Friendly.View
             // 
             // textBoxAboutMe
             // 
+            this.textBoxAboutMe.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAboutMe.Location = new System.Drawing.Point(6, 196);
             this.textBoxAboutMe.MaxLength = 300;
             this.textBoxAboutMe.Multiline = true;
@@ -503,6 +504,7 @@ namespace Friendly.View
             // 
             // dataGridViewMyMatches
             // 
+            this.dataGridViewMyMatches.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewMyMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMyMatches.Location = new System.Drawing.Point(188, 44);
             this.dataGridViewMyMatches.Name = "dataGridViewMyMatches";
@@ -513,6 +515,7 @@ namespace Friendly.View
             // 
             // dataGridViewMyMatchesCities
             // 
+            this.dataGridViewMyMatchesCities.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewMyMatchesCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMyMatchesCities.Location = new System.Drawing.Point(31, 42);
             this.dataGridViewMyMatchesCities.Name = "dataGridViewMyMatchesCities";
