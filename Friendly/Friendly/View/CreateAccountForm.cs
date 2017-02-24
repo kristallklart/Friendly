@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Windows.Forms;
 using System.Data.SqlClient;
@@ -18,52 +20,52 @@ namespace Friendly.View
             AutoValidate = AutoValidate.Disable;
             this.StartPosition = FormStartPosition.CenterParent;
         }
-
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void buttonCreateAccount_Click(object sender, EventArgs e)
         {
             labelFeedback.Text = "";
             if (this.ValidateChildren())
             {
-                User user = new User();
-                user.Username = textBoxUsername.Text.Trim();
-                user.Password = PasswordHash.ScryptHashString(textBoxPassword.Text.Trim(), PasswordHash.Strength.Medium);
-                user.FirstName = textBoxFirstName.Text.Trim();
-                user.LastName = textBoxLastName.Text.Trim();
-                int day;
-                int month;
-                int year;
-                if (Int32.TryParse(cueComboBoxDay.SelectedItem.ToString(), out day) &&
-                    Int32.TryParse(cueComboBoxMonth.SelectedItem.ToString(), out month) && 
-                    Int32.TryParse(cueComboBoxYear.SelectedItem.ToString(), out year))
-                {
-                    DateTime birthdate = new DateTime(year, month, day);
-                    user.Birthdate = birthdate;
-                }
-                else
-                {
-                    errorProvider.SetError(cueComboBoxYear, "That is not a valid birthdate.");
-                }
                 try
                 {
+                    User user = new User();
+                    user.Username = textBoxUsername.Text.Trim();
+                    user.Password = PasswordHash.ScryptHashString(textBoxPassword.Text.Trim(),
+                        PasswordHash.Strength.Medium);
+                    user.FirstName = textBoxFirstName.Text.Trim();
+                    user.LastName = textBoxLastName.Text.Trim();
+                    int day;
+                    int month;
+                    int year;
+
+                    if (int.TryParse(cueComboBoxDay.SelectedItem.ToString(), out day) &&
+                        int.TryParse(cueComboBoxMonth.SelectedItem.ToString(), out month) &&
+                        int.TryParse(cueComboBoxYear.SelectedItem.ToString(), out year))
+                    {
+                        DateTime birthdate = new DateTime(year, month, day);
+                        user.Birthdate = birthdate;
+                    }
+
                     Controller.AddNewUser(user);
+                    this.DialogResult = DialogResult.OK;
                 }
-                catch (SqlException ex)
+                catch (DbUpdateException ex)
                 {
-                   labelFeedback.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
-                catch (Exception ex)
+                catch (DbEntityValidationException ex)
                 {
-                   labelFeedback.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
-                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                errorProvider.SetError(cueComboBoxYear, "That is not a valid birthdate.");
             }
         }
-
         private void textBox_Validating(object sender, CancelEventArgs e)
         {
             TextBox tempBox = sender as TextBox;
@@ -93,7 +95,6 @@ namespace Friendly.View
             else
                 e.Cancel = false;
         }
-
         private void control_Validated(object sender, EventArgs e)
         {
             this.errorProvider.SetError(sender as Control, string.Empty);
@@ -110,7 +111,6 @@ namespace Friendly.View
             else
                 e.Cancel = false;
         }
- 
         private void CreateAccountForm_Load(object sender, EventArgs e)
         {
             int[] days = Enumerable.Range(1, 31).ToArray();
@@ -118,11 +118,13 @@ namespace Friendly.View
             {
                 cueComboBoxDay.Items.Add(day);
             }
+
             int[] months = Enumerable.Range(1, 12).ToArray();
             foreach (int month in months)
             {
                 cueComboBoxMonth.Items.Add(month);
             }
+
             int startYear = 1899;
             int[] years = Enumerable.Range(startYear, (DateTime.Now.Year - 17) - startYear).ToArray();
             foreach (int year in years)

@@ -32,20 +32,15 @@ namespace Friendly.DatabaseAccessLayer
                 {
                     throw new InvalidUserOrPasswordException("Couldn't find user with username: " + username);
                 }
-                else
+                User tempUser = context.Users.FirstOrDefault(user => user.Username.Equals(username, StringComparison.Ordinal));
+                if (PasswordHash.ScryptHashStringVerify(tempUser.Password, password))
                 {
-                    User tempUser = context.Users.FirstOrDefault(user => user.Username.Equals(username, StringComparison.Ordinal));
-                    if (PasswordHash.ScryptHashStringVerify(tempUser.Password, password))
-                    {
-                        return tempUser;
-                    }
-                    else
-                    {
-                        throw new InvalidUserOrPasswordException("The entered password doesn't match for username: " + username);
-                    }
+                    return tempUser;
                 }
+                throw new InvalidUserOrPasswordException("The entered password doesn't match for username: " + username);
             }
         }
+
         public static void UpdateUser (User u)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
