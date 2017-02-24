@@ -67,6 +67,7 @@ namespace Friendly.View
             this.dataGridViewMyMessagesTab = new System.Windows.Forms.DataGridView();
             this.labelMessages = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControlMain.SuspendLayout();
             this.tabMyProfile.SuspendLayout();
             this.groupBoxMyDetails.SuspendLayout();
@@ -79,6 +80,7 @@ namespace Friendly.View
             this.tabMyMessages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMessagesTab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -132,7 +134,7 @@ namespace Friendly.View
             this.labelMustNames.AutoSize = true;
             this.labelMustNames.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMustNames.ForeColor = System.Drawing.Color.Red;
-            this.labelMustNames.Location = new System.Drawing.Point(374, 50);
+            this.labelMustNames.Location = new System.Drawing.Point(374, 45);
             this.labelMustNames.Name = "labelMustNames";
             this.labelMustNames.Size = new System.Drawing.Size(13, 17);
             this.labelMustNames.TabIndex = 25;
@@ -163,6 +165,7 @@ namespace Friendly.View
             // 
             // textBoxAboutMe
             // 
+            this.textBoxAboutMe.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAboutMe.Location = new System.Drawing.Point(6, 196);
             this.textBoxAboutMe.MaxLength = 300;
             this.textBoxAboutMe.Multiline = true;
@@ -298,6 +301,7 @@ namespace Friendly.View
             // dataGridViewMyCities
             // 
             this.dataGridViewMyCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMyCities.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewMyCities.Location = new System.Drawing.Point(8, 196);
             this.dataGridViewMyCities.Name = "dataGridViewMyCities";
             this.dataGridViewMyCities.ReadOnly = true;
@@ -348,141 +352,6 @@ namespace Friendly.View
             this.cueComboBoxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cueComboBoxCity.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cueComboBoxCity.FormattingEnabled = true;
-            this.cueComboBoxCity.Items.AddRange(new object[] {
-            "STOCKHOLM",
-            "GÖTEBORG",
-            "MALMÖ",
-            "",
-            "Alingsås",
-            "Arboga\t",
-            "Arvika",
-            "Askersund",
-            "Avesta\t",
-            "Boden",
-            "Bollnäs",
-            "Borgholm",
-            "Borlänge",
-            "Borås",
-            "Djursholm",
-            "Eksjö",
-            "Enköping",
-            "Eskilstuna",
-            "Eslöv",
-            "Fagersta",
-            "Falkenberg",
-            "Falköping",
-            "Falsterbo",
-            "Falun",
-            "Filipstad",
-            "Flen",
-            "Gränna",
-            "Gävle",
-            "Hagfors",
-            "Halmstad",
-            "Haparanda",
-            "Hedemora",
-            "Helsingborg",
-            "Hjo",
-            "Hudiksvall",
-            "Huskvarna",
-            "Härnösand",
-            "Hässleholm",
-            "Höganäs",
-            "Jönköping",
-            "Kalmar",
-            "Karlshamn",
-            "Karlskoga",
-            "Karlskrona",
-            "Karlstad",
-            "Katrineholm",
-            "Kiruna",
-            "Kramfors",
-            "Kristianstad",
-            "Kristinehamn",
-            "Kumla",
-            "Kungsbacka",
-            "Kungälv",
-            "Köping",
-            "Laholm",
-            "Landskrona",
-            "Lidingö",
-            "Lidköping",
-            "Lindesberg",
-            "Linköping",
-            "Ljungby",
-            "Ludvika",
-            "Luleå",
-            "Lund",
-            "Lycksele",
-            "Lysekil",
-            "Mariefred",
-            "Mariestad",
-            "Marstrand",
-            "Mjölby",
-            "Motala",
-            "Nacka",
-            "Nora",
-            "Norrköping",
-            "Norrtälje",
-            "Nybro",
-            "Nyköping",
-            "Nynäshamn",
-            "Nässjö",
-            "Oskarshamn",
-            "Oxelösund",
-            "Piteå",
-            "Ronneby",
-            "Sala",
-            "Sandviken",
-            "Sigtuna",
-            "Simrishamn",
-            "Skanör",
-            "Skara",
-            "Skellefteå",
-            "Skänninge",
-            "Skövde",
-            "Sollefteå",
-            "Solna",
-            "Strängnäs",
-            "Strömstad",
-            "Sundbyberg",
-            "Sundsvall",
-            "Säffle",
-            "Säter",
-            "Sävsjö",
-            "Söderhamn",
-            "Söderköping",
-            "Södertälje",
-            "Sölvesborg",
-            "Tidaholm",
-            "Torshälla",
-            "Tranås",
-            "Trelleborg",
-            "Trollhättan",
-            "Trosa",
-            "Uddevalla",
-            "Ulricehamn",
-            "Umeå",
-            "Uppsala",
-            "Vadstena",
-            "Varberg",
-            "Vaxholm",
-            "Vetlanda",
-            "Vimmerby",
-            "Visby",
-            "Vänersborg",
-            "Värnamo",
-            "Västervik",
-            "Västerås",
-            "Växjö",
-            "Ystad",
-            "Ängelholm",
-            "Åmål",
-            "Örebro",
-            "Öregrund",
-            "Örnsköldsvik",
-            "Östersund",
-            "Östhammar"});
             this.cueComboBoxCity.Location = new System.Drawing.Point(158, 41);
             this.cueComboBoxCity.Name = "cueComboBoxCity";
             this.cueComboBoxCity.Size = new System.Drawing.Size(133, 21);
@@ -490,7 +359,7 @@ namespace Friendly.View
             // 
             // tabMyMatches
             // 
-            this.tabMyMatches.Controls.Add(this.dataGridViewMyMatches);
+            this.tabMyMatches.Controls.Add(this.panel1);
             this.tabMyMatches.Controls.Add(this.dataGridViewMyMatchesCities);
             this.tabMyMatches.Location = new System.Drawing.Point(4, 22);
             this.tabMyMatches.Name = "tabMyMatches";
@@ -503,17 +372,20 @@ namespace Friendly.View
             // dataGridViewMyMatches
             // 
             this.dataGridViewMyMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMyMatches.Location = new System.Drawing.Point(188, 44);
+            this.dataGridViewMyMatches.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewMyMatches.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewMyMatches.Name = "dataGridViewMyMatches";
             this.dataGridViewMyMatches.ReadOnly = true;
-            this.dataGridViewMyMatches.Size = new System.Drawing.Size(644, 378);
+            this.dataGridViewMyMatches.Size = new System.Drawing.Size(435, 324);
             this.dataGridViewMyMatches.TabIndex = 1;
+            this.dataGridViewMyMatches.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewMyMatches.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMyMatches_CellClick);
             // 
             // dataGridViewMyMatchesCities
             // 
             this.dataGridViewMyMatchesCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMyMatchesCities.Location = new System.Drawing.Point(31, 42);
+            this.dataGridViewMyMatchesCities.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewMyMatchesCities.Location = new System.Drawing.Point(78, 40);
             this.dataGridViewMyMatchesCities.Name = "dataGridViewMyMatchesCities";
             this.dataGridViewMyMatchesCities.ReadOnly = true;
             this.dataGridViewMyMatchesCities.Size = new System.Drawing.Size(136, 380);
@@ -582,6 +454,14 @@ namespace Friendly.View
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridViewMyMatches);
+            this.panel1.Location = new System.Drawing.Point(249, 40);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(539, 380);
+            this.panel1.TabIndex = 2;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -610,6 +490,7 @@ namespace Friendly.View
             this.tabMyMessages.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyMessagesTab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -651,6 +532,7 @@ namespace Friendly.View
         private System.Windows.Forms.GroupBox groupBoxPreferences;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Label labelMustNames;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
