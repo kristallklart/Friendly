@@ -293,6 +293,7 @@ namespace Friendly.View
                         Image newImage = Image.FromFile(fileContent);
                         byte[] result = (byte[]) new ImageConverter().ConvertTo(newImage, typeof(byte[]));
                         picBoxProfilePic.Image = newImage;
+                        currentUser.Picture = result;
                         Controller.SaveProfilePicture(currentUser.Username, result);
                     }
                     catch (DbUpdateException ex)
@@ -328,7 +329,7 @@ namespace Friendly.View
             if (tempBox.Text.Trim().Length == 0)
             {
                 e.Cancel = true;
-                labelMessages.Text = "Please make sure both Firstname and Lastname is entered";
+                labelMessages.Text = "Please make sure both firstname and fastname are entered";
                 this.errorProvider.SetError(textBoxLastName, "Please enter a firstname and lastname.");
             }
             else

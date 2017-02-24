@@ -17,11 +17,13 @@ namespace Friendly
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoginForm loginForm = new LoginForm();
-            if(loginForm.ShowDialog() == DialogResult.OK)
+            using (LoginForm loginForm = new LoginForm())
             {
-                Application.Run(new MainForm(loginForm.User));
-            }             
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new MainForm(loginForm.User));
+                }
+            }                  
         }
     }
 }
