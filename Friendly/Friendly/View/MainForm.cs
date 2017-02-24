@@ -342,6 +342,7 @@ namespace Friendly.View
         {
             this.errorProvider.SetError(sender as Control, string.Empty);
         }
+
     }
 }
 
