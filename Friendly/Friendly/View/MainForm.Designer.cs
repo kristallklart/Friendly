@@ -280,6 +280,7 @@ namespace Friendly.View
             this.dataGridViewMyCities.Name = "dataGridViewMyCities";
             this.dataGridViewMyCities.Size = new System.Drawing.Size(444, 211);
             this.dataGridViewMyCities.TabIndex = 20;
+            this.dataGridViewMyCities.ReadOnly = true;
             // 
             // dateTimePickerFrom
             // 
