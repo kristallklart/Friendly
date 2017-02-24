@@ -132,7 +132,7 @@ namespace Friendly.View
             this.labelMustNames.AutoSize = true;
             this.labelMustNames.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMustNames.ForeColor = System.Drawing.Color.Red;
-            this.labelMustNames.Location = new System.Drawing.Point(374, 50);
+            this.labelMustNames.Location = new System.Drawing.Point(374, 45);
             this.labelMustNames.Name = "labelMustNames";
             this.labelMustNames.Size = new System.Drawing.Size(13, 17);
             this.labelMustNames.TabIndex = 25;
@@ -298,6 +298,7 @@ namespace Friendly.View
             // dataGridViewMyCities
             // 
             this.dataGridViewMyCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMyCities.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewMyCities.Location = new System.Drawing.Point(8, 196);
             this.dataGridViewMyCities.Name = "dataGridViewMyCities";
             this.dataGridViewMyCities.ReadOnly = true;
