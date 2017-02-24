@@ -70,6 +70,8 @@ namespace Friendly.View
                 {
                    dataGridViewMyCities.Columns[i].Visible = false;
                 }
+                //dataGridViewMyCities.AutoResizeColumns();
+
             }
             catch (ArgumentNullException ex)
             {
