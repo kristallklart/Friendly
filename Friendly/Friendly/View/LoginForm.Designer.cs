@@ -126,7 +126,7 @@
             this.labelMustPassword.AutoSize = true;
             this.labelMustPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMustPassword.ForeColor = System.Drawing.Color.Red;
-            this.labelMustPassword.Location = new System.Drawing.Point(205, 107);
+            this.labelMustPassword.Location = new System.Drawing.Point(204, 104);
             this.labelMustPassword.Name = "labelMustPassword";
             this.labelMustPassword.Size = new System.Drawing.Size(13, 17);
             this.labelMustPassword.TabIndex = 8;
@@ -137,7 +137,7 @@
             this.labelMustUsername.AutoSize = true;
             this.labelMustUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMustUsername.ForeColor = System.Drawing.Color.Red;
-            this.labelMustUsername.Location = new System.Drawing.Point(205, 70);
+            this.labelMustUsername.Location = new System.Drawing.Point(204, 67);
             this.labelMustUsername.Name = "labelMustUsername";
             this.labelMustUsername.Size = new System.Drawing.Size(13, 17);
             this.labelMustUsername.TabIndex = 7;

@@ -68,6 +68,7 @@ namespace Friendly.View
             this.cueComboBoxInterestedIn = new Friendly.Utilities.CueComboBox();
             this.cueComboBoxCity = new Friendly.Utilities.CueComboBox();
             this.cueTextBoxMessage = new Friendly.Utilities.CueTextBox();
+            this.labelMustInterestCity = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tabMyProfile.SuspendLayout();
             this.groupBoxMyDetails.SuspendLayout();
@@ -229,6 +230,7 @@ namespace Friendly.View
             // 
             // groupBoxPreferences
             // 
+            this.groupBoxPreferences.Controls.Add(this.labelMustInterestCity);
             this.groupBoxPreferences.Controls.Add(this.buttonDelete);
             this.groupBoxPreferences.Controls.Add(this.cueComboBoxInterestedIn);
             this.groupBoxPreferences.Controls.Add(this.labelFrom);
@@ -261,7 +263,7 @@ namespace Friendly.View
             // 
             this.labelFrom.AutoSize = true;
             this.labelFrom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrom.Location = new System.Drawing.Point(172, 159);
+            this.labelFrom.Location = new System.Drawing.Point(160, 159);
             this.labelFrom.Name = "labelFrom";
             this.labelFrom.Size = new System.Drawing.Size(33, 13);
             this.labelFrom.TabIndex = 14;
@@ -280,7 +282,7 @@ namespace Friendly.View
             // dateTimePickerFrom
             // 
             this.dateTimePickerFrom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(208, 152);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(196, 152);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(100, 22);
             this.dateTimePickerFrom.TabIndex = 10;
@@ -290,7 +292,7 @@ namespace Friendly.View
             // 
             this.labelTo.AutoSize = true;
             this.labelTo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTo.Location = new System.Drawing.Point(324, 159);
+            this.labelTo.Location = new System.Drawing.Point(312, 159);
             this.labelTo.Name = "labelTo";
             this.labelTo.Size = new System.Drawing.Size(18, 13);
             this.labelTo.TabIndex = 15;
@@ -299,7 +301,7 @@ namespace Friendly.View
             // dateTimePickerTo
             // 
             this.dateTimePickerTo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerTo.Location = new System.Drawing.Point(348, 152);
+            this.dateTimePickerTo.Location = new System.Drawing.Point(336, 152);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(99, 22);
             this.dateTimePickerTo.TabIndex = 11;
@@ -307,7 +309,7 @@ namespace Friendly.View
             // buttonAddLocation
             // 
             this.buttonAddLocation.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.buttonAddLocation.Location = new System.Drawing.Point(372, 180);
+            this.buttonAddLocation.Location = new System.Drawing.Point(360, 180);
             this.buttonAddLocation.Name = "buttonAddLocation";
             this.buttonAddLocation.Size = new System.Drawing.Size(75, 23);
             this.buttonAddLocation.TabIndex = 12;
@@ -437,10 +439,11 @@ namespace Friendly.View
             this.cueComboBoxInterestedIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cueComboBoxInterestedIn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.cueComboBoxInterestedIn.FormattingEnabled = true;
-            this.cueComboBoxInterestedIn.Location = new System.Drawing.Point(175, 123);
+            this.cueComboBoxInterestedIn.Location = new System.Drawing.Point(163, 123);
             this.cueComboBoxInterestedIn.Name = "cueComboBoxInterestedIn";
             this.cueComboBoxInterestedIn.Size = new System.Drawing.Size(136, 21);
             this.cueComboBoxInterestedIn.TabIndex = 8;
+            this.cueComboBoxInterestedIn.Validated += new System.EventHandler(this.control_Validated);
             // 
             // cueComboBoxCity
             // 
@@ -448,10 +451,12 @@ namespace Friendly.View
             this.cueComboBoxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cueComboBoxCity.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cueComboBoxCity.FormattingEnabled = true;
-            this.cueComboBoxCity.Location = new System.Drawing.Point(314, 123);
+            this.cueComboBoxCity.Location = new System.Drawing.Point(302, 123);
             this.cueComboBoxCity.Name = "cueComboBoxCity";
             this.cueComboBoxCity.Size = new System.Drawing.Size(133, 21);
             this.cueComboBoxCity.TabIndex = 9;
+            this.errorProvider.SetIconPadding(this.cueComboBoxCity, 4);
+            this.cueComboBoxCity.Validated += new System.EventHandler(this.control_Validated);
             // 
             // cueTextBoxMessage
             // 
@@ -462,12 +467,23 @@ namespace Friendly.View
             this.cueTextBoxMessage.Size = new System.Drawing.Size(566, 56);
             this.cueTextBoxMessage.TabIndex = 3;
             // 
+            // labelMustInterestCity
+            // 
+            this.labelMustInterestCity.AutoSize = true;
+            this.labelMustInterestCity.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.labelMustInterestCity.ForeColor = System.Drawing.Color.Red;
+            this.labelMustInterestCity.Location = new System.Drawing.Point(439, 127);
+            this.labelMustInterestCity.Name = "labelMustInterestCity";
+            this.labelMustInterestCity.Size = new System.Drawing.Size(13, 17);
+            this.labelMustInterestCity.TabIndex = 24;
+            this.labelMustInterestCity.Text = "*";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(939, 523);
+            this.ClientSize = new System.Drawing.Size(939, 524);
             this.Controls.Add(this.labelMessages);
             this.Controls.Add(this.tabControlMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -533,6 +549,7 @@ namespace Friendly.View
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Label labelMustNames;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelMustInterestCity;
     }
 }
 

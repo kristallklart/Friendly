@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using Friendly.Model;
 using Friendly.ControllerLayer;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Core;
 using System.Linq.Expressions;
+using System.IO;
 using Friendly.Utilities;
 
 namespace Friendly.View
@@ -26,8 +28,10 @@ namespace Friendly.View
             AutoValidate = AutoValidate.Disable;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
+            labelMessages.Text = "";
             TabControl tempTabControl = sender as TabControl;
             if (tempTabControl != null)
             {
@@ -43,12 +47,17 @@ namespace Friendly.View
                             break;
                     }
                 }
+                catch (EntityException ex)
+                {
+                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                }
                 catch (ArgumentNullException ex)
                 {
                     labelMessages.Text = ErrorHandler.HandleError(ex);
                 }
             }            
         }
+
         public void UsersLocationsTimesToDataGrid()
         {
             dataGridViewMyCities.DataSource = Controller.GetUserLocations(currentUser.Username);
@@ -63,6 +72,7 @@ namespace Friendly.View
                 dataGridViewMyCities.Columns[i].Visible = false;
             }
         }
+
         public void UsersLocationsToDataGrid()
         {
             dataGridViewMyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
@@ -73,6 +83,7 @@ namespace Friendly.View
                 dataGridViewMyMatchesCities.Columns[i].Visible = false;
             }
         }
+
         public void UsersByCityToDataGrid(string selectedCity, User currentuser)
         {
             dataGridViewMyMatches.DataSource = Controller.GetUsersByCity(selectedCity, currentuser);
@@ -87,6 +98,7 @@ namespace Friendly.View
                 dataGridViewMyMatches.Columns[i].Visible = false;
             }
         }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             dateTimePickerFrom.MinDate = DateTime.Today;
@@ -100,6 +112,10 @@ namespace Friendly.View
                 DefaultValuesLocation();
                 labelAge.Text = Controller.GetAge(currentUser.Username).ToString().Trim() + " years";         
                 cueComboBoxProfessionalField.DataSource = Controller.GetFieldOfProfessions();             
+            }
+            catch (EntityException ex)
+            {
+                labelMessages.Text = ErrorHandler.HandleError(ex);
             }
             catch (ArgumentNullException ex)
             {
@@ -126,6 +142,7 @@ namespace Friendly.View
                 picBoxProfilePic.Image = (Image)new ImageConverter().ConvertFrom(currentUser.Picture);
             }             
         }
+
         private void DefaultValuesLocation()
         {
                 cueComboBoxInterestedIn.DataSource = Controller.GetPurposes();
@@ -149,6 +166,10 @@ namespace Friendly.View
                     DataGridViewRow selectedRow = dataGridViewMyMatchesCities.Rows[e.RowIndex];
                     string selectedCity = selectedRow.Cells[0].Value.ToString().Trim();
                     UsersByCityToDataGrid(selectedCity, currentUser);
+                }
+                catch (EntityException ex)
+                {
+                    labelMessages.Text = ErrorHandler.HandleError(ex);
                 }
                 catch (ArgumentNullException ex)
                 {
@@ -192,6 +213,10 @@ namespace Friendly.View
                 {
                     labelMessages.Text = ErrorHandler.HandleError(ex);
                 }
+                catch (EntityException ex)
+                {
+                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                }
                 catch (ArgumentNullException ex)
                 {
                     labelMessages.Text = ErrorHandler.HandleError(ex);
@@ -216,8 +241,15 @@ namespace Friendly.View
                     Controller.AddUserLocationPurpose(ulp);
                     UsersLocationsTimesToDataGrid();
                     DefaultValuesLocation();
+                    this.errorProvider.SetError(cueComboBoxCity, string.Empty);
+                    labelMessages.Text = "Successfully added a new preference to your account";
+                   
                 }
                 catch (DbUpdateException ex)
+                {
+                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                }
+                catch (EntityException ex)
                 {
                     labelMessages.Text = ErrorHandler.HandleError(ex);
                 }
@@ -225,23 +257,37 @@ namespace Friendly.View
                 {
                     labelMessages.Text = ErrorHandler.HandleError(ex);
                 }              
-            } 
+            }
+            else
+            {
+                labelMessages.Text = "Please select an interest and a city.";
+                this.errorProvider.SetError(cueComboBoxCity, "Please enter an interest and a city.");
+            }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            User_Location_Purpose ulp = new User_Location_Purpose();
-            DataGridViewRow selectedRow = dataGridViewMyCities.CurrentRow;
-            
             try
             {
-                Controller.DeleteUserLocatioPurpose(ulp);
-                ulp.City = selectedRow.Cells[0].Value.ToString().Trim();
-                ulp.Purposetype = selectedRow.Cells[2].Value.ToString().Trim();
-                ulp.FromDate = Convert.ToDateTime(selectedRow.Cells[3].Value.ToString().Trim());
-                ulp.ToDate = Convert.ToDateTime(selectedRow.Cells[4].Value.ToString().Trim());
-                ulp.Username = currentUser.Username;
-                UsersLocationsTimesToDataGrid();
+                
+                User_Location_Purpose ulp = new User_Location_Purpose();
+                DataGridViewRow selectedRow = dataGridViewMyCities.CurrentRow;
+                if (selectedRow != null)
+                {
+                    ulp.City = selectedRow.Cells[0].Value.ToString().Trim();
+                    ulp.Purposetype = selectedRow.Cells[2].Value.ToString().Trim();
+                    ulp.FromDate = Convert.ToDateTime(selectedRow.Cells[3].Value.ToString().Trim());
+                    ulp.ToDate = Convert.ToDateTime(selectedRow.Cells[4].Value.ToString().Trim());
+                    ulp.Username = currentUser.Username;
+                    Controller.DeleteUserLocatioPurpose(ulp);
+                    UsersLocationsTimesToDataGrid();
+                    labelMessages.Text = "Successfully deleted a preference from your account";
+                }
+                else
+                {
+                    labelMessages.Text = "Please select a preference from the table.";
+                }
+                
             }
             catch (DbUpdateException ex)
             {
@@ -258,12 +304,11 @@ namespace Friendly.View
         {
             using (OpenFileDialog openFile = new OpenFileDialog())
             {
-                if (openFile.ShowDialog() == DialogResult.OK) // Ser till att koden inte fortsätter om man inte valt att öppna en fil.
+                if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    string fileContent = openFile.FileName;
-
                     try
                     {
+                        string fileContent = openFile.FileName;
                         Image newImage = Image.FromFile(fileContent);
                         byte[] result = (byte[]) new ImageConverter().ConvertTo(newImage, typeof(byte[]));
                         picBoxProfilePic.Image = newImage;
@@ -278,7 +323,7 @@ namespace Friendly.View
                     {
                         labelMessages.Text = ErrorHandler.HandleError(ex);
                     }
-                    catch (System.IO.FileNotFoundException ex)
+                    catch (FileNotFoundException ex)
                     {
                         labelMessages.Text = ErrorHandler.HandleError(ex);
                     }
@@ -303,8 +348,8 @@ namespace Friendly.View
             if (tempBox.Text.Trim().Length == 0)
             {
                 e.Cancel = true;
-                labelMessages.Text = "Please make sure both firstname and fastname are entered";
-                this.errorProvider.SetError(textBoxLastName, "Please enter a firstname and lastname.");
+                labelMessages.Text = "Please make sure both firstname and lastname are entered.";
+                this.errorProvider.SetError(textBoxLastName, "Please enter a firstname and a lastname.");
             }
             else
             {
