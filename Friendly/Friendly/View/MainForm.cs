@@ -31,7 +31,7 @@ namespace Friendly.View
 
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            labelMessages.Text = "";
+            labelFeedback.Text = "";
             TabControl tempTabControl = sender as TabControl;
             if (tempTabControl != null)
             {
@@ -49,11 +49,11 @@ namespace Friendly.View
                 }
                 catch (EntityException ex)
                 {
-                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
                 catch (ArgumentNullException ex)
                 {
-                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
             }            
         }
@@ -115,11 +115,11 @@ namespace Friendly.View
             }
             catch (EntityException ex)
             {
-                labelMessages.Text = ErrorHandler.HandleError(ex);
+                labelFeedback.Text = ErrorHandler.HandleError(ex);
             }
             catch (ArgumentNullException ex)
             {
-                labelMessages.Text = ErrorHandler.HandleError(ex);
+                labelFeedback.Text = ErrorHandler.HandleError(ex);
             }
 
             cueComboBoxProfessionalField.DisplayMember = "Industry";
@@ -169,11 +169,11 @@ namespace Friendly.View
                 }
                 catch (EntityException ex)
                 {
-                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
                 catch (ArgumentNullException ex)
                 {
-                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
             }
         }
@@ -211,17 +211,17 @@ namespace Friendly.View
                 }
                 catch (DbUpdateException ex)
                 {
-                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
                 catch (EntityException ex)
                 {
-                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
                 catch (ArgumentNullException ex)
                 {
-                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
-                labelMessages.Text = "Successfully updated your details.";
+                labelFeedback.Text = "Successfully updated your details.";
             }
         }
 
@@ -242,25 +242,25 @@ namespace Friendly.View
                     UsersLocationsTimesToDataGrid();
                     DefaultValuesLocation();
                     this.errorProvider.SetError(cueComboBoxCity, string.Empty);
-                    labelMessages.Text = "Successfully added a new preference to your account";
+                    labelFeedback.Text = "Successfully added a new preference to your account";
                    
                 }
                 catch (DbUpdateException ex)
                 {
-                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
                 catch (EntityException ex)
                 {
-                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
                 catch (ArgumentNullException ex)
                 {
-                    labelMessages.Text = ErrorHandler.HandleError(ex);
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }              
             }
             else
             {
-                labelMessages.Text = "Please select an interest and a city.";
+                labelFeedback.Text = "Please select an interest and a city.";
                 this.errorProvider.SetError(cueComboBoxCity, "Please enter an interest and a city.");
             }
         }
@@ -281,17 +281,17 @@ namespace Friendly.View
                     ulp.Username = currentUser.Username;
                     Controller.DeleteUserLocatioPurpose(ulp);
                     UsersLocationsTimesToDataGrid();
-                    labelMessages.Text = "Successfully deleted a preference from your account";
+                    labelFeedback.Text = "Successfully deleted a preference from your account";
                 }
                 else
                 {
-                    labelMessages.Text = "Please select a preference from the table.";
+                    labelFeedback.Text = "Please select a preference from the table.";
                 }
                 
             }
             catch (DbUpdateException ex)
             {
-                labelMessages.Text = ErrorHandler.HandleError(ex);
+                labelFeedback.Text = ErrorHandler.HandleError(ex);
             }         
         }
 
@@ -317,19 +317,19 @@ namespace Friendly.View
                     }
                     catch (DbUpdateException ex)
                     {
-                        labelMessages.Text = ErrorHandler.HandleError(ex);
+                        labelFeedback.Text = ErrorHandler.HandleError(ex);
                     }
                     catch (OutOfMemoryException ex)
                     {
-                        labelMessages.Text = ErrorHandler.HandleError(ex);
+                        labelFeedback.Text = ErrorHandler.HandleError(ex);
                     }
                     catch (FileNotFoundException ex)
                     {
-                        labelMessages.Text = ErrorHandler.HandleError(ex);
+                        labelFeedback.Text = ErrorHandler.HandleError(ex);
                     }
                     catch (ArgumentException ex)
                     {
-                        labelMessages.Text = ErrorHandler.HandleError(ex);
+                        labelFeedback.Text = ErrorHandler.HandleError(ex);
                     }          
                 }
             }              
@@ -348,7 +348,7 @@ namespace Friendly.View
             if (tempBox.Text.Trim().Length == 0)
             {
                 e.Cancel = true;
-                labelMessages.Text = "Please make sure both firstname and lastname are entered.";
+                labelFeedback.Text = "Please make sure both firstname and lastname are entered.";
                 this.errorProvider.SetError(textBoxLastName, "Please enter a firstname and a lastname.");
             }
             else
