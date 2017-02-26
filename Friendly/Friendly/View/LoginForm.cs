@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.Entity.Core;
 using Friendly.ControllerLayer;
 using Friendly.Model;
 using Friendly.Utilities;
@@ -30,11 +31,13 @@ namespace Friendly.View
         }
         private void linkLabelCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CreateAccountForm form = new CreateAccountForm();
-            if (form.ShowDialog() == DialogResult.OK)
+            using (CreateAccountForm form = new CreateAccountForm())
             {
-                labelFeedback.Text = "Successfully created a new user";
-            }
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    labelFeedback.Text = "Successfully created a new user";
+                }
+            }   
         }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -45,6 +48,10 @@ namespace Friendly.View
                 {
                     User = Controller.CheckUsernameAndPassword(textBoxUsername.Text.Trim(), textBoxPassword.Text.Trim());
                     this.DialogResult = DialogResult.OK;               
+                }
+                catch (EntityException ex)
+                {
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
                 catch (InvalidUserOrPasswordException ex)
                 {

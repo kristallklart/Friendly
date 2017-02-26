@@ -116,7 +116,7 @@
             this.groupBoxLogin.Controls.Add(this.labelUsername);
             this.groupBoxLogin.Location = new System.Drawing.Point(12, 12);
             this.groupBoxLogin.Name = "groupBoxLogin";
-            this.groupBoxLogin.Size = new System.Drawing.Size(271, 254);
+            this.groupBoxLogin.Size = new System.Drawing.Size(290, 254);
             this.groupBoxLogin.TabIndex = 7;
             this.groupBoxLogin.TabStop = false;
             this.groupBoxLogin.Text = "Login";
@@ -161,7 +161,7 @@
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 294);
+            this.ClientSize = new System.Drawing.Size(314, 294);
             this.Controls.Add(this.labelFeedback);
             this.Controls.Add(this.groupBoxLogin);
             this.Name = "LoginForm";

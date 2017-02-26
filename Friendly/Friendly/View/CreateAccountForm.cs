@@ -56,14 +56,14 @@ namespace Friendly.View
                 {
                     labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
-                catch (DbEntityValidationException ex)
-                {
-                    labelFeedback.Text = ErrorHandler.HandleError(ex);
-                }
                 catch (EntityException ex)
                 {
                     labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
+                catch (DbEntityValidationException ex)
+                {
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
+                }              
             }
         }
         private void textBox_Validating(object sender, CancelEventArgs e)
