@@ -4,7 +4,7 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using System.Data.Entity.Core;
 using Friendly.Utilities;
 using Friendly.Model;
 using Friendly.ControllerLayer;
@@ -60,10 +60,10 @@ namespace Friendly.View
                 {
                     labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
-            }
-            else
-            {
-                errorProvider.SetError(cueComboBoxYear, "That is not a valid birthdate.");
+                catch (EntityException ex)
+                {
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
+                }
             }
         }
         private void textBox_Validating(object sender, CancelEventArgs e)
