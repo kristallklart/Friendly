@@ -18,27 +18,13 @@ namespace Friendly.View
     public partial class MainForm : Form
     {
         private User currentUser;
-        
-        public MainForm()
-        {
-            InitializeComponent();
-            AutoValidate = AutoValidate.Disable;
-        }
+
         public MainForm(User user)
         {
             currentUser = user;
             InitializeComponent();
+            AutoValidate = AutoValidate.Disable;
             this.StartPosition = FormStartPosition.CenterScreen;
-        }
-
-        //Ser till att inga validation events körs innan "X" knappen        
-        protected override void WndProc(ref Message m)
-        {
-            if (m.Msg == 0x10) // The upper right "X" was clicked
-            {
-                AutoValidate = AutoValidate.Disable;
-            }
-            base.WndProc(ref m);
         }
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
