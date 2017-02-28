@@ -45,6 +45,9 @@ namespace Friendly.View
                         case 1:
                             UsersLocationsToDataGrid();
                             break;
+                        case 2:
+                            DataGridViewMyMessagesTab(currentUser);
+                            break;
                     }
                 }
                 catch (EntityException ex)

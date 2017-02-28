@@ -63,6 +63,7 @@
             this.buttonMatchMessage.TabIndex = 16;
             this.buttonMatchMessage.Text = "Match and Message";
             this.buttonMatchMessage.UseVisualStyleBackColor = true;
+            this.buttonMatchMessage.Click += new System.EventHandler(this.buttonMatchMessage_Click);
             // 
             // labelFirstName
             // 

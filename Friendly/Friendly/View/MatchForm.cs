@@ -46,12 +46,12 @@ namespace Friendly.View
                 picBoxMatchImage.Image = (Image)new ImageConverter().ConvertFrom(user.Picture);
             }
         }
+       
+
         private void buttonMatchMessage_Click(object sender, EventArgs e)
         {
             Controller.AddMatch(currentUser, user.Username);
             this.Close();
-
-            
 
         }
     }
