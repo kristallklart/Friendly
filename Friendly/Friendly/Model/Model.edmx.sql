@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/22/2017 09:45:50
--- Generated from EDMX file: C:\Users\Ann-Kathrine\Source\Repos\Friendly\Friendly\Friendly\Model\Model.edmx
+-- Date Created: 02/24/2017 16:50:45
+-- Generated from EDMX file: C:\Users\josefin\Source\Repos\Friendly\Friendly\Friendly\Model\Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -29,6 +29,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_User_Location_User]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[User_Location_Purpose] DROP CONSTRAINT [FK_User_Location_User];
 GO
+IF OBJECT_ID(N'[dbo].[FK_MatchUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Match] DROP CONSTRAINT [FK_MatchUser];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MessageUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Messages] DROP CONSTRAINT [FK_MessageUser];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -48,6 +54,12 @@ IF OBJECT_ID(N'[dbo].[User_Location_Purpose]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Users];
+GO
+IF OBJECT_ID(N'[dbo].[Match]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Match];
+GO
+IF OBJECT_ID(N'[dbo].[Messages]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Messages];
 GO
 
 -- --------------------------------------------------
@@ -96,6 +108,22 @@ CREATE TABLE [dbo].[Users] (
 );
 GO
 
+-- Creating table 'Match'
+CREATE TABLE [dbo].[Match] (
+    [MatchUsername] nvarchar(50)  NOT NULL,
+    [Username] nvarchar(50)  NOT NULL
+);
+GO
+
+-- Creating table 'Messages'
+CREATE TABLE [dbo].[Messages] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Sender] nvarchar(50)  NOT NULL,
+    [Reciever] nvarchar(max)  NOT NULL,
+    [Content] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -128,6 +156,18 @@ GO
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT [PK_Users]
     PRIMARY KEY CLUSTERED ([Username] ASC);
+GO
+
+-- Creating primary key on [MatchUsername], [Username] in table 'Match'
+ALTER TABLE [dbo].[Match]
+ADD CONSTRAINT [PK_Match]
+    PRIMARY KEY CLUSTERED ([MatchUsername], [Username] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Messages'
+ALTER TABLE [dbo].[Messages]
+ADD CONSTRAINT [PK_Messages]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
 -- --------------------------------------------------
@@ -186,6 +226,36 @@ GO
 CREATE INDEX [IX_FK_User_Location_User]
 ON [dbo].[User_Location_Purpose]
     ([Username]);
+GO
+
+-- Creating foreign key on [Username] in table 'Match'
+ALTER TABLE [dbo].[Match]
+ADD CONSTRAINT [FK_MatchUser]
+    FOREIGN KEY ([Username])
+    REFERENCES [dbo].[Users]
+        ([Username])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MatchUser'
+CREATE INDEX [IX_FK_MatchUser]
+ON [dbo].[Match]
+    ([Username]);
+GO
+
+-- Creating foreign key on [Sender] in table 'Messages'
+ALTER TABLE [dbo].[Messages]
+ADD CONSTRAINT [FK_MessageUser]
+    FOREIGN KEY ([Sender])
+    REFERENCES [dbo].[Users]
+        ([Username])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MessageUser'
+CREATE INDEX [IX_FK_MessageUser]
+ON [dbo].[Messages]
+    ([Sender]);
 GO
 
 -- --------------------------------------------------

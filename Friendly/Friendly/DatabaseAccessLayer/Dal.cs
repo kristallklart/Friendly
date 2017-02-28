@@ -18,9 +18,9 @@ namespace Friendly.DatabaseAccessLayer
         public static void AddNewUser(User user)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
-            {   
-                    context.Users.Add(user);
-                    context.SaveChanges();
+            {
+                context.Users.Add(user);
+                context.SaveChanges();
             }
         }
         public static User CheckUsernameAndPassword(string username, string password)
@@ -46,7 +46,7 @@ namespace Friendly.DatabaseAccessLayer
                 }
             }
         }
-        public static void UpdateUser (User u)
+        public static void UpdateUser(User u)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
@@ -66,7 +66,15 @@ namespace Friendly.DatabaseAccessLayer
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-                List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(l => l.Username == username).ToList();           
+                List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(l => l.Username == username).ToList();
+                return locations;
+            }
+        }
+        public static List<User_Location_Purpose> GetUserOwnLocations(string username)
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(l => l.Username == username).ToList();
                 return locations;
             }
         }
@@ -75,10 +83,10 @@ namespace Friendly.DatabaseAccessLayer
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
                 List<FieldOfProfession> industries = context.FieldOfProfessions.ToList();
-                return industries; 
+                return industries;
             }
         }
-        public static List<User_Location_Purpose> GetUsersByCity(string city,User currentuser)
+        public static List<User_Location_Purpose> GetUsersByCity(string city, User currentuser)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
@@ -88,16 +96,16 @@ namespace Friendly.DatabaseAccessLayer
         }
         public static int GetAge(string username)
         {
-           using (FriendlyDBEntities context = new FriendlyDBEntities())
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-               int age = 0;
+                int age = 0;
                 DateTime dateOfBirth = Convert.ToDateTime(context.Users.Where(u => u.Username == username).Select(u => u.Birthdate).FirstOrDefault());
                 age = DateTime.Now.Year - dateOfBirth.Year;
                 if (DateTime.Now.DayOfYear < dateOfBirth.DayOfYear)
                 {
                     age = age - 1;
-                }                 
-               return age;
+                }
+                return age;
             }
         }
         public static List<Purpose> GetPurposes()
@@ -106,6 +114,14 @@ namespace Friendly.DatabaseAccessLayer
             {
                 List<Purpose> purposes = context.Purposes.ToList();
                 return purposes;
+            }
+        }
+        public static List<Match> GetMatches(User currentuser)
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                List<Match> matches = context.Match.Where(m => m.Username == currentuser.Username).ToList();
+                return matches;
             }
         }
         public static List<Location> GetLocations()
@@ -126,7 +142,7 @@ namespace Friendly.DatabaseAccessLayer
         }
         public static void DeleteUserLocatioPurpose(User_Location_Purpose ulp)
         {
-            using(FriendlyDBEntities context = new FriendlyDBEntities())
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
                 context.User_Location_Purpose.Attach(ulp);
                 context.User_Location_Purpose.Remove(ulp);
@@ -139,6 +155,29 @@ namespace Friendly.DatabaseAccessLayer
             {
                 var user = context.Users.FirstOrDefault(u => u.Username == username);
                 user.Picture = picture;
+                context.SaveChanges();
+            }
+        }
+        public static void AddMatch( User currentuser, string match)
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                Match m = new Match();
+                m.MatchUsername = match;
+                m.User = context.Users.FirstOrDefault(u => u.Username == currentuser.Username);
+                context.Match.Add(m);
+                context.SaveChanges();
+            }
+        }
+        public static void AddMessage(string sender, string receiver, string message)
+        {
+            using (FriendlyDBEntities context = new FriendlyDBEntities())
+            {
+                Message m = new Message();
+                m.Sender = sender;
+                m.Reciever= receiver;
+                m.Content = message;
+                context.Messages.Add(m);
                 context.SaveChanges();
             }
         }

@@ -11,6 +11,8 @@
     <EntitySet Name="Purposes" EntityType="Model.Store.Purposes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="User_Location_Purpose" EntityType="Model.Store.User_Location_Purpose" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Users" EntityType="Model.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Match" EntityType="Model.Store.Match" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Messages" EntityType="Model.Store.Messages" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_FieldOfProfessionUser" Association="Model.Store.FK_FieldOfProfessionUser">
       <End Role="FieldOfProfessions" EntitySet="FieldOfProfessions" />
       <End Role="Users" EntitySet="Users" />
@@ -26,6 +28,14 @@
     <AssociationSet Name="FK_User_Location_User" Association="Model.Store.FK_User_Location_User">
       <End Role="Users" EntitySet="Users" />
       <End Role="User_Location_Purpose" EntitySet="User_Location_Purpose" />
+    </AssociationSet>
+    <AssociationSet Name="MatchUser" Association="Model.Store.MatchUser">
+      <End Role="Match" EntitySet="Match" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="MessageUser" Association="Model.Store.MessageUser">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="User" EntitySet="Users" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="FieldOfProfessions">
@@ -74,6 +84,23 @@
     <Property Name="About" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Industry" Type="nvarchar" Nullable="true" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="MatchUsername" />
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="MatchUsername" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sender" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Reciever" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <Association Name="FK_FieldOfProfessionUser">
     <End Role="FieldOfProfessions" Type="Model.Store.FieldOfProfessions" Multiplicity="0..1" />
     <End Role="Users" Type="Model.Store.Users" Multiplicity="*" />
@@ -119,6 +146,30 @@
       </Principal>
       <Dependent Role="User_Location_Purpose">
         <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MatchUser">
+    <End Role="Match" Type="Model.Store.Match" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Match">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MessageUser">
+    <End Role="Message" Type="Model.Store.Messages" Multiplicity="*" />
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="Sender" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -179,6 +230,8 @@
           <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="FieldOfProfession" Relationship="Self.FK_FieldOfProfessionUser" FromRole="Users" ToRole="FieldOfProfessions" />
           <NavigationProperty Name="User_Location_Purposes" Relationship="Self.FK_User_Location_User" FromRole="Users" ToRole="User_Location_Purpose" />
+          <NavigationProperty Name="Matches" Relationship="Model.MatchUser" FromRole="User" ToRole="Match" />
+          <NavigationProperty Name="Messages" Relationship="Model.MessageUser" FromRole="User" ToRole="Message" />
         </EntityType>
         <Association Name="FK_FieldOfProfessionUser">
           <End Role="FieldOfProfessions" Type="Self.FieldOfProfession" Multiplicity="0..1" />
@@ -250,7 +303,60 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="User_Location_Purpose" EntitySet="User_Location_Purpose" />
           </AssociationSet>
+          <EntitySet Name="Match" EntityType="Model.Match" />
+          <EntitySet Name="Messages" EntityType="Model.Message" />
+          <AssociationSet Name="MatchUser" Association="Model.MatchUser">
+            <End Role="Match" EntitySet="Match" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="MessageUser" Association="Model.MessageUser">
+            <End Role="Message" EntitySet="Messages" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Match">
+          <Key>
+            <PropertyRef Name="MatchUsername" />
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="MatchUsername" Type="String" Nullable="false" MaxLength="50" />
+          <NavigationProperty Name="User" Relationship="Model.MatchUser" FromRole="Match" ToRole="User" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="Model.MessageUser" FromRole="Message" ToRole="User" />
+          <Property Name="Sender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reciever" Type="String" Nullable="false" />
+          <Property Name="Content" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="MatchUser">
+          <End Type="Model.Match" Role="Match" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Match">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MessageUser">
+          <End Type="Model.Message" Role="Message" Multiplicity="*" />
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="Sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -301,6 +407,24 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="About" ColumnName="About" />
           <ScalarProperty Name="Industry" ColumnName="Industry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Match">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Match)">
+        <MappingFragment StoreEntitySet="Match">
+          <ScalarProperty Name="MatchUsername" ColumnName="MatchUsername" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Message)">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="Reciever" ColumnName="Reciever" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

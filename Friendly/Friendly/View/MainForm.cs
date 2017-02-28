@@ -41,6 +41,9 @@ namespace Friendly.View
                 case 1:
                     UsersLocationsToDataGrid();
                     break;
+                case 2:
+                   DataGridViewMyMessagesTab(currentUser);
+                     break;
                 }
             }            
         }
@@ -64,10 +67,27 @@ namespace Friendly.View
         {
             try
             {
-                dataGridViewMyMatchesCities.DataSource = Controller.GetUserLocations(currentUser.Username);
+                dataGridViewMyMatchesCities.DataSource = Controller.GetUserOwnLocations(currentUser.Username);
                 for (int i = 1; i < dataGridViewMyMatchesCities.Columns.Count; i++)
                 {
                     dataGridViewMyMatchesCities.Columns[i].Visible = false;
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                labelMessages.Text = ErrorHandler.HandleError(ex);
+            }
+        }
+
+
+        public void DataGridViewMyMessagesTab(User currentuser)
+        {
+            try
+            {
+                dataGridViewMyMessagesTab.DataSource = Controller.GetMatches(currentuser);
+                for (int i = 1; i < dataGridViewMyMessagesTab.Columns.Count; i++)
+                {
+                    dataGridViewMyMessagesTab.Columns[i].Visible = false;
                 }
             }
             catch (ArgumentNullException ex)
@@ -164,9 +184,9 @@ namespace Friendly.View
             {
                 DataGridViewRow selectedRow = dataGridViewMyMatches.Rows[e.RowIndex];
                 string selectedUser = selectedRow.Cells[1].Value.ToString().Trim();
-                using (PopUpForm showUserForm = new PopUpForm(selectedUser))
+                using (PopUpForm showUserForm = new PopUpForm(selectedUser,currentUser))
                 {
-                    showUserForm.Show();
+                    showUserForm.ShowDialog();
                 }
             }
         }
@@ -268,10 +288,21 @@ namespace Friendly.View
 
         private void buttonSendMessage_Click(object sender, EventArgs e)
         {
-            string message = cueTextBoxMessage.Text;
+            string message = cueTextBoxMessage.Text.Trim();
+            DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
+            string dcc2Name = selectedRow.Cells[0].Value.ToString().Trim();
             DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
-            //DelegateBroadcastClient dcc2 = new DelegateBroadcastClient();
+            DelegateBroadcastClient dcc2 = new DelegateBroadcastClient(dcc2Name);
+            Controller.AddMessage(currentUser.Username, dcc2Name,message);
+            DelegateBroadcastServer.sendMsgToAll(message);
         }
+        public void ShowMessage(string message)
+        {
+            string msg = message;
+            textBoxMessages.Text = msg;
+        }
+
+        
     }
 }
 

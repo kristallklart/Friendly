@@ -30,5 +30,7 @@ namespace Friendly.Model
         public virtual DbSet<Purpose> Purposes { get; set; }
         public virtual DbSet<User_Location_Purpose> User_Location_Purpose { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Match> Match { get; set; }
+        public virtual DbSet<Message> Messages { get; set; }
     }
 }

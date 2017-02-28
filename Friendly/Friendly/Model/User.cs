@@ -18,6 +18,8 @@ namespace Friendly.Model
         public User()
         {
             this.User_Location_Purposes = new HashSet<User_Location_Purpose>();
+            this.Matches = new HashSet<Match>();
+            this.Messages = new HashSet<Message>();
         }
     
         public string Username { get; set; }
@@ -33,5 +35,9 @@ namespace Friendly.Model
         public virtual FieldOfProfession FieldOfProfession { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User_Location_Purpose> User_Location_Purposes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Match> Matches { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Message> Messages { get; set; }
     }
 }

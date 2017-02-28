@@ -31,6 +31,10 @@ namespace Friendly.ControllerLayer
         {
             return Dal.GetUserLocations(username);
         }
+        public static List<User_Location_Purpose> GetUserOwnLocations(string username)
+        {
+            return Dal.GetUserOwnLocations(username);
+        }
         public static List<FieldOfProfession> GetFieldOfProfessions()
         {
             return Dal.GetFieldOfProfessions();
@@ -47,6 +51,10 @@ namespace Friendly.ControllerLayer
         {
             return Dal.GetPurposes();
         }
+        public static List<Match> GetMatches(User currentuser)
+        {
+            return Dal.GetMatches(currentuser);
+        }
         public static List<Location> GetLocations()
         {
             return Dal.GetLocations();
@@ -62,6 +70,14 @@ namespace Friendly.ControllerLayer
         public static void SaveProfilePicture(string username, byte[] picture)
         {
             Dal.SaveProfilePicture(username, picture);
+        }
+        public static void AddMatch (User currentuser,string match)
+        {
+            Dal.AddMatch(currentuser, match);
+        }
+        public static void AddMessage ( string sender, string receiver, string message)
+        {
+            Dal.AddMessage(sender, receiver,message);
         }
     }
 }

@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2bb1e257895a4a29a9f4427810be65a7" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.FieldOfProfession" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FieldOfProfession" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Location" Width="1.5" PointX="5.625" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Purpose" Width="1.5" PointX="8.5" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.User_Location_Purpose" Width="2.125" PointX="5.375" PointY="1.25" IsExpanded="true" />
@@ -14,6 +14,10 @@
         <AssociationConnector Association="Model.FK_User_Location_Location" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_User_LocationPurpose" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_User_Location_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.Match" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="Model.Message" Width="1.5" PointX="0.75" PointY="5" />
+        <AssociationConnector Association="Model.MatchUser" />
+        <AssociationConnector Association="Model.MessageUser" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -9,17 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Friendly.Model;
 using Friendly.ControllerLayer;
-using Friendly.Oberverpattern;
 
 namespace Friendly.View
 {
     public partial class PopUpForm : Form 
     {
         private User user;
-        public PopUpForm(string selectedUser)
+        private User currentUser;
+        public PopUpForm(string selectedUser,User currentuser)
         {
             InitializeComponent();
             user = Controller.GetUser(selectedUser);
+            currentUser = currentuser;
 
             labelMatchFirstName.Text = user.FirstName.ToString().Trim();
             labelMatchLastName.Text = user.LastName.ToString().Trim();
@@ -41,12 +42,11 @@ namespace Friendly.View
                 picBoxMatchImage.Image = (Image)new ImageConverter().ConvertFrom(user.Picture);
             }
         }
-
-
-
         private void buttonMatchMessage_Click(object sender, EventArgs e)
         {
-            
+            Controller.AddMatch(currentUser, user.Username);
+            this.Close();
+
             
 
         }

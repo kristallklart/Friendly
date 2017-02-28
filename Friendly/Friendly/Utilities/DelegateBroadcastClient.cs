@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Friendly.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,18 @@ using System.Threading.Tasks;
 
 namespace Friendly.Utilities
 {
-    class DelegateBroadcastClient
+    public class DelegateBroadcastClient
     {
         private String clientName;
-        private void onMsgArrived(String msg)
+        
+        public void onMsgArrived(string msg)
         {
-            Console.WriteLine("Msg arrived (Client {0}): {1}", clientName, msg);
-        }
+            
+            string message = ("Client" + clientName + ": "+msg);
+            
+
+
+    }
         public DelegateBroadcastClient(String clientName)
         {
             this.clientName = clientName;
