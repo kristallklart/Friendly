@@ -461,6 +461,7 @@ namespace Friendly.View
             this.dataGridViewMyMessagesTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMyMessagesTab.Location = new System.Drawing.Point(51, 17);
             this.dataGridViewMyMessagesTab.Name = "dataGridViewMyMessagesTab";
+            this.dataGridViewMyMessagesTab.ReadOnly = true;
             this.dataGridViewMyMessagesTab.Size = new System.Drawing.Size(131, 413);
             this.dataGridViewMyMessagesTab.TabIndex = 0;
             // 
