@@ -85,7 +85,7 @@ namespace Friendly.View
             }
             catch (ArgumentNullException ex)
             {
-                labelMessages.Text = ErrorHandler.HandleError(ex);
+                labelFeedback.Text = ErrorHandler.HandleError(ex);
             }
         }
 
@@ -102,7 +102,7 @@ namespace Friendly.View
             }
             catch (ArgumentNullException ex)
             {
-                labelMessages.Text = ErrorHandler.HandleError(ex);
+                labelFeedback.Text = ErrorHandler.HandleError(ex);
             }
         }
         public void UsersByCityToDataGrid(string selectedCity, User currentuser)
@@ -205,7 +205,7 @@ namespace Friendly.View
             {
                 DataGridViewRow selectedRow = dataGridViewMyMatches.Rows[e.RowIndex];
                 string selectedUser = selectedRow.Cells[1].Value.ToString().Trim();
-                using (MatchForm showUserForm = new MatchForm(selectedUser))
+                using (MatchForm showUserForm = new MatchForm(selectedUser,currentUser))
                 {
                     showUserForm.ShowDialog();
                 }
