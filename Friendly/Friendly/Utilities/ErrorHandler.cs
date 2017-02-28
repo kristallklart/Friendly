@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
+using System.Data.Entity.Core;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Friendly.Utilities
 {
@@ -12,26 +16,53 @@ namespace Friendly.Utilities
         public static string HandleError(Exception e)
         {
             string message = "";
-            int errorCode;
-            if (e is SqlException)
-            {
-                errorCode = (e as SqlException).Number;
+
+            if (e is DbUpdateException || e is EntityException)
+            {       
+                SqlException sqlEx = e.GetBaseException() as SqlException;                
+                int errorCode = sqlEx.Number;
                 switch (errorCode)
                 {
                     case 2627: // Primary key violation
-                        message = "Username already exists, please try another one";
+                        if(sqlEx.Message.Contains("PK_User_Location_Purpose"))
+                        {
+                            message = "A preference with the entered values already exists for your account.";
+                        }
+                        else if (sqlEx.Message.Contains("PK_Users"))
+                        {
+                            message = "Username already exists, please try another one";
+                        }
+                        break;
+                    case 4060: // Couldn't connect to the database
+                        message = "Could not connect to the database, please contact support";
                         break;
                     default:
                         break;
-                }
-            }
-            else if (e is ArgumentNullException)
-            {
-                message = "Du fick ett exception, grattis! Gå och gör lite thé medans smurfarna städar upp efter dig.";
-            }
+                }     
+            }      
             else if (e is InvalidUserOrPasswordException)
             {
                 message = e.Message;
+            }
+            else if (e is DbEntityValidationException)
+            {
+                message = "One or more of the values you entered where not valid, please check your details and try again.";
+            }
+            else if (e is OutOfMemoryException)
+            {
+                message = "The file you selected was not in a supported file format.";
+            }
+            else if (e is ArgumentNullException)
+            {
+                message = "Unfortunately something went wrong, please restart the application and try again.";
+            }
+            else if (e is ArgumentException)
+            {
+                message = "The file you selected was not in a supported file format.";
+            }
+            else if (e is FileNotFoundException)
+            {
+                message = "The file you selected could not be found, please try again or choose another file.";
             }
             return message;
         }

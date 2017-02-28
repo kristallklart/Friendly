@@ -118,11 +118,11 @@
     <Compile Include="View\CreateAccountForm.Designer.cs">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PopUpForm.cs">
+    <Compile Include="View\MatchForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\PopUpForm.Designer.cs">
-      <DependentUpon>PopUpForm.cs</DependentUpon>
+    <Compile Include="View\MatchForm.Designer.cs">
+      <DependentUpon>MatchForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
@@ -142,8 +142,8 @@
     <EmbeddedResource Include="View\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\PopUpForm.resx">
-      <DependentUpon>PopUpForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\MatchForm.resx">
+      <DependentUpon>MatchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -159,6 +159,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Model\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -196,6 +197,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="Utilities\FyllSkiten.sql" />
+    <None Include="Resources\Spongebob.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

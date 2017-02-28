@@ -9,25 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Friendly.Model;
 using Friendly.ControllerLayer;
+//using Friendly.Oberverpattern;
 
 namespace Friendly.View
 {
-    public partial class PopUpForm : Form 
+    public partial class MatchForm : Form 
     {
         private User user;
+       
         private User currentUser;
-        public PopUpForm(string selectedUser,User currentuser)
+        public MatchForm(string selectedUser,User currentuser)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterParent;
             user = Controller.GetUser(selectedUser);
             currentUser = currentuser;
 
-            labelMatchFirstName.Text = user.FirstName.ToString().Trim();
-            labelMatchLastName.Text = user.LastName.ToString().Trim();
-            labelMatchAge.Text = Controller.GetAge(selectedUser).ToString().Trim() + " years";
+            labelFirstName.Text = user.FirstName.ToString().Trim();
+            labelLastName.Text = user.LastName.ToString().Trim();
+            labelUserName.Text = user.Username.ToString().Trim();
+            labelAge.Text = Controller.GetAge(selectedUser).ToString().Trim() + " years";
             if (user.Industry != null)
             {
-                labelMatchProfessionalField.Text = user.Industry.ToString().Trim();
+                labelProfessionalField.Text = user.Industry.ToString().Trim();
             }
             if (user.Profession != null)
             {

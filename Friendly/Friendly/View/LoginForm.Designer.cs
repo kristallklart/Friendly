@@ -116,7 +116,7 @@
             this.groupBoxLogin.Controls.Add(this.labelUsername);
             this.groupBoxLogin.Location = new System.Drawing.Point(12, 12);
             this.groupBoxLogin.Name = "groupBoxLogin";
-            this.groupBoxLogin.Size = new System.Drawing.Size(271, 254);
+            this.groupBoxLogin.Size = new System.Drawing.Size(290, 254);
             this.groupBoxLogin.TabIndex = 7;
             this.groupBoxLogin.TabStop = false;
             this.groupBoxLogin.Text = "Login";
@@ -124,20 +124,22 @@
             // labelMustPassword
             // 
             this.labelMustPassword.AutoSize = true;
+            this.labelMustPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMustPassword.ForeColor = System.Drawing.Color.Red;
-            this.labelMustPassword.Location = new System.Drawing.Point(205, 107);
+            this.labelMustPassword.Location = new System.Drawing.Point(204, 104);
             this.labelMustPassword.Name = "labelMustPassword";
-            this.labelMustPassword.Size = new System.Drawing.Size(11, 13);
+            this.labelMustPassword.Size = new System.Drawing.Size(13, 17);
             this.labelMustPassword.TabIndex = 8;
             this.labelMustPassword.Text = "*";
             // 
             // labelMustUsername
             // 
             this.labelMustUsername.AutoSize = true;
+            this.labelMustUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMustUsername.ForeColor = System.Drawing.Color.Red;
-            this.labelMustUsername.Location = new System.Drawing.Point(205, 70);
+            this.labelMustUsername.Location = new System.Drawing.Point(204, 67);
             this.labelMustUsername.Name = "labelMustUsername";
-            this.labelMustUsername.Size = new System.Drawing.Size(11, 13);
+            this.labelMustUsername.Size = new System.Drawing.Size(13, 17);
             this.labelMustUsername.TabIndex = 7;
             this.labelMustUsername.Text = "*";
             // 
@@ -159,7 +161,7 @@
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 294);
+            this.ClientSize = new System.Drawing.Size(314, 294);
             this.Controls.Add(this.labelFeedback);
             this.Controls.Add(this.groupBoxLogin);
             this.Name = "LoginForm";
