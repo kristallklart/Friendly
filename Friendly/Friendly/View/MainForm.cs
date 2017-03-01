@@ -61,8 +61,21 @@ namespace Friendly.View
             }            
         }
 
+        public void CheckDate()
+        {
+            List<User_Location_Purpose> ulp = Controller.GetUserLocations(currentUser.Username);
+            foreach (User_Location_Purpose u in ulp)
+            {
+                if (u.ToDate < DateTime.Today)
+                {
+                    Controller.DeleteUserLocatioPurpose(u);
+                }
+            }
+        }
+
         public void UsersLocationsTimesToDataGrid()
         {
+            CheckDate();
             dataGridViewMyCities.DataSource = Controller.GetUserLocations(currentUser.Username);
             dataGridViewMyCities.Columns[1].Visible = false;
             dataGridViewMyCities.Columns[0].HeaderText = "CITY";
@@ -171,16 +184,18 @@ namespace Friendly.View
 
         private void DefaultValuesLocation()
         {
-                cueComboBoxInterestedIn.DataSource = Controller.GetPurposes();
-                cueComboBoxInterestedIn.DisplayMember = "Purposetype";
-                cueComboBoxInterestedIn.ValueMember = "Purposetype";
-                cueComboBoxInterestedIn.SelectedIndex = -1;
-                cueComboBoxInterestedIn.CueText = "Interested in";
-                cueComboBoxCity.DataSource = Controller.GetLocations();
-                cueComboBoxCity.DisplayMember = "City";
-                cueComboBoxCity.ValueMember = "City";
-                cueComboBoxCity.SelectedIndex = -1;
-                cueComboBoxCity.CueText = "City";  
+            dateTimePickerFrom.Value = DateTime.Today;
+            dateTimePickerTo.Value = DateTime.Today;
+            cueComboBoxInterestedIn.DataSource = Controller.GetPurposes();
+            cueComboBoxInterestedIn.DisplayMember = "Purposetype";
+            cueComboBoxInterestedIn.ValueMember = "Purposetype";
+            cueComboBoxInterestedIn.SelectedIndex = -1;
+            cueComboBoxInterestedIn.CueText = "Interested in";
+            cueComboBoxCity.DataSource = Controller.GetLocations();
+            cueComboBoxCity.DisplayMember = "City";
+            cueComboBoxCity.ValueMember = "City";
+            cueComboBoxCity.SelectedIndex = -1;
+            cueComboBoxCity.CueText = "City";  
         }
 
         private void dataGridViewMyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
