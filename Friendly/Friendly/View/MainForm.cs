@@ -81,6 +81,7 @@ namespace Friendly.View
             try
             {
                 dataGridViewMyMatchesCities.DataSource = Controller.GetUserOwnLocations(currentUser.Username);
+                dataGridViewMyMatchesCities.Columns[0].HeaderText = "CITY";
                 for (int i = 1; i < dataGridViewMyMatchesCities.Columns.Count; i++)
                 {
                     dataGridViewMyMatchesCities.Columns[i].Visible = false;
@@ -98,6 +99,7 @@ namespace Friendly.View
             try
             {
                 dataGridViewMyMessagesTab.DataSource = Controller.GetMatches(currentuser);
+                dataGridViewMyMessagesTab.Columns[0].HeaderText = "USERNAME";
                 for (int i = 1; i < dataGridViewMyMessagesTab.Columns.Count; i++)
                 {
                     dataGridViewMyMessagesTab.Columns[i].Visible = false;
