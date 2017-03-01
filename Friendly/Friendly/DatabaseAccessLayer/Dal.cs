@@ -135,7 +135,7 @@ namespace Friendly.DatabaseAccessLayer
                 context.SaveChanges();
             }
         }
-        public static void DeleteUserLocatioPurpose(User_Location_Purpose ulp)
+        public static void DeleteUserLocationPurpose(User_Location_Purpose ulp)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
