@@ -89,7 +89,7 @@ namespace Friendly.View
             this.tabControlMain.Controls.Add(this.tabMyProfile);
             this.tabControlMain.Controls.Add(this.tabMyMatches);
             this.tabControlMain.Controls.Add(this.tabMyMessages);
-            this.tabControlMain.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlMain.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMain.Location = new System.Drawing.Point(12, 12);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
@@ -102,10 +102,10 @@ namespace Friendly.View
             this.tabMyProfile.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabMyProfile.Controls.Add(this.groupBoxMyDetails);
             this.tabMyProfile.Controls.Add(this.groupBoxPreferences);
-            this.tabMyProfile.Location = new System.Drawing.Point(4, 22);
+            this.tabMyProfile.Location = new System.Drawing.Point(4, 26);
             this.tabMyProfile.Name = "tabMyProfile";
             this.tabMyProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMyProfile.Size = new System.Drawing.Size(907, 460);
+            this.tabMyProfile.Size = new System.Drawing.Size(907, 456);
             this.tabMyProfile.TabIndex = 0;
             this.tabMyProfile.Text = "My profile";
             // 
@@ -335,10 +335,10 @@ namespace Friendly.View
             this.tabMyMatches.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabMyMatches.Controls.Add(this.panel1);
             this.tabMyMatches.Controls.Add(this.dataGridViewMyMatchesCities);
-            this.tabMyMatches.Location = new System.Drawing.Point(4, 22);
+            this.tabMyMatches.Location = new System.Drawing.Point(4, 26);
             this.tabMyMatches.Name = "tabMyMatches";
             this.tabMyMatches.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMyMatches.Size = new System.Drawing.Size(907, 460);
+            this.tabMyMatches.Size = new System.Drawing.Size(907, 456);
             this.tabMyMatches.TabIndex = 1;
             this.tabMyMatches.Text = "My matches";
             // 
@@ -380,9 +380,9 @@ namespace Friendly.View
             this.tabMyMessages.Controls.Add(this.buttonSendMessage);
             this.tabMyMessages.Controls.Add(this.textBoxMessages);
             this.tabMyMessages.Controls.Add(this.dataGridViewMyMessagesTab);
-            this.tabMyMessages.Location = new System.Drawing.Point(4, 22);
+            this.tabMyMessages.Location = new System.Drawing.Point(4, 26);
             this.tabMyMessages.Name = "tabMyMessages";
-            this.tabMyMessages.Size = new System.Drawing.Size(907, 460);
+            this.tabMyMessages.Size = new System.Drawing.Size(907, 456);
             this.tabMyMessages.TabIndex = 2;
             this.tabMyMessages.Text = "My messages";
             // 
@@ -418,7 +418,7 @@ namespace Friendly.View
             this.labelFeedback.AutoSize = true;
             this.labelFeedback.Location = new System.Drawing.Point(12, 501);
             this.labelFeedback.Name = "labelFeedback";
-            this.labelFeedback.Size = new System.Drawing.Size(0, 13);
+            this.labelFeedback.Size = new System.Drawing.Size(0, 17);
             this.labelFeedback.TabIndex = 1;
             // 
             // errorProvider
@@ -484,11 +484,13 @@ namespace Friendly.View
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(939, 524);
             this.Controls.Add(this.labelFeedback);
             this.Controls.Add(this.tabControlMain);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Friendly";
             this.Load += new System.EventHandler(this.MainForm_Load);
