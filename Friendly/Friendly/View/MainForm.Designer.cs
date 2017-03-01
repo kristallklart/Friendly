@@ -99,6 +99,7 @@ namespace Friendly.View
             // 
             // tabMyProfile
             // 
+            this.tabMyProfile.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.tabMyProfile.Controls.Add(this.groupBoxMyDetails);
             this.tabMyProfile.Controls.Add(this.groupBoxPreferences);
             this.tabMyProfile.Location = new System.Drawing.Point(4, 22);
@@ -107,10 +108,10 @@ namespace Friendly.View
             this.tabMyProfile.Size = new System.Drawing.Size(907, 460);
             this.tabMyProfile.TabIndex = 0;
             this.tabMyProfile.Text = "My profile";
-            this.tabMyProfile.UseVisualStyleBackColor = true;
             // 
             // groupBoxMyDetails
             // 
+            this.groupBoxMyDetails.BackColor = System.Drawing.Color.Honeydew;
             this.groupBoxMyDetails.Controls.Add(this.labelMustNames);
             this.groupBoxMyDetails.Controls.Add(this.buttonAddPicture);
             this.groupBoxMyDetails.Controls.Add(this.picBoxProfilePic);
@@ -123,7 +124,7 @@ namespace Friendly.View
             this.groupBoxMyDetails.Controls.Add(this.buttonUpdateDetails);
             this.groupBoxMyDetails.Controls.Add(this.textBoxFirstName);
             this.groupBoxMyDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBoxMyDetails.Location = new System.Drawing.Point(6, 3);
+            this.groupBoxMyDetails.Location = new System.Drawing.Point(10, 6);
             this.groupBoxMyDetails.Name = "groupBoxMyDetails";
             this.groupBoxMyDetails.Size = new System.Drawing.Size(417, 447);
             this.groupBoxMyDetails.TabIndex = 3;
@@ -250,6 +251,7 @@ namespace Friendly.View
             // 
             // groupBoxPreferences
             // 
+            this.groupBoxPreferences.BackColor = System.Drawing.Color.Honeydew;
             this.groupBoxPreferences.Controls.Add(this.labelMustInterestCity);
             this.groupBoxPreferences.Controls.Add(this.buttonDelete);
             this.groupBoxPreferences.Controls.Add(this.cueComboBoxInterestedIn);
@@ -261,7 +263,7 @@ namespace Friendly.View
             this.groupBoxPreferences.Controls.Add(this.buttonAddLocation);
             this.groupBoxPreferences.Controls.Add(this.cueComboBoxCity);
             this.groupBoxPreferences.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBoxPreferences.Location = new System.Drawing.Point(442, 3);
+            this.groupBoxPreferences.Location = new System.Drawing.Point(439, 6);
             this.groupBoxPreferences.Name = "groupBoxPreferences";
             this.groupBoxPreferences.Size = new System.Drawing.Size(458, 447);
             this.groupBoxPreferences.TabIndex = 2;
@@ -470,7 +472,7 @@ namespace Friendly.View
             this.labelFeedback.AutoSize = true;
             this.labelFeedback.Location = new System.Drawing.Point(12, 501);
             this.labelFeedback.Name = "labelFeedback";
-            this.labelFeedback.Size = new System.Drawing.Size(63, 13);
+            this.labelFeedback.Size = new System.Drawing.Size(0, 13);
             this.labelFeedback.TabIndex = 1;
             // 
             // errorProvider
