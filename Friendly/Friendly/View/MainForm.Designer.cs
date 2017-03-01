@@ -472,7 +472,6 @@ namespace Friendly.View
             this.labelFeedback.Name = "labelFeedback";
             this.labelFeedback.Size = new System.Drawing.Size(63, 13);
             this.labelFeedback.TabIndex = 1;
-            this.labelFeedback.Text = "Messages";
             // 
             // errorProvider
             // 

@@ -340,6 +340,7 @@ namespace Friendly.View
                         picBoxProfilePic.Image = newImage;
                         currentUser.Picture = result;
                         Controller.SaveProfilePicture(currentUser.Username, result);
+                        labelFeedback.Text = "Picture saved";
                     }
                     catch (DbUpdateException ex)
                     {
