@@ -68,7 +68,7 @@ namespace Friendly.View
             {
                 if (u.ToDate < DateTime.Today)
                 {
-                    Controller.DeleteUserLocatioPurpose(u);
+                    Controller.DeleteUserLocationPurpose(u);
                 }
             }
         }
@@ -320,7 +320,7 @@ namespace Friendly.View
                     ulp.FromDate = Convert.ToDateTime(selectedRow.Cells[3].Value.ToString().Trim());
                     ulp.ToDate = Convert.ToDateTime(selectedRow.Cells[4].Value.ToString().Trim());
                     ulp.Username = currentUser.Username;
-                    Controller.DeleteUserLocatioPurpose(ulp);
+                    Controller.DeleteUserLocationPurpose(ulp);
                     UsersLocationsTimesToDataGrid();
                     labelFeedback.Text = "Successfully deleted a preference from your account";
                 }
