@@ -69,3 +69,11 @@ INSERT INTO User_Location_Purpose([City],[Username],[Purposetype],[FromDate],[To
 INSERT INTO User_Location_Purpose([City],[Username],[Purposetype],[FromDate],[ToDate]) VALUES('Trollhättan','Allistair','Bio','2017-03-06','2017-03-11'),('Malmö','Daquan','Lunch','2017-03-04','2017-03-14'),('Borås','Craig','Fest','2017-03-04','2017-03-14'),('Halmstad','Brock','Fotboll','2017-03-07','2017-03-13'),('Luleå','Lawrence','Teater','2017-03-06','2017-03-11'),('Lund','Matthew','Fest','2017-03-04','2017-03-14'),('Jönköping','Trevor','Teater','2017-03-04','2017-03-11'),('Helsingborg','Hadassah','Öl','2017-03-07','2017-03-14'),('Eslöv','Brian','Fest','2017-03-08','2017-03-12'),('Umeå','Lasir','Bio','2017-03-04','2017-03-12');
 INSERT INTO User_Location_Purpose([City],[Username],[Purposetype],[FromDate],[ToDate]) VALUES('Örebro','Bannon','Lunch','2017-03-03','2017-03-12'),('Simrishamn','Vanna','Lunch','2017-03-08','2017-03-12'),('Trollhättan','Giacomo','Dans','2017-03-07','2017-03-14'),('Örebro','Bannon','Dans','2017-03-03','2017-03-13'),('Lund','Keaton','Lunch','2017-03-07','2017-03-13'),('Norrköping','Lewis','Hockey','2017-03-05','2017-03-12'),('Alingsås','Athena','Bio','2017-03-03','2017-03-13'),('Södertälje','Elliott','Middag','2017-03-08','2017-03-12'),('Trollhättan','Howard','Hockey','2017-03-06','2017-03-14'),('Simrishamn','Jenette','Fest','2017-03-08','2017-03-12');
 
+INSERT INTO Match([MatchUsername],[Username]) VALUES ('Nero','Minerva');
+INSERT INTO Match([MatchUsername],[Username]) VALUES ('Nero','Mannix');
+INSERT INTO Match([MatchUsername],[Username]) VALUES ('Nero','Mollie');
+INSERT INTO Match([MatchUsername],[Username]) VALUES ('Nero','Driscoll');
+
+INSERT INTO Messages([Sender],[Reciever],[Content]) VALUES ('Nero', 'Minerva', 'Hi, I would like to get a beer together some day.');
+INSERT INTO Messages([Sender],[Reciever],[Content]) VALUES ('Nero', 'Mannix', 'Hi, I would like to have dinner together some day.');
+INSERT INTO Messages([Sender],[Reciever],[Content]) VALUES ('Nero', 'Mollie', 'Hi, I would like to see football together some day.');
