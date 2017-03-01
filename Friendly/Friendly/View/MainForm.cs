@@ -44,6 +44,7 @@ namespace Friendly.View
                             break;
                         case 1:
                             UsersLocationsToDataGrid();
+                            dataGridViewMyMatches.DataSource = null;
                             break;
                         case 2:
                             DataGridViewMyMessagesTab(currentUser);
