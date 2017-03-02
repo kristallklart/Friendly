@@ -193,6 +193,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 409);
             this.Controls.Add(this.labelFeedbackMatch);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.labelUserName);
             this.Controls.Add(this.labelHeaderTitle);
             this.Controls.Add(this.labelHeaderFieldOfProfession);
