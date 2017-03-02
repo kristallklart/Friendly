@@ -405,6 +405,7 @@ namespace Friendly.View
             this.textBoxMessages.Name = "textBoxMessages";
             this.textBoxMessages.Size = new System.Drawing.Size(647, 341);
             this.textBoxMessages.TabIndex = 1;
+            this.textBoxMessages.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             // 
             // dataGridViewMyMessagesTab
             // 

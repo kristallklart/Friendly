@@ -379,27 +379,20 @@ namespace Friendly.View
 
         private void buttonSendMessage_Click(object sender, EventArgs e)
         {
-            string message = cueTextBoxMessage.Text.Trim();
-            DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
-            string dcc2Name = selectedRow.Cells[0].Value.ToString().Trim();
-            DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
-            DelegateBroadcastClient dcc2 = new DelegateBroadcastClient(dcc2Name);
-            Controller.AddMessage(currentUser.Username, dcc2Name, message);
-            DelegateBroadcastServer.sendMsgToAll(message);
-            WriteMessages();
 
+            if (cueTextBoxMessage.Text !=  "")
+            {
+                string message = cueTextBoxMessage.Text.Trim();
 
+                DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
+                string dcc2Name = selectedRow.Cells[0].Value.ToString().Trim();
+                DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
+                DelegateBroadcastClient dcc2 = new DelegateBroadcastClient(dcc2Name);
+                Controller.AddMessage(currentUser.Username, dcc2Name, message);
+                DelegateBroadcastServer.sendMsgToAll(message);
+                WriteMessages();
+            }
         }
-        private void WriteMessage(string message)
-        {
-            textBoxMessages.Text = message;
-        }
-        public void ShowMessage(string message)
-        {
-            string msg = message;
-            textBoxMessages.Text = msg;
-        }
-
         private void textBox_Validating(object sender, CancelEventArgs e)
         {
             TextBox tempBox = sender as TextBox;
@@ -424,8 +417,6 @@ namespace Friendly.View
         {
             
             WriteMessages();
-            
-
     }
         private void WriteMessages ()
         {
@@ -442,12 +433,7 @@ namespace Friendly.View
             textBoxMessages.Text = String.Join(Environment.NewLine, messageContent);
             cueTextBoxMessage.Text = string.Empty;
 
-        }
-
-        private void cueTextBoxMessage_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }  
     }
 }
 
