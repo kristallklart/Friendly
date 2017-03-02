@@ -109,7 +109,6 @@ namespace Friendly.View
             }
         }
 
-
         public void DataGridViewMyMessagesTab(User currentuser)
         {
             try
@@ -126,6 +125,7 @@ namespace Friendly.View
                 labelFeedback.Text = ErrorHandler.HandleError(ex);
             }
         }
+
         public void UsersByCityToDataGrid(string selectedCity, User currentuser)
         {
             dataGridViewMyMatches.DataSource = Controller.GetUsersByCity(selectedCity, currentuser);
