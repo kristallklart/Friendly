@@ -32,6 +32,10 @@ namespace Friendly.Utilities
                         {
                             message = "Username already exists, please try another one";
                         }
+                        else if (sqlEx.Message.Contains("PK_Match"))
+                        {
+                            message = "You have aldready matched with this person.";
+                        }
                         break;
                     case 4060: // Couldn't connect to the database
                         message = "Could not connect to the database, please contact support";

@@ -58,7 +58,7 @@ namespace Friendly.View
             }
             catch(DbUpdateException ex)
             {
-                
+                labelFeedbackMatch.Text = ErrorHandler.HandleError(ex);
             }
 
         }
