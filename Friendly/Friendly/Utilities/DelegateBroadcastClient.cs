@@ -11,11 +11,8 @@ namespace Friendly.Utilities
 
         public void onMsgArrived(string msg, MainForm form)
         {
-
             
             form.WriteMessages();
-
-
     }
         public Message SendMsg (Message msg)
         {
@@ -25,12 +22,12 @@ namespace Friendly.Utilities
         public DelegateBroadcastClient(string clientName)
         {
             this.clientName = clientName;
-            DelegateBroadcastServer.ClientConnect(new DelegateBroadcastServer.MsgArrivedDelegate(OnMsgArrived));
+            DelegateBroadcastServer.ClientConnect(new DelegateBroadcastServer.MsgArrivedDelegate(onMsgArrived));
         }
 
         public void Dispose()
         {
-            DelegateBroadcastServer.ClientDisconnect(new  DelegateBroadcastServer.MsgArrivedDelegate(OnMsgArrived));
+            DelegateBroadcastServer.ClientDisconnect(new  DelegateBroadcastServer.MsgArrivedDelegate(onMsgArrived));
             GC.SuppressFinalize(this);
         }
 

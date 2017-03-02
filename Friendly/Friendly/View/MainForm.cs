@@ -423,15 +423,14 @@ namespace Friendly.View
 
         private void buttonSendMessage_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
+            
 
             if (cueTextBoxMessage.Text !=  "")
             {
                 try
                 {
 
-                    string message = cueTextBoxMessage.Text.Trim();
-
+                string message = cueTextBoxMessage.Text.Trim();   
                 DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
                 string dcc2Name = selectedRow.Cells[0].Value.ToString().Trim();
                 DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
