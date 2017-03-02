@@ -1,4 +1,5 @@
 ﻿using Friendly.Model;
+using Friendly.View;
 using System;
 
 namespace Friendly.Utilities
@@ -6,13 +7,14 @@ namespace Friendly.Utilities
     public class DelegateBroadcastClient
     {
         private String clientName;
-      
+        
 
-        public void onMsgArrived(string msg)
+        public void onMsgArrived(string msg, MainForm form)
         {
+
             
-            string message = (clientName + ": "+msg);
-            
+            form.WriteMessages();
+
 
     }
         public Message SendMsg (Message msg)

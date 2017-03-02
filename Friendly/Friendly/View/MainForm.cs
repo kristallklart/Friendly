@@ -17,6 +17,7 @@ namespace Friendly.View
         private User currentUser;
         public delegate void UpdateTextMessage(string message);
         public UpdateTextMessage writeMessageDelegate;
+        
 
         public MainForm(User user)
         {
@@ -24,7 +25,9 @@ namespace Friendly.View
             InitializeComponent();
             AutoValidate = AutoValidate.Disable;
             this.StartPosition = FormStartPosition.CenterScreen;
+            
         }
+        
 
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -389,8 +392,8 @@ namespace Friendly.View
                 DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
                 DelegateBroadcastClient dcc2 = new DelegateBroadcastClient(dcc2Name);
                 Controller.AddMessage(currentUser.Username, dcc2Name, message);
-                DelegateBroadcastServer.sendMsgToAll(message);
-                WriteMessages();
+                DelegateBroadcastServer.sendMsgToAll(message,this);
+               
             }
         }
         private void textBox_Validating(object sender, CancelEventArgs e)
@@ -418,7 +421,7 @@ namespace Friendly.View
             
             WriteMessages();
     }
-        private void WriteMessages ()
+        public void WriteMessages ()
         {
             DataGridViewRow selectedR = dataGridViewMyMessagesTab.CurrentRow;
             string TheSender = currentUser.Username;
@@ -434,6 +437,7 @@ namespace Friendly.View
             cueTextBoxMessage.Text = string.Empty;
 
         }  
+        
     }
 }
 
