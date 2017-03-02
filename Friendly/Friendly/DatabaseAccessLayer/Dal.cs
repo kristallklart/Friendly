@@ -37,7 +37,7 @@ namespace Friendly.DatabaseAccessLayer
                 {
                     return tempUser;
                 }
-                throw new InvalidUserOrPasswordException("The entered password doesn't match for username: " + username);
+                throw new InvalidUserOrPasswordException("The entered password doesn't match username: " + username);
             }
         }
 
@@ -146,7 +146,7 @@ namespace Friendly.DatabaseAccessLayer
                 context.SaveChanges();
             }
         }
-        public static void DeleteUserLocatioPurpose(User_Location_Purpose ulp)
+        public static void DeleteUserLocationPurpose(User_Location_Purpose ulp)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {

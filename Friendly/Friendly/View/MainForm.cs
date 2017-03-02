@@ -46,6 +46,7 @@ namespace Friendly.View
                             break;
                         case 1:
                             UsersLocationsToDataGrid();
+                            dataGridViewMyMatches.DataSource = null;
                             break;
                         case 2:
                             DataGridViewMyMessagesTab(currentUser);
@@ -63,8 +64,21 @@ namespace Friendly.View
             }            
         }
 
+        public void CheckDate()
+        {
+            List<User_Location_Purpose> ulp = Controller.GetUserLocations(currentUser.Username);
+            foreach (User_Location_Purpose u in ulp)
+            {
+                if (u.ToDate < DateTime.Today)
+                {
+                    Controller.DeleteUserLocationPurpose(u);
+                }
+            }
+        }
+
         public void UsersLocationsTimesToDataGrid()
         {
+            CheckDate();
             dataGridViewMyCities.DataSource = Controller.GetUserLocations(currentUser.Username);
             dataGridViewMyCities.Columns[1].Visible = false;
             dataGridViewMyCities.Columns[0].HeaderText = "CITY";
@@ -83,6 +97,7 @@ namespace Friendly.View
             try
             {
                 dataGridViewMyMatchesCities.DataSource = Controller.GetUserOwnLocations(currentUser.Username);
+                dataGridViewMyMatchesCities.Columns[0].HeaderText = "CITY";
                 for (int i = 1; i < dataGridViewMyMatchesCities.Columns.Count; i++)
                 {
                     dataGridViewMyMatchesCities.Columns[i].Visible = false;
@@ -100,6 +115,7 @@ namespace Friendly.View
             try
             {
                 dataGridViewMyMessagesTab.DataSource = Controller.GetMatches(currentuser);
+                dataGridViewMyMessagesTab.Columns[0].HeaderText = "USERNAME";
                 for (int i = 1; i < dataGridViewMyMessagesTab.Columns.Count; i++)
                 {
                     dataGridViewMyMessagesTab.Columns[i].Visible = false;
@@ -171,16 +187,18 @@ namespace Friendly.View
 
         private void DefaultValuesLocation()
         {
-                cueComboBoxInterestedIn.DataSource = Controller.GetPurposes();
-                cueComboBoxInterestedIn.DisplayMember = "Purposetype";
-                cueComboBoxInterestedIn.ValueMember = "Purposetype";
-                cueComboBoxInterestedIn.SelectedIndex = -1;
-                cueComboBoxInterestedIn.CueText = "Interested in";
-                cueComboBoxCity.DataSource = Controller.GetLocations();
-                cueComboBoxCity.DisplayMember = "City";
-                cueComboBoxCity.ValueMember = "City";
-                cueComboBoxCity.SelectedIndex = -1;
-                cueComboBoxCity.CueText = "City";  
+            dateTimePickerFrom.Value = DateTime.Today;
+            dateTimePickerTo.Value = DateTime.Today;
+            cueComboBoxInterestedIn.DataSource = Controller.GetPurposes();
+            cueComboBoxInterestedIn.DisplayMember = "Purposetype";
+            cueComboBoxInterestedIn.ValueMember = "Purposetype";
+            cueComboBoxInterestedIn.SelectedIndex = -1;
+            cueComboBoxInterestedIn.CueText = "Interested in";
+            cueComboBoxCity.DataSource = Controller.GetLocations();
+            cueComboBoxCity.DisplayMember = "City";
+            cueComboBoxCity.ValueMember = "City";
+            cueComboBoxCity.SelectedIndex = -1;
+            cueComboBoxCity.CueText = "City";  
         }
 
         private void dataGridViewMyMatchesCities_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -305,7 +323,7 @@ namespace Friendly.View
                     ulp.FromDate = Convert.ToDateTime(selectedRow.Cells[3].Value.ToString().Trim());
                     ulp.ToDate = Convert.ToDateTime(selectedRow.Cells[4].Value.ToString().Trim());
                     ulp.Username = currentUser.Username;
-                    Controller.DeleteUserLocatioPurpose(ulp);
+                    Controller.DeleteUserLocationPurpose(ulp);
                     UsersLocationsTimesToDataGrid();
                     labelFeedback.Text = "Successfully deleted a preference from your account";
                 }
@@ -340,6 +358,7 @@ namespace Friendly.View
                         picBoxProfilePic.Image = newImage;
                         currentUser.Picture = result;
                         Controller.SaveProfilePicture(currentUser.Username, result);
+                        labelFeedback.Text = "Picture saved";
                     }
                     catch (DbUpdateException ex)
                     {
