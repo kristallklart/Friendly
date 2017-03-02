@@ -36,6 +36,9 @@ namespace Friendly.Utilities
                     case 4060: // Couldn't connect to the database
                         message = "Could not connect to the database, please contact support";
                         break;
+                    default:
+                        message = "Unknown exception, primary key.";
+                        break;
                 }     
             }      
             else if (e is InvalidUserOrPasswordException)

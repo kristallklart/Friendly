@@ -114,12 +114,14 @@ namespace Friendly.View
         private void CreateAccountForm_Load(object sender, EventArgs e)
         {
             int[] days = Enumerable.Range(1, 31).ToArray();
+
             foreach (int day in days)
             {
                 cueComboBoxDay.Items.Add(day);
             }
 
             int[] months = Enumerable.Range(1, 12).ToArray();
+
             foreach (int month in months)
             {
                 cueComboBoxMonth.Items.Add(month);
@@ -127,6 +129,7 @@ namespace Friendly.View
 
             int startYear = 1899;
             int[] years = Enumerable.Range(startYear, (DateTime.Now.Year - 17) - startYear).ToArray();
+
             foreach (int year in years)
             {
                 cueComboBoxYear.Items.Add(year);

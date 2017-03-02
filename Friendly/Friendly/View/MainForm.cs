@@ -61,29 +61,56 @@ namespace Friendly.View
 
         public void CheckDate()
         {
-            List<User_Location_Purpose> ulp = Controller.GetUserLocations(currentUser.Username);
-            foreach (User_Location_Purpose u in ulp)
+            try
             {
-                if (u.ToDate < DateTime.Today)
+                List<User_Location_Purpose> ulp = Controller.GetUserLocations(currentUser.Username);
+
+                foreach (User_Location_Purpose u in ulp)
                 {
-                    Controller.DeleteUserLocationPurpose(u);
+                    if (u.ToDate < DateTime.Today)
+                    {
+                        Controller.DeleteUserLocationPurpose(u);
+                    }
                 }
+            }
+            catch (DbUpdateException e)
+            {
+                labelFeedback.Text = ErrorHandler.HandleError(e);
+            }
+            catch (EntityException e)
+            {
+                labelFeedback.Text = ErrorHandler.HandleError(e);
+            }
+            catch (ArgumentNullException e)
+            {
+                labelFeedback.Text = ErrorHandler.HandleError(e);
             }
         }
 
         public void UsersLocationsTimesToDataGrid()
         {
-            CheckDate();
-            dataGridViewMyCities.DataSource = Controller.GetUserLocations(currentUser.Username);
-            dataGridViewMyCities.Columns[1].Visible = false;
-            dataGridViewMyCities.Columns[0].HeaderText = "CITY";
-            dataGridViewMyCities.Columns[2].HeaderText = "PURPOSE";
-            dataGridViewMyCities.Columns[3].HeaderText = "FROM";
-            dataGridViewMyCities.Columns[4].HeaderText = "TO";
-
-            for (int i = 5; i < dataGridViewMyCities.Columns.Count; i++)
+            try
             {
-                dataGridViewMyCities.Columns[i].Visible = false;
+                CheckDate();
+                dataGridViewMyCities.DataSource = Controller.GetUserLocations(currentUser.Username);
+                dataGridViewMyCities.Columns[1].Visible = false;
+                dataGridViewMyCities.Columns[0].HeaderText = "CITY";
+                dataGridViewMyCities.Columns[2].HeaderText = "PURPOSE";
+                dataGridViewMyCities.Columns[3].HeaderText = "FROM";
+                dataGridViewMyCities.Columns[4].HeaderText = "TO";
+
+                for (int i = 5; i < dataGridViewMyCities.Columns.Count; i++)
+                {
+                    dataGridViewMyCities.Columns[i].Visible = false;
+                }
+            }
+            catch (EntityException e)
+            {
+                labelFeedback.Text = ErrorHandler.HandleError(e);
+            }
+            catch (ArgumentNullException e)
+            {
+                labelFeedback.Text = ErrorHandler.HandleError(e);
             }
         }
 
@@ -97,6 +124,10 @@ namespace Friendly.View
                 {
                     dataGridViewMyMatchesCities.Columns[i].Visible = false;
                 }
+            }
+            catch (EntityException ex)
+            {
+                labelFeedback.Text = ErrorHandler.HandleError(ex);
             }
             catch (ArgumentNullException ex)
             {
@@ -114,6 +145,10 @@ namespace Friendly.View
                 {
                     dataGridViewMyMessagesTab.Columns[i].Visible = false;
                 }
+            }
+            catch (EntityException ex)
+            {
+                labelFeedback.Text = ErrorHandler.HandleError(ex);
             }
             catch (ArgumentNullException ex)
             {
@@ -308,7 +343,6 @@ namespace Friendly.View
         {
             try
             {
-                
                 User_Location_Purpose ulp = new User_Location_Purpose();
                 DataGridViewRow selectedRow = dataGridViewMyCities.CurrentRow;
                 if (selectedRow != null)
@@ -326,9 +360,13 @@ namespace Friendly.View
                 {
                     labelFeedback.Text = "Please select a preference from the table.";
                 }
-                
+
             }
             catch (DbUpdateException ex)
+            {
+                labelFeedback.Text = ErrorHandler.HandleError(ex);
+            }
+            catch (EntityException ex)
             {
                 labelFeedback.Text = ErrorHandler.HandleError(ex);
             }         
@@ -346,7 +384,6 @@ namespace Friendly.View
                 openFile.Filter = "Image file (.jpg, .png, .bmp)|*.jpg;*.png;*.bmp";
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    
                     try
                     {
                         string fileContent = openFile.FileName;
@@ -358,6 +395,10 @@ namespace Friendly.View
                         labelFeedback.Text = "Picture saved";
                     }
                     catch (DbUpdateException ex)
+                    {
+                        labelFeedback.Text = ErrorHandler.HandleError(ex);
+                    }
+                    catch (EntityException ex)
                     {
                         labelFeedback.Text = ErrorHandler.HandleError(ex);
                     }
@@ -379,18 +420,28 @@ namespace Friendly.View
 
         private void buttonSendMessage_Click(object sender, EventArgs e)
         {
+            DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
 
-            if (cueTextBoxMessage.Text !=  "")
+            if (cueTextBoxMessage.Text !=  "" && selectedRow != null)
             {
-                string message = cueTextBoxMessage.Text.Trim();
-
-                DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
-                string dcc2Name = selectedRow.Cells[0].Value.ToString().Trim();
-                DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
-                DelegateBroadcastClient dcc2 = new DelegateBroadcastClient(dcc2Name);
-                Controller.AddMessage(currentUser.Username, dcc2Name, message);
-                DelegateBroadcastServer.sendMsgToAll(message);
-                WriteMessages();
+                try
+                {
+                    string message = cueTextBoxMessage.Text.Trim();
+                    string dcc2Name = selectedRow.Cells[0].Value.ToString().Trim();
+                    DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
+                    DelegateBroadcastClient dcc2 = new DelegateBroadcastClient(dcc2Name);
+                    Controller.AddMessage(currentUser.Username, dcc2Name, message);
+                    DelegateBroadcastServer.SendMsgToAll(message);
+                    WriteMessages();
+                }
+                catch (DbUpdateException ex)
+                {
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
+                }
+                catch (EntityException ex)
+                {
+                    labelFeedback.Text = ErrorHandler.HandleError(ex);
+                }
             }
         }
         private void textBox_Validating(object sender, CancelEventArgs e)
@@ -414,25 +465,36 @@ namespace Friendly.View
         }
 
         private void dataGridViewMyMessagesTab_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+        {          
             WriteMessages();
-    }
+        }
+
         private void WriteMessages ()
         {
-            DataGridViewRow selectedR = dataGridViewMyMessagesTab.CurrentRow;
-            string TheSender = currentUser.Username;
-            string reciever = selectedR.Cells[0].Value.ToString().Trim();
-            List<string> messageContent = new List<string>();
-            List<Friendly.Model.Message> allmessages = Controller.GetAllMessages(TheSender, reciever);
-            foreach (Friendly.Model.Message m in allmessages)
+            try
             {
-                string a = (m.Sender.ToString()+": "+m.Content.ToString());
-                messageContent.Add(a);
-            }
-            textBoxMessages.Text = String.Join(Environment.NewLine, messageContent);
-            cueTextBoxMessage.Text = string.Empty;
+                DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
+                string sender = currentUser.Username;
 
+                if (selectedRow != null)
+                {
+                    string reciever = selectedRow.Cells[0].Value.ToString().Trim();
+                    List<string> messageContent = new List<string>();
+                    List<Friendly.Model.Message> allmessages = Controller.GetAllMessages(sender, reciever);
+
+                    foreach (Friendly.Model.Message m in allmessages)
+                    {
+                        string a = (m.Sender.ToString() + ": " + m.Content.ToString());
+                        messageContent.Add(a);
+                    }
+                    textBoxMessages.Text = string.Join(Environment.NewLine, messageContent);
+                    cueTextBoxMessage.Text = string.Empty;              
+                }
+            }
+            catch (EntityException e)
+            {
+                labelFeedback.Text = ErrorHandler.HandleError(e);
+            }
         }  
     }
 }
