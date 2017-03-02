@@ -10,12 +10,7 @@ namespace Friendly.View
 {
     public partial class LoginForm : Form
     {
-        private User user;
-        public User User
-        {
-            get { return user; }
-            set { user = value; }
-        }
+        public User User { get; set; }
         public LoginForm()
         {
             InitializeComponent();

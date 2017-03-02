@@ -19,21 +19,21 @@ namespace Friendly.Utilities
     }
         public Message SendMsg (Message msg)
         {
-
             return msg;
         }
-        public DelegateBroadcastClient(String clientName)
+
+        public DelegateBroadcastClient(string clientName)
         {
             this.clientName = clientName;
-            DelegateBroadcastServer.clientConnect(
-                new DelegateBroadcastServer.MsgArrivedDelegate(onMsgArrived));
+            DelegateBroadcastServer.ClientConnect(new DelegateBroadcastServer.MsgArrivedDelegate(OnMsgArrived));
         }
+
         public void Dispose()
         {
-            DelegateBroadcastServer.clientDisconnect
-                (new  DelegateBroadcastServer.MsgArrivedDelegate(onMsgArrived));
+            DelegateBroadcastServer.ClientDisconnect(new  DelegateBroadcastServer.MsgArrivedDelegate(OnMsgArrived));
             GC.SuppressFinalize(this);
         }
+
         ~DelegateBroadcastClient()
         {
             Dispose();

@@ -33,7 +33,6 @@ namespace Friendly.View
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabMyProfile = new System.Windows.Forms.TabPage();
             this.groupBoxMyDetails = new System.Windows.Forms.GroupBox();
@@ -44,32 +43,32 @@ namespace Friendly.View
             this.labelAge = new System.Windows.Forms.Label();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.labelAboutMe = new System.Windows.Forms.Label();
+            this.cueTextBoxProfessionalTitle = new Friendly.Utilities.CueTextBox();
+            this.cueComboBoxProfessionalField = new Friendly.Utilities.CueComboBox();
             this.buttonUpdateDetails = new System.Windows.Forms.Button();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.groupBoxPreferences = new System.Windows.Forms.GroupBox();
             this.labelMustInterestCity = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.cueComboBoxInterestedIn = new Friendly.Utilities.CueComboBox();
             this.labelFrom = new System.Windows.Forms.Label();
             this.dataGridViewMyCities = new System.Windows.Forms.DataGridView();
             this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
             this.labelTo = new System.Windows.Forms.Label();
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
             this.buttonAddLocation = new System.Windows.Forms.Button();
+            this.cueComboBoxCity = new Friendly.Utilities.CueComboBox();
             this.tabMyMatches = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewMyMatches = new System.Windows.Forms.DataGridView();
             this.dataGridViewMyMatchesCities = new System.Windows.Forms.DataGridView();
             this.tabMyMessages = new System.Windows.Forms.TabPage();
+            this.cueTextBoxMessage = new Friendly.Utilities.CueTextBox();
             this.buttonSendMessage = new System.Windows.Forms.Button();
             this.textBoxMessages = new System.Windows.Forms.TextBox();
             this.dataGridViewMyMessagesTab = new System.Windows.Forms.DataGridView();
             this.labelFeedback = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cueTextBoxProfessionalTitle = new Friendly.Utilities.CueTextBox();
-            this.cueComboBoxProfessionalField = new Friendly.Utilities.CueComboBox();
-            this.cueComboBoxInterestedIn = new Friendly.Utilities.CueComboBox();
-            this.cueComboBoxCity = new Friendly.Utilities.CueComboBox();
-            this.cueTextBoxMessage = new Friendly.Utilities.CueTextBox();
             this.tabControlMain.SuspendLayout();
             this.tabMyProfile.SuspendLayout();
             this.groupBoxMyDetails.SuspendLayout();
@@ -208,6 +207,26 @@ namespace Friendly.View
             this.labelAboutMe.TabIndex = 11;
             this.labelAboutMe.Text = "About me";
             // 
+            // cueTextBoxProfessionalTitle
+            // 
+            this.cueTextBoxProfessionalTitle.Cue = "Professional title";
+            this.cueTextBoxProfessionalTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cueTextBoxProfessionalTitle.Location = new System.Drawing.Point(146, 122);
+            this.cueTextBoxProfessionalTitle.Name = "cueTextBoxProfessionalTitle";
+            this.cueTextBoxProfessionalTitle.Size = new System.Drawing.Size(222, 22);
+            this.cueTextBoxProfessionalTitle.TabIndex = 4;
+            // 
+            // cueComboBoxProfessionalField
+            // 
+            this.cueComboBoxProfessionalField.CueText = "Field of profession";
+            this.cueComboBoxProfessionalField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cueComboBoxProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cueComboBoxProfessionalField.FormattingEnabled = true;
+            this.cueComboBoxProfessionalField.Location = new System.Drawing.Point(146, 95);
+            this.cueComboBoxProfessionalField.Name = "cueComboBoxProfessionalField";
+            this.cueComboBoxProfessionalField.Size = new System.Drawing.Size(222, 21);
+            this.cueComboBoxProfessionalField.TabIndex = 3;
+            // 
             // buttonUpdateDetails
             // 
             this.buttonUpdateDetails.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
@@ -273,6 +292,18 @@ namespace Friendly.View
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
+            // cueComboBoxInterestedIn
+            // 
+            this.cueComboBoxInterestedIn.CueText = "Interested in";
+            this.cueComboBoxInterestedIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cueComboBoxInterestedIn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cueComboBoxInterestedIn.FormattingEnabled = true;
+            this.cueComboBoxInterestedIn.Location = new System.Drawing.Point(163, 123);
+            this.cueComboBoxInterestedIn.Name = "cueComboBoxInterestedIn";
+            this.cueComboBoxInterestedIn.Size = new System.Drawing.Size(136, 21);
+            this.cueComboBoxInterestedIn.TabIndex = 8;
+            this.cueComboBoxInterestedIn.Validated += new System.EventHandler(this.control_Validated);
+            // 
             // labelFrom
             // 
             this.labelFrom.AutoSize = true;
@@ -331,6 +362,19 @@ namespace Friendly.View
             this.buttonAddLocation.UseVisualStyleBackColor = true;
             this.buttonAddLocation.Click += new System.EventHandler(this.buttonAddLocation_Click);
             // 
+            // cueComboBoxCity
+            // 
+            this.cueComboBoxCity.CueText = "City";
+            this.cueComboBoxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cueComboBoxCity.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cueComboBoxCity.FormattingEnabled = true;
+            this.errorProvider.SetIconPadding(this.cueComboBoxCity, 4);
+            this.cueComboBoxCity.Location = new System.Drawing.Point(302, 123);
+            this.cueComboBoxCity.Name = "cueComboBoxCity";
+            this.cueComboBoxCity.Size = new System.Drawing.Size(133, 21);
+            this.cueComboBoxCity.TabIndex = 9;
+            this.cueComboBoxCity.Validated += new System.EventHandler(this.control_Validated);
+            // 
             // tabMyMatches
             // 
             this.tabMyMatches.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -387,6 +431,16 @@ namespace Friendly.View
             this.tabMyMessages.TabIndex = 2;
             this.tabMyMessages.Text = "My messages";
             // 
+            // cueTextBoxMessage
+            // 
+            this.cueTextBoxMessage.Cue = "Write a message...";
+            this.cueTextBoxMessage.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cueTextBoxMessage.Location = new System.Drawing.Point(203, 374);
+            this.cueTextBoxMessage.Multiline = true;
+            this.cueTextBoxMessage.Name = "cueTextBoxMessage";
+            this.cueTextBoxMessage.Size = new System.Drawing.Size(566, 56);
+            this.cueTextBoxMessage.TabIndex = 3;
+            // 
             // buttonSendMessage
             // 
             this.buttonSendMessage.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
@@ -404,21 +458,14 @@ namespace Friendly.View
             this.textBoxMessages.Location = new System.Drawing.Point(203, 17);
             this.textBoxMessages.Multiline = true;
             this.textBoxMessages.Name = "textBoxMessages";
+            this.textBoxMessages.ReadOnly = true;
+            this.textBoxMessages.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxMessages.Size = new System.Drawing.Size(647, 341);
             this.textBoxMessages.TabIndex = 1;
-            this.textBoxMessages.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             // 
             // dataGridViewMyMessagesTab
             // 
             this.dataGridViewMyMessagesTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewMyMessagesTab.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewMyMessagesTab.Location = new System.Drawing.Point(51, 17);
             this.dataGridViewMyMessagesTab.Name = "dataGridViewMyMessagesTab";
             this.dataGridViewMyMessagesTab.ReadOnly = true;
@@ -439,61 +486,6 @@ namespace Friendly.View
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
-            // cueTextBoxProfessionalTitle
-            // 
-            this.cueTextBoxProfessionalTitle.Cue = "Professional title";
-            this.cueTextBoxProfessionalTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.cueTextBoxProfessionalTitle.Location = new System.Drawing.Point(146, 122);
-            this.cueTextBoxProfessionalTitle.Name = "cueTextBoxProfessionalTitle";
-            this.cueTextBoxProfessionalTitle.Size = new System.Drawing.Size(222, 22);
-            this.cueTextBoxProfessionalTitle.TabIndex = 4;
-            // 
-            // cueComboBoxProfessionalField
-            // 
-            this.cueComboBoxProfessionalField.CueText = "Field of profession";
-            this.cueComboBoxProfessionalField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cueComboBoxProfessionalField.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cueComboBoxProfessionalField.FormattingEnabled = true;
-            this.cueComboBoxProfessionalField.Location = new System.Drawing.Point(146, 95);
-            this.cueComboBoxProfessionalField.Name = "cueComboBoxProfessionalField";
-            this.cueComboBoxProfessionalField.Size = new System.Drawing.Size(222, 21);
-            this.cueComboBoxProfessionalField.TabIndex = 3;
-            // 
-            // cueComboBoxInterestedIn
-            // 
-            this.cueComboBoxInterestedIn.CueText = "Interested in";
-            this.cueComboBoxInterestedIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cueComboBoxInterestedIn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.cueComboBoxInterestedIn.FormattingEnabled = true;
-            this.cueComboBoxInterestedIn.Location = new System.Drawing.Point(163, 123);
-            this.cueComboBoxInterestedIn.Name = "cueComboBoxInterestedIn";
-            this.cueComboBoxInterestedIn.Size = new System.Drawing.Size(136, 21);
-            this.cueComboBoxInterestedIn.TabIndex = 8;
-            this.cueComboBoxInterestedIn.Validated += new System.EventHandler(this.control_Validated);
-            // 
-            // cueComboBoxCity
-            // 
-            this.cueComboBoxCity.CueText = "City";
-            this.cueComboBoxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cueComboBoxCity.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cueComboBoxCity.FormattingEnabled = true;
-            this.errorProvider.SetIconPadding(this.cueComboBoxCity, 4);
-            this.cueComboBoxCity.Location = new System.Drawing.Point(302, 123);
-            this.cueComboBoxCity.Name = "cueComboBoxCity";
-            this.cueComboBoxCity.Size = new System.Drawing.Size(133, 21);
-            this.cueComboBoxCity.TabIndex = 9;
-            this.cueComboBoxCity.Validated += new System.EventHandler(this.control_Validated);
-            // 
-            // cueTextBoxMessage
-            // 
-            this.cueTextBoxMessage.Cue = "Write a message...";
-            this.cueTextBoxMessage.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.cueTextBoxMessage.Location = new System.Drawing.Point(203, 374);
-            this.cueTextBoxMessage.Multiline = true;
-            this.cueTextBoxMessage.Name = "cueTextBoxMessage";
-            this.cueTextBoxMessage.Size = new System.Drawing.Size(566, 56);
-            this.cueTextBoxMessage.TabIndex = 3;
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -505,6 +497,7 @@ namespace Friendly.View
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Friendly";
             this.Load += new System.EventHandler(this.MainForm_Load);

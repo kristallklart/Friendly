@@ -196,7 +196,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Content Include="Utilities\FyllSkiten.sql" />
+    <Content Include="Model\TestData.sql" />
     <None Include="Resources\Spongebob.png" />
   </ItemGroup>
   <ItemGroup>

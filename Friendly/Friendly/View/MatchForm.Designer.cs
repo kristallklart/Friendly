@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchForm));
             this.picBoxMatchImage = new System.Windows.Forms.PictureBox();
             this.buttonMatchMessage = new System.Windows.Forms.Button();
             this.labelFirstName = new System.Windows.Forms.Label();
@@ -191,9 +192,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(565, 409);
             this.Controls.Add(this.labelFeedbackMatch);
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.labelUserName);
             this.Controls.Add(this.labelHeaderTitle);
             this.Controls.Add(this.labelHeaderFieldOfProfession);
@@ -209,6 +210,7 @@
             this.Controls.Add(this.buttonMatchMessage);
             this.Controls.Add(this.picBoxMatchImage);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MatchForm";
             this.Text = "A new friend?";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMatchImage)).EndInit();
