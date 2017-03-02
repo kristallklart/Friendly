@@ -33,6 +33,7 @@ namespace Friendly.View
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabMyProfile = new System.Windows.Forms.TabPage();
             this.groupBoxMyDetails = new System.Windows.Forms.GroupBox();
@@ -388,6 +389,7 @@ namespace Friendly.View
             // 
             // buttonSendMessage
             // 
+            this.buttonSendMessage.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.buttonSendMessage.Location = new System.Drawing.Point(775, 407);
             this.buttonSendMessage.Name = "buttonSendMessage";
             this.buttonSendMessage.Size = new System.Drawing.Size(75, 23);
@@ -398,6 +400,7 @@ namespace Friendly.View
             // 
             // textBoxMessages
             // 
+            this.textBoxMessages.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.textBoxMessages.Location = new System.Drawing.Point(203, 17);
             this.textBoxMessages.Multiline = true;
             this.textBoxMessages.Name = "textBoxMessages";
@@ -407,6 +410,14 @@ namespace Friendly.View
             // dataGridViewMyMessagesTab
             // 
             this.dataGridViewMyMessagesTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMyMessagesTab.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewMyMessagesTab.Location = new System.Drawing.Point(51, 17);
             this.dataGridViewMyMessagesTab.Name = "dataGridViewMyMessagesTab";
             this.dataGridViewMyMessagesTab.ReadOnly = true;
@@ -475,6 +486,7 @@ namespace Friendly.View
             // cueTextBoxMessage
             // 
             this.cueTextBoxMessage.Cue = "Write a message...";
+            this.cueTextBoxMessage.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.cueTextBoxMessage.Location = new System.Drawing.Point(203, 374);
             this.cueTextBoxMessage.Multiline = true;
             this.cueTextBoxMessage.Name = "cueTextBoxMessage";
