@@ -54,6 +54,7 @@ namespace Friendly.View
             try
             {
                 Controller.AddMatch(currentUser, user.Username);
+                Controller.AddMatch(user, currentUser.Username);
                 this.Close();
             }
             catch(DbUpdateException ex)
