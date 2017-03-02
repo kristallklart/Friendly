@@ -350,7 +350,7 @@ namespace Friendly.View
             {
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    openFile.Filter = "Image files|*.jpg;*.jpeg;*.png;*.bmp";
+                    openFile.Filter = "Image files|*.jpg;*.png;*.bmp";
                     try
                     {
                         string fileContent = openFile.FileName;
