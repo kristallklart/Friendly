@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Data.Entity.Core;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.IO;
 
@@ -39,8 +35,6 @@ namespace Friendly.Utilities
                         break;
                     case 4060: // Couldn't connect to the database
                         message = "Could not connect to the database, please contact support";
-                        break;
-                    default:
                         break;
                 }     
             }      
