@@ -444,6 +444,7 @@ namespace Friendly.View
                 }
             }
         }
+
         private void textBox_Validating(object sender, CancelEventArgs e)
         {
             TextBox tempBox = sender as TextBox;
