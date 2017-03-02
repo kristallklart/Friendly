@@ -464,6 +464,7 @@ namespace Friendly.View
             this.dataGridViewMyMessagesTab.ReadOnly = true;
             this.dataGridViewMyMessagesTab.Size = new System.Drawing.Size(131, 413);
             this.dataGridViewMyMessagesTab.TabIndex = 0;
+            this.dataGridViewMyMessagesTab.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMyMessagesTab_CellClick);
             // 
             // labelFeedback
             // 

@@ -20,6 +20,8 @@ namespace Friendly.View
     public partial class MainForm : Form
     {
         private User currentUser;
+        public delegate void UpdateTextMessage(string message);
+        public UpdateTextMessage writeMessageDelegate;
 
         public MainForm(User user)
         {
@@ -28,7 +30,7 @@ namespace Friendly.View
             AutoValidate = AutoValidate.Disable;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-
+        
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelFeedback.Text = "";
@@ -366,8 +368,15 @@ namespace Friendly.View
             string dcc2Name = selectedRow.Cells[0].Value.ToString().Trim();
             DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
             DelegateBroadcastClient dcc2 = new DelegateBroadcastClient(dcc2Name);
-            Controller.AddMessage(currentUser.Username, dcc2Name,message);
+            Controller.AddMessage(currentUser.Username, dcc2Name, message);
             DelegateBroadcastServer.sendMsgToAll(message);
+            WriteMessages();
+
+
+        }
+        private void WriteMessage(string message)
+        {
+            textBoxMessages.Text = message;
         }
         public void ShowMessage(string message)
         {
@@ -395,6 +404,28 @@ namespace Friendly.View
             this.errorProvider.SetError(sender as Control, string.Empty);
         }
 
+        private void dataGridViewMyMessagesTab_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            WriteMessages();
+            
+
+        }
+        private void WriteMessages ()
+        {
+            DataGridViewRow selectedR = dataGridViewMyMessagesTab.CurrentRow;
+            string TheSender = currentUser.Username;
+            string reciever = selectedR.Cells[0].Value.ToString().Trim();
+            List<string> messageContent = new List<string>();
+            List<Friendly.Model.Message> allmessages = Controller.GetAllMessages(TheSender, reciever);
+            foreach (Friendly.Model.Message m in allmessages)
+            {
+                string a = (m.Sender.ToString()+": "+m.Content.ToString());
+                messageContent.Add(a);
+            }
+            textBoxMessages.Text = String.Join(Environment.NewLine, messageContent);
+
+        }
     }
 }
 
