@@ -42,6 +42,7 @@
             this.labelHeaderFieldOfProfession = new System.Windows.Forms.Label();
             this.labelHeaderTitle = new System.Windows.Forms.Label();
             this.labelUserName = new System.Windows.Forms.Label();
+            this.labelFeedbackMatch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMatchImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,12 +179,21 @@
             this.labelUserName.TabIndex = 28;
             this.labelUserName.Text = "UserName";
             // 
+            // labelFeedbackMatch
+            // 
+            this.labelFeedbackMatch.AutoSize = true;
+            this.labelFeedbackMatch.Location = new System.Drawing.Point(13, 384);
+            this.labelFeedbackMatch.Name = "labelFeedbackMatch";
+            this.labelFeedbackMatch.Size = new System.Drawing.Size(0, 13);
+            this.labelFeedbackMatch.TabIndex = 29;
+            // 
             // MatchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(565, 409);
+            this.Controls.Add(this.labelFeedbackMatch);
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(565, 400);
             this.Controls.Add(this.labelUserName);
             this.Controls.Add(this.labelHeaderTitle);
             this.Controls.Add(this.labelHeaderFieldOfProfession);
@@ -223,5 +233,6 @@
         private System.Windows.Forms.Label labelHeaderFieldOfProfession;
         private System.Windows.Forms.Label labelHeaderTitle;
         private System.Windows.Forms.Label labelUserName;
+        private System.Windows.Forms.Label labelFeedbackMatch;
     }
 }

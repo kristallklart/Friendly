@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Friendly.Model;
 using Friendly.ControllerLayer;
@@ -58,7 +52,7 @@ namespace Friendly.View
             }
             catch(DbUpdateException ex)
             {
-                
+                labelFeedbackMatch.Text = ErrorHandler.HandleError(ex);
             }
 
         }

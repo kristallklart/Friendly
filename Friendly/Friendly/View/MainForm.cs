@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Friendly.Model;
 using Friendly.ControllerLayer;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Core;
-using System.Linq.Expressions;
 using System.IO;
 using Friendly.Utilities;
 
