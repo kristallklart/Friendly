@@ -20,10 +20,12 @@ namespace Friendly.View
     public partial class MainForm : Form
     {
         private User currentUser;
+        private OpenFileDialog openFile;
 
         public MainForm(User user)
         {
             currentUser = user;
+            openFile = new OpenFileDialog();
             InitializeComponent();
             AutoValidate = AutoValidate.Disable;
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -344,10 +346,11 @@ namespace Friendly.View
 
         private void buttonAddPicture_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFile = new OpenFileDialog())
+            using (openFile)
             {
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
+                    openFile.Filter = "Images|*.jpg;*.jpeg;*.png;*.bmp";
                     try
                     {
                         string fileContent = openFile.FileName;
