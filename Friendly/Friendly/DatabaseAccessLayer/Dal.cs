@@ -37,7 +37,7 @@ namespace Friendly.DatabaseAccessLayer
                 {
                     return tempUser;
                 }
-                throw new InvalidUserOrPasswordException("The entered password doesn't match for username: " + username);
+                throw new InvalidUserOrPasswordException("The entered password doesn't match username: " + username);
             }
         }
 
