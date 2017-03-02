@@ -443,6 +443,12 @@ namespace Friendly.View
                 messageContent.Add(a);
             }
             textBoxMessages.Text = String.Join(Environment.NewLine, messageContent);
+            cueTextBoxMessage.Text = string.Empty;
+
+        }
+
+        private void cueTextBoxMessage_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Friendly.Model;
 using Friendly.ControllerLayer;
-//using Friendly.Oberverpattern;
+using System.Data.Entity.Infrastructure;
+using Friendly.Utilities;
 
 namespace Friendly.View
 {
@@ -50,9 +51,18 @@ namespace Friendly.View
 
         private void buttonMatchMessage_Click(object sender, EventArgs e)
         {
-            Controller.AddMatch(currentUser, user.Username);
-            this.Close();
+            try
+            {
+                Controller.AddMatch(currentUser, user.Username);
+                this.Close();
+            }
+            catch(DbUpdateException ex)
+            {
+                
+            }
 
         }
+
+        
     }
 }
