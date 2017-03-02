@@ -1,4 +1,5 @@
-﻿using Friendly.View;
+﻿using Friendly.Model;
+using Friendly.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +11,20 @@ namespace Friendly.Utilities
     public class DelegateBroadcastClient
     {
         private String clientName;
-        
+      
+
         public void onMsgArrived(string msg)
         {
             
-            string message = ("Client" + clientName + ": "+msg);
+            string message = (clientName + ": "+msg);
             
 
-
     }
+        public Message SendMsg (Message msg)
+        {
+
+            return msg;
+        }
         public DelegateBroadcastClient(String clientName)
         {
             this.clientName = clientName;

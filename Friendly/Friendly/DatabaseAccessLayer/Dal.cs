@@ -65,14 +65,25 @@ namespace Friendly.DatabaseAccessLayer
                 return locations;
             }
         }
-        public static List<User_Location_Purpose> GetUserOwnLocations(string username)
+         public static List<User_Location_Purpose> GetUserOwnLocations(string username)
+        {
+           using (FriendlyDBEntities context = new FriendlyDBEntities())
+         {
+         List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(l => l.Username == username).ToList();
+                return locations;
+        }
+          }
+
+       public static List<Message> GetAllMessages (string sender, string reciever)
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-                List<User_Location_Purpose> locations = context.User_Location_Purpose.Where(l => l.Username == username).ToList();
-                return locations;
+                List<Message> messages = context.Messages.Where(s => s.Sender == sender || s.Sender == reciever).Where(r => r.Reciever == reciever || r.Reciever == sender).ToList();
+                return messages;
             }
+
         }
+
         public static List<FieldOfProfession> GetFieldOfProfessions()
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
@@ -176,5 +187,6 @@ namespace Friendly.DatabaseAccessLayer
                 context.SaveChanges();
             }
         }
+
     }
 }

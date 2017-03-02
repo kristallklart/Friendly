@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Friendly.Model;
 using Friendly.DatabaseAccessLayer;
-
+using Friendly.View;
 
 namespace Friendly.ControllerLayer
 {
@@ -21,7 +21,7 @@ namespace Friendly.ControllerLayer
         }
         public static void UpdateUser(User u)
         {
-           Dal.UpdateUser(u);
+            Dal.UpdateUser(u);
         }
         public static User GetUser(string username)
         {
@@ -41,11 +41,11 @@ namespace Friendly.ControllerLayer
         }
         public static List<User_Location_Purpose> GetUsersByCity(string city, User currentuser)
         {
-            return Dal.GetUsersByCity(city,currentuser);
+            return Dal.GetUsersByCity(city, currentuser);
         }
         public static int GetAge(string username)
         {
-           return Dal.GetAge(username);
+            return Dal.GetAge(username);
         }
         public static List<Purpose> GetPurposes()
         {
@@ -71,13 +71,17 @@ namespace Friendly.ControllerLayer
         {
             Dal.SaveProfilePicture(username, picture);
         }
-        public static void AddMatch (User currentuser,string match)
+        public static void AddMatch(User currentuser, string match)
         {
             Dal.AddMatch(currentuser, match);
         }
-        public static void AddMessage ( string sender, string receiver, string message)
+        public static void AddMessage(string sender, string receiver, string message)
         {
-            Dal.AddMessage(sender, receiver,message);
+            Dal.AddMessage(sender, receiver, message);
+        }
+        public static List<Message> GetAllMessages(string sender, string reciever)
+        {
+           return  Dal.GetAllMessages(sender, reciever);
         }
     }
 }
