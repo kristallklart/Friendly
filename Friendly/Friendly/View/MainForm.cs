@@ -30,7 +30,7 @@ namespace Friendly.View
             AutoValidate = AutoValidate.Disable;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-        
+
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelFeedback.Text = "";
@@ -350,6 +350,7 @@ namespace Friendly.View
             {
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
+                    openFile.Filter = "Image files|*.jpg;*.jpeg;*.png;*.bmp";
                     try
                     {
                         string fileContent = openFile.FileName;
@@ -429,7 +430,7 @@ namespace Friendly.View
             WriteMessages();
             
 
-        }
+    }
         private void WriteMessages ()
         {
             DataGridViewRow selectedR = dataGridViewMyMessagesTab.CurrentRow;
