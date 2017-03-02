@@ -168,11 +168,13 @@ namespace Friendly.DatabaseAccessLayer
         {
             using (FriendlyDBEntities context = new FriendlyDBEntities())
             {
-                Match m = new Match();
-                m.MatchUsername = match;
-                m.User = context.Users.FirstOrDefault(u => u.Username == currentuser.Username);
-                context.Match.Add(m);
-                context.SaveChanges();
+                
+                    Match m = new Match();
+                    m.MatchUsername = match;
+                    m.User = context.Users.FirstOrDefault(u => u.Username == currentuser.Username);
+                    context.Match.Add(m);
+                    context.SaveChanges();
+              
             }
         }
         public static void AddMessage(string sender, string receiver, string message)

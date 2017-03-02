@@ -30,7 +30,7 @@ namespace Friendly.View
             AutoValidate = AutoValidate.Disable;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-        
+
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelFeedback.Text = "";
@@ -109,7 +109,6 @@ namespace Friendly.View
             }
         }
 
-
         public void DataGridViewMyMessagesTab(User currentuser)
         {
             try
@@ -126,6 +125,7 @@ namespace Friendly.View
                 labelFeedback.Text = ErrorHandler.HandleError(ex);
             }
         }
+
         public void UsersByCityToDataGrid(string selectedCity, User currentuser)
         {
             dataGridViewMyMatches.DataSource = Controller.GetUsersByCity(selectedCity, currentuser);
@@ -350,6 +350,7 @@ namespace Friendly.View
             {
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
+                    openFile.Filter = "Image files|*.jpg;*.jpeg;*.png;*.bmp";
                     try
                     {
                         string fileContent = openFile.FileName;
@@ -429,7 +430,7 @@ namespace Friendly.View
             WriteMessages();
             
 
-        }
+    }
         private void WriteMessages ()
         {
             DataGridViewRow selectedR = dataGridViewMyMessagesTab.CurrentRow;
@@ -443,6 +444,12 @@ namespace Friendly.View
                 messageContent.Add(a);
             }
             textBoxMessages.Text = String.Join(Environment.NewLine, messageContent);
+            cueTextBoxMessage.Text = string.Empty;
+
+        }
+
+        private void cueTextBoxMessage_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
