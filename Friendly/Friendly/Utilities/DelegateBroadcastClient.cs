@@ -25,7 +25,7 @@ namespace Friendly.Utilities
 
         public void Dispose()
         {
-            DelegateBroadcastServer.ClientDisconnect(new  DelegateBroadcastServer.MsgArrivedDelegate(OnMsgArrived));
+            DelegateBroadcastServer.ClientDisconnect(new DelegateBroadcastServer.MsgArrivedDelegate(OnMsgArrived));
             GC.SuppressFinalize(this);
         }
 

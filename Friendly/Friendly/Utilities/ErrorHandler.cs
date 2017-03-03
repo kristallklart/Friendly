@@ -37,7 +37,7 @@ namespace Friendly.Utilities
                         message = "Could not connect to the database, please contact support";
                         break;
                     default:
-                        message = "Unknown exception, primary key.";
+                        message = "Unknown error, please contact suppoert.";
                         break;
                 }     
             }      

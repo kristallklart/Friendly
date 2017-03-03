@@ -27,8 +27,12 @@ namespace Friendly.Utilities
             Delegate[] delegateList = madObj.GetInvocationList();
 
             for (int i = 0; i < delegateList.Length; i++)
+            {
                 if (delegateList[i].Target != outside)
-                    ((MsgArrivedDelegate)delegateList[i])(msg);
+                {
+                    ((MsgArrivedDelegate)delegateList[i])(msg);                   
+                }              
+            }
         }
     }
 }
