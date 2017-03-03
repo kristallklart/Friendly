@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Friendly.View;
+using System;
 
 namespace Friendly.Utilities
 {
     class DelegateBroadcastServer
     {
-        public delegate void MsgArrivedDelegate(string message);
+        public delegate void MsgArrivedDelegate(String message, MainForm form);
         private static MsgArrivedDelegate madObj;
 
         public static void ClientConnect(MsgArrivedDelegate mad)
@@ -16,13 +17,11 @@ namespace Friendly.Utilities
         {
             madObj = (MsgArrivedDelegate)Delegate.Remove(madObj, mad);
         }
-
-        public static void SendMsgToAll(string msg)
+        public static void sendMsgToAll(String msg, MainForm form)
         {
-            madObj(msg);
+            madObj(msg,form);
         }
-
-        public static void SendMsgToSome(string msg, object outside)
+        public static void sendMsgToSome(String msg,Object outside,MainForm form)
         {
             Delegate[] delegateList = madObj.GetInvocationList();
 

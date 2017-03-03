@@ -17,6 +17,7 @@ namespace Friendly.View
         private User currentUser;
         public delegate void UpdateTextMessage(string message);
         public UpdateTextMessage writeMessageDelegate;
+        
 
         public MainForm(User user)
         {
@@ -24,7 +25,9 @@ namespace Friendly.View
             InitializeComponent();
             AutoValidate = AutoValidate.Disable;
             this.StartPosition = FormStartPosition.CenterScreen;
+            
         }
+        
 
         private void TabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -45,6 +48,7 @@ namespace Friendly.View
                             break;
                         case 2:
                             DataGridViewMyMessagesTab(currentUser);
+                            textBoxMessages.Text = "";
                             break;
                     }
                 }
@@ -420,19 +424,20 @@ namespace Friendly.View
 
         private void buttonSendMessage_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
+            
 
-            if (cueTextBoxMessage.Text !=  "" && selectedRow != null)
+            if (cueTextBoxMessage.Text !=  "")
             {
                 try
                 {
-                    string message = cueTextBoxMessage.Text.Trim();
-                    string dcc2Name = selectedRow.Cells[0].Value.ToString().Trim();
-                    DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
-                    DelegateBroadcastClient dcc2 = new DelegateBroadcastClient(dcc2Name);
-                    Controller.AddMessage(currentUser.Username, dcc2Name, message);
-                    DelegateBroadcastServer.SendMsgToAll(message);
-                    WriteMessages();
+
+                string message = cueTextBoxMessage.Text.Trim();   
+                DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
+                string dcc2Name = selectedRow.Cells[0].Value.ToString().Trim();
+                DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
+                DelegateBroadcastClient dcc2 = new DelegateBroadcastClient(dcc2Name);
+                Controller.AddMessage(currentUser.Username, dcc2Name, message);
+                DelegateBroadcastServer.sendMsgToAll(message,this);
                 }
                 catch (DbUpdateException ex)
                 {
@@ -442,6 +447,7 @@ namespace Friendly.View
                 {
                     labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
+
             }
         }
 
@@ -468,9 +474,8 @@ namespace Friendly.View
         private void dataGridViewMyMessagesTab_CellClick(object sender, DataGridViewCellEventArgs e)
         {          
             WriteMessages();
-        }
-
-        private void WriteMessages ()
+    }
+        public void WriteMessages ()
         {
             try
             {
@@ -497,6 +502,7 @@ namespace Friendly.View
                 labelFeedback.Text = ErrorHandler.HandleError(e);
             }
         }  
+        
     }
 }
 
