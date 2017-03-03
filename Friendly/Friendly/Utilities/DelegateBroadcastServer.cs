@@ -5,7 +5,7 @@ namespace Friendly.Utilities
 {
     class DelegateBroadcastServer
     {
-        public delegate void MsgArrivedDelegate(String message, MainForm form);
+        public delegate void MsgArrivedDelegate(string message, MainForm form);
         private static MsgArrivedDelegate madObj;
 
         public static void ClientConnect(MsgArrivedDelegate mad)
@@ -17,11 +17,11 @@ namespace Friendly.Utilities
         {
             madObj = (MsgArrivedDelegate)Delegate.Remove(madObj, mad);
         }
-        public static void sendMsgToAll(String msg, MainForm form)
+        public static void SendMsgToAll(string msg, MainForm form)
         {
             madObj(msg,form);
         }
-        public static void sendMsgToSome(String msg,Object outside,MainForm form)
+        public static void SendMsgToSome(string msg, object outside, MainForm form)
         {
             Delegate[] delegateList = madObj.GetInvocationList();
 
@@ -29,7 +29,7 @@ namespace Friendly.Utilities
             {
                 if (delegateList[i].Target != outside)
                 {
-                    ((MsgArrivedDelegate)delegateList[i])(msg);                   
+                    ((MsgArrivedDelegate)delegateList[i])(msg, form);                   
                 }              
             }
         }

@@ -6,14 +6,14 @@ namespace Friendly.Utilities
 {
     public class DelegateBroadcastClient
     {
-        private String clientName;
+        private string clientName;
         
 
-        public void onMsgArrived(string msg, MainForm form)
-        {
-            
+        public void OnMsgArrived(string msg, MainForm form)
+        {           
             form.WriteMessages();
-    }
+        }
+
         public Message SendMsg (Message msg)
         {
             return msg;
@@ -22,7 +22,7 @@ namespace Friendly.Utilities
         public DelegateBroadcastClient(string clientName)
         {
             this.clientName = clientName;
-            DelegateBroadcastServer.ClientConnect(new DelegateBroadcastServer.MsgArrivedDelegate(onMsgArrived));
+            DelegateBroadcastServer.ClientConnect(new DelegateBroadcastServer.MsgArrivedDelegate(OnMsgArrived));
         }
 
         public void Dispose()

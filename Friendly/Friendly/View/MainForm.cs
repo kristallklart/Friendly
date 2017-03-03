@@ -364,7 +364,6 @@ namespace Friendly.View
                 {
                     labelFeedback.Text = "Please select a preference from the table.";
                 }
-
             }
             catch (DbUpdateException ex)
             {
@@ -423,21 +422,26 @@ namespace Friendly.View
         }
 
         private void buttonSendMessage_Click(object sender, EventArgs e)
-        {
-            
+        {         
 
             if (cueTextBoxMessage.Text !=  "")
             {
                 try
                 {
-
-                string message = cueTextBoxMessage.Text.Trim();   
-                DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
-                string dcc2Name = selectedRow.Cells[0].Value.ToString().Trim();
-                DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
-                DelegateBroadcastClient dcc2 = new DelegateBroadcastClient(dcc2Name);
-                Controller.AddMessage(currentUser.Username, dcc2Name, message);
-                DelegateBroadcastServer.sendMsgToAll(message,this);
+                    string message = cueTextBoxMessage.Text.Trim();
+                    DataGridViewRow selectedRow = dataGridViewMyMessagesTab.CurrentRow;
+                    if (selectedRow != null)
+                    {                   
+                        string dcc2Name = selectedRow.Cells[0].Value.ToString().Trim();
+                        DelegateBroadcastClient dcc1 = new DelegateBroadcastClient(currentUser.Username);
+                        DelegateBroadcastClient dcc2 = new DelegateBroadcastClient(dcc2Name);
+                        Controller.AddMessage(currentUser.Username, dcc2Name, message);
+                        DelegateBroadcastServer.SendMsgToAll(message,this);
+                    }
+                    else
+                    {
+                        labelFeedback.Text = "Please select a user to send a message to.";
+                    }
                 }
                 catch (DbUpdateException ex)
                 {
@@ -447,7 +451,6 @@ namespace Friendly.View
                 {
                     labelFeedback.Text = ErrorHandler.HandleError(ex);
                 }
-
             }
         }
 
@@ -474,7 +477,8 @@ namespace Friendly.View
         private void dataGridViewMyMessagesTab_CellClick(object sender, DataGridViewCellEventArgs e)
         {          
             WriteMessages();
-    }
+        }
+
         public void WriteMessages ()
         {
             try
