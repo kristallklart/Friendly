@@ -48,6 +48,7 @@ namespace Friendly.View
                             break;
                         case 2:
                             DataGridViewMyMessagesTab(currentUser);
+                            textBoxMessages.Text = "";
                             break;
                     }
                 }
